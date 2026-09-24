@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTR Japan Nexus (MJX) - Official Portal</title>
+    <!-- Google Fonts: Inter & Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* ヘッダー */
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 60px 20px 40px;
+            text-align: center;
+            border-bottom: 4px solid var(--primary);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header-subtitle {
+            color: #38bdf8;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .header-desc {
+            color: #94a3b8;
+            font-size: 1.15rem;
+            font-weight: 500;
+        }
+
+        /* コンテナ */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .select-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .select-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #0f172a;
+        }
+
+        /* 言語選択ボタンのグリッド */
+        .btn-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .lang-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 20px;
+            background: #ffffff;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .lang-btn:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px -5px rgba(37, 99, 235, 0.15);
+            background: #eff6ff;
+        }
+
+        .lang-flag {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        .lang-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .lang-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* フッター */
+        footer {
+            background: #0f172a;
+            color: #64748b;
+            text-align: center;
+            padding: 24px 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        footer strong {
+            color: #38bdf8;
+        }
+
+        @media (max-width: 640px) {
+            header h1 { font-size: 1.8rem; }
+            .select-card { padding: 24px 16px; }
+            .btn-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="header-subtitle">OFFICIAL RULES & PARTICIPATION GUIDE</div>
+            <h1>🌐 MTR Japan Nexus (MJX)</h1>
+            <div class="header-desc">サーバー利用規約 & 参加ガイド / Server Rules & Guide</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="select-card">
+            <div class="select-title">言語を選択してください / Select Language</div>
+            
+            <div class="btn-grid">
+                <!-- 日本語版リンク -->
+                <a href="jp.html" class="lang-btn">
+                    <div class="lang-flag">🇯🇵</div>
+                    <div class="lang-name">日本語 (Japanese)</div>
+                    <div class="lang-desc">利用規約・参加ガイドを見る</div>
+                </a>
+
+                <!-- 英語版リンク -->
+                <a href="en.html" class="lang-btn">
+                    <div class="lang-flag">🇺🇸</div>
+                    <div class="lang-name">English</div>
+                    <div class="lang-desc">Rules & Participation Guide</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Welcome to MTR Japan Nexus — <strong>Build. Connect. Live.</strong>
+    </footer>
+
+</body>
+</html>

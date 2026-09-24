@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTR Japan Nexus (MJX) OFFICIAL RULES & PARTICIPATION GUIDE</title>
+    <!-- Google Fonts: Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --primary-dark: #1d4ed8;
+            
+            --builder: #0d9488;
+            --builder-light: #f0fdf4;
+            --builder-border: #99f6e4;
+            
+            --visitor: #16a34a;
+            --visitor-light: #f0fdf4;
+            --visitor-border: #bbf7d0;
+            
+            --warning: #dc2626;
+            --warning-light: #fef2f2;
+            --warning-border: #fecaca;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding-bottom: 60px;
+        }
+
+        /* ヘッダー */
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--primary);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header-subtitle {
+            color: #38bdf8;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+
+        .header-desc {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* ナビゲーションバー */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            overflow-x: auto;
+            padding: 8px 16px;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .nav-container a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: #f1f5f9;
+            transition: all 0.2s ease;
+        }
+
+        .nav-container a:hover {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        /* メインコンテンツレイアウト */
+        .container {
+            max-width: 960px;
+            margin: 30px auto 0;
+            padding: 0 20px;
+        }
+
+        /* セクション共通カード */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            padding: 28px;
+            margin-bottom: 28px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        /* サブセクション */
+        .subsection {
+            margin-bottom: 24px;
+        }
+
+        .subsection:last-child {
+            margin-bottom: 0;
+        }
+
+        .subsection-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* 成り立ち（前身サーバー）専用スタイル */
+        .history-card {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+        }
+
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .community-box {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid #e0f2fe;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .community-box h4 {
+            font-size: 1.1rem;
+            color: #0369a1;
+            margin-bottom: 4px;
+        }
+
+        .community-box .subtitle {
+            font-size: 0.8rem;
+            color: #64748b;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .concept-highlight {
+            background: #ffffff;
+            border-left: 4px solid var(--primary);
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .concept-highlight h4 {
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        /* ビルダー専用カードスタイル */
+        .builder-card {
+            border-top: 4px solid var(--builder);
+        }
+        .builder-card .section-header {
+            color: var(--builder);
+            border-bottom-color: var(--builder-border);
+        }
+
+        /* ビジター専用カードスタイル */
+        .visitor-card {
+            border-top: 4px solid var(--visitor);
+        }
+        .visitor-card .section-header {
+            color: var(--visitor);
+            border-bottom-color: var(--visitor-border);
+        }
+
+        /* 運営対応カードスタイル */
+        .admin-card {
+            border-top: 4px solid var(--warning);
+            background: #fff5f5;
+        }
+        .admin-card .section-header {
+            color: var(--warning);
+            border-bottom-color: var(--warning-border);
+        }
+
+        /* リストスタイル */
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 10px 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 6px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 6px;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .builder-card ul li::before { color: var(--builder); }
+        .visitor-card ul li::before { color: var(--visitor); }
+
+        /* 例・強調ボックス */
+        .example-box {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 12px 16px;
+            margin: 10px 0;
+            font-size: 0.95rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #334155;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 6px;
+        }
+
+        /* フッター */
+        .footer-banner {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 36px 20px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .footer-slogan {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: #38bdf8;
+            letter-spacing: 1px;
+            margin-top: 12px;
+        }
+
+        p {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            color: #0f172a;
+        }
+
+        /* レスポンシブ調整 */
+        @media (max-width: 640px) {
+            header h1 { font-size: 1.6rem; }
+            .card { padding: 18px; }
+            .section-header { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="top">
+        <div class="header-container">
+            <div class="header-subtitle">OFFICIAL RULES & PARTICIPATION GUIDE</div>
+            <h1>🌐 MTR Japan Nexus (MJX)</h1>
+            <div class="header-desc">サーバー利用規約 & 参加ガイド</div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#history">🔗 MJXの成り立ち</a>
+            <a href="#common">🌐 1. 共通ルール</a>
+            <a href="#builder">🔨 2. ビルダー向け</a>
+            <a href="#visitor">🚶‍♂️ 3. ビジター向け</a>
+            <a href="#playstyle">🏙️ 4. 基本的な遊び方</a>
+            <a href="#admin">⚖️ 5. 運営対応</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- MJXの成り立ちとコンセプト -->
+        <section id="history" class="card history-card">
+            <div class="section-header" style="color: #0284c7; border-bottom-color: #bae6fd;">
+                🔗 MJXの成り立ち（3つの前身コミュニティのノウハウ統合）
+            </div>
+            <p><strong>MTR Japan Nexus（MJX）</strong>は、これまで異なる分野で発展してきた3つのコミュニティが、それぞれ培ってきた技術・経験・ノウハウを持ち寄ることで誕生した統合都市サーバーです。</p>
+            <p>単純に既存のワールドを統合したものではなく、各コミュニティが培ってきた<strong>「鉄道」「システム・技術」「建築」</strong>それぞれの強みを、新たな一つの都市圏へ融合しています。</p>
+
+            <div class="community-grid">
+                <div class="community-box">
+                    <h4>MJaS</h4>
+                    <div class="subtitle">MTR Japan Server</div>
+                    <p style="font-size: 0.9rem;">2024年夏頃公開。MTR Japan Usersが運営・管理する大規模な公開MTRサーバー。</p>
+                    <p style="font-size: 0.9rem;">800を超える駅と、総延長70km以上の定期運用路線網を構築・運営してきた経験を持ち、大規模な鉄道路線・駅・交通インフラを建設・運用するためのノウハウをMJXへ引き継いでいます。</p>
+                </div>
+
+                <div class="community-box">
+                    <h4>MTTS</h4>
+                    <div class="subtitle">New MTR Technology & Transport Server</div>
+                    <p style="font-size: 0.9rem;">NEST氏をはじめとする管理陣が運営。</p>
+                    <p style="font-size: 0.9rem;">MTRを活用した路線建設に加え、車内デジタルサイネージなどのシステム構築、交通関連の技術・ギミックの開発、サーバー運用に関するノウハウを培ってきた技術系コミュニティです。MJaSとは異なる規模・方向性での路線建設や、現代日本の交通を再現するための技術的な取り組みを行ってきました。</p>
+                </div>
+
+                <div class="community-box">
+                    <h4>JNC</h4>
+                    <div class="subtitle">JapanitureCraft</div>
+                    <p style="font-size: 0.9rem;">Japaniture Modの家具・インテリア技術を軸に、建築・都市景観・内装デザインに関するノウハウを培ってきた建築専門コミュニティです。</p>
+                    <p style="font-size: 0.9rem;">リアルで高品質な建築物や内装、都市景観を制作する技術と経験をMJXへ引き継いでいます。</p>
+                </div>
+            </div>
+
+            <div class="concept-highlight">
+                <h4>🌐 3つの強みを一つの都市へ</h4>
+                <ul>
+                    <li><strong>MJaS</strong> — 大規模な鉄道路線・交通インフラ建設のノウハウ</li>
+                    <li><strong>MTTS</strong> — 交通システム・技術・路線建設のノウハウ</li>
+                    <li><strong>JNC</strong> — 建築・都市景観・内装のノウハウ</li>
+                </ul>
+                <p style="margin-top: 10px; font-size: 0.95rem;">これら3つの強みを組み合わせることで、MJXでは鉄道だけでも、建築だけでもない、「都市そのもの」を楽しめるMinecraftコミュニティを目指します。</p>
+            </div>
+
+            <div class="concept-highlight" style="border-left-color: #16a34a; background: #f0fdf4; margin-top: 12px;">
+                <h4 style="color: #16a34a;">【MJXのコンセプトと目的】</h4>
+                <p style="font-size: 0.95rem;"><strong>MTR Japan Nexus（以下「MJX」）</strong>は、MJaSの鉄道網、MTTSの先端技術・交通インフラ、JNCのリアルな建築・景観を融合し、Minecraft上に「都市・交通・生活・経済」が揃った一つの世界を構築するコミュニティサーバーです。</p>
+                <p style="font-size: 0.95rem;">鉄道・自動車・建築・店舗経営・各種イベントなどを通じて、プレイヤー同士で都市圏を発展させていくことを目的としています。</p>
+                <p style="font-size: 0.95rem; margin-bottom: 0;">自由な活動を尊重しつつ、他のプレイヤーの成果物、財産、設備およびサーバー環境の保護を徹底します。</p>
+            </div>
+        </section>
+
+        <!-- 1. 共通ルール -->
+        <section id="common" class="card">
+            <div class="section-header" style="color: var(--primary);">
+                1. 🌐 共通ルール（全プレイヤー適用）
+            </div>
+            <p>ビルダー・ビジターを問わず、MJXに参加するすべてのプレイヤーに適用される基本ルールです。</p>
+
+            <div class="subsection" style="margin-top: 20px;">
+                <div class="subsection-title">1-1. 基本マナー・禁止事項</div>
+                
+                <p><strong>🚫 他人の建築・財産への配慮</strong></p>
+                <p>他のプレイヤーが作成・所有・管理している以下のものを、許可なく破壊・移動・使用・持ち去る行為を禁止します。</p>
+                <ul>
+                    <li>建築物</li>
+                    <li>道路・線路</li>
+                    <li>車両</li>
+                    <li>アイテム・チェスト</li>
+                    <li>自動販売機・ショップ</li>
+                    <li>その他の設置設備</li>
+                </ul>
+                <p>故意または悪質な破壊・盗難・荒らし行為には、一発BANを含む厳正な対応を行う場合があります。<br>過失による損害については、被害状況や経緯を確認したうえで運営が対応します。</p>
+
+                <p style="margin-top: 16px;"><strong>⚔️ カオス要素・戦闘（TacZ等）</strong></p>
+                <p>街中での無差別なPK（プレイヤーキル）、銃撃、爆発、その他の戦闘によって、他プレイヤーの建築物・車両・設備等を巻き込む行為は禁止です。</p>
+                <p>TacZ等の武器を使用した試射・戦闘・撮影は、指定されたテスト場・撮影エリア・PvPイベント等で行ってください。</p>
+                <p>イベント等で特別に認められた場合は、そのイベント固有のルールを優先します。</p>
+
+                <p style="margin-top: 16px;"><strong>⚡ サーバー負荷への配慮</strong></p>
+                <p>サーバーの安定した運営を維持するため、以下のような過剰な負荷を発生させる行為は避けてください。</p>
+                <ul>
+                    <li>大量のクロック回路の常時稼働</li>
+                    <li>過剰なCreate等の動力・回転機構</li>
+                    <li>大量のエンティティの放置</li>
+                    <li>大量の車両の放置</li>
+                    <li>大量のアイテム・ドロップアイテムの放置</li>
+                    <li>その他、サーバーの動作に著しい負荷を与える設備・装置</li>
+                </ul>
+                <p>サーバーへの負荷が大きいと運営が判断した場合、設備の停止・撤去・変更等をお願いする場合があります。</p>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 24px 0;">
+
+            <div class="subsection">
+                <div class="subsection-title">1-2. 💰 経済システム（Lightman's Currency）</div>
+                <p>MJXでは、サーバー内通貨としてコインを使用します。</p>
+
+                <p style="margin-top: 12px;"><strong>🏦 金融・インフラ</strong></p>
+                <p>街中のATM・銀行等を利用して、以下の金融サービスを利用できます。</p>
+                <ul>
+                    <li>預金</li>
+                    <li>引き出し</li>
+                    <li>口座間送金</li>
+                    <li>その他、対応する金融サービス</li>
+                </ul>
+
+                <p style="margin-top: 12px;"><strong>🪙 通貨の入手</strong></p>
+                <p>ビジターを中心に、以下のような活動によってコインを獲得できます。</p>
+                <ul>
+                    <li>ビルダー・運営からの業務受託</li>
+                    <li>店舗・サービス業</li>
+                    <li>タクシー・バス等の運転</li>
+                    <li>商品・料理等の販売</li>
+                    <li>自動販売機の運営</li>
+                    <li>イベント・大会への参加</li>
+                    <li>その他、認められた業務・サービス</li>
+                </ul>
+
+                <p style="margin-top: 12px;"><strong>🛒 通貨の使用</strong></p>
+                <p>コインは以下のようなサービス・商品に使用できます。</p>
+                <ul>
+                    <li>MTR等の運賃・定期券</li>
+                    <li>高速道路料金</li>
+                    <li>車両購入</li>
+                    <li>武器・弾薬</li>
+                    <li>家具・家電・インテリア</li>
+                    <li>飲食店・ショップ</li>
+                    <li>物件のレンタル・購入</li>
+                    <li>その他、対応する商品・サービス</li>
+                </ul>
+
+                <p style="margin-top: 12px;"><strong>📉 インフレ防止</strong></p>
+                <p>健全な経済を維持するため、以下のような形で適切に通貨を回収します。</p>
+                <ul>
+                    <li>運賃</li>
+                    <li>高速道路料金</li>
+                    <li>事故修復費</li>
+                    <li>行政上の罰金</li>
+                    <li>各種手数料</li>
+                    <li>その他の経済調整</li>
+                </ul>
+                <p>サーバー内経済の状況に応じて、運営が料金・手数料等を調整する場合があります。</p>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 24px 0;">
+
+            <div class="subsection">
+                <div class="subsection-title">1-3. 🚗 道路交通・事故対応（MTS / Kaminari等）</div>
+                <p><strong>🚨 事故が発生した際の義務と賠償</strong></p>
+                <p>車両の運転中に事故を起こし、建築物・道路・車両・設備等を破損させた場合は、直ちに安全を確保し、事故を放置せず、速やかに当事者または運営へ報告してください。</p>
+                <div class="example-box">
+                    <strong>【修復・賠償】</strong><br>
+                    被害状況に応じて、運営が復旧方法・修復費等を判断します。原則として当事者同士の話し合いを尊重し、必要に応じて運営が仲介します。
+                </div>
+
+                <p style="margin-top: 12px;"><strong>🚫 悪質な事故放置の禁止</strong></p>
+                <p>事故を起こしたこと自体を理由として、直ちに厳しい処分を行うことは原則ありません。</p>
+                <p>ただし、以下のような悪質な行為は処分の対象となります。</p>
+                <ul>
+                    <li>当て逃げ</li>
+                    <li>故意の事故</li>
+                    <li>事故の隠蔽</li>
+                    <li>虚偽の報告</li>
+                    <li>事故後の意図的な放置</li>
+                    <li>同様の行為を繰り返すこと</li>
+                </ul>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 24px 0;">
+
+            <div class="subsection">
+                <div class="subsection-title">1-4. 📹 配信・撮影</div>
+                <p>YouTube、Twitch等での配信・動画撮影・写真投稿は大歓迎です！</p>
+                <p>他プレイヤーが映り込む場合は、プライバシーやプレイ環境への配慮をお願いします。</p>
+                <div class="example-box">
+                    <strong>推奨ハッシュタグ：</strong> <span class="badge">#MJX鯖</span> <span class="badge">#MTRJapanNexus</span>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 24px 0;">
+
+            <div class="subsection">
+                <div class="subsection-title">1-5. ⚠️ サーバー・MOD環境に関する免責</div>
+                <p>MJXでは多数のMOD・プラグインを使用しているため、以下の事象が発生する場合があります。</p>
+                <ul>
+                    <li>予告なしのメンテナンス</li>
+                    <li>仕様変更</li>
+                    <li>MOD・プラグイン等による不具合</li>
+                    <li>ワールドの復旧・ロールバック</li>
+                    <li>データ消失</li>
+                    <li>その他、予期せぬ障害</li>
+                </ul>
+                <p>データ損失等が発生した場合、完全な復旧を保証することはできません。</p>
+                <p>また、本規約に明記されていない事態については、状況を確認したうえで運営が最終的に判断します。</p>
+            </div>
+        </section>
+
+        <!-- 2. ビルダー向けルール -->
+        <section id="builder" class="card builder-card">
+            <div class="section-header">
+                2. 🔨 ビルダー（建築・開発者）向けルール
+            </div>
+            <p>ビルダーは、MJXにおいて都市開発・建築・交通・インフラ整備等を行う開発者向けの参加区分です。</p>
+
+            <div class="subsection" style="margin-top: 20px;">
+                <div class="subsection-title">🏅 2-1. ビルダー資格</div>
+                <p>所定のMTR Global Server Alliance（MGSA）によるビルダー選考を受け、条件を満たす必要があります。</p>
+                <p>選考通過後、MJX内で都市開発・建築等を行うための権限が付与されます。</p>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">🏗️ 2-2. 建築・開発権限</div>
+                <p>ビルダーにはクリエイティブ権限が付与され、土地取得申請なしで自由に都市開発を行うことができます。</p>
+                <p>ただし、他者の既存の建築物・土地・設備・交通インフラ等を無断で変更・撤去する行為は禁止します。</p>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">🏗️ 2-3. 建物一覧・Schematic共有</div>
+                <p>制作した建物をSchematicとして共有し、他のビルダーが都市開発に利用できる<strong>「建物一覧」</strong>を運用します。</p>
+
+                <div class="example-box">
+                    <strong>【建物登録の手順】</strong><br>
+                    Discordの「建物一覧」チャンネルへ、以下の形式で投稿してください。<br>
+                    <strong>建物名 ＋ 完成写真</strong><br>
+                    <em>例： 🏪 コンビニ ＋ 📷 完成写真</em><br><br>
+                    その後、マインクラフトサーバーにてSchematicを保存してください。<br>
+                    保存名は建物名と統一してください。<br>
+                    <em>例： コンビニ.schem</em>
+                </div>
+
+                <p><strong>【登録と利用許諾】</strong></p>
+                <p>「建物一覧」への登録を行った時点で、制作者は以下の利用を許諾したものとして扱います。</p>
+                <p><em>MJX内のビルダーが、都市開発を目的として当該Schematicを自由に設置・使用すること。</em></p>
+                <p>この利用について、設置ごとの個別許可は不要です。また、都市開発上必要な場合は、同一Schematicを複数箇所へ設置することができます。</p>
+
+                <p style="margin-top: 10px;"><strong>【未登録の建物】</strong></p>
+                <p>「建物一覧」に登録されていない建物については、制作者の許可なくSchematicを使用・設置しないでください。</p>
+
+                <p style="margin-top: 10px;"><strong>【建物の改造】</strong></p>
+                <p>設置場所や都市景観に合わせて、外装・内装・設備等を変更することができます。</p>
+                <p>ただし、元の制作者の作品性を著しく損なう大幅な改変や、改変した建物を元制作者の作品として扱う行為は避けてください。大幅な改変を行った建物を新たな建物として再登録する場合は、可能な限り元の制作者を明記してください。</p>
+
+                <p style="margin-top: 10px;"><strong>【登録解除】</strong></p>
+                <p>制作者が運営へ申し出ることで、当該Schematicの新規利用を停止することができます。</p>
+                <p>ただし、登録解除前に既に設置・利用された建物、および既に取得・配置済みのSchematicについては、原則として撤去・回収を行いません。</p>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">🚆 2-4. 鉄道・インフラ（MTR Mod）</div>
+                <p>ビルダーは事前申請なしで路線を敷設することができます。</p>
+                <p>ルートの重複や並行路線の建設も原則として自由です。</p>
+                <p>また、長期間開発が停止していることのみを理由として、直ちに路線の権利を剥奪したり、強制撤去したりすることはありません。</p>
+                <p>ただし、他者の建築物・設備・既存インフラ等を無断で変更・撤去することは禁止します。</p>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">⚙️ 2-5. Create Modの扱い</div>
+                <p>Create Modの建材・装飾・機能等は自由に使用できます。</p>
+                <p>ただし、以下のようなサーバーへ過剰な負荷を与える設備については、禁止または制限する場合があります。</p>
+                <ul>
+                    <li>大型の回転機構</li>
+                    <li>大量のクロック回路</li>
+                    <li>大量のエンティティを使用する設備</li>
+                    <li>その他、サーバーの動作に著しい負荷を与える設備</li>
+                </ul>
+                <p>鉄道については、原則としてMTR Modをメインの鉄道システムとして使用します。</p>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">💰 2-6. ビルダーの経済関与ルール</div>
+                <p><strong>【クリエイティブ資源の無制限配布禁止】</strong></p>
+                <p>ビルダーは、クリエイティブによって生成したアイテム・建材・装備等を、ビジター等へ無制限に直接配布することを禁止します。</p>
+                <p>また、MJX内の経済バランスを維持するため、ビルダーが保有するコインをビジター等へ無制限に直接配布する行為も禁止します。</p>
+
+                <p style="margin-top: 12px;"><strong>【業務委託・公式店舗の推奨】</strong></p>
+                <p>ビジターへ仕事を依頼し、その対価としてコインを支払うことは歓迎されます。</p>
+                <p><em>例：案内、運転手、撮影、建築作業、店舗スタッフ、その他の業務</em></p>
+                <p>また、運営の認可を受けた公式店舗・事業の運営も歓迎されます。</p>
+                <p><em>例：ショールーム、車両ディーラー、飲食店、ショップ、その他のサービス事業</em></p>
+            </div>
+        </section>
+
+        <!-- 3. ビジター向けルール -->
+        <section id="visitor" class="card visitor-card">
+            <div class="section-header">
+                3. 🚶‍♂️ ビジター（一般参加・生活者）向けルール
+            </div>
+            <p>ビジターは、MJXの都市で観光・買い物・交通・仕事・生活・イベント等を楽しむ一般プレイヤー向けの参加区分です。</p>
+
+            <div class="subsection" style="margin-top: 20px;">
+                <div class="subsection-title">🎮 3-1. 参加環境</div>
+                <p>ビジターは原則としてアドベンチャーモードで参加します。</p>
+                <p>そのため、通常のプレイではブロックの破壊や都市施設の改変を行うことはできません。</p>
+                <p>参加時には、行政から初期手当が支給されます。</p>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">💼 3-2. お金の稼ぎ方</div>
+                <p>以下のような活動によってコインを獲得できます。</p>
+                <ul>
+                    <li>接客</li>
+                    <li>運転手</li>
+                    <li>案内</li>
+                    <li>業務受託</li>
+                    <li>ショップ経営</li>
+                    <li>商品販売</li>
+                    <li>自動販売機運営</li>
+                    <li>イベント・大会への参加</li>
+                    <li>その他、認められた仕事・サービス</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">🛒 3-3. お金の使い道</div>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="margin-bottom: 10px;"><strong>交通：</strong> MTR運賃、定期券、高速道路料金</li>
+                    <li style="margin-bottom: 10px;"><strong>モビリティ：</strong> 車両・ディーラー、MTS / Kaminari関連製品</li>
+                    <li style="margin-bottom: 10px;"><strong>装備：</strong> TacZ等の武器・弾薬、その他、対応する装備<br><span style="font-size: 0.88rem; color: #64748b;">※武器・弾薬の使用については、MJXの戦闘・安全ルールを遵守してください。</span></li>
+                    <li style="margin-bottom: 10px;"><strong>生活：</strong> JNC系家具・家電、飲食、ショップ商品、物件の購入・賃貸、その他、対応する商品・サービス</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 4. 基本的な遊び方 -->
+        <section id="playstyle" class="card">
+            <div class="section-header" style="color: #475569;">
+                4. 🏙️ 基本的な遊び方
+            </div>
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 12px; padding-left: 28px; position: relative;">
+                    <span style="position: absolute; left: 0;">🔨</span>
+                    <strong>ビルダー：</strong> 都市、住宅、駅、道路、鉄道、店舗、各種施設等を自由に開発する。
+                </li>
+                <li style="margin-bottom: 12px; padding-left: 28px; position: relative;">
+                    <span style="position: absolute; left: 0;">🚶</span>
+                    <strong>ビジター：</strong> 街を歩き、交通を利用し、買い物・仕事・イベント等を通じて都市で生活する。
+                </li>
+                <li style="margin-bottom: 12px; padding-left: 28px; position: relative;">
+                    <span style="position: absolute; left: 0;">🚆</span>
+                    <strong>交通：</strong> MTRに乗車したり、自分で車両を運転したりして都市を移動する。
+                </li>
+                <li style="margin-bottom: 12px; padding-left: 28px; position: relative;">
+                    <span style="position: absolute; left: 0;">💰</span>
+                    <strong>経済：</strong> 仕事でコインを稼ぎ、商品を仕入れ、ショップや自動販売機等を運営する。
+                </li>
+                <li style="margin-bottom: 12px; padding-left: 28px; position: relative;">
+                    <span style="position: absolute; left: 0;">📹</span>
+                    <strong>コンテンツ制作：</strong> 都市での生活・建築・交通・イベント等を配信、動画、写真などのコンテンツとして発信する。
+                </li>
+            </ul>
+        </section>
+
+        <!-- 5. 運営による対応 -->
+        <section id="admin" class="card admin-card">
+            <div class="section-header">
+                5. ⚖️ 運営による対応
+            </div>
+            <p>規約違反が確認された場合、違反内容・悪質性・被害状況・過去の違反状況等を考慮し、以下の対応を行う場合があります。</p>
+            <ul>
+                <li>注意・警告</li>
+                <li>建築物・設備等の修正依頼</li>
+                <li>アイテム・通貨等の回収</li>
+                <li>権限の一時停止</li>
+                <li>ビルダー権限の停止・取消</li>
+                <li>一時BAN</li>
+                <li>永久BAN</li>
+            </ul>
+
+            <div class="example-box" style="background: #ffffff; border-color: var(--warning-border); margin-top: 16px;">
+                <strong style="color: var(--warning);">特に、以下のような行為については厳重に対応します：</strong>
+                <p style="margin-top: 6px; margin-bottom: 0;">荒らし、盗難、故意の破壊、サーバーへの負荷攻撃、不正な経済操作、その他、サーバー運営を著しく妨害する行為</p>
+            </div>
+        </section>
+
+        <!-- 6. 最後に -->
+        <div class="footer-banner">
+            <h3 style="font-size: 1.2rem; margin-bottom: 12px;">6. 📌 最後に</h3>
+            <p style="max-width: 700px; margin: 0 auto; color: #cbd5e1; font-size: 0.95rem;">
+                MJXは、MJaSの「鉄道インフラ」、MTTSの「先端交通技術」、JNCの「家具・景観美」がひとつになった統合都市サーバーです。<br>
+                ビルダーが街を作り、ビジターが訪れ、働き、買い物をして、交通機関を利用する。<br>
+                「作る人」も「暮らす人」も、一緒になって一つの都市圏を成長させていきましょう！
+            </p>
+            <div class="footer-slogan">
+                Welcome to MTR Japan Nexus.<br>
+                Build. Connect. Live.
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

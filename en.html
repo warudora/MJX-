@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTR Japan Nexus (MJX) OFFICIAL RULES & PARTICIPATION GUIDE</title>
+    <!-- Google Fonts: Inter & Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --primary-dark: #1d4ed8;
+            
+            --builder: #0d9488;
+            --builder-light: #f0fdf4;
+            --builder-border: #99f6e4;
+            
+            --visitor: #16a34a;
+            --visitor-light: #f0fdf4;
+            --visitor-border: #bbf7d0;
+            
+            --warning: #dc2626;
+            --warning-light: #fef2f2;
+            --warning-border: #fecaca;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding-bottom: 60px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--primary);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header-subtitle {
+            color: #38bdf8;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+
+        .header-desc {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            overflow-x: auto;
+            padding: 8px 16px;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .nav-container a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: #f1f5f9;
+            transition: all 0.2s ease;
+        }
+
+        .nav-container a:hover {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        /* Container & Cards */
+        .container {
+            max-width: 960px;
+            margin: 30px auto 0;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            padding: 28px;
+            margin-bottom: 28px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .subsection {
+            margin-bottom: 24px;
+        }
+
+        .subsection:last-child {
+            margin-bottom: 0;
+        }
+
+        .subsection-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Origins Card */
+        .history-card {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+        }
+
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .community-box {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid #e0f2fe;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .community-box h4 {
+            font-size: 1.1rem;
+            color: #0369a1;
+            margin-bottom: 4px;
+        }
+
+        .community-box .subtitle {
+            font-size: 0.8rem;
+            color: #64748b;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .concept-highlight {
+            background: #ffffff;
+            border-left: 4px solid var(--primary);
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .concept-highlight h4 {
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        /* Builder Card */
+        .builder-card {
+            border-top: 4px solid var(--builder);
+        }
+        .builder-card .section-header {
+            color: var(--builder);
+            border-bottom-color: var(--builder-border);
+        }
+
+        /* Visitor Card */
+        .visitor-card {
+            border-top: 4px solid var(--visitor);
+        }
+        .visitor-card .section-header {
+            color: var(--visitor);
+            border-bottom-color: var(--visitor-border);
+        }
+
+        /* Admin Card */
+        .admin-card {
+            border-top: 4px solid var(--warning);
+            background: #fff5f5;
+        }
+        .admin-card .section-header {
+            color: var(--warning);
+            border-bottom-color: var(--warning-border);
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 10px 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 6px;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 6px;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .builder-card ul li::before { color: var(--builder); }
+        .visitor-card ul li::before { color: var(--visitor); }
+
+        /* Example / Callout Boxes */
+        .example-box {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 12px 16px;
+            margin: 10px 0;
+            font-size: 0.95rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #334155;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 6px;
+        }
+
+        /* Footer */
+        .footer-banner {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 36px 20px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .footer-slogan {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: #38bdf8;
+            letter-spacing: 1px;
+            margin-top: 12px;
+        }
+
+        p {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            color: #0f172a;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            header h1 { font-size: 1.6rem; }
+            .card { padding: 18px; }
+            .section-header { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="top">
+        <div class="header-container">
+            <div class="header-subtitle">OFFICIAL RULES & PARTICIPATION GUIDE</div>
+            <h1>🌐 MTR Japan Nexus (MJX)</h1>
+            <div class="header-desc">Server Rules & Participation Guide</div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#history">🔗 Origins of MJX</a>
+            <a href="#common">🌐 1. General Rules</a>
+            <a href="#builder">🔨 2. Rules for Builders</a>
+            <a href="#visitor">🚶‍♂️ 3. Rules for Visitors</a>
+            <a href="#playstyle">🏙️ 4. Basic Ways to Play</a>
+            <a href="#admin">⚖️ 5. Administrative Actions</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- Origins of MJX -->
+        <section id="history" class="card history-card">
+            <div class="section-header" style="color: #0284c7; border-bottom-color: #bae6fd;">
+                🔗 The Origins of MJX — Integration of Expertise from Three Former Communities
+            </div>
+            <p><strong>MTR Japan Nexus (MJX)</strong> was established through the collaboration of three communities that had each developed expertise in different fields, bringing together their accumulated knowledge, technology, and experience.</p>
+            <p>Rather than simply merging existing worlds, MJX combines the strengths of each community in <strong>railways, systems & technology, and architecture</strong> to create a new and unified urban environment.</p>
+
+            <div class="community-grid">
+                <div class="community-box">
+                    <h4>MJaS</h4>
+                    <div class="subtitle">MTR Japan Server</div>
+                    <p style="font-size: 0.9rem;">Launched around the summer of 2024 and operated and managed by MTR Japan Users, MJaS is a large-scale public MTR server.</p>
+                    <p style="font-size: 0.9rem;">With experience in constructing and operating a railway network consisting of over 800 stations and more than 70 km of regularly operated routes, MJaS contributes extensive expertise in the construction and operation of large-scale railway lines, stations, and transportation infrastructure to MJX.</p>
+                </div>
+
+                <div class="community-box">
+                    <h4>MTTS</h4>
+                    <div class="subtitle">New MTR Technology & Transport Server</div>
+                    <p style="font-size: 0.9rem;">Operated by a management team including NEST.</p>
+                    <p style="font-size: 0.9rem;">MTTS has developed expertise in MTR-based railway construction as well as system development such as in-train digital signage, transportation-related technologies and mechanisms, and server operations. MTTS has also pursued railway construction on a different scale and with a different focus from MJaS, along with technical projects aimed at recreating modern Japanese transportation systems.</p>
+                </div>
+
+                <div class="community-box">
+                    <h4>JNC</h4>
+                    <div class="subtitle">JapanitureCraft</div>
+                    <p style="font-size: 0.9rem;">JNC is a community specializing in architecture that has developed expertise in architecture, urban scenery, and interior design, centered around the furniture and interior-design capabilities of Japaniture Mod.</p>
+                    <p style="font-size: 0.9rem;">Its experience and techniques for creating realistic, high-quality buildings, interiors, and urban environments are carried forward into MJX.</p>
+                </div>
+            </div>
+
+            <div class="concept-highlight">
+                <h4>🌐 Bringing Three Strengths Together into One City</h4>
+                <ul>
+                    <li><strong>MJaS</strong> — Expertise in large-scale railway and transportation infrastructure construction</li>
+                    <li><strong>MTTS</strong> — Expertise in transportation systems, technology, and railway construction</li>
+                    <li><strong>JNC</strong> — Expertise in architecture, urban scenery, and interior design</li>
+                </ul>
+                <p style="margin-top: 10px; font-size: 0.95rem;">By combining these three strengths, MJX aims to create a Minecraft community where players can enjoy an entire city—not just railways or architecture alone.</p>
+            </div>
+
+            <div class="concept-highlight" style="border-left-color: #16a34a; background: #f0fdf4; margin-top: 12px;">
+                <h4 style="color: #16a34a;">【MJX Concept & Purpose】</h4>
+                <p style="font-size: 0.95rem;"><strong>MTR Japan Nexus (hereinafter "MJX")</strong> combines the railway infrastructure expertise of MJaS, the advanced transportation technologies and systems of MTTS, and the realistic architecture and scenery of JNC to create a Minecraft community server featuring a complete world of urban development, transportation, everyday life, and economy.</p>
+                <p style="font-size: 0.95rem;">Through railways, automobiles, architecture, businesses, events, and other activities, players work together to develop and expand the metropolitan area.</p>
+                <p style="font-size: 0.95rem; margin-bottom: 0;">MJX respects freedom of activity while prioritizing the protection of other players' creations, property, facilities, and the overall server environment.</p>
+            </div>
+        </section>
+
+        <!-- 1. General Rules -->
+        <section id="common" class="card">
+            <div class="section-header" style="color: var(--primary);">
+                1. 🌐 General Rules — Applicable to All Players
+            </div>
+            <p>These basic rules apply to every player participating in MJX, regardless of whether they are a Builder or Visitor.</p>
+
+            <div class="subsection" style="margin-top: 20px;">
+                <div class="subsection-title">1-1. Basic Conduct & Prohibited Activities</div>
+                
+                <p><strong>🚫 Respect for Other Players' Buildings and Property</strong></p>
+                <p>Players must not destroy, move, use, or take any of the following without permission when they are created, owned, or managed by another player:</p>
+                <ul>
+                    <li>Buildings</li>
+                    <li>Roads and railway tracks</li>
+                    <li>Vehicles</li>
+                    <li>Items and chests</li>
+                    <li>Vending machines and shops</li>
+                    <li>Other installed facilities</li>
+                </ul>
+                <p>Intentional or malicious destruction, theft, or griefing may result in strict disciplinary action, including an immediate ban.<br>For accidental damage, the administration will review the circumstances and respond accordingly.</p>
+
+                <p style="margin-top: 16px;"><strong>⚔️ Chaos Elements & Combat (TacZ, etc.)</strong></p>
+                <p>Indiscriminate player killing (PK), gunfire, explosions, or other combat activities that involve or damage other players' buildings, vehicles, facilities, or other property are prohibited in urban areas.</p>
+                <p>Testing weapons, combat, or filming with weapons such as TacZ must be conducted in designated testing areas, filming areas, PvP event areas, or other locations specifically authorized for such activities.</p>
+                <p>When a special event explicitly permits such activities, the rules of that event take priority.</p>
+
+                <p style="margin-top: 16px;"><strong>⚡ Consideration for Server Performance</strong></p>
+                <p>To maintain stable server operation, players must avoid activities that generate excessive server load, including:</p>
+                <ul>
+                    <li>Continuously running large numbers of clock circuits</li>
+                    <li>Excessive Create-powered or rotational mechanisms</li>
+                    <li>Leaving large numbers of entities unattended</li>
+                    <li>Leaving large numbers of vehicles unattended</li>
+                    <li>Leaving large numbers of dropped items unattended</li>
+                    <li>Other equipment or mechanisms that place significant load on the server</li>
+                </ul>
+                <p>If the administration determines that a facility is causing excessive server load, players may be asked to stop, remove, or modify it.</p>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 24px 0;">
+
+            <div class="subsection">
+                <div class="subsection-title">1-2. 💰 Economy System — Lightman's Currency</div>
+                <p>MJX uses coins as its in-game currency.</p>
+
+                <p style="margin-top: 12px;"><strong>🏦 Financial Services & Infrastructure</strong></p>
+                <p>Players can use ATMs, banks, and other financial facilities throughout the city to access services including:</p>
+                <ul>
+                    <li>Deposits</li>
+                    <li>Withdrawals</li>
+                    <li>Account-to-account transfers</li>
+                    <li>Other supported financial services</li>
+                </ul>
+
+                <p style="margin-top: 12px;"><strong>🪙 Earning Currency</strong></p>
+                <p>Visitors can primarily earn coins through activities such as:</p>
+                <ul>
+                    <li>Contracted work for Builders or the administration</li>
+                    <li>Shops and service businesses</li>
+                    <li>Taxi and bus driving</li>
+                    <li>Selling products and food</li>
+                    <li>Operating vending machines</li>
+                    <li>Participating in events and competitions</li>
+                    <li>Other approved jobs and services</li>
+                </ul>
+
+                <p style="margin-top: 12px;"><strong>🛒 Spending Currency</strong></p>
+                <p>Coins can be used for various goods and services, including:</p>
+                <ul>
+                    <li>MTR fares and commuter passes</li>
+                    <li>Highway tolls</li>
+                    <li>Vehicle purchases</li>
+                    <li>Weapons and ammunition</li>
+                    <li>Furniture, appliances, and interior items</li>
+                    <li>Restaurants and shops</li>
+                    <li>Property rental and purchases</li>
+                    <li>Other supported goods and services</li>
+                </ul>
+
+                <p style="margin-top: 12px;"><strong>📉 Inflation Control</strong></p>
+                <p>To maintain a healthy in-game economy, currency may be appropriately removed from circulation through mechanisms such as:</p>
+                <ul>
+                    <li>Transportation fares</li>
+                    <li>Highway tolls</li>
+                    <li>Accident repair costs</li>
+                    <li>Administrative fines</li>
+                    <li>Various fees</li>
+                    <li>Other economic adjustments</li>
+                </ul>
+                <p>The administration may adjust prices and fees according to the condition of the server economy.</p>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 24px 0;">
+
+            <div class="subsection">
+                <div class="subsection-title">1-3. 🚗 Road Traffic & Accident Response — MTS / Kaminari, etc.</div>
+                <p><strong>🚨 Responsibilities and Compensation in the Event of an Accident</strong></p>
+                <p>If a player causes an accident while driving a vehicle and damages a building, road, vehicle, facility, or other property, they must immediately ensure safety, must not leave the accident unresolved, and must promptly report the incident to the affected party or the administration.</p>
+                <div class="example-box">
+                    <strong>【Repair & Compensation】</strong><br>
+                    The administration will determine the appropriate restoration method and repair costs based on the extent of the damage.<br>
+                    As a general principle, discussions between the parties involved will be respected, with the administration acting as a mediator when necessary.
+                </div>
+
+                <p style="margin-top: 12px;"><strong>🚫 Prohibition of Malicious Failure to Respond to Accidents</strong></p>
+                <p>Simply causing an accident will not normally result in severe disciplinary action.</p>
+                <p>However, malicious conduct such as the following may result in disciplinary action:</p>
+                <ul>
+                    <li>Hit-and-run</li>
+                    <li>Deliberately causing an accident</li>
+                    <li>Concealing an accident</li>
+                    <li>Making false reports</li>
+                    <li>Intentionally abandoning the scene or damage without response</li>
+                    <li>Repeatedly committing similar acts</li>
+                </ul>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 24px 0;">
+
+            <div class="subsection">
+                <div class="subsection-title">1-4. 📹 Streaming & Recording</div>
+                <p>Streaming, video recording, and photo sharing on platforms such as YouTube and Twitch are highly welcome!</p>
+                <p>When other players appear in your content, please respect their privacy and playing environment.</p>
+                <div class="example-box">
+                    <strong>Recommended Hashtags:</strong> <span class="badge">#MJX鯖</span> <span class="badge">#MTRJapanNexus</span>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 24px 0;">
+
+            <div class="subsection">
+                <div class="subsection-title">1-5. ⚠️ Server & Mod Environment Disclaimer</div>
+                <p>MJX uses numerous Mods and plugins. As a result, the following situations may occur:</p>
+                <ul>
+                    <li>Unscheduled maintenance</li>
+                    <li>Changes to specifications</li>
+                    <li>Bugs caused by Mods or plugins</li>
+                    <li>World restoration or rollback</li>
+                    <li>Data loss</li>
+                    <li>Other unexpected incidents</li>
+                </ul>
+                <p>Complete restoration of lost data cannot be guaranteed.</p>
+                <p>For situations not explicitly covered by these rules, the administration will make the final decision after reviewing the circumstances.</p>
+            </div>
+        </section>
+
+        <!-- 2. Rules for Builders -->
+        <section id="builder" class="card builder-card">
+            <div class="section-header">
+                2. 🔨 Rules for Builders — Construction & Development
+            </div>
+            <p>Builders are participants authorized to engage in urban development, construction, transportation, infrastructure development, and related activities within MJX.</p>
+
+            <div class="subsection" style="margin-top: 20px;">
+                <div class="subsection-title">🏅 2-1. Builder Qualification</div>
+                <p>Applicants must undergo the designated MTR Global Server Alliance (MGSA) Builder Selection process and meet the required conditions.</p>
+                <p>After passing the selection process, the necessary permissions for urban development and construction within MJX will be granted.</p>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">🏗️ 2-2. Construction & Development Rights</div>
+                <p>Builders are granted Creative Mode permissions and may freely develop areas without submitting individual land acquisition applications.</p>
+                <p>However, unauthorized modification or removal of other players' existing buildings, land, facilities, transportation infrastructure, or other property is prohibited.</p>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">🏗️ 2-3. Building Directory & Schematic Sharing</div>
+                <p>MJX operates a <strong>Building Directory</strong> where completed buildings can be shared as Schematics for use by other Builders in urban development.</p>
+
+                <div class="example-box">
+                    <strong>【Building Registration Procedure】</strong><br>
+                    Post the following in the Discord "Building Directory" channel:<br>
+                    <strong>Building Name + Completed Photos</strong><br>
+                    <em>Example: 🏪 Convenience Store ＋ 📷 Completed Photos</em><br><br>
+                    Afterward, save the Schematic on the designated Minecraft server storage.<br>
+                    The saved file name must match the building name.<br>
+                    <em>Example: Convenience Store.schem</em>
+                </div>
+
+                <p><strong>【Registration & Usage Permission】</strong></p>
+                <p>By registering a building in the Building Directory, the creator is considered to have granted permission for:</p>
+                <p><em>Builders within MJX to freely place and use the Schematic for the purpose of urban development.</em></p>
+                <p>No individual permission is required for each installation. The same Schematic may also be installed in multiple locations when necessary for urban development.</p>
+
+                <p style="margin-top: 10px;"><strong>【Unregistered Buildings】</strong></p>
+                <p>Buildings that have not been registered in the Building Directory must not be used or installed as Schematics without permission from the creator.</p>
+
+                <p style="margin-top: 10px;"><strong>【Modification of Buildings】</strong></p>
+                <p>Builders may modify exterior, interior, equipment, or other elements to suit the location and surrounding cityscape.</p>
+                <p>However, major modifications that significantly compromise the original creator's work, or presenting a modified building as the original creator's work, should be avoided. When substantially modifying a building and registering the modified version as a new building, the original creator should be credited whenever possible.</p>
+
+                <p style="margin-top: 10px;"><strong>【Removal from the Directory】</strong></p>
+                <p>A creator may request the administration to stop new usage of their Schematic.</p>
+                <p>However, buildings that were already installed or used before the registration was removed, as well as Schematics that have already been obtained or placed, will generally not be required to be removed or recovered.</p>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">🚆 2-4. Railways & Infrastructure — MTR Mod</div>
+                <p>Builders may construct railway lines without prior application or approval.</p>
+                <p>Route overlaps and parallel railway lines are generally permitted.</p>
+                <p>A railway line will not automatically have its rights revoked or be forcibly removed solely because development has been inactive for an extended period.</p>
+                <p>However, unauthorized modification or removal of other players' buildings, facilities, or existing infrastructure is prohibited.</p>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">⚙️ 2-5. Use of Create Mod</div>
+                <p>Create Mod building materials, decorative elements, and functions may generally be used freely.</p>
+                <p>However, facilities that place excessive load on the server may be prohibited or restricted, including:</p>
+                <ul>
+                    <li>Large-scale rotational mechanisms</li>
+                    <li>Large numbers of clock circuits</li>
+                    <li>Facilities using large numbers of entities</li>
+                    <li>Other facilities that significantly affect server performance</li>
+                </ul>
+                <p>For railway systems, MTR Mod should generally be used as the primary railway system.</p>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">💰 2-6. Builder Economic Participation Rules</div>
+                <p><strong>【Prohibition of Unlimited Distribution of Creative Resources】</strong></p>
+                <p>Builders must not freely distribute Creative-generated items, building materials, equipment, or other resources to Visitors without restriction.</p>
+                <p>Likewise, to maintain the balance of the MJX economy, Builders must not freely distribute their personal in-game currency to Visitors without restriction.</p>
+
+                <p style="margin-top: 12px;"><strong>【Contracted Work & Official Businesses】</strong></p>
+                <p>Builders are encouraged to hire Visitors for work and pay them coins in return.</p>
+                <p><em>Examples: Guides, Drivers, Photography, Construction work, Shop staff, Other contracted services</em></p>
+                <p>The operation of official businesses authorized by the administration is also encouraged.</p>
+                <p><em>Examples: Showrooms, Vehicle dealerships, Restaurants, Shops, Other service businesses</em></p>
+            </div>
+        </section>
+
+        <!-- 3. Rules for Visitors -->
+        <section id="visitor" class="card visitor-card">
+            <div class="section-header">
+                3. 🚶‍♂️ Rules for Visitors — General Participants & Residents
+            </div>
+            <p>Visitors are general players who participate in MJX by enjoying tourism, shopping, transportation, employment, daily life, events, and other activities within the city.</p>
+
+            <div class="subsection" style="margin-top: 20px;">
+                <div class="subsection-title">🎮 3-1. Participation Environment</div>
+                <p>Visitors generally participate in Adventure Mode.</p>
+                <p>Therefore, under normal circumstances, Visitors cannot destroy blocks or modify urban facilities.</p>
+                <p>Visitors receive an initial allowance upon joining.</p>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">💼 3-2. Ways to Earn Money</div>
+                <p>Visitors can earn coins through activities such as:</p>
+                <ul>
+                    <li>Customer service</li>
+                    <li>Driving</li>
+                    <li>Guiding</li>
+                    <li>Contracted work</li>
+                    <li>Shop management</li>
+                    <li>Product sales</li>
+                    <li>Vending machine operation</li>
+                    <li>Event and competition participation</li>
+                    <li>Other approved jobs and services</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">🛒 3-3. Ways to Spend Money</div>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="margin-bottom: 10px;"><strong>Transportation:</strong> MTR fares, Commuter passes, Highway tolls</li>
+                    <li style="margin-bottom: 10px;"><strong>Mobility:</strong> Vehicles and dealerships, MTS / Kaminari-related products</li>
+                    <li style="margin-bottom: 10px;"><strong>Equipment:</strong> Weapons and ammunition such as TacZ, Other supported equipment<br><span style="font-size: 0.88rem; color: #64748b;">※ Weapon and ammunition usage must comply with MJX's combat and safety rules.</span></li>
+                    <li style="margin-bottom: 10px;"><strong>Daily Life:</strong> JNC furniture and appliances, Food and restaurants, Shop products, Property purchases and rentals, Other supported goods and services</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 4. Basic Ways to Play -->
+        <section id="playstyle" class="card">
+            <div class="section-header" style="color: #475569;">
+                4. 🏙️ Basic Ways to Play
+            </div>
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 12px; padding-left: 28px; position: relative;">
+                    <span style="position: absolute; left: 0;">🔨</span>
+                    <strong>Builders:</strong> Freely develop cities, houses, stations, roads, railways, shops, and other facilities.
+                </li>
+                <li style="margin-bottom: 12px; padding-left: 28px; position: relative;">
+                    <span style="position: absolute; left: 0;">🚶</span>
+                    <strong>Visitors:</strong> Walk around the city, use public transportation, work, shop, participate in events, and experience life within the city.
+                </li>
+                <li style="margin-bottom: 12px; padding-left: 28px; position: relative;">
+                    <span style="position: absolute; left: 0;">🚆</span>
+                    <strong>Transportation:</strong> Travel throughout the city using MTR or by driving your own vehicle.
+                </li>
+                <li style="margin-bottom: 12px; padding-left: 28px; position: relative;">
+                    <span style="position: absolute; left: 0;">💰</span>
+                    <strong>Economy:</strong> Earn money through work, purchase goods, and operate shops or vending machines.
+                </li>
+                <li style="margin-bottom: 12px; padding-left: 28px; position: relative;">
+                    <span style="position: absolute; left: 0;">📹</span>
+                    <strong>Content Creation:</strong> Create and share streams, videos, and photos featuring life, architecture, transportation, and events within the city.
+                </li>
+            </ul>
+        </section>
+
+        <!-- 5. Administrative Actions -->
+        <section id="admin" class="card admin-card">
+            <div class="section-header">
+                5. ⚖️ Administrative Actions
+            </div>
+            <p>When a violation of these rules is confirmed, the administration may take the following actions depending on the nature of the violation, its severity, the resulting damage, and the player's previous record:</p>
+            <ul>
+                <li>Notice or warning</li>
+                <li>Requests to modify buildings or facilities</li>
+                <li>Confiscation of items or currency</li>
+                <li>Temporary suspension of permissions</li>
+                <li>Suspension or revocation of Builder status</li>
+                <li>Temporary ban</li>
+                <li>Permanent ban</li>
+            </ul>
+
+            <div class="example-box" style="background: #ffffff; border-color: var(--warning-border); margin-top: 16px;">
+                <strong style="color: var(--warning);">Particularly serious action may be taken against:</strong>
+                <p style="margin-top: 6px; margin-bottom: 0;">Griefing, theft, intentional destruction, attacks intended to overload the server, economic manipulation or abuse, and other acts that seriously interfere with server operations.</p>
+            </div>
+        </section>
+
+        <!-- 6. Final Message -->
+        <div class="footer-banner">
+            <h3 style="font-size: 1.2rem; margin-bottom: 12px;">6. 📌 Final Message</h3>
+            <p style="max-width: 700px; margin: 0 auto; color: #cbd5e1; font-size: 0.95rem;">
+                MJX is an integrated urban server where MJaS's "railway infrastructure," MTTS's "advanced transportation technology," and JNC's "furniture and urban design" come together.<br>
+                Builders create the city. Visitors come, work, shop, and use its transportation systems.<br>
+                Whether you are someone who builds or someone who lives in the city, everyone can work together to develop one interconnected metropolitan area.
+            </p>
+            <div class="footer-slogan">
+                Welcome to MTR Japan Nexus.<br>
+                Build. Connect. Live.
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
