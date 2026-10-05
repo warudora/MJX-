@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ config.site_name }} - Official</title>
+    <style>
+        :root { --primary: #00a8ff; --discord: #5865F2; --dark: #2f3640; --light: #f5f6fa; }
+        body { margin: 0; font-family: 'Segoe UI', "Hiragino Kaku Gothic ProN", sans-serif; background: #fff; color: var(--dark); line-height: 1.6; }
+        .navbar { background: rgba(255,255,255,0.98); display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; position: sticky; top: 0; z-index: 2000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo a { font-size: 1.4rem; color: var(--dark); text-decoration: none; font-weight: bold; }
+        .logo a span { color: var(--primary); }
+        .nav-links { list-style: none; display: flex; margin: 0; padding: 0; gap: 20px; }
+        .nav-links a { color: var(--dark); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--primary); }
+        .hero { height: 65vh; min-height: 420px; position: relative; display: flex; justify-content: center; align-items: center; text-align: center; color: white; background: #000; overflow: hidden; }
+        .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: opacity 1.5s ease-in-out; opacity: 0; }
+        .hero-bg.active { opacity: 1; }
+        .hero-content { position: relative; z-index: 2; width: 90%; max-width: 800px; background: rgba(0,0,0,0.45); padding: 35px; border-radius: 16px; backdrop-filter: blur(5px); }
+        .hero h1 { font-size: clamp(2rem, 6vw, 3.4rem); margin: 0; }
+        .discord-box { background: white; padding: 14px 30px; border-radius: 50px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); margin: -28px auto 0; display: block; width: fit-content; position: relative; z-index: 10; text-align: center; text-decoration: none; }
+        .container { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
+        .section-header { text-align: center; margin-bottom: 30px; }
+        .section-header h2 { font-size: 1.7rem; margin: 0; display: inline-block; position: relative; }
+        .section-header h2::after { content: ''; display: block; width: 45px; height: 3px; background: var(--primary); margin: 8px auto 0; }
+        .news-list { max-height: 180px; overflow-y: auto; background: #fff; border-radius: 12px; border: 1px solid #eee; padding: 10px 20px; }
+        .news-item { display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #f1f2f6; font-size: 0.95rem; }
+        .news-tag { background: var(--primary); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; margin-right: 12px; font-weight: bold; }
+        .mission-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .mission-card { background: white; border: 1px solid #eee; border-radius: 14px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        .progress-bar-bg { width: 100%; height: 10px; background: #eee; border-radius: 5px; overflow: hidden; margin: 12px 0 6px; }
+        .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--primary), #2ed573); }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); margin-top: 20px; }
+        .video-wrapper iframe { position: absolute; top:0; left: 0; width: 100%; height: 100%; border: 0; }
+        .article-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .article-card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid #eee; text-decoration: none; color: inherit; transition: 0.3s; display: flex; flex-direction: column; }
+        .article-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+        .article-card img { width: 100%; height: 150px; object-fit: cover; }
+        .article-body { padding: 15px; flex: 1; }
+        .status-compact { margin-top: 50px; padding: 25px; background: var(--light); border: 1px solid #eee; border-radius: 16px; display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
+        .map-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px; }
+        .map-button { padding: 22px; border-radius: 14px; text-decoration: none; color: white; font-weight: bold; text-align: center; }
+        .system-map { background: linear-gradient(135deg, #1e3799, #00a8ff); }
+        .blue-map { background: linear-gradient(135deg, #38ada9, #78e08f); }
+        footer { background: #2f3640; color: white; text-align: center; padding: 35px 0; margin-top: 80px; }
+    
+/* ===== MJX Introduction Sections ===== */
+.intro-lead { max-width: 900px; margin: 0 auto; text-align: center; color: #555; font-size: 1.02rem; line-height: 2; }
+.intro-lead strong { color: var(--dark); }
+.intro-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-top: 30px; }
+.intro-card { background: #fff; border: 1px solid #eee; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 18px rgba(0,0,0,0.04); }
+.intro-card img { width: 100%; height: 230px; object-fit: cover; display: block; }
+.intro-body { padding: 22px; }
+.intro-body h3 { margin: 0 0 10px; font-size: 1.2rem; }
+.intro-body p { margin: 0; color: #666; font-size: 0.92rem; line-height: 1.9; }
+.feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.feature-card { background: var(--light); border-radius: 14px; padding: 24px 20px; text-align: center; }
+.feature-icon { width: 52px; height: 52px; margin: 0 auto 14px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.45rem; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.feature-card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+.feature-card p { margin: 0; color: #666; font-size: 0.88rem; line-height: 1.8; }
+.role-list { display: grid; gap: 12px; margin-top: 25px; }
+.role-item { display: flex; align-items: flex-start; gap: 15px; padding: 18px 20px; background: #fff; border: 1px solid #eee; border-left: 4px solid var(--primary); border-radius: 10px; box-shadow: 0 3px 12px rgba(0,0,0,0.03); }
+.role-item strong { display: block; margin-bottom: 3px; }
+.role-item span { color: #666; font-size: 0.88rem; }
+.intro-photo-wide { width: 100%; height: 360px; object-fit: cover; border-radius: 16px; display: block; margin-top: 28px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+.intro-note { margin-top: 22px; padding: 22px 25px; background: linear-gradient(135deg, #f5faff, #fff); border-radius: 14px; border: 1px solid #e5f4ff; }
+.intro-note strong { color: var(--primary); }
+@media (max-width: 768px){ .intro-grid,.feature-grid{grid-template-columns:1fr}.intro-card img{height:200px}.intro-photo-wide{height:240px}.intro-lead{font-size:.92rem}.role-item{padding:16px} }
+
+/* MJX Responsive Layout */
+html{box-sizing:border-box;overflow-x:hidden}*,*:before,*:after{box-sizing:inherit}img,video,iframe{max-width:100%}
+.navbar{gap:18px;flex-wrap:wrap}.nav-links{flex-wrap:wrap;align-items:center}.nav-links li{white-space:nowrap}
+button,input,select,textarea{max-width:100%}
+.table-wrap,.table-responsive{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+pre,code{overflow-x:auto;max-width:100%}
+@media (max-width: 1024px){
+  .navbar{padding:13px 4%}.nav-links{gap:12px}.nav-links a{font-size:.9rem}
+  .container{max-width:94%;margin-left:auto;margin-right:auto}
+  .hero-content{width:92%;padding:28px}.hero{min-height:380px}
+  .step-card,.company-card,.card{padding:25px}
+}
+@media (max-width: 768px){
+  .navbar{align-items:flex-start;padding:12px 4%;position:relative}.logo{flex:1;min-width:160px}.nav-links{width:100%;display:flex;gap:8px 14px;padding-top:6px}.nav-links a{font-size:.82rem}
+  .container{width:92%;max-width:none;padding-left:0;padding-right:0;margin-top:32px;margin-bottom:50px}
+  h1{font-size:clamp(1.65rem,6vw,2.2rem)}h2{font-size:1.35rem}h3{font-size:1.08rem}
+  .hero{height:58vh;min-height:340px}.hero-content{padding:22px 18px;border-radius:12px}.hero h1{font-size:clamp(1.8rem,8vw,2.8rem)}
+  .news-item{align-items:flex-start;gap:8px;flex-wrap:wrap}.news-tag{margin-right:0}.status-compact{margin-top:32px;padding:18px}.map-grid,.mission-grid,.article-grid,.company-grid{grid-template-columns:1fr}.article-card img{height:180px}
+  .step-card{padding:24px 20px;border-radius:15px}.header-simple{padding:42px 18px}.header-simple h1{margin-bottom:8px}
+  .form-group{margin-bottom:16px}.form-row,.form-grid{display:block!important}.form-row>*{width:100%!important;margin-bottom:12px}
+  .container form input,.container form select,.container form textarea{font-size:16px}
+  .login-card{width:calc(100% - 28px);padding:28px 22px}.login-card h2{font-size:1.45rem}
+  .preview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .photo-card img{height:105px}
+  .modal{padding:12px}.modal-box{max-height:94vh;padding:17px}
+}
+@media (max-width: 480px){
+  .navbar{padding:11px 15px}.logo a{font-size:1.15rem}.nav-links{gap:6px 11px}.nav-links a{font-size:.78rem}
+  .container{width:calc(100% - 28px);margin-top:24px}.hero{height:52vh;min-height:300px}.hero-content{width:94%;padding:18px 14px}.hero-content p{font-size:.9rem}.discord-box{max-width:90%;padding:12px 18px}
+  .section-header{margin-bottom:20px}.section-header h2{font-size:1.35rem}.news-list{padding:8px 12px}.news-item{font-size:.86rem}
+  .mission-card{padding:16px}.article-card img{height:150px}.status-compact{gap:12px;font-size:.88rem}.map-button{padding:17px}
+  .step-card{padding:20px 16px}.discord-btn,.submit-btn{width:100%;text-align:center}.header-simple{padding:32px 15px}
+  .preview-grid{grid-template-columns:1fr}.photo-card img{height:150px}
+  .login-card{width:calc(100% - 20px);padding:24px 17px}.remember-row{font-size:.8rem}
+  table{font-size:.78rem}.table th,.table td{padding:8px}
+}
+
+</style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo"><a href="{{ url_for('homepage.home') }}"><strong>{{ config.site_name }}</strong></a></div>
+    <ul class="nav-links">
+        {% for item in nav_items %}
+        <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>
+
+<header class="hero">
+    {% for img in hero_images %}
+    <div class="hero-bg {% if loop.first %}active{% endif %}" style="background-image: linear-gradient(135deg, rgba(0,168,255,0.2), rgba(0,0,0,0.6)), url('{{ img }}');"></div>
+    {% endfor %}
+    <div class="hero-content">
+        <h1>{{ config.site_name }}</h1>
+        <p>仲間と創る、次世代の鉄道ネットワークと都市空間。</p>
+    </div>
+</header>
+
+<a href="{{ url_for('homepage.join') }}" class="discord-box">
+    <span style="color:#777; font-size: 0.85rem; display:block;">SERVER ACCESS</span>
+    <span style="font-size:0.95rem; color:var(--discord); font-weight:bold;">参加手順・Discordはこちら ➔</span>
+</a>
+
+<div class="container">
+    <section style="margin-top: 60px;">
+        <div class="section-header"><h2>NEWS / お知らせ</h2></div>
+        <div class="news-list">
+            {% for item in news %}
+            <div class="news-item">
+                <span style="color:#999; font-size:0.85rem; margin-right:15px; font-family:monospace;">{{ item.date }}</span>
+                <span class="news-tag">{{ item.tag }}</span>
+                <span>{{ item.title }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section>
+        <div class="section-header"><h2>ABOUT / MTR Japan Nexusとは</h2></div>
+        <p class="intro-lead">
+            <strong>{{ config.site_name }}</strong>は、鉄道と都市空間を中心に、Minecraftの世界でひとつの街とネットワークを創り上げていくサーバーです。
+            鉄道を利用する人、街をつくる人、それぞれの参加スタイルから世界を広げていきます。
+        </p>
+        {% if hero_images %}
+        <img class="intro-photo-wide" src="{{ hero_images[0] }}" alt="MTR Japan Nexusの街と鉄道の風景">
+        {% endif %}
+        <div class="intro-note">
+            <strong>鉄道だけではない、ひとつの都市をつくる。</strong><br>
+            駅を中心に広がる街並みや建築、プレイヤーによる活動がつながり、ひとつの世界として発展していきます。
+        </div>
+    </section>
+
+    <section style="margin-top: 70px;">
+        <div class="section-header"><h2>WORLD / この世界でできること</h2></div>
+        <div class="intro-grid">
+            {% if hero_images|length > 1 %}<article class="intro-card"><img src="{{ hero_images[1] }}" alt="鉄道と駅の風景">{% else %}<article class="intro-card">{% endif %}
+                <div class="intro-body">
+                    <h3>🚆 鉄道を楽しむ</h3>
+                    <p>
+                        MTRmodを使用した公共交通機関を中心に、駅から駅へ移動しながら広がっていく都市を楽しめます。
+                        路線や駅そのものを見るだけでなく、鉄道が街と街をつなぐ役割も楽しめます。
+                    </p>
+                </div>
+            </article>
+            {% if hero_images|length > 2 %}<article class="intro-card"><img src="{{ hero_images[2] }}" alt="都市と建築の風景">{% else %}<article class="intro-card">{% endif %}
+                <div class="intro-body">
+                    <h3>🏙️ 街をつくる</h3>
+                    <p>
+                        住宅、商業施設、公共施設などを組み合わせながら、自分たちの理想の都市空間を形にしていきます。
+                        建築と交通が一体になった街づくりを楽しめます。
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section style="margin-top: 70px;">
+        <div class="section-header"><h2>CONCEPT / サーバーの特徴</h2></div>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🚆</div>
+                <h3>本格的な鉄道</h3>
+                <p>MTRmodを活用した鉄道網を中心に、駅・路線・都市のつながりを楽しめます。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏗️</div>
+                <h3>自由な建築</h3>
+                <p>街づくりや建築を通して、自分のアイデアを実際の都市空間として形にできます。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h3>広がる都市ネットワーク</h3>
+                <p>鉄道と建築がつながることで、ひとつの街からさらに大きな世界へ発展していきます。</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="margin-top: 70px;">
+        <div class="section-header"><h2>PARTICIPATION / 参加者の役割</h2></div>
+        <p class="intro-lead">それぞれの楽しみ方で、MTR Japan Nexusの世界に参加できます。</p>
+        <div class="role-list">
+            <div class="role-item"><div><strong>Visitor</strong><span>観光や鉄道の利用を中心に、完成した都市を楽しむ参加者。</span></div></div>
+            <div class="role-item"><div><strong>Builder</strong><span>建築や鉄道運営など、実際の都市づくりに参加するメンバー。選考あり。</span></div></div>
+            <div class="role-item"><div><strong>Admin</strong><span>サーバー全体の運営や管理を担当し、世界の発展を支えるメンバー。</span></div></div>
+        </div>
+    </section>
+
+    <section style="margin-top: 70px;">
+        <div class="section-header"><h2>GROWING WORLD / 成長する都市</h2></div>
+        <p class="intro-lead">
+            MTR Japan Nexusは、完成した世界を眺めるだけのサーバーではありません。
+            プレイヤーの活動によって街が生まれ、鉄道がつながり、さらに新しい場所へ世界が広がっていきます。
+        </p>
+    </section>
+
+
+
+    <section style="margin-top: 60px;">
+        <div class="section-header"><h2>MISSIONS / 進行中プロジェクト</h2></div>
+        <div class="mission-grid">
+            {% for m in missions %}
+            <div class="mission-card">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <h3 style="margin:0; font-size:1.1rem;">{{ m.title }}</h3>
+                    <span style="font-size:0.75rem; background:#e8f5e9; color:#2ecc71; padding:3px 8px; border-radius:20px; font-weight:bold;">{{ m.status }}</span>
+                </div>
+                <p style="font-size:0.85rem; color:#666; margin:8px 0 0;">{{ m.desc }}</p>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: {{ m.progress }}%;"></div></div>
+                <div style="text-align:right; font-size:0.8rem; font-weight:bold; color:var(--primary);">進捗率: {{ m.progress }}%</div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    {% if articles %}
+    <section style="margin-top: 60px;">
+        <div class="section-header"><h2>ARTICLES & LOGS / 新聞・日記・図鑑</h2></div>
+        <div class="article-grid">
+            {% for a in articles %}
+            <a href="{{ url_for('homepage.article_detail', article_id=a.id) }}" class="article-card">
+                <img src="{{ a.thumbnail }}" alt="{{ a.title }}">
+                <div class="article-body">
+                    <span style="font-size:0.75rem; font-weight:bold; color:var(--primary);">
+                        {% if a.type == 'newspaper' %}📰 新聞{% elif a.type == 'diary' %}📔 開発日記{% else %}📚 Wiki{% endif %}
+                    </span>
+                    <h3 style="margin:5px 0; font-size:1rem;">{{ a.title }}</h3>
+                    <p style="font-size:0.8rem; color:#666; margin:0;">{{ a.summary }}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        <div style="text-align:center; margin-top:20px;">
+            <a href="{{ url_for('homepage.articles') }}" style="color:var(--primary); font-weight:bold; text-decoration:none;">すべての記事・新聞を見る →</a>
+        </div>
+    </section>
+    {% endif %}
+
+    <section style="margin-top: 60px;">
+        <div class="section-header"><h2>OFFICIAL MOVIE / 紹介映像</h2></div>
+        <div class="video-wrapper">
+            <iframe src="{{ config.youtube_embed_url }}" title="YouTube player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <div class="status-compact">
+        <div>
+            <span style="font-size:0.85rem; font-weight:bold; display:block; margin-bottom:5px;">SERVER STATUS</span>
+            <span id="ping-status" style="font-size:0.8rem; font-weight:bold; color:white; background:#f04747; padding:4px 12px; border-radius:20px;">Checking...</span>
+            <span id="ping-ms" style="color:#666; font-size:0.8rem; margin-left:8px;"></span>
+        </div>
+        <div style="display:flex; align-items:baseline; gap:8px;">
+            <span id="player-count" style="font-size:2.8rem; color:var(--primary); font-weight:bold; line-height:1;">0</span>
+            <span style="font-size:1rem; color:#666; font-weight:600;">PLAYERS ONLINE</span>
+        </div>
+    </div>
+
+    <section style="margin-top: 40px; padding: 35px 20px; background: var(--light); border-radius: 16px; text-align: center;">
+        <div class="section-header"><h2>LIVE MAPS / リアルタイムマップ</h2></div>
+        <div class="map-grid">
+            <a href="{{ config.system_map_url }}" target="_blank" class="map-button system-map">システムマップ (MTR路線図)</a>
+            <a href="{{ config.blue_map_url }}" target="_blank" class="map-button blue-map">3D ブルーマップ (地形・建築)</a>
+        </div>
+    </section>
+</div>
+
+<footer><p style="margin:0;">&copy; 2026 {{ config.site_name }}. All Rights Reserved.</p></footer>
+
+<script>
+    const slides = document.querySelectorAll('.hero-bg');
+    let currentSlide = 0;
+    setInterval(() => {
+        if(slides.length === 0) return;
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }, 5500);
+
+    async function updateMCStatus() {
+        try {
+            const res = await fetch('/api/status');
+            if(!res.ok) return;
+            const d = await res.json();
+            const el = document.getElementById('ping-status');
+            el.innerText = d.ping;
+            el.style.backgroundColor = (d.ping === 'Online') ? '#43b581' : '#f04747';
+            document.getElementById('ping-ms').innerText = d.ms !== '-' ? `(${d.ms})` : '';
+            document.getElementById('player-count').innerText = d.count;
+        } catch(e) {}
+    }
+    setInterval(updateMCStatus, 60000);
+    updateMCStatus();
+</script>
+</body>
+</html>\n
