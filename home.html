@@ -318,7 +318,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
 
 <header class="hero">
     {% for img in hero_images %}
-    <div class="hero-bg {% if loop.first %}active{% endif %}" style="background-image: linear-gradient(135deg, rgba(0,168,255,0.2), rgba(0,0,0,0.6)), url('{{ img }}');"></div>
+    <div class="hero-bg {% if loop.first %}active{% endif %}" style="background-image: linear-gradient(135deg, rgba(180,0,86,0.2), rgba(0,0,0,0.6)), url('{{ img }}');"></div>
     {% endfor %}
     <div class="hero-content">
         <h1>{{ config.site_name }}</h1>
@@ -480,7 +480,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
     <div class="status-compact">
         <div>
             <span style="font-size:0.85rem; font-weight:bold; display:block; margin-bottom:5px;">SERVER STATUS</span>
-            <span id="ping-status" style="font-size:0.8rem; font-weight:bold; color:white; background:#f04747; padding:4px 12px; border-radius:20px;">Checking...</span>
+            <span id="ping-status" aria-live="polite" style="font-size:0.8rem; font-weight:bold; color:white; background:#a12232; padding:4px 12px; border-radius:20px;">Checking...</span>
             <span id="ping-ms" style="color:#666; font-size:0.8rem; margin-left:8px;"></span>
         </div>
         <div style="display:flex; align-items:baseline; gap:8px;">
@@ -519,7 +519,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
             const el = document.getElementById('ping-status');
             if (!el) return;
             el.textContent = d.ping ?? '-';
-            el.style.backgroundColor = (d.ping === 'Online') ? '#43b581' : '#f04747';
+            el.style.backgroundColor = (d.ping === 'Online') ? '#247a52' : '#a12232';
             const ms = document.getElementById('ping-ms');
             if (ms) ms.textContent = (d.ms != null && d.ms !== '-') ? `(${d.ms})` : '';
             const count = document.getElementById('player-count');
