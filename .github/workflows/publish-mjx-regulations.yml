@@ -1,0 +1,44 @@
+name: Publish updated MJX regulation PDFs
+on:
+  push:
+    paths:
+      - .github/workflows/publish-mjx-regulations.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install PyMuPDF
+        run: python -m pip install 'pymupdf>=1.26,<1.27'
+      - name: Rebuild, split and validate PDFs
+        run: |
+          python scripts/publish_mjx_regulations.py
+          python - <<'PY'
+          from pathlib import Path
+          import fitz
+          counts=[4,5,11,8,6,18,3]
+          names=['01-cinema-policy.pdf','02-general-server-rules.pdf','03-builder-regulations.pdf','04-resource-pack-rules.pdf','05-privacy-policy.pdf','06-economic-regulations.pdf','07-visitor-rules.pdf']
+          for name,n in zip(names,counts):
+              with fitz.open(Path('regulations/fulltext')/name) as doc:
+                  assert len(doc)==n,(name,len(doc),n)
+          with fitz.open('MJX_all_seven_regulations_2026-11-01.pdf') as doc:
+              assert len(doc)==55
+          print('Verified seven split files and 55-page combined PDF.')
+          PY
+      - name: Replace published originals
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add regulations/fulltext/*.pdf MJX_all_seven_regulations_2026-11-01.pdf regulations.html regulations-en.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Replace MJX regulation PDFs with corrected 55-page layout"
+            git push
+          fi
