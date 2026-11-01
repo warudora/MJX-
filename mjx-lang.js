@@ -1,24 +1,49 @@
-/* MJX language selection: static page links stay in their language. */
+/* Global MJX language routing for all static site pages (JA / EN). */
 (function () {
   "use strict";
-  const key = "mjx-site-language";
-  const toEnglish = {"index.html":"index-en.html","regulations.html":"regulations-en.html","jp.html":"en.html"};
-  const name = window.location.pathname.split("/").pop() || "index.html";
-  let preference = "";
-  try { preference = window.localStorage.getItem(key) || ""; } catch (_) {}
-  if (preference === "en" && toEnglish[name]) {
-    window.location.replace(toEnglish[name] + window.location.search + window.location.hash);
+  const storageKey = "mjx-site-language";
+  const pages = {
+    "index.html":         { ja: "index.html",       en: "index-en.html" },
+    "index-en.html":      { ja: "index.html",       en: "index-en.html" },
+    "jp.html":            { ja: "jp.html",          en: "en.html" },
+    "en.html":            { ja: "jp.html",          en: "en.html" },
+    "regulations.html":   { ja: "regulations.html", en: "regulations-en.html" },
+    "regulations-en.html":{ ja: "regulations.html", en: "regulations-en.html" }
+  };
+  const path = window.location.pathname;
+  const filename = path.slice(path.lastIndexOf("/") + 1) || "index.html";
+  const pair = pages[filename];
+  const params = new URLSearchParams(window.location.search);
+  const explicit = params.get("lang");
+  const requested = explicit === "en" || explicit === "ja" ? explicit : null;
+  let saved = null;
+  try {
+    const pref = window.localStorage.getItem(storageKey);
+    if (pref === "en" || pref === "ja") saved = pref;
+  } catch (_) {}
+  const shown = document.documentElement.lang.toLowerCase().startsWith("en") ? "en" : "ja";
+  const selected = requested || saved || shown;
+
+  // Both directions are symmetric. An explicit ?lang= choice wins over storage.
+  try { window.localStorage.setItem(storageKey, selected); } catch (_) {}
+  if (pair && filename !== pair[selected]) {
+    const destination = new URL(window.location.href);
+    destination.pathname = path.slice(0, path.lastIndexOf("/") + 1) + pair[selected];
+    window.location.replace(destination.href);
     return;
   }
-  if (document.documentElement.lang.toLowerCase().startsWith("en")) {
-    try { window.localStorage.setItem(key, "en"); } catch (_) {}
-  }
+
+  // Persist an explicit user switch before navigation, including back to Japanese.
   document.addEventListener("click", function (event) {
-    const anchor = event.target.closest && event.target.closest("a[data-mjx-lang]");
-    if (!anchor) return;
-    const selected = anchor.getAttribute("data-mjx-lang");
-    if (selected === "ja" || selected === "en") {
-      try { window.localStorage.setItem(key, selected); } catch (_) {}
-    }
+    const node = event.target instanceof Element ? event.target.closest("a[data-mjx-lang]") : null;
+    if (!node) return;
+    const target = node.getAttribute("data-mjx-lang");
+    if (target !== "ja" && target !== "en") return;
+    try { window.localStorage.setItem(storageKey, target); } catch (_) {}
+  }, true);
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const self = document.querySelector('.mjx-lang-toggle a[data-mjx-lang="' + selected + '"]');
+    if (self) self.setAttribute("aria-current", "true");
   });
 })();

@@ -127,3 +127,12 @@ body{margin:0;min-width:0}
 @media print{
  .mjx-topbar,.mjx-skip,.mjx-page-footer{display:none!important}
 }
+
+/* Two-way language selection shared by portal and regulations. */
+.mjx-lang-toggle{display:inline-flex;align-items:center;gap:4px;flex-shrink:0;border:1px solid var(--mjx-border);border-radius:12px;padding:4px;background:#fff}
+.mjx-lang-toggle a{min-height:36px;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;padding:6px 12px;border-radius:8px;font-size:.82rem;font-weight:800;text-decoration:none;color:#526074}
+.mjx-lang-toggle a:hover{color:var(--mjx-accent-deep);background:var(--mjx-accent-soft)}
+.mjx-lang-toggle a.is-selected{background:var(--mjx-accent);color:#fff}
+.mjx-lang-toggle a:focus-visible{outline:3px solid var(--mjx-accent);outline-offset:2px}
+@media(max-width:1024px){.mjx-topbar-inner .mjx-lang-toggle{margin-left:auto}}
+@media(max-width:700px){.mjx-topbar-inner .mjx-lang-toggle{margin-left:0}.mjx-lang-toggle a{min-height:36px}}

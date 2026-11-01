@@ -136,6 +136,12 @@ body.mjx-home{margin:0;min-width:0;background:#f6f7f9;color:var(--mjx-ink);font-
 }
 @media(max-height:460px) and (orientation:landscape){.mjx-home .hero{height:auto;min-height:280px;max-height:none}}
 @media(prefers-reduced-motion:reduce){.mjx-home .hero-bg{transition:none}}
+
+/* Language selector for the Flask-rendered homepage. */
+.mjx-home .mjx-flask-language{display:inline-flex;align-items:center;gap:4px;padding:4px;border:1px solid #dfe5eb;border-radius:12px;white-space:nowrap}
+.mjx-home .mjx-flask-language a{min-height:36px;padding:6px 10px;border-radius:8px}
+.mjx-home .mjx-flask-language a.is-selected{color:#fff;background:#b40056}
+@media(max-width:700px){.mjx-home .mjx-flask-language{flex-shrink:0}}
 </style>
 <!-- Self-contained style: this Jinja template may render without a static /mjx-theme.css route. -->
 
@@ -143,13 +149,16 @@ body.mjx-home{margin:0;min-width:0;background:#f6f7f9;color:var(--mjx-ink);font-
 <body class="mjx-home">
 <a class="mjx-skip" href="#main-content">{{ 'Skip to main content' if mjx_en else '本文へ移動' }}</a>
 <nav class="navbar">
-    <div class="logo"><a href="{{ url_for('homepage.home') }}"><span class="mjx-brand-mark" aria-hidden="true">X</span><strong>{{ config.site_name }}</strong></a></div>
+    <div class="logo"><a href="{{ url_for('homepage.home', lang='en' if mjx_en else 'ja') }}"><span class="mjx-brand-mark" aria-hidden="true">X</span><strong>{{ config.site_name }}</strong></a></div>
     <ul class="nav-links">
         {% for item in nav_items %}
         <li><a href="{{ item.url }}">{{ item.name_en|default(item.name, true) if mjx_en else item.name }}</a></li>
         {% endfor %}
         <li><a href="{{ 'regulations-en.html' if mjx_en else 'regulations.html' }}" class="mjx-nav-policy">{{ 'Official Regulations' if mjx_en else '公式7規定' }}</a></li>
-        <li><a href="{{ url_for('homepage.home', lang='ja' if mjx_en else 'en') }}" data-mjx-home-switch="{{ 'ja' if mjx_en else 'en' }}">{{ '日本語' if mjx_en else 'English' }}</a></li>
+        <li class="mjx-flask-language" aria-label="Language / 言語">
+<a href="{{ url_for('homepage.home', lang='ja') }}" data-mjx-home-switch="ja" lang="ja" {% if not mjx_en %}aria-current="true" class="is-selected"{% endif %}>日本語</a>
+<a href="{{ url_for('homepage.home', lang='en') }}" data-mjx-home-switch="en" lang="en" {% if mjx_en %}aria-current="true" class="is-selected"{% endif %}>English</a>
+</li>
     </ul>
 </nav>
 
@@ -341,10 +350,33 @@ body.mjx-home{margin:0;min-width:0;background:#f6f7f9;color:var(--mjx-ink);font-
     (function(){
       try{
         const params=new URLSearchParams(window.location.search);
-        if(!params.has('lang')&&localStorage.getItem('mjx-site-language')==='en'&&document.documentElement.lang==='ja'){
-          const url=new URL(window.location.href);url.searchParams.set('lang','en');window.location.replace(url.href);return;
+        const requested=params.get('lang');
+        const current=document.documentElement.lang==='en'?'en':'ja';
+        const saved=localStorage.getItem('mjx-site-language');
+        // Explicit ?lang= is authoritative, in either direction.
+        const selected=(requested==='en'||requested==='ja')?requested:(saved==='en'||saved==='ja'?saved:current);
+        localStorage.setItem('mjx-site-language',selected);
+        if(selected!==current){
+          const next=new URL(window.location.href);
+          next.searchParams.set('lang',selected);
+          window.location.replace(next.href);
+          return;
         }
-        localStorage.setItem('mjx-site-language',document.documentElement.lang==='en'?'en':'ja');
+        document.querySelectorAll('a[data-mjx-home-switch]').forEach(function(link){
+          link.addEventListener('click',function(){
+            localStorage.setItem('mjx-site-language',link.getAttribute('data-mjx-home-switch'));
+          });
+        });
+        // Preserve the chosen language on dynamic internal pages and static MJX links.
+        document.querySelectorAll('a[href]').forEach(function(link){
+          if(link.hasAttribute('data-mjx-home-switch')||link.getAttribute('href').startsWith('#'))return;
+          try{
+            const target=new URL(link.href,window.location.href);
+            if(target.origin!==window.location.origin||/\\.(pdf|zip|jar)(?:$|[?#])/i.test(target.pathname))return;
+            target.searchParams.set('lang',selected);
+            link.href=target.href;
+          }catch(_){}
+        });
       }catch(_){}
     })();
     const slides = document.querySelectorAll('.hero-bg');
