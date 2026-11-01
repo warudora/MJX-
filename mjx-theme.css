@@ -21,7 +21,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .mjx-topbar-inner { max-width:1200px; margin:auto; padding:12px 24px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
 .mjx-brand { display:inline-flex; gap:11px; align-items:center; flex-shrink:0; text-decoration:none; color:var(--mjx-ink); font:800 .94rem/1.25 Inter,"Noto Sans JP",sans-serif; letter-spacing:.045em; }
 .mjx-brand:hover { color:var(--mjx-accent); }
-.mjx-brand-mark { display:grid; place-items:center; height:36px; width:36px; border-radius:11px; background:var(--mjx-accent); color:#fff; font-size:1.2rem; font-weight:800; letter-spacing:-.07em; }
+.mjx-brand-image {display:block;flex-shrink:0;width:44px;height:44px;max-width:none;object-fit:contain;}
 .mjx-toplinks { display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
 .mjx-toplinks a { color:#405067; text-decoration:none; font-size:.83rem; font-weight:700; line-height:1.3; padding:9px 13px; border-radius:10px; transition:background .18s,color .18s; }
 .mjx-toplinks a:hover { background:var(--mjx-accent-soft); color:var(--mjx-accent-deep); }
@@ -70,7 +70,7 @@ body{margin:0;min-width:0}
 :where(img,video,iframe,svg){max-width:100%}
 :where(.mjx-topbar-inner,.mjx-toplinks,.mjx-route-card,.mjx-action){min-width:0}
 .mjx-action{min-height:44px;max-width:100%;white-space:normal;text-align:center}
-.mjx-brand-mark{flex-shrink:0}
+.mjx-brand-image{flex-shrink:0}
 .mjx-toplinks a{min-height:44px;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
 .mjx-route-card{overflow-wrap:anywhere}
 .mjx-page-footer .mjx-footer-inner>*{min-width:0;overflow-wrap:anywhere}
@@ -92,7 +92,7 @@ body{margin:0;min-width:0}
  html{scroll-padding-top:114px}
  .mjx-topbar-inner{padding:9px max(14px,env(safe-area-inset-right)) 9px max(14px,env(safe-area-inset-left));flex-wrap:wrap;gap:5px}
  .mjx-brand{font-size:.86rem;max-width:100%}
- .mjx-brand-mark{height:32px;width:32px}
+ .mjx-brand-image{height:36px;width:36px}
  .mjx-topbar-inner>nav.mjx-toplinks{width:100%;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;flex-wrap:nowrap;scrollbar-width:thin;gap:4px;padding:1px 0 3px}
  .mjx-toplinks a{flex-shrink:0;padding:8px 11px;font-size:.8rem}
  .mjx-hero-inner,.mjx-index .mjx-hero-inner{padding:39px 18px 43px}

@@ -78,7 +78,7 @@ body.mjx-home{margin:0;min-width:0;background:#f6f7f9;color:var(--mjx-ink);font-
 .mjx-home .mjx-skip:focus{top:12px}
 .mjx-home .navbar{z-index:1000;background:rgba(255,255,255,.97);border-bottom:1px solid var(--mjx-border);box-shadow:0 2px 10px #14202d08;padding:12px max(24px,calc((100vw - 1152px)/2));gap:17px}
 .mjx-home .logo a{display:flex;align-items:center;gap:10px;color:var(--mjx-ink);text-decoration:none;font-size:1.04rem}
-.mjx-home .mjx-brand-mark{display:grid;place-items:center;flex-shrink:0;width:36px;height:36px;background:var(--mjx-accent);color:#fff;border-radius:11px;font-weight:800}
+.mjx-home .mjx-brand-image{display:block;flex-shrink:0;width:44px;height:44px;max-width:none;object-fit:contain}
 .mjx-home .nav-links{align-items:center;gap:4px;min-width:0}
 .mjx-home .nav-links a{display:inline-flex;align-items:center;min-height:44px;border-radius:10px;padding:8px 11px;color:#45546a;font-size:.85rem;text-decoration:none}
 .mjx-home .nav-links a:hover,.mjx-home .nav-links a.mjx-nav-policy{color:var(--mjx-accent-deep);background:var(--mjx-accent-soft)}
@@ -146,7 +146,7 @@ body.mjx-home{margin:0;min-width:0;background:#f6f7f9;color:var(--mjx-ink);font-
 .mjx-home .navbar>.mjx-flask-language{order:1;margin-left:auto}
 .mjx-home .navbar>.nav-links{order:2}
 }
-@media(max-width:700px){.mjx-home .mjx-flask-language{flex-shrink:0}}
+@media(max-width:700px){.mjx-home .mjx-flask-language{flex-shrink:0}.mjx-home .mjx-brand-image{width:36px;height:36px}}
 
 /* Right-aligned navigation alongside the language control. */
 .mjx-home .navbar{justify-content:flex-start}
@@ -224,7 +224,7 @@ html{scroll-behavior:smooth}
 <body class="mjx-home" id="page-top">
 <a class="mjx-skip" href="#main-content">{{ 'Skip to main content' if mjx_en else '本文へ移動' }}</a>
 <nav class="navbar">
-    <div class="logo"><a href="{{ url_for('homepage.home', lang='en' if mjx_en else 'ja') }}"><span class="mjx-brand-mark" aria-hidden="true">X</span><strong>{{ config.site_name }}</strong></a></div>
+    <div class="logo"><a href="{{ url_for('homepage.home', lang='en' if mjx_en else 'ja') }}"><img class="mjx-brand-image" src="https://warudora.github.io/MJX-/assets/mjx-logo-original.png?v=20261101-header" width="44" height="44" alt=""><strong>{{ config.site_name }}</strong></a></div>
     <ul class="nav-links">
         {% for item in nav_items %}
         <li><a href="{{ item.url }}">{{ item.name_en|default(item.name, true) if mjx_en else item.name }}</a></li>
