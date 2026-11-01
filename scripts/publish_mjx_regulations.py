@@ -11,12 +11,16 @@ COVERS = {1:1,5:4,10:9,21:19,29:26,35:31,53:48}
 def publish():
     root = Path(__file__).resolve().parents[1]
     directory = root / "regulations" / "fulltext"
+    original_archive = root / "regulations" / "source-original"
     original = fitz.open()
     for name in NAMES:
-        with fitz.open(directory / name) as part:
+        with fitz.open(original_archive / name) as part:
             original.insert_pdf(part)
     if len(original) != 50:
-        raise ValueError("Expected 50 pages in original PDFs")
+        raise ValueError("Expected 50 source pages")
+    logo_png = original[7].get_pixmap(matrix=fitz.Matrix(2,2), clip=fitz.Rect(350,630,550,790), alpha=False).tobytes("png")
+    if logo_png[:4] != bytes((137,80,78,71)):
+        raise ValueError("Could not render complete logo")
     data = json.loads(zlib.decompress(base64.b64decode(DATA)))
     units = {}
     for doc,src,sy0,sy1,dest,dy0,dy1 in data:
@@ -56,8 +60,7 @@ def publish():
         x=(page.rect.width-fitz.get_text_length(number,fontname="helv",fontsize=7.8))/2
         page.insert_text((x,812),number,fontname="helv",fontsize=7.8,color=(.42,.47,.54))
         if num in ENDS:
-            page.show_pdf_page(fitz.Rect(445,693,535,760),original,7,
-                               clip=fitz.Rect(175,680,415,825),keep_proportion=True)
+            page.insert_image(fitz.Rect(444,685,538,760),stream=logo_png,keep_proportion=True,overlay=True)
     output.set_toc([[1,f"{i:02d}  {NAMES[i-1][:-4]}",START[i-1]] for i in range(1,8)])
     output.save(root/"MJX_all_seven_regulations_2026-11-01.pdf",garbage=4,deflate=True)
     for name,first,last in zip(NAMES,START,ENDS):
