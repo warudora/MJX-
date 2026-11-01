@@ -1,207 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MTR Japan Nexus (MJX) - Official Portal</title>
-    <!-- Google Fonts: Inter & Noto Sans JP -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --border-color: #e2e8f0;
-            --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Inter', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        /* ヘッダー */
-        header {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: #ffffff;
-            padding: 60px 20px 40px;
-            text-align: center;
-            border-bottom: 4px solid var(--primary);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-
-        .header-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .header-subtitle {
-            color: #38bdf8;
-            font-weight: 700;
-            font-size: 0.95rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            font-weight: 900;
-            margin-bottom: 12px;
-            line-height: 1.2;
-        }
-
-        .header-desc {
-            color: #94a3b8;
-            font-size: 1.15rem;
-            font-weight: 500;
-        }
-
-        /* コンテナ */
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .select-card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-            padding: 40px;
-            text-align: center;
-        }
-
-        .select-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 24px;
-            color: #0f172a;
-        }
-
-        /* 言語選択ボタンのグリッド */
-        .btn-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-        }
-
-        .lang-btn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 24px 20px;
-            background: #ffffff;
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            text-decoration: none;
-            color: var(--text-main);
-            transition: all 0.25s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-
-        .lang-btn:hover {
-            border-color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 20px -5px rgba(37, 99, 235, 0.15);
-            background: #eff6ff;
-        }
-
-        .lang-flag {
-            font-size: 2.5rem;
-            margin-bottom: 12px;
-        }
-
-        .lang-name {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .lang-desc {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        /* フッター */
-        footer {
-            background: #0f172a;
-            color: #64748b;
-            text-align: center;
-            padding: 24px 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        footer strong {
-            color: #38bdf8;
-        }
-
-        @media (max-width: 640px) {
-            header h1 { font-size: 1.8rem; }
-            .select-card { padding: 24px 16px; }
-            .btn-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#b40056">
+<meta name="description" content="MTR Japan Nexus公式ポータル。公式7規定の適用状況、日本語・英語の参加ガイドをご覧いただけます。">
+<title>MTR Japan Nexus | Official Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mjx-theme.css">
 </head>
-<body>
-
-    <header>
-        <div class="header-container">
-            <div class="header-subtitle">OFFICIAL RULES & PARTICIPATION GUIDE</div>
-            <h1>🌐 MTR Japan Nexus (MJX)</h1>
-            <div class="header-desc">サーバー利用規約 & 参加ガイド / Server Rules & Guide</div>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="select-card">
-            <div class="select-title">言語を選択してください / Select Language</div>
-            <p style="margin:-8px 0 23px;color:#64748b;font-size:.9rem">公式7規定・2026年11月1日承認版を基準に運用状況を整理しています。</p>
-            <a href="regulations.html" style="display:block;text-align:center;padding:16px;margin-bottom:22px;background:#fff3f8;border:1px solid #e8a3c0;border-radius:12px;color:#a5004e;font-weight:800;text-decoration:none">📜 公式7規定・適用状況を確認する</a>
-            
-            <div class="btn-grid">
-                <!-- 日本語版リンク -->
-                <a href="jp.html" class="lang-btn">
-                    <div class="lang-flag">🇯🇵</div>
-                    <div class="lang-name">日本語 (Japanese)</div>
-                    <div class="lang-desc">利用規約・参加ガイドを見る</div>
-                </a>
-
-                <!-- 英語版リンク -->
-                <a href="en.html" class="lang-btn">
-                    <div class="lang-flag">🇺🇸</div>
-                    <div class="lang-name">English</div>
-                    <div class="lang-desc">Rules & Participation Guide</div>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        Welcome to MTR Japan Nexus — <strong>Build. Connect. Live.</strong>
-    </footer>
-
+<body class="mjx-index">
+<a class="mjx-skip" href="#main-content">本文へ移動</a>
+<div class="mjx-topbar"><div class="mjx-topbar-inner"><a class="mjx-brand" href="index.html"><span class="mjx-brand-mark" aria-hidden="true">X</span><span>MTR JAPAN NEXUS</span></a><nav class="mjx-toplinks" aria-label="サイトナビゲーション"><a href="index.html" aria-current="page">ホーム</a><a href="regulations.html">公式7規定</a><a href="jp.html">参加ガイド</a><a href="en.html">English</a></nav></div></div>
+<main id="main-content">
+<section class="mjx-hero" aria-labelledby="portal-title"><div class="mjx-hero-inner">
+<div class="mjx-eyebrow">OFFICIAL PORTAL / MTR JAPAN NEXUS</div>
+<span class="mjx-hero-rule"></span>
+<h1 id="portal-title">つくる、つながる。<br>ひとつの都市へ。</h1>
+<p>MTR Japan Nexus（MJX）の公式案内ポータル。参加前に確認したい7つの規定と、Builder・Visitor向けの参加ガイドをまとめました。</p>
+<div class="mjx-hero-actions"><a class="mjx-action mjx-action--primary" href="regulations.html">公式7規定を確認する</a><a class="mjx-action" href="jp.html">日本語ガイドを見る</a></div>
+<div class="mjx-kpis" aria-label="2026年11月1日承認版の文書内訳"><span><b>07</b> 規定文書</span><span><b>04</b> 現行・原文維持</span><span><b>03</b> 改訂承認済み・施行日未指定</span></div>
+</div></section>
+<section class="mjx-landing-content" aria-labelledby="routes-title">
+<div class="mjx-eyebrow">EXPLORE MJX</div><h2 id="routes-title" class="mjx-landing-heading">知りたい内容から探す</h2>
+<div class="mjx-route-grid">
+<a href="regulations.html" class="mjx-route-card"><span class="mjx-route-index">01 / DOCUMENTS</span><h2>公式7規定</h2><p>映画館・共通・Builder・リソースパック・プライバシー・経済・Visitor。承認状況と概要をまとめて確認。</p><span class="mjx-route-open">規定一覧を開く <span aria-hidden="true">↗</span></span></a>
+<a href="jp.html" class="mjx-route-card"><span class="mjx-route-index">02 / GUIDE · JA</span><h2>日本語参加ガイド</h2><p>MJXの成り立ち、参加区分、建築、経済、交通などをわかりやすく案内します。</p><span class="mjx-route-open">日本語で読む <span aria-hidden="true">↗</span></span></a>
+<a href="en.html" class="mjx-route-card" lang="en"><span class="mjx-route-index">03 / GUIDE · EN</span><h2>English Guide</h2><p>Introduction to MJX, participant roles, city life, and general community guidance.</p><span class="mjx-route-open">Read in English <span aria-hidden="true">↗</span></span></a>
+</div>
+<div class="mjx-disclaimer"><h2>改訂承認と施行日について</h2><p>2026年11月1日に改訂・修正が承認された④リソースパック統一規約、⑤プライバシーポリシー、⑦ビジター向けルールは、施行日がまだ指定されていません。現在適用中の規定と承認済み改訂版は区別して案内しています。条文の確認には運営が提供するPDF原本をご利用ください。</p></div>
+</section>
+</main>
+<footer class="mjx-page-footer"><div class="mjx-footer-inner"><span>© 2026 MTR Japan Nexus</span><span>Build. Connect. Live. · <a href="regulations.html">規定一覧</a></span></div></footer>
 </body>
 </html>

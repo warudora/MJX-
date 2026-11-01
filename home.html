@@ -105,15 +105,17 @@ pre,code{overflow-x:auto;max-width:100%}
 }
 
 </style>
+<link rel="stylesheet" href="mjx-theme.css">
 </head>
-<body>
+<body class="mjx-home">
+<a class="mjx-skip" href="#main-content">本文へ移動</a>
 <nav class="navbar">
-    <div class="logo"><a href="{{ url_for('homepage.home') }}"><strong>{{ config.site_name }}</strong></a></div>
+    <div class="logo"><a href="{{ url_for('homepage.home') }}"><span class="mjx-brand-mark" aria-hidden="true">X</span><strong>{{ config.site_name }}</strong></a></div>
     <ul class="nav-links">
         {% for item in nav_items %}
         <li><a href="{{ item.url }}">{{ item.name }}</a></li>
         {% endfor %}
-        <li><a href="regulations.html">公式7規定</a></li>
+        <li><a href="regulations.html" class="mjx-nav-policy">公式7規定</a></li>
     </ul>
 </nav>
 
@@ -132,7 +134,13 @@ pre,code{overflow-x:auto;max-width:100%}
     <span style="font-size:0.95rem; color:var(--discord); font-weight:bold;">参加手順・Discordはこちら ➔</span>
 </a>
 
-<div class="container">
+<div class="container" id="main-content">
+    <section class="mjx-policy-spotlight" aria-label="公式7規定のお知らせ">
+      <div><span class="eyebrow">OFFICIAL REGULATIONS / 2026.11.01</span>
+      <h2>MJX 公式7規定のご案内</h2>
+      <p>現行規定と改訂承認済み文書の違いを確認できます。改訂承認済みの3文書は施行日未指定です。</p></div>
+      <a class="mjx-action mjx-action--primary" href="regulations.html">7規定を確認する</a>
+    </section>
     <section style="margin-top: 60px;">
         <div class="section-header"><h2>NEWS / お知らせ</h2></div>
         <div class="news-list">
