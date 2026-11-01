@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="ja">
+{% set mjx_en = request.args.get('lang') == 'en' %}
+<html lang="{{ 'en' if mjx_en else 'ja' }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ config.site_name }} - Official</title>
+    <title>{{ config.site_name }} - {{ 'Official' if mjx_en else '公式サイト' }}</title>
     <style>
 :root { --primary: #b40056; --discord: #5865F2; --dark: #2f3640; --light: #f5f6fa; }
         body { margin: 0; font-family: 'Segoe UI', "Hiragino Kaku Gothic ProN", sans-serif; background: #fff; color: var(--dark); line-height: 1.6; }
@@ -140,14 +141,15 @@ body.mjx-home{margin:0;min-width:0;background:#f6f7f9;color:var(--mjx-ink);font-
 
 </head>
 <body class="mjx-home">
-<a class="mjx-skip" href="#main-content">本文へ移動</a>
+<a class="mjx-skip" href="#main-content">{{ 'Skip to main content' if mjx_en else '本文へ移動' }}</a>
 <nav class="navbar">
     <div class="logo"><a href="{{ url_for('homepage.home') }}"><span class="mjx-brand-mark" aria-hidden="true">X</span><strong>{{ config.site_name }}</strong></a></div>
     <ul class="nav-links">
         {% for item in nav_items %}
-        <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+        <li><a href="{{ item.url }}">{{ item.name_en|default(item.name, true) if mjx_en else item.name }}</a></li>
         {% endfor %}
-        <li><a href="regulations.html" class="mjx-nav-policy">公式7規定</a></li>
+        <li><a href="{{ 'regulations-en.html' if mjx_en else 'regulations.html' }}" class="mjx-nav-policy">{{ 'Official Regulations' if mjx_en else '公式7規定' }}</a></li>
+        <li><a href="{{ url_for('homepage.home', lang='ja' if mjx_en else 'en') }}" data-mjx-home-switch="{{ 'ja' if mjx_en else 'en' }}">{{ '日本語' if mjx_en else 'English' }}</a></li>
     </ul>
 </nav>
 
@@ -157,67 +159,67 @@ body.mjx-home{margin:0;min-width:0;background:#f6f7f9;color:var(--mjx-ink);font-
     {% endfor %}
     <div class="hero-content">
         <h1>{{ config.site_name }}</h1>
-        <p>仲間と創る、次世代の鉄道ネットワークと都市空間。</p>
+        <p>{{ 'Create a next-generation railway network and urban environment, together.' if mjx_en else '仲間と創る、次世代の鉄道ネットワークと都市空間。' }}</p>
     </div>
 </header>
 
 <a href="{{ url_for('homepage.join') }}" class="discord-box">
     <span style="color:#777; font-size: 0.85rem; display:block;">SERVER ACCESS</span>
-    <span style="font-size:0.95rem; color:var(--discord); font-weight:bold;">参加手順・Discordはこちら ➔</span>
+    <span style="font-size:0.95rem; color:var(--discord); font-weight:bold;">{{ 'Participation guide and Discord' if mjx_en else '参加手順・Discordはこちら ➔' }}</span>
 </a>
 
 <div class="container" id="main-content">
-    <section class="mjx-policy-spotlight" aria-label="公式7規定のお知らせ">
+    <section class="mjx-policy-spotlight" aria-label="{{ 'Official regulations notice' if mjx_en else '公式7規定のお知らせ' }}">
       <div><span class="eyebrow">OFFICIAL REGULATIONS / 2026.11.01</span>
-      <h2>MJX 公式7規定のご案内</h2>
-      <p>現行規定と改訂承認済み文書の違いを確認できます。改訂承認済みの3文書は施行日未指定です。</p></div>
-      <a class="mjx-action mjx-action--primary" href="regulations.html">7規定を確認する</a>
+      <h2>{{ 'The Seven Official MJX Regulations' if mjx_en else 'MJX 公式7規定のご案内' }}</h2>
+      <p>{{ 'See which rules are in effect and which revisions have only been approved. Revisions 04, 05, and 07 have no announced effective dates.' if mjx_en else '現行規定と改訂承認済み文書の違いを確認できます。改訂承認済みの3文書は施行日未指定です。' }}</p></div>
+      <a class="mjx-action mjx-action--primary" href="{{ 'regulations-en.html' if mjx_en else 'regulations.html' }}">{{ 'Read the regulations' if mjx_en else '7規定を確認する' }}</a>
     </section>
     <section style="margin-top: 60px;">
-        <div class="section-header"><h2>NEWS / お知らせ</h2></div>
+        <div class="section-header"><h2>{{ 'NEWS / Announcements' if mjx_en else 'NEWS / お知らせ' }}</h2></div>
         <div class="news-list">
             {% for item in news %}
             <div class="news-item">
                 <span style="color:#999; font-size:0.85rem; margin-right:15px; font-family:monospace;">{{ item.date }}</span>
-                <span class="news-tag">{{ item.tag }}</span>
-                <span>{{ item.title }}</span>
+                <span class="news-tag">{{ item.tag_en|default(item.tag, true) if mjx_en else item.tag }}</span>
+                <span>{{ item.title_en|default(item.title, true) if mjx_en else item.title }}</span>
             </div>
             {% endfor %}
         </div>
     </section>
     <section>
-        <div class="section-header"><h2>ABOUT / MTR Japan Nexusとは</h2></div>
+        <div class="section-header"><h2>{{ 'ABOUT / What is MTR Japan Nexus?' if mjx_en else 'ABOUT / MTR Japan Nexusとは' }}</h2></div>
         <p class="intro-lead">
-            <strong>{{ config.site_name }}</strong>は、鉄道と都市空間を中心に、Minecraftの世界でひとつの街とネットワークを創り上げていくサーバーです。
-            鉄道を利用する人、街をつくる人、それぞれの参加スタイルから世界を広げていきます。
+            <strong>{{ config.site_name }}</strong>{{ ' is a Minecraft server focused on building an interconnected city and railway network.' if mjx_en else 'は、鉄道と都市空間を中心に、Minecraftの世界でひとつの街とネットワークを創り上げていくサーバーです。' }}
+            {{ 'Whether you ride the trains or build the city, each way of participating helps the world grow.' if mjx_en else '鉄道を利用する人、街をつくる人、それぞれの参加スタイルから世界を広げていきます。' }}
         </p>
         {% if hero_images %}
-        <img class="intro-photo-wide" src="{{ hero_images[0] }}" alt="MTR Japan Nexusの街と鉄道の風景">
+        <img class="intro-photo-wide" src="{{ hero_images[0] }}" alt="{{ 'A city and railway in MTR Japan Nexus' if mjx_en else 'MTR Japan Nexusの街と鉄道の風景' }}">
         {% endif %}
         <div class="intro-note">
-            <strong>鉄道だけではない、ひとつの都市をつくる。</strong><br>
-            駅を中心に広がる街並みや建築、プレイヤーによる活動がつながり、ひとつの世界として発展していきます。
+            <strong>{{ 'Building an entire city, not just railways.' if mjx_en else '鉄道だけではない、ひとつの都市をつくる。' }}</strong><br>
+            {{ 'Buildings, neighborhoods, and player activities develop around stations and connect into a living world.' if mjx_en else '駅を中心に広がる街並みや建築、プレイヤーによる活動がつながり、ひとつの世界として発展していきます。' }}
         </div>
     </section>
 
     <section style="margin-top: 70px;">
-        <div class="section-header"><h2>WORLD / この世界でできること</h2></div>
+        <div class="section-header"><h2>{{ 'WORLD / What You Can Do' if mjx_en else 'WORLD / この世界でできること' }}</h2></div>
         <div class="intro-grid">
-            <article class="intro-card">{% if hero_images|length > 1 %}<img src="{{ hero_images[1] }}" alt="鉄道と駅の風景">{% endif %}
+            <article class="intro-card">{% if hero_images|length > 1 %}<img src="{{ hero_images[1] }}" alt="{{ 'Railways and stations' if mjx_en else '鉄道と駅の風景' }}">{% endif %}
                 <div class="intro-body">
-                    <h3>🚆 鉄道を楽しむ</h3>
+                    <h3>{{ '🚆 Explore the Railways' if mjx_en else '🚆 鉄道を楽しむ' }}</h3>
                     <p>
-                        MTRmodを使用した公共交通機関を中心に、駅から駅へ移動しながら広がっていく都市を楽しめます。
-                        路線や駅そのものを見るだけでなく、鉄道が街と街をつなぐ役割も楽しめます。
+                        {{ 'Explore a growing city through its MTR Mod-powered public transit network, traveling from station to station.' if mjx_en else 'MTRmodを使用した公共交通機関を中心に、駅から駅へ移動しながら広がっていく都市を楽しめます。' }}
+                        {{ 'Enjoy the railway lines, the stations, and the connections they create between communities.' if mjx_en else '路線や駅そのものを見るだけでなく、鉄道が街と街をつなぐ役割も楽しめます。' }}
                     </p>
                 </div>
             </article>
-            <article class="intro-card">{% if hero_images|length > 2 %}<img src="{{ hero_images[2] }}" alt="都市と建築の風景">{% endif %}
+            <article class="intro-card">{% if hero_images|length > 2 %}<img src="{{ hero_images[2] }}" alt="{{ 'Cities and architecture' if mjx_en else '都市と建築の風景' }}">{% endif %}
                 <div class="intro-body">
-                    <h3>🏙️ 街をつくる</h3>
+                    <h3>{{ '🏙️ Build the City' if mjx_en else '🏙️ 街をつくる' }}</h3>
                     <p>
-                        住宅、商業施設、公共施設などを組み合わせながら、自分たちの理想の都市空間を形にしていきます。
-                        建築と交通が一体になった街づくりを楽しめます。
+                        {{ 'Design urban spaces with homes, commercial buildings, and public facilities.' if mjx_en else '住宅、商業施設、公共施設などを組み合わせながら、自分たちの理想の都市空間を形にしていきます。' }}
+                        {{ 'Enjoy planning a city where transportation and architecture work together.' if mjx_en else '建築と交通が一体になった街づくりを楽しめます。' }}
                     </p>
                 </div>
             </article>
@@ -225,58 +227,58 @@ body.mjx-home{margin:0;min-width:0;background:#f6f7f9;color:var(--mjx-ink);font-
     </section>
 
     <section style="margin-top: 70px;">
-        <div class="section-header"><h2>CONCEPT / サーバーの特徴</h2></div>
+        <div class="section-header"><h2>{{ 'CONCEPT / Server Features' if mjx_en else 'CONCEPT / サーバーの特徴' }}</h2></div>
         <div class="feature-grid">
             <div class="feature-card">
                 <div class="feature-icon">🚆</div>
-                <h3>本格的な鉄道</h3>
-                <p>MTRmodを活用した鉄道網を中心に、駅・路線・都市のつながりを楽しめます。</p>
+                <h3>{{ 'Realistic Railways' if mjx_en else '本格的な鉄道' }}</h3>
+                <p>{{ 'Experience an MTR Mod railway network connecting stations, lines, and cities.' if mjx_en else 'MTRmodを活用した鉄道網を中心に、駅・路線・都市のつながりを楽しめます。' }}</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🏗️</div>
-                <h3>自由な建築</h3>
-                <p>街づくりや建築を通して、自分のアイデアを実際の都市空間として形にできます。</p>
+                <h3>{{ 'Creative Building' if mjx_en else '自由な建築' }}</h3>
+                <p>{{ 'Turn your ideas into real places through construction and city planning.' if mjx_en else '街づくりや建築を通して、自分のアイデアを実際の都市空間として形にできます。' }}</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🌐</div>
-                <h3>広がる都市ネットワーク</h3>
-                <p>鉄道と建築がつながることで、ひとつの街からさらに大きな世界へ発展していきます。</p>
+                <h3>{{ 'Expanding Urban Network' if mjx_en else '広がる都市ネットワーク' }}</h3>
+                <p>{{ 'As transportation and architecture connect, each neighborhood becomes part of a bigger world.' if mjx_en else '鉄道と建築がつながることで、ひとつの街からさらに大きな世界へ発展していきます。' }}</p>
             </div>
         </div>
     </section>
 
     <section style="margin-top: 70px;">
-        <div class="section-header"><h2>PARTICIPATION / 参加者の役割</h2></div>
-        <p class="intro-lead">それぞれの楽しみ方で、MTR Japan Nexusの世界に参加できます。</p>
+        <div class="section-header"><h2>{{ 'PARTICIPATION / Participant Roles' if mjx_en else 'PARTICIPATION / 参加者の役割' }}</h2></div>
+        <p class="intro-lead">{{ 'Explore MJX in the role that fits how you want to play.' if mjx_en else 'それぞれの楽しみ方で、MTR Japan Nexusの世界に参加できます。' }}</p>
         <div class="role-list">
-            <div class="role-item"><div><strong>Visitor</strong><span>観光や鉄道の利用を中心に、完成した都市を楽しむ参加者。</span></div></div>
-            <div class="role-item"><div><strong>Builder</strong><span>建築や鉄道運営など、実際の都市づくりに参加するメンバー。選考あり。</span></div></div>
-            <div class="role-item"><div><strong>Admin</strong><span>サーバー全体の運営や管理を担当し、世界の発展を支えるメンバー。</span></div></div>
+            <div class="role-item"><div><strong>Visitor</strong><span>{{ 'Visitors explore the city, use the railway, and experience urban life.' if mjx_en else '観光や鉄道の利用を中心に、完成した都市を楽しむ参加者。' }}</span></div></div>
+            <div class="role-item"><div><strong>Builder</strong><span>{{ 'Builders create and operate parts of the city, including buildings and railways. Selection is required.' if mjx_en else '建築や鉄道運営など、実際の都市づくりに参加するメンバー。選考あり。' }}</span></div></div>
+            <div class="role-item"><div><strong>Admin</strong><span>{{ 'Admins maintain the server and support the development of the world.' if mjx_en else 'サーバー全体の運営や管理を担当し、世界の発展を支えるメンバー。' }}</span></div></div>
         </div>
     </section>
 
     <section style="margin-top: 70px;">
-        <div class="section-header"><h2>GROWING WORLD / 成長する都市</h2></div>
+        <div class="section-header"><h2>{{ 'GROWING WORLD / A Growing City' if mjx_en else 'GROWING WORLD / 成長する都市' }}</h2></div>
         <p class="intro-lead">
-            MTR Japan Nexusは、完成した世界を眺めるだけのサーバーではありません。
-            プレイヤーの活動によって街が生まれ、鉄道がつながり、さらに新しい場所へ世界が広がっていきます。
+            {{ 'MTR Japan Nexus is more than a finished world to explore.' if mjx_en else 'MTR Japan Nexusは、完成した世界を眺めるだけのサーバーではありません。' }}
+            {{ 'As participants build and create, neighborhoods appear, lines connect, and the world expands.' if mjx_en else 'プレイヤーの活動によって街が生まれ、鉄道がつながり、さらに新しい場所へ世界が広がっていきます。' }}
         </p>
     </section>
 
 
 
     <section style="margin-top: 60px;">
-        <div class="section-header"><h2>MISSIONS / 進行中プロジェクト</h2></div>
+        <div class="section-header"><h2>{{ 'MISSIONS / Ongoing Projects' if mjx_en else 'MISSIONS / 進行中プロジェクト' }}</h2></div>
         <div class="mission-grid">
             {% for m in missions %}
             <div class="mission-card">
                 <div style="display:flex; justify-content:space-between; align-items:center;">
-                    <h3 style="margin:0; font-size:1.1rem;">{{ m.title }}</h3>
-                    <span style="font-size:0.75rem; background:#e8f5e9; color:#2ecc71; padding:3px 8px; border-radius:20px; font-weight:bold;">{{ m.status }}</span>
+                    <h3 style="margin:0; font-size:1.1rem;">{{ m.title_en|default(m.title, true) if mjx_en else m.title }}</h3>
+                    <span style="font-size:0.75rem; background:#e8f5e9; color:#2ecc71; padding:3px 8px; border-radius:20px; font-weight:bold;">{{ m.status_en|default(m.status, true) if mjx_en else m.status }}</span>
                 </div>
-                <p style="font-size:0.85rem; color:#666; margin:8px 0 0;">{{ m.desc }}</p>
+                <p style="font-size:0.85rem; color:#666; margin:8px 0 0;">{{ m.desc_en|default(m.desc, true) if mjx_en else m.desc }}</p>
                 <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: {{ m.progress }}%;"></div></div>
-                <div style="text-align:right; font-size:0.8rem; font-weight:bold; color:var(--primary);">進捗率: {{ m.progress }}%</div>
+                <div style="text-align:right; font-size:0.8rem; font-weight:bold; color:var(--primary);">{{ 'Progress: ' if mjx_en else '進捗率: ' }}{{ m.progress }}%</div>
             </div>
             {% endfor %}
         </div>
@@ -284,29 +286,29 @@ body.mjx-home{margin:0;min-width:0;background:#f6f7f9;color:var(--mjx-ink);font-
 
     {% if articles %}
     <section style="margin-top: 60px;">
-        <div class="section-header"><h2>ARTICLES & LOGS / 新聞・日記・図鑑</h2></div>
+        <div class="section-header"><h2>{{ 'ARTICLES & LOGS / News, Diaries, and Wiki' if mjx_en else 'ARTICLES & LOGS / 新聞・日記・図鑑' }}</h2></div>
         <div class="article-grid">
             {% for a in articles %}
             <a href="{{ url_for('homepage.article_detail', article_id=a.id) }}" class="article-card">
-                <img src="{{ a.thumbnail }}" alt="{{ a.title }}">
+                <img src="{{ a.thumbnail }}" alt="{{ a.title_en|default(a.title, true) if mjx_en else a.title }}">
                 <div class="article-body">
                     <span style="font-size:0.75rem; font-weight:bold; color:var(--primary);">
-                        {% if a.type == 'newspaper' %}📰 新聞{% elif a.type == 'diary' %}📔 開発日記{% else %}📚 Wiki{% endif %}
+                        {% if a.type == 'newspaper' %}{{ '📰 Newspaper' if mjx_en else '📰 新聞' }}{% elif a.type == 'diary' %}{{ '📔 Development Diary' if mjx_en else '📔 開発日記' }}{% else %}{{ '📚 Wiki' if mjx_en else '📚 Wiki' }}{% endif %}
                     </span>
                     <h3 style="margin:5px 0; font-size:1rem;">{{ a.title }}</h3>
-                    <p style="font-size:0.8rem; color:#666; margin:0;">{{ a.summary }}</p>
+                    <p style="font-size:0.8rem; color:#666; margin:0;">{{ a.summary_en|default(a.summary, true) if mjx_en else a.summary }}</p>
                 </div>
             </a>
             {% endfor %}
         </div>
         <div style="text-align:center; margin-top:20px;">
-            <a href="{{ url_for('homepage.articles') }}" style="color:var(--primary); font-weight:bold; text-decoration:none;">すべての記事・新聞を見る →</a>
+            <a href="{{ url_for('homepage.articles') }}" style="color:var(--primary); font-weight:bold; text-decoration:none;">{{ 'Browse all articles and newspapers →' if mjx_en else 'すべての記事・新聞を見る →' }}</a>
         </div>
     </section>
     {% endif %}
 
     <section style="margin-top: 60px;">
-        <div class="section-header"><h2>OFFICIAL MOVIE / 紹介映像</h2></div>
+        <div class="section-header"><h2>{{ 'OFFICIAL MOVIE / Introduction Video' if mjx_en else 'OFFICIAL MOVIE / 紹介映像' }}</h2></div>
         <div class="video-wrapper">
             <iframe src="{{ config.youtube_embed_url }}" title="YouTube player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -325,10 +327,10 @@ body.mjx-home{margin:0;min-width:0;background:#f6f7f9;color:var(--mjx-ink);font-
     </div>
 
     <section style="margin-top: 40px; padding: 35px 20px; background: var(--light); border-radius: 16px; text-align: center;">
-        <div class="section-header"><h2>LIVE MAPS / リアルタイムマップ</h2></div>
+        <div class="section-header"><h2>{{ 'LIVE MAPS / Real-Time Maps' if mjx_en else 'LIVE MAPS / リアルタイムマップ' }}</h2></div>
         <div class="map-grid">
-            <a href="{{ config.system_map_url }}" target="_blank" class="map-button system-map">システムマップ (MTR路線図)</a>
-            <a href="{{ config.blue_map_url }}" target="_blank" class="map-button blue-map">3D ブルーマップ (地形・建築)</a>
+            <a href="{{ config.system_map_url }}" target="_blank" class="map-button system-map">{{ 'System Map (MTR Route Diagram)' if mjx_en else 'システムマップ (MTR路線図)' }}</a>
+            <a href="{{ config.blue_map_url }}" target="_blank" class="map-button blue-map">{{ '3D BlueMap (Terrain and Buildings)' if mjx_en else '3D ブルーマップ (地形・建築)' }}</a>
         </div>
     </section>
 </div>
@@ -336,6 +338,15 @@ body.mjx-home{margin:0;min-width:0;background:#f6f7f9;color:var(--mjx-ink);font-
 <footer><p style="margin:0;">&copy; 2026 {{ config.site_name }}. All Rights Reserved.</p></footer>
 
 <script>
+    (function(){
+      try{
+        const params=new URLSearchParams(window.location.search);
+        if(!params.has('lang')&&localStorage.getItem('mjx-site-language')==='en'&&document.documentElement.lang==='ja'){
+          const url=new URL(window.location.href);url.searchParams.set('lang','en');window.location.replace(url.href);return;
+        }
+        localStorage.setItem('mjx-site-language',document.documentElement.lang==='en'?'en':'ja');
+      }catch(_){}
+    })();
     const slides = document.querySelectorAll('.hero-bg');
     let currentSlide = 0;
     if (slides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
