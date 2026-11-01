@@ -203,7 +203,7 @@ body.mjx-home{margin:0;min-width:0;background:#f6f7f9;color:var(--mjx-ink);font-
     <section style="margin-top: 70px;">
         <div class="section-header"><h2>WORLD / この世界でできること</h2></div>
         <div class="intro-grid">
-            {% if hero_images|length > 1 %}<article class="intro-card"><img src="{{ hero_images[1] }}" alt="鉄道と駅の風景">{% else %}<article class="intro-card">{% endif %}
+            <article class="intro-card">{% if hero_images|length > 1 %}<img src="{{ hero_images[1] }}" alt="鉄道と駅の風景">{% endif %}
                 <div class="intro-body">
                     <h3>🚆 鉄道を楽しむ</h3>
                     <p>
@@ -212,7 +212,7 @@ body.mjx-home{margin:0;min-width:0;background:#f6f7f9;color:var(--mjx-ink);font-
                     </p>
                 </div>
             </article>
-            {% if hero_images|length > 2 %}<article class="intro-card"><img src="{{ hero_images[2] }}" alt="都市と建築の風景">{% else %}<article class="intro-card">{% endif %}
+            <article class="intro-card">{% if hero_images|length > 2 %}<img src="{{ hero_images[2] }}" alt="都市と建築の風景">{% endif %}
                 <div class="intro-body">
                     <h3>🏙️ 街をつくる</h3>
                     <p>
