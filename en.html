@@ -76,10 +76,50 @@ h1{margin:0 0 14px;font-size:clamp(2.05rem,5vw,3.6rem);font-weight:800;letter-sp
 @media(max-width:680px){
  .header-inner>.lang-toggle{margin-left:auto}
 }
+
+/* Accessible floating link to the beginning of every MJX page. */
+html{scroll-behavior:smooth}
+.mjx-back-to-top{
+ position:fixed;
+ right:calc(18px + env(safe-area-inset-right,0px));
+ bottom:calc(18px + env(safe-area-inset-bottom,0px));
+ z-index:1600;
+ display:inline-flex;
+ justify-content:center;
+ align-items:center;
+ gap:8px;
+ min-width:50px;
+ min-height:50px;
+ padding:11px 15px;
+ border:1px solid #980046;
+ border-radius:999px;
+ background:#b40056;
+ color:#fff;
+ font-family:inherit;
+ font-size:.88rem;
+ font-weight:800;
+ line-height:1.2;
+ text-decoration:none;
+ box-shadow:0 9px 25px rgba(24,32,50,.24);
+ -webkit-tap-highlight-color:transparent;
+}
+.mjx-back-to-top:hover{background:#870040;color:#fff;transform:translateY(-2px)}
+.mjx-back-to-top:focus-visible{outline:3px solid #172132;outline-offset:3px}
+.mjx-back-to-top .mjx-back-to-top-arrow{font-size:1.3rem;line-height:1}
+@media(max-width:700px){
+ .mjx-back-to-top{right:calc(13px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));min-width:48px;min-height:48px;padding:12px}
+ .mjx-back-to-top .mjx-back-to-top-text{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .mjx-back-to-top{transition:none}
+ .mjx-back-to-top:hover{transform:none}
+}
+@media print{.mjx-back-to-top{display:none!important}}
 </style>
 <script defer src="mjx-lang.js?v=2"></script>
 </head>
-<body id="top">
+<body id="page-top">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header"><div class="header-inner"><a class="brand" href="index-en.html?lang=en"><span class="logo" aria-hidden="true">X</span>MTR JAPAN NEXUS</a>
 <nav class="site-nav" aria-label="Site navigation"><a href="index-en.html?lang=en">Home</a><a href="regulations-en.html?lang=en">Official Rules</a><a href="en.html?lang=en" aria-current="page">About MJX</a></nav><div class="lang-toggle" role="group" aria-label="Language / 言語"><a href="jp.html?lang=ja" data-mjx-lang="ja" lang="ja">日本語</a><a href="en.html?lang=en" data-mjx-lang="en" lang="en" class="is-selected" aria-current="true">English</a></div></div></header>
@@ -113,7 +153,8 @@ This is an introduction to MJX. For the official rules and their current status,
                 Builders create the city, while Visitors visit, work, shop, and use transportation.<br>
                 Let's grow one metropolitan area together—both those who build it and those who live in it!</p><div class="slogan">Welcome to MTR Japan Nexus.<br>
                 Build. Connect. Live.</div></section>
-<nav class="actions bottom-actions" aria-label="Related pages"><a class="action action-primary" href="regulations-en.html?lang=en">Official regulations</a><a class="action" href="index-en.html?lang=en">Back to home</a><a class="action" href="#top">Back to top</a></nav>
+<nav class="actions bottom-actions" aria-label="Related pages"><a class="action action-primary" href="regulations-en.html?lang=en">Official regulations</a><a class="action" href="index-en.html?lang=en">Back to home</a><a class="action" href="#page-top">Back to top</a></nav>
 </main>
 <footer class="site-footer"><div class="footer-inner"><span>© 2026 MTR Japan Nexus · About MJX</span><span><a href="index-en.html?lang=en">Home</a> · <a href="regulations-en.html?lang=en">Official regulations</a></span></div></footer>
+<a class="mjx-back-to-top" href="#page-top" aria-label="Back to top" title="Back to top"><span class="mjx-back-to-top-arrow" aria-hidden="true">↑</span><span class="mjx-back-to-top-text">Top</span></a>
 </body></html>

@@ -24,9 +24,9 @@ a{color:var(--accent)}a:hover{text-decoration-thickness:2px}button,input{font:in
 .hero h1{font-size:clamp(2.15rem,5vw,4.2rem);line-height:1.27;letter-spacing:-.03em;margin:15px 0}
 .hero p{font-size:1.03rem;color:var(--muted);max-width:780px;margin:0}
 .redline{display:block;width:85px;height:5px;background:var(--accent);margin:27px 0;border-radius:20px}
-.hero-stats{margin-top:36px;display:flex;flex-wrap:wrap;gap:11px}
-.stat{border:1px solid var(--line);background:#fff;border-radius:12px;padding:13px 18px;display:flex;align-items:baseline;gap:9px;font-weight:600;color:var(--muted);font-size:.82rem}
-.stat b{font-size:1.45rem;color:var(--ink)}
+
+
+
 .wrap{max-width:1200px;margin:auto;padding:40px 24px 85px}
 .notice{border:1px solid #ebd0dc;border-left:5px solid var(--accent);background:#fff;border-radius:14px;padding:21px 24px;margin-bottom:28px}
 .notice h2{font-size:1.05rem;margin:0 0 7px}.notice p{margin:0;color:#445065;font-size:.91rem}
@@ -58,8 +58,8 @@ a{color:var(--accent)}a:hover{text-decoration-thickness:2px}button,input{font:in
 footer{background:#141b27;color:#c3ccd8;padding:27px 24px;font-size:.82rem}footer .inner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 footer a{color:#fff}
 @media(max-width:830px){.rule-grid{grid-template-columns:1fr}.toplinks{gap:9px}.toplinks a{font-size:.74rem}}
-@media(max-width:560px){.hero-inner{padding:49px 20px 44px}.wrap{padding:28px 15px 65px}.rule{padding:23px 20px}.topbar-inner{padding:10px 15px}.brand span:last-child{font-size:.82rem}.toplinks a{font-size:.68rem}.hero-stats{gap:8px}.stat{padding:10px 12px}.tools{align-items:stretch}.controls{width:100%}.search{width:100%}}
-@media print{.topbar,.controls,.rule summary,.hero-stats{display:none!important}body{background:#fff}.hero-inner{padding:20px}.wrap{padding:10px}.rule-grid{display:block}.rule{break-inside:avoid;margin-bottom:15px;box-shadow:none}.rule details{display:block}.rule details .rule-details{display:block!important}.rule-details section{break-inside:avoid}.footer-note{break-inside:avoid}}
+@media(max-width:560px){.hero-inner{padding:49px 20px 44px}.wrap{padding:28px 15px 65px}.rule{padding:23px 20px}.topbar-inner{padding:10px 15px}.brand span:last-child{font-size:.82rem}.toplinks a{font-size:.68rem}.tools{align-items:stretch}.controls{width:100%}.search{width:100%}}
+@media print{.topbar,.controls,.rule summary,body{background:#fff}.hero-inner{padding:20px}.wrap{padding:10px}.rule-grid{display:block}.rule{break-inside:avoid;margin-bottom:15px;box-shadow:none}.rule details{display:block}.rule details .rule-details{display:block!important}.rule-details section{break-inside:avoid}.footer-note{break-inside:avoid}}
 
 .fulltext-actions{margin-top:18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .fulltext-link{display:inline-flex;gap:11px;align-items:center;justify-content:space-between;padding:11px 17px;background:#b40056;border:1px solid #b40056;border-radius:11px;color:#fff;text-decoration:none;font-weight:800;font-size:.86rem;transition:background .2s,transform .2s}
@@ -76,15 +76,15 @@ footer a{color:#fff}
 @media(max-width:560px){.quicklinks{align-items:flex-start;flex-direction:column;gap:5px}.quicklinks-list{width:100%}.rule-label{max-width:100%;overflow-wrap:anywhere}.rule{scroll-margin-top:100px}}
 @media print{.quicklinks{display:none}}
 </style>
-<link rel="stylesheet" href="mjx-theme.css?v=20261101-rightnav">
+<link rel="stylesheet" href="mjx-theme.css?v=20261101-toplink">
 <script defer src="mjx-lang.js?v=2"></script>
 </head>
-<body class="mjx-regulations">
+<body id="page-top" class="mjx-regulations">
 <a class="mjx-skip" href="#main-content">Skip to main content</a>
 <div class="topbar mjx-topbar"><div class="topbar-inner mjx-topbar-inner"><a class="mjx-brand" href="index-en.html?lang=en"><span class="mjx-brand-mark" aria-hidden="true">X</span><span>MTR JAPAN NEXUS</span></a><nav class="mjx-toplinks" aria-label="Site navigation"><a href="index-en.html?lang=en">Home</a><a href="regulations-en.html?lang=en" aria-current="page">Official Rules</a><a href="en.html?lang=en">About MJX</a></nav><div class="mjx-lang-toggle" role="group" aria-label="Language / 言語"><a href="regulations.html?lang=ja" data-mjx-lang="ja" lang="ja">日本語</a><a href="regulations-en.html?lang=en" data-mjx-lang="en" lang="en" class="is-selected" aria-current="true">English</a></div></div></div>
 <header class="hero"><div class="hero-inner"><div class="eyebrow">MJX / REGULATIONS / 2026.11.01</div><span class="redline"></span><h1>Seven Official Regulations<br>Status and Summary</h1>
 <p>An English guide to the seven MJX regulations, based on the 50-page document set approved November 1, 2026. For authoritative wording, use the Japanese original PDFs.</p>
-<div class="hero-stats"><div class="stat"><b>07</b> Documents</div><div class="stat"><b>04</b> Current, unchanged</div><div class="stat"><b>03</b> Approved, effective date pending</div></div></div></header>
+</div></header>
 <main class="wrap" id="main-content">
 <section class="notice" aria-label="Important information"><h2>Approval is not the same as taking effect</h2>
 <p>The amendments to 04 (Resource Pack), 05 (Privacy Policy), and 07 (Visitor Rules) were approved on November 1, 2026. However, their effective dates have not been specified. Do not assume they replaced the previous active provisions immediately.</p>
@@ -221,5 +221,6 @@ footer a{color:#fff}
   render();
 })();
 </script>
+<a class="mjx-back-to-top" href="#page-top" aria-label="Back to top" title="Back to top"><span class="mjx-back-to-top-arrow" aria-hidden="true">↑</span><span class="mjx-back-to-top-text">Top</span></a>
 </body>
 </html>

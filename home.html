@@ -158,11 +158,51 @@ body.mjx-home{margin:0;min-width:0;background:#f6f7f9;color:var(--mjx-ink);font-
  .mjx-home .navbar>.nav-links{order:2;margin-left:0;width:100%;justify-content:flex-start;overflow-x:auto}
  .mjx-home .navbar>.nav-links>li:first-child{margin-left:auto}
 }
+
+/* Accessible floating link to the beginning of every MJX page. */
+html{scroll-behavior:smooth}
+.mjx-back-to-top{
+ position:fixed;
+ right:calc(18px + env(safe-area-inset-right,0px));
+ bottom:calc(18px + env(safe-area-inset-bottom,0px));
+ z-index:1600;
+ display:inline-flex;
+ justify-content:center;
+ align-items:center;
+ gap:8px;
+ min-width:50px;
+ min-height:50px;
+ padding:11px 15px;
+ border:1px solid #980046;
+ border-radius:999px;
+ background:#b40056;
+ color:#fff;
+ font-family:inherit;
+ font-size:.88rem;
+ font-weight:800;
+ line-height:1.2;
+ text-decoration:none;
+ box-shadow:0 9px 25px rgba(24,32,50,.24);
+ -webkit-tap-highlight-color:transparent;
+}
+.mjx-back-to-top:hover{background:#870040;color:#fff;transform:translateY(-2px)}
+.mjx-back-to-top:focus-visible{outline:3px solid #172132;outline-offset:3px}
+.mjx-back-to-top .mjx-back-to-top-arrow{font-size:1.3rem;line-height:1}
+@media(max-width:700px){
+ .mjx-back-to-top{right:calc(13px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));min-width:48px;min-height:48px;padding:12px}
+ .mjx-back-to-top .mjx-back-to-top-text{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .mjx-back-to-top{transition:none}
+ .mjx-back-to-top:hover{transform:none}
+}
+@media print{.mjx-back-to-top{display:none!important}}
 </style>
 <!-- Self-contained style: this Jinja template may render without a static /mjx-theme.css route. -->
 
 </head>
-<body class="mjx-home">
+<body class="mjx-home" id="page-top">
 <a class="mjx-skip" href="#main-content">{{ 'Skip to main content' if mjx_en else '本文へ移動' }}</a>
 <nav class="navbar">
     <div class="logo"><a href="{{ url_for('homepage.home', lang='en' if mjx_en else 'ja') }}"><span class="mjx-brand-mark" aria-hidden="true">X</span><strong>{{ config.site_name }}</strong></a></div>
@@ -424,5 +464,6 @@ body.mjx-home{margin:0;min-width:0;background:#f6f7f9;color:var(--mjx-ink);font-
     setInterval(updateMCStatus, 60000);
     updateMCStatus();
 </script>
+<a class="mjx-back-to-top" href="#page-top" aria-label="{{ 'Back to top' if mjx_en else 'ページ上部へ戻る' }}" title="{{ 'Back to top' if mjx_en else 'ページ上部へ戻る' }}"><span class="mjx-back-to-top-arrow" aria-hidden="true">↑</span><span class="mjx-back-to-top-text">{{ 'Top' if mjx_en else '上へ' }}</span></a>
 </body>
 </html>
