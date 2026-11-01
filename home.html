@@ -201,6 +201,26 @@ html{scroll-behavior:smooth}
 </style>
 <!-- Self-contained style: this Jinja template may render without a static /mjx-theme.css route. -->
 
+<link rel="icon" href="https://warudora.github.io/MJX-/assets/mjx-mark.svg?v=20261101" type="image/svg+xml">
+<link rel="icon" href="https://warudora.github.io/MJX-/assets/favicon-32.png?v=20261101" type="image/png" sizes="32x32">
+<link rel="shortcut icon" href="https://warudora.github.io/MJX-/favicon.ico?v=20261101" type="image/x-icon">
+<link rel="apple-touch-icon" href="https://warudora.github.io/MJX-/assets/apple-touch-icon.png?v=20261101" sizes="180x180">
+<link rel="manifest" href="https://warudora.github.io/MJX-/assets/site.webmanifest">
+<meta name="apple-mobile-web-app-title" content="MJX">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MTR Japan Nexus">
+<meta property="og:title" content="{{ config.site_name }} | {{ 'Official Portal' if mjx_en else '公式サイト' }}">
+<meta property="og:description" content="{{ 'Official MJX portal: railway, community and city projects.' if mjx_en else 'MTR Japan Nexus公式サイト。鉄道と都市づくりの情報を紹介。' }}">
+<meta property="og:image" content="https://warudora.github.io/MJX-/assets/og-mjx.png?v=20261101">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MTR Japan Nexus official logo">
+<meta property="og:locale" content="{{ 'en_US' if mjx_en else 'ja_JP' }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ config.site_name }} | {{ 'Official Portal' if mjx_en else '公式サイト' }}">
+<meta name="twitter:description" content="{{ 'Official MJX portal: railway, community and city projects.' if mjx_en else 'MTR Japan Nexus公式サイト。鉄道と都市づくりの情報を紹介。' }}">
+<meta name="twitter:image" content="https://warudora.github.io/MJX-/assets/og-mjx.png?v=20261101">
 </head>
 <body class="mjx-home" id="page-top">
 <a class="mjx-skip" href="#main-content">{{ 'Skip to main content' if mjx_en else '本文へ移動' }}</a>

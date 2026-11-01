@@ -104,3 +104,11 @@ The English regulations page shows both the Japanese original PDF and its Englis
 ### 生成後ロゴの検証と二重化対策
 - ロゴ画像は7規定の最終ページへ必ず1回生成する。旧原本由来の余分なロゴは、ページ52のフッター下だけ白で覆い、フッター罫線を再描画する。ページ55は本文を再配置するときに元のロゴだけを1回コピーする。
 - ロゴ検査は上右側の安全領域を対象とするので、最終ページにロゴが無いPDFは公開されない。
+
+## Website branding and icon assets (2026-11-01)
+- Source: `assets/mjx-logo.svg`, vectorized from the official magenta-background MJX logo provided by the community owner. The emblem and wordmark retain their original outlines.
+- `scripts/generate_brand_assets.py` renders the site favicon, Apple touch icon, PWA icons, and 1200×630 Open Graph sharing preview.
+- `.github/workflows/generate-mjx-icons.yml` regenerates binary images and publishes them when the SVG source or generator changes.
+- Static Japanese/English home, regulations and About pages, and the Flask/Jinja homepage have favicon, app-icon and social meta tags.
+- The Flask homepage points its icons at the GitHub Pages asset URLs to avoid dependence on Flask static route configuration.
+- `assets/site.webmanifest` provides the installable web app icon metadata. App icon generation does not modify the legal regulation PDF logos.

@@ -1,0 +1,47 @@
+name: Generate MJX site icons
+on:
+  push:
+    paths:
+      - assets/mjx-logo.svg
+      - scripts/generate_brand_assets.py
+      - .github/workflows/generate-mjx-icons.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install renderer
+        run: python -m pip install "Pillow>=11,<13" "CairoSVG>=2.7,<3"
+      - name: Build branded icons and preview
+        run: python scripts/generate_brand_assets.py
+      - name: Verify files
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          paths=["favicon.ico","assets/mjx-mark.svg","assets/favicon-32.png","assets/apple-touch-icon.png","assets/mjx-icon-192.png","assets/mjx-icon-512.png","assets/og-mjx.png"]
+          for name in paths:
+              p=Path(name)
+              assert p.is_file() and p.stat().st_size>200, name
+          for name,size in [("assets/og-mjx.png",(1200,630)),("assets/apple-touch-icon.png",(180,180)),("assets/mjx-icon-192.png",(192,192)),("assets/mjx-icon-512.png",(512,512))]:
+              with Image.open(name) as im:
+                  assert im.size==size,(name,im.size)
+          print("All MJX icons validated")
+          PY
+      - name: Publish generated assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add favicon.ico assets/mjx-mark.svg assets/favicon-32.png assets/apple-touch-icon.png assets/mjx-icon-192.png assets/mjx-icon-512.png assets/og-mjx.png
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish MJX favicon, app icons and social preview"
+            git push
+          fi
