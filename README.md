@@ -66,3 +66,17 @@
 - 規定一覧のヒーローにあった同じ統計表示も日英から撤去。承認・施行状態の文章と7規定の一覧・PDFリンクは維持。
 - すべての公開HTML（index/index-en、regulations/regulations-en、jp/en）とFlask/Jinjaホームに、ページ上部へ戻る固定リンクを追加。通常の `href="#page-top"` で動作するため、JavaScriptが無効でも利用可能。
 - スマホでは丸い矢印、広い画面では「↑ 上へ / ↑ Top」と表示。iOSセーフエリア、キーボード操作、動きを減らす設定、印刷時の非表示に対応。
+
+## English reference PDFs (2026-11-01)
+The seven English summaries are kept as **separate reference PDFs**, not as translations of every provision. Use the original Japanese PDFs for the complete terms and official wording.
+
+- Combined: `regulations/english/MJX-seven-regulations-english-reference-guide.pdf`
+- 01 Cinema System Usage Policy: `regulations/english/01-01-cinema-policy-summary-en.pdf`
+- 02 General Server Regulations: `regulations/english/02-02-general-server-rules-summary-en.pdf`
+- 03 Builder Regulations: `regulations/english/03-03-builder-regulations-summary-en.pdf`
+- 04 Resource Pack Regulations: `regulations/english/04-04-resource-pack-rules-summary-en.pdf`
+- 05 Privacy Policy: `regulations/english/05-05-privacy-policy-summary-en.pdf`
+- 06 Economic Regulations: `regulations/english/06-06-economic-regulations-summary-en.pdf`
+- 07 Visitor Rules: `regulations/english/07-07-visitor-rules-summary-en.pdf`
+
+The English regulations page shows both the Japanese original PDF and its English reference summary PDF. Revisions 04, 05, and 07 remain **approved but without announced effective dates**. Complete, clause-by-clause certified English translations have not been produced; the scanned original pages require additional verification before such translations could be published.
