@@ -159,7 +159,7 @@ body.mjx-home{margin:0;min-width:0;background:#f6f7f9;color:var(--mjx-ink);font-
         {% for item in nav_items %}
         <li><a href="{{ item.url }}">{{ item.name_en|default(item.name, true) if mjx_en else item.name }}</a></li>
         {% endfor %}
-        <li><a href="{{ 'regulations-en.html' if mjx_en else 'regulations.html' }}" class="mjx-nav-policy">{{ 'Official Regulations' if mjx_en else '公式7規定' }}</a></li>
+        <li><a href="{{ 'regulations-en.html?lang=en' if mjx_en else 'regulations.html?lang=ja' }}" class="mjx-nav-policy">{{ 'Official Regulations' if mjx_en else '公式7規定' }}</a></li>
         
     </ul>
     <div class="mjx-flask-language" aria-label="Language / 言語">
@@ -188,7 +188,7 @@ body.mjx-home{margin:0;min-width:0;background:#f6f7f9;color:var(--mjx-ink);font-
       <div><span class="eyebrow">OFFICIAL REGULATIONS / 2026.11.01</span>
       <h2>{{ 'The Seven Official MJX Regulations' if mjx_en else 'MJX 公式7規定のご案内' }}</h2>
       <p>{{ 'See which rules are in effect and which revisions have only been approved. Revisions 04, 05, and 07 have no announced effective dates.' if mjx_en else '現行規定と改訂承認済み文書の違いを確認できます。改訂承認済みの3文書は施行日未指定です。' }}</p></div>
-      <a class="mjx-action mjx-action--primary" href="{{ 'regulations-en.html' if mjx_en else 'regulations.html' }}">{{ 'Read the regulations' if mjx_en else '7規定を確認する' }}</a>
+      <a class="mjx-action mjx-action--primary" href="{{ 'regulations-en.html?lang=en' if mjx_en else 'regulations.html?lang=ja' }}">{{ 'Read the regulations' if mjx_en else '7規定を確認する' }}</a>
     </section>
     <section style="margin-top: 60px;">
         <div class="section-header"><h2>{{ 'NEWS / Announcements' if mjx_en else 'NEWS / お知らせ' }}</h2></div>
