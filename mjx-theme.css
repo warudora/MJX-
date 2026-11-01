@@ -120,6 +120,47 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .mjx-guide .mjx-page-footer { margin-top:40px; }
 .mjx-guide .mjx-hero strong,.mjx-guide .mjx-alert strong { color:var(--mjx-ink); }
 
+/* MJX About pages: restore complete component foundations after retiring the legacy guide.
+   The guide HTML no longer embeds the old stylesheet, so shared styling must be explicit. */
+.mjx-guide .mjx-guide-nav{position:relative;top:auto}
+.mjx-guide .nav-container{display:flex;align-items:center;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;white-space:nowrap}
+.mjx-guide .nav-container a{flex-shrink:0;text-decoration:none;font-weight:700}
+.mjx-guide .section-header{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.015em}
+.mjx-guide .community-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:20px 0}
+.mjx-guide .community-box{min-width:0;background:#fff}
+.mjx-guide .community-box h4{font-size:1.1rem;font-weight:800;margin:0 0 5px}
+.mjx-guide .community-box .subtitle{font-size:.79rem;color:#617087;font-weight:700;margin:0 0 10px;line-height:1.65}
+.mjx-guide .community-box p{font-size:.92rem;line-height:1.85}
+.mjx-guide .concept-highlight{border-left:4px solid var(--mjx-accent);padding:19px 21px;margin-top:16px}
+.mjx-guide .concept-highlight h4{font-weight:800;margin:0 0 9px;line-height:1.5}
+.mjx-guide .concept-highlight ul{list-style:none;padding:0;margin:12px 0}
+.mjx-guide .concept-highlight li{position:relative;padding-left:19px;margin:7px 0;line-height:1.7}
+.mjx-guide .concept-highlight li::before{content:"•";position:absolute;left:2px;color:var(--mjx-accent);font-weight:800}
+.mjx-guide .concept-highlight p:last-child{margin-bottom:0}
+.mjx-guide .footer-banner{color:#fff;text-align:center;padding:39px 29px;overflow-wrap:anywhere}
+.mjx-guide .footer-banner .closing-heading{color:#fff;font-size:1.28rem;line-height:1.55;font-weight:800;margin:0 0 15px}
+.mjx-guide .footer-banner p{max-width:700px;margin:0 auto;line-height:2;color:#dce3ee!important}
+.mjx-guide .footer-slogan{display:block;text-align:center;font-size:1.3rem;font-weight:800;letter-spacing:.035em;line-height:1.6;margin-top:19px;color:#f69bc3}
+.mjx-guide .back-to-top{position:fixed;right:22px;bottom:22px;z-index:700;display:flex;justify-content:center;align-items:center;width:46px;height:46px;border-radius:50%;color:#fff;text-decoration:none;font-size:1.35rem;line-height:1;font-weight:900;transition:background .2s,transform .2s}
+.mjx-guide .back-to-top:hover{color:#fff;transform:translateY(-2px)}
+@media(max-width:700px){
+ .mjx-guide .community-grid{grid-template-columns:minmax(0,1fr)}
+ .mjx-guide .concept-highlight{padding:17px 16px}
+ .mjx-guide .footer-banner{padding:29px 17px}
+ .mjx-guide .footer-banner .closing-heading{font-size:1.16rem}
+ .mjx-guide .footer-slogan{font-size:1.13rem}
+ .mjx-guide .back-to-top{width:44px;height:44px}
+}
+@media(min-width:701px) and (max-width:1024px){
+ .mjx-guide .community-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(min-width:701px) and (max-width:860px){
+ .mjx-guide .community-grid{grid-template-columns:1fr}
+}
+@media print{
+ .mjx-guide .footer-banner{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
 /* Optional Jinja homepage template. Preserve its dynamic content and scripts. */
 .mjx-home { background:var(--mjx-background); color:var(--mjx-ink); font-family:Inter,"Noto Sans JP",sans-serif; }
 .mjx-home .navbar { z-index:600; background:rgba(255,255,255,.97); border-bottom:1px solid var(--mjx-border); box-shadow:0 2px 10px rgba(20,29,45,.025); padding:12px max(24px,calc((100vw - 1152px)/2)); gap:20px; }
