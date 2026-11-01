@@ -62,6 +62,20 @@ h1{margin:0 0 14px;font-size:clamp(2.05rem,5vw,3.6rem);font-weight:800;letter-sp
 .lang-toggle a.is-selected{background:var(--pink);color:#fff}
 @media(max-width:900px){.header-inner .lang-toggle{order:1;margin-left:auto}.header-inner>.site-nav{order:2}}
 @media(max-width:680px){.header-inner .lang-toggle{margin-left:0}}
+
+/* Layout: brand on left, site links and locale switch on the right. */
+.header-inner{justify-content:flex-start}
+.header-inner>.brand{flex-shrink:0}
+.header-inner>.site-nav{margin-left:auto;justify-content:flex-end}
+.header-inner>.lang-toggle{margin-left:8px}
+@media(max-width:900px){
+ .header-inner>.lang-toggle{order:1;margin-left:auto}
+ .header-inner>.site-nav{order:2;margin-left:0;width:100%;justify-content:flex-start;overflow-x:auto}
+ .header-inner>.site-nav>a:first-child{margin-left:auto}
+}
+@media(max-width:680px){
+ .header-inner>.lang-toggle{margin-left:auto}
+}
 </style>
 <script defer src="mjx-lang.js?v=2"></script>
 </head>

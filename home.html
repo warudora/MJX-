@@ -147,6 +147,17 @@ body.mjx-home{margin:0;min-width:0;background:#f6f7f9;color:var(--mjx-ink);font-
 .mjx-home .navbar>.nav-links{order:2}
 }
 @media(max-width:700px){.mjx-home .mjx-flask-language{flex-shrink:0}}
+
+/* Right-aligned navigation alongside the language control. */
+.mjx-home .navbar{justify-content:flex-start}
+.mjx-home .navbar>.logo{flex-shrink:0}
+.mjx-home .navbar>.nav-links{margin-left:auto;justify-content:flex-end}
+.mjx-home .navbar>.mjx-flask-language{margin-left:8px}
+@media(max-width:1024px){
+ .mjx-home .navbar>.mjx-flask-language{order:1;margin-left:auto}
+ .mjx-home .navbar>.nav-links{order:2;margin-left:0;width:100%;justify-content:flex-start;overflow-x:auto}
+ .mjx-home .navbar>.nav-links>li:first-child{margin-left:auto}
+}
 </style>
 <!-- Self-contained style: this Jinja template may render without a static /mjx-theme.css route. -->
 
