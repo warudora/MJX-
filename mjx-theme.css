@@ -1,4 +1,4 @@
-/* MJX unified visual system — 2026-11-01. Shared across portal, official rules and guides. */
+/* MJX unified visual system — 2026-11-01. Shared by the official portal and regulations index. */
 :root {
   --mjx-accent: #b40056;
   --mjx-accent-deep: #89003f;
@@ -65,245 +65,41 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .mjx-disclaimer { border:1px solid #ead4df; border-left:4px solid var(--mjx-accent); border-radius:14px; background:#fff; padding:22px 24px; margin-top:23px; line-height:1.8; }
 .mjx-disclaimer h2 { margin:0 0 7px; font-size:1rem; }
 .mjx-disclaimer p { margin:0; color:#566276; font-size:.87rem; }
-
-/* Japanese / English long-form guides. Content intentionally retained. */
-.mjx-guide { --primary: var(--mjx-accent); --primary-dark: var(--mjx-accent-deep); --primary-light: var(--mjx-accent-soft); font-family:Inter,"Noto Sans JP",sans-serif; background:var(--mjx-background); padding-bottom:0; line-height:1.85; }
-.mjx-guide .mjx-hero { text-align:left; background:#fff; border-bottom:1px solid var(--mjx-border); box-shadow:none; padding:0; }
-.mjx-guide .mjx-hero-inner { max-width:1100px; padding:57px 24px 55px; }
-.mjx-guide .mjx-hero h1 { font-size:clamp(2.05rem,5vw,3.6rem); color:var(--mjx-ink); }
-.mjx-guide .mjx-hero p { color:var(--mjx-muted); }
-/* The legacy guide's broad 'nav' selector must not affect the sitewide topbar. */
-.mjx-guide .mjx-topbar nav.mjx-toplinks {
-  position: static;
-  top: auto;
-  z-index: auto;
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-  backdrop-filter: none;
-}
-.mjx-guide .mjx-guide-nav { top:61px; z-index:500; border-bottom:1px solid var(--mjx-border); box-shadow:none; background:rgba(255,255,255,.94); }
-.mjx-guide .nav-container { max-width:1130px; gap:8px; padding:9px 24px; scrollbar-width:thin; }
-.mjx-guide .nav-container a { background:transparent; color:#536071; border:1px solid transparent; border-radius:9px; font-size:.82rem; padding:8px 12px; }
-.mjx-guide .nav-container a:hover,
-.mjx-guide .nav-container a:focus-visible { border-color:#ecd3df; background:var(--mjx-accent-soft); color:var(--mjx-accent-deep); }
-.mjx-guide .nav-container a:first-child { color:var(--mjx-accent-deep); background:var(--mjx-accent-soft); font-weight:800; }
-.mjx-guide .mjx-alert { max-width:1100px; margin-top:23px; }
-.mjx-guide .language-switcher { max-width:1100px; padding:0 24px; margin:0 auto; }
-.mjx-guide .language-switcher-card { padding:13px 20px; box-shadow:none; border-radius:13px; background:#fff; }
-.mjx-guide .language-switcher a { background:var(--mjx-accent); border-radius:10px; color:#fff; }
-.mjx-guide .language-switcher a:hover { background:var(--mjx-accent-deep); }
-.mjx-guide > .container { max-width:1100px; padding:0 24px; margin:23px auto 0; }
-.mjx-guide .card { background:#fff; border:1px solid var(--mjx-border); border-radius:18px; box-shadow:var(--mjx-shadow); padding:29px 32px; margin-bottom:19px; scroll-margin-top:135px; }
-.mjx-guide .section-header { font-size:1.4rem; color:var(--mjx-ink); padding-bottom:15px; margin-bottom:20px; border-bottom:1px solid var(--mjx-border); line-height:1.5; }
-.mjx-guide .subsection-title { color:#223047; font-size:1.05rem; margin-bottom:9px; }
-.mjx-guide p, .mjx-guide li { line-height:1.85; }
-.mjx-guide .history-card { background:#fff; border-left:4px solid var(--mjx-accent); }
-.mjx-guide .community-box { border:1px solid var(--mjx-border); border-radius:13px; padding:19px; box-shadow:none; }
-.mjx-guide .community-box h4 { color:var(--mjx-accent-deep); }
-.mjx-guide .concept-highlight { border-left-color:var(--mjx-accent); background:var(--mjx-accent-soft); box-shadow:none; border-radius:0 11px 11px 0; }
-.mjx-guide .concept-highlight h4 { color:var(--mjx-accent-deep); }
-.mjx-guide .builder-card { border-left:4px solid #64748b; border-top:1px solid var(--mjx-border); }
-.mjx-guide .visitor-card { border-left:4px solid #278778; border-top:1px solid var(--mjx-border); }
-.mjx-guide .admin-card { border-left:4px solid #b84555; border-top:1px solid var(--mjx-border); background:#fff; }
-.mjx-guide .builder-card .section-header,
-.mjx-guide .visitor-card .section-header,
-.mjx-guide .admin-card .section-header { color:var(--mjx-ink); border-bottom-color:var(--mjx-border); }
-.mjx-guide .example-box { border:1px solid var(--mjx-border); border-radius:12px; background:#f8fafc; padding:16px 18px; }
-.mjx-guide .badge { border-radius:8px; background:#eef1f5; color:#334155; }
-.mjx-guide ul li::before { color:var(--mjx-accent); }
-.mjx-guide .footer-banner { border-radius:18px; background:linear-gradient(135deg,#232c3c,#172132); box-shadow:none; margin-top:22px; }
-.mjx-guide .footer-banner p { color:#d2dae6!important; }
-.mjx-guide .footer-slogan { color:#f69bc3; }
-.mjx-guide .back-to-top { background:var(--mjx-accent); box-shadow:0 10px 25px rgba(130,0,67,.22); }
-.mjx-guide .back-to-top:hover { background:var(--mjx-accent-deep); }
-.mjx-guide .mjx-page-footer { margin-top:40px; }
-.mjx-guide .mjx-hero strong,.mjx-guide .mjx-alert strong { color:var(--mjx-ink); }
-
-/* MJX About pages: restore complete component foundations after retiring the legacy guide.
-   The guide HTML no longer embeds the old stylesheet, so shared styling must be explicit. */
-.mjx-guide .mjx-guide-nav{position:relative;top:auto}
-.mjx-guide .nav-container{display:flex;align-items:center;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;white-space:nowrap}
-.mjx-guide .nav-container a{flex-shrink:0;text-decoration:none;font-weight:700}
-.mjx-guide .section-header{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.015em}
-.mjx-guide .community-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:20px 0}
-.mjx-guide .community-box{min-width:0;background:#fff}
-.mjx-guide .community-box h4{font-size:1.1rem;font-weight:800;margin:0 0 5px}
-.mjx-guide .community-box .subtitle{font-size:.79rem;color:#617087;font-weight:700;margin:0 0 10px;line-height:1.65}
-.mjx-guide .community-box p{font-size:.92rem;line-height:1.85}
-.mjx-guide .concept-highlight{border-left:4px solid var(--mjx-accent);padding:19px 21px;margin-top:16px}
-.mjx-guide .concept-highlight h4{font-weight:800;margin:0 0 9px;line-height:1.5}
-.mjx-guide .concept-highlight ul{list-style:none;padding:0;margin:12px 0}
-.mjx-guide .concept-highlight li{position:relative;padding-left:19px;margin:7px 0;line-height:1.7}
-.mjx-guide .concept-highlight li::before{content:"•";position:absolute;left:2px;color:var(--mjx-accent);font-weight:800}
-.mjx-guide .concept-highlight p:last-child{margin-bottom:0}
-.mjx-guide .footer-banner{color:#fff;text-align:center;padding:39px 29px;overflow-wrap:anywhere}
-.mjx-guide .footer-banner .closing-heading{color:#fff;font-size:1.28rem;line-height:1.55;font-weight:800;margin:0 0 15px}
-.mjx-guide .footer-banner p{max-width:700px;margin:0 auto;line-height:2;color:#dce3ee!important}
-.mjx-guide .footer-slogan{display:block;text-align:center;font-size:1.3rem;font-weight:800;letter-spacing:.035em;line-height:1.6;margin-top:19px;color:#f69bc3}
-.mjx-guide .back-to-top{position:fixed;right:22px;bottom:22px;z-index:700;display:flex;justify-content:center;align-items:center;width:46px;height:46px;border-radius:50%;color:#fff;text-decoration:none;font-size:1.35rem;line-height:1;font-weight:900;transition:background .2s,transform .2s}
-.mjx-guide .back-to-top:hover{color:#fff;transform:translateY(-2px)}
-@media(max-width:700px){
- .mjx-guide .community-grid{grid-template-columns:minmax(0,1fr)}
- .mjx-guide .concept-highlight{padding:17px 16px}
- .mjx-guide .footer-banner{padding:29px 17px}
- .mjx-guide .footer-banner .closing-heading{font-size:1.16rem}
- .mjx-guide .footer-slogan{font-size:1.13rem}
- .mjx-guide .back-to-top{width:44px;height:44px}
-}
-@media(min-width:701px) and (max-width:1024px){
- .mjx-guide .community-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-@media(min-width:701px) and (max-width:860px){
- .mjx-guide .community-grid{grid-template-columns:1fr}
-}
-@media print{
- .mjx-guide .footer-banner{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-}
-
-/* Optional Jinja homepage template. Preserve its dynamic content and scripts. */
-.mjx-home { background:var(--mjx-background); color:var(--mjx-ink); font-family:Inter,"Noto Sans JP",sans-serif; }
-.mjx-home .navbar { z-index:600; background:rgba(255,255,255,.97); border-bottom:1px solid var(--mjx-border); box-shadow:0 2px 10px rgba(20,29,45,.025); padding:12px max(24px,calc((100vw - 1152px)/2)); gap:20px; }
-.mjx-home .logo a { display:flex; align-items:center; gap:10px; color:var(--mjx-ink); letter-spacing:.015em; text-decoration:none; font-size:1.05rem; }
-.mjx-home .mjx-brand-mark { flex-shrink:0; }
-.mjx-home .nav-links { align-items:center; gap:4px; flex-wrap:wrap; }
-.mjx-home .nav-links a { display:inline-block; border-radius:10px; padding:8px 11px; color:#546174; font-size:.85rem; transition:color .2s,background .2s; }
-.mjx-home .nav-links a:hover { color:var(--mjx-accent-deep); background:var(--mjx-accent-soft); }
-.mjx-home .nav-links a.mjx-nav-policy { color:var(--mjx-accent-deep); background:var(--mjx-accent-soft); }
-.mjx-home .hero { min-height:450px; height:63vh; max-height:680px; border-bottom:4px solid var(--mjx-accent); }
-.mjx-home .hero-content { border:1px solid rgba(255,255,255,.2); background:rgba(15,24,40,.65); backdrop-filter:blur(11px); box-shadow:0 18px 65px rgba(0,0,0,.25); padding:40px; }
-.mjx-home .hero-content h1 { letter-spacing:-.03em; }
-.mjx-home .discord-box { border:1px solid #dce2ea; border-radius:15px; box-shadow:0 10px 24px rgba(28,36,50,.09); }
-.mjx-home .discord-box:hover { border-color:#dfa7c0; }
-.mjx-home .container { max-width:1152px; }
-.mjx-home .section-header h2::after { background:var(--mjx-accent); height:4px; width:65px; border-radius:20px; }
-.mjx-home .news-list, .mjx-home .mission-card, .mjx-home .article-card,
-.mjx-home .intro-card, .mjx-home .feature-card, .mjx-home .step-card { border:1px solid var(--mjx-border); border-radius:16px; box-shadow:var(--mjx-shadow); }
-.mjx-home .news-tag { background:var(--mjx-accent); border-radius:6px; }
-.mjx-home .article-card:hover { border-color:#ebacc7; }
-.mjx-home .status-compact { border-color:var(--mjx-border); background:#fff; border-radius:16px; }
-.mjx-home .progress-bar-fill { background:linear-gradient(90deg,var(--mjx-accent),#df6c9d); }
-.mjx-home .map-button { border-radius:13px; }
-.mjx-home .mjx-policy-spotlight { background:#fff; border:1px solid var(--mjx-border); border-left:5px solid var(--mjx-accent); border-radius:18px; padding:23px 26px; display:flex; justify-content:space-between; gap:20px; align-items:center; margin:0 0 43px; box-shadow:var(--mjx-shadow); }
-.mjx-home .mjx-policy-spotlight .eyebrow { color:var(--mjx-accent); font-weight:800; font-size:.72rem; letter-spacing:.14em; }
-.mjx-home .mjx-policy-spotlight h2 { font-size:1.25rem; margin:5px 0 7px; }
-.mjx-home .mjx-policy-spotlight p { color:var(--mjx-muted); margin:0; font-size:.89rem; line-height:1.8; }
-.mjx-home footer { background:#151d2a; }
-@media (max-width:900px) {
-  .mjx-route-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .mjx-home .navbar { padding:12px 20px; flex-wrap:wrap; }
-  .mjx-home .nav-links { gap:0; }
-}
-@media (max-width:640px) {
-  .mjx-topbar-inner { padding:10px 15px; align-items:flex-start; flex-wrap:wrap; gap:7px; }
-  .mjx-toplinks { width:100%; gap:2px; overflow-x:auto; flex-wrap:nowrap; scrollbar-width:thin; padding-bottom:2px; }
-  .mjx-toplinks a { white-space:nowrap; padding:8px 10px; font-size:.76rem; }
-  .mjx-brand { font-size:.87rem; }
-  .mjx-brand-mark { height:32px; width:32px; border-radius:9px; }
-  .mjx-hero-inner, .mjx-index .mjx-hero-inner, .mjx-guide .mjx-hero-inner { padding:43px 19px 45px; }
-  .mjx-hero p { font-size:.94rem; }
-  .mjx-landing-content { padding:29px 16px 46px; }
-  .mjx-route-grid { grid-template-columns:1fr; }
-  .mjx-route-card { min-height:212px; padding:23px; }
-  .mjx-route-card .mjx-route-open { padding-top:15px; }
-  .mjx-alert { margin:16px 15px; padding:18px; }
-  .mjx-guide .mjx-alert { margin:16px 15px; }
-  .mjx-guide .mjx-guide-nav { position:relative; top:auto; }
-  .mjx-guide .nav-container { padding:9px 15px; }
-  .mjx-guide .language-switcher { padding:0 15px; }
-  .mjx-guide > .container { padding:0 15px; margin-top:16px; }
-  .mjx-guide .card { padding:21px 19px; border-radius:16px; margin-bottom:14px; scroll-margin-top:15px; }
-  .mjx-guide .section-header { font-size:1.15rem; }
-  .mjx-guide .community-grid { grid-template-columns:1fr; }
-  .mjx-guide .language-switcher-card { padding:11px 13px; }
-  .mjx-guide .language-switcher-label { font-size:.77rem; }
-  .mjx-guide .language-switcher a { padding:8px 11px; }
-  .mjx-page-footer { margin-top:28px; }
-  .mjx-home .navbar { align-items:flex-start; }
-  .mjx-home .nav-links { width:100%; flex-wrap:nowrap; overflow-x:auto; }
-  .mjx-home .nav-links a { white-space:nowrap; }
-  .mjx-home .hero-content { padding:26px 20px; }
-  .mjx-home .mjx-policy-spotlight { margin:5px 0 25px; padding:19px; flex-direction:column; align-items:flex-start; }
-}
-@media(prefers-reduced-motion:reduce) {
-  html { scroll-behavior:auto; }
-  *,*::before,*::after { transition-duration:.01ms!important; animation-duration:.01ms!important; }
-}
-@media print {
-  .mjx-topbar,.mjx-guide-nav,.mjx-skip,.mjx-page-footer,.mjx-guide .back-to-top { display:none!important; }
-  .mjx-guide .card { box-shadow:none; break-inside:avoid; }
-}
-
-/* MJX adaptive layout: desktop >=1025 / tablet 701–1024 / phone <=700 */
+/* Only shared navigation and public portal styles belong in this file.
+   About pages and the Flask homepage have their own self-contained styles. */
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-padding-top:80px}
-body{min-width:0}
-:where(main,section,article,header,footer,nav,.mjx-topbar-inner,.mjx-toplinks,.mjx-route-card){min-width:0}
+html{margin:0;scroll-padding-top:88px}
+body{margin:0;min-width:0}
 :where(img,video,iframe,svg){max-width:100%}
-:where(.mjx-route-card,.mjx-hero,.mjx-alert,.mjx-guide .card,.mjx-regulations .rule,.mjx-home .mission-card){overflow-wrap:anywhere}
+:where(.mjx-topbar-inner,.mjx-toplinks,.mjx-route-card,.mjx-action){min-width:0}
 .mjx-action{min-height:44px;max-width:100%;white-space:normal;text-align:center}
-.mjx-topbar-inner,.mjx-toplinks,.mjx-home .navbar .nav-links{min-width:0}
-.mjx-toplinks a{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
-.mjx-guide .nav-container a{min-height:44px;display:inline-flex;align-items:center}
-.mjx-home .navbar .nav-links li{margin:0;padding:0}
-.mjx-home .navbar .nav-links a{display:inline-flex;align-items:center;min-height:44px}
-.mjx-home .mjx-policy-spotlight .mjx-action{flex-shrink:0}
-.mjx-home .map-button,.mjx-home .discord-box{min-height:44px}
-.mjx-home .table-wrap,.mjx-home .table-responsive{max-width:100%;overflow-x:auto}
-.mjx-regulations .rule,.mjx-regulations .quicklinks,.mjx-regulations .quicklinks-list{min-width:0}
-.mjx-regulations .rule h3,.mjx-regulations .rule-details{overflow-wrap:anywhere}
-.mjx-regulations .rule-label{max-width:100%;line-height:1.55}
-.mjx-regulations .quicklinks-list a,.mjx-regulations .fulltext-link{min-height:44px}
-.mjx-regulations .fulltext-link{max-width:100%}
-.mjx-regulations .rule-details p{font-size:.88rem}
+.mjx-brand-mark{flex-shrink:0}
+.mjx-toplinks a{min-height:44px;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
+.mjx-route-card{overflow-wrap:anywhere}
+.mjx-page-footer .mjx-footer-inner>*{min-width:0;overflow-wrap:anywhere}
 @media(min-width:1025px){
  .mjx-route-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
- .mjx-regulations .rule-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .mjx-topbar-inner,.mjx-home .navbar{flex-wrap:nowrap}
+ .mjx-topbar-inner{flex-wrap:nowrap}
 }
 @media(min-width:701px) and (max-width:1024px){
  html{scroll-padding-top:114px}
  .mjx-topbar-inner{flex-wrap:wrap;gap:5px;padding:12px 22px 9px}
- .mjx-topbar-inner>nav.mjx-toplinks{width:100%;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;flex-wrap:nowrap;scrollbar-width:thin;gap:7px}
- .mjx-toplinks a{white-space:nowrap;flex-shrink:0}
+ .mjx-topbar-inner>nav.mjx-toplinks{width:100%;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;flex-wrap:nowrap;scrollbar-width:thin;gap:6px}
+ .mjx-toplinks a{flex-shrink:0}
  .mjx-hero-inner,.mjx-index .mjx-hero-inner{padding:57px 30px 59px}
  .mjx-landing-content{padding:36px 30px 56px}
  .mjx-route-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
- .mjx-route-card{padding:23px;min-height:225px}
- .mjx-guide .mjx-guide-nav{position:relative;top:auto}
- .mjx-guide .mjx-hero-inner{padding:52px 30px 50px}
- .mjx-guide>.container{padding-left:30px;padding-right:30px}
- .mjx-guide .card{scroll-margin-top:114px}
- .mjx-guide .community-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .mjx-guide .mjx-alert{margin-left:30px;margin-right:30px}
- .mjx-home .navbar{flex-wrap:wrap;gap:5px;padding:12px 22px}
- .mjx-home .navbar .nav-links{width:100%;max-width:100%;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;gap:6px}
- .mjx-home .navbar .nav-links li{flex-shrink:0}
- .mjx-home .hero{min-height:400px;height:min(62vh,620px)}
- .mjx-home .hero-content{max-width:min(760px,90vw)}
- .mjx-home .container{max-width:100%;width:auto;padding:0 30px}
- .mjx-home .intro-grid,.mjx-home .feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .mjx-home .mjx-policy-spotlight{flex-wrap:wrap}
- .mjx-regulations .hero-inner{padding:57px 30px 50px}
- .mjx-regulations .wrap{padding:34px 30px 65px}
- .mjx-regulations .rule-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .mjx-regulations .rule{padding:23px;scroll-margin-top:114px}
- .mjx-regulations .controls{max-width:100%}
-}
-@media(min-width:701px) and (max-width:860px){
- .mjx-guide .community-grid,.mjx-regulations .rule-grid,.mjx-home .intro-grid{grid-template-columns:1fr}
- .mjx-regulations .search{width:min(350px,100%)}
+ .mjx-route-card{min-height:225px;padding:23px}
 }
 @media(max-width:700px){
- html{scroll-padding-top:112px}
- .mjx-topbar{position:sticky;top:0}
+ html{scroll-padding-top:114px}
  .mjx-topbar-inner{padding:9px max(14px,env(safe-area-inset-right)) 9px max(14px,env(safe-area-inset-left));flex-wrap:wrap;gap:5px}
- .mjx-brand{max-width:100%;font-size:.86rem;line-height:1.3}
- .mjx-brand-mark{width:32px;height:32px;flex-shrink:0}
+ .mjx-brand{font-size:.86rem;max-width:100%}
+ .mjx-brand-mark{height:32px;width:32px}
  .mjx-topbar-inner>nav.mjx-toplinks{width:100%;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;flex-wrap:nowrap;scrollbar-width:thin;gap:4px;padding:1px 0 3px}
- .mjx-toplinks a{flex-shrink:0;white-space:nowrap;padding:8px 11px;font-size:.8rem}
- .mjx-hero-inner,.mjx-index .mjx-hero-inner,.mjx-guide .mjx-hero-inner{padding:39px 18px 43px}
- .mjx-hero h1{font-size:clamp(1.8rem,7vw,2.45rem);overflow-wrap:anywhere}
+ .mjx-toplinks a{flex-shrink:0;padding:8px 11px;font-size:.8rem}
+ .mjx-hero-inner,.mjx-index .mjx-hero-inner{padding:39px 18px 43px}
+ .mjx-hero h1{font-size:clamp(1.8rem,7vw,2.45rem)}
  .mjx-hero p{font-size:.94rem;line-height:1.85}
  .mjx-hero-actions{gap:9px;margin-top:22px}
  .mjx-action{padding:10px 15px;font-size:.87rem}
@@ -314,83 +110,20 @@ body{min-width:0}
  .mjx-route-card{min-height:0;padding:22px 20px}
  .mjx-route-card h2{font-size:1.2rem;margin:12px 0 7px}
  .mjx-disclaimer{padding:18px 17px}
- .mjx-page-footer{padding:24px max(16px,env(safe-area-inset-right)) 24px max(16px,env(safe-area-inset-left))}
- .mjx-guide .mjx-guide-nav{position:relative;top:auto}
- .mjx-guide .nav-container{padding:6px 15px;overflow-x:auto;gap:6px}
- .mjx-guide .nav-container a{flex-shrink:0}
- .mjx-guide .mjx-alert{margin:16px;padding:18px}
- .mjx-guide>.container{padding:0 16px;margin:16px auto 0}
- .mjx-guide .card{padding:21px 19px;margin-bottom:14px;scroll-margin-top:110px}
- .mjx-guide .community-grid{grid-template-columns:minmax(0,1fr)}
- .mjx-guide .section-header{font-size:1.12rem}
- .mjx-guide .footer-banner{padding:25px 16px}
- .mjx-guide .footer-slogan{font-size:1.1rem;overflow-wrap:anywhere}
- .mjx-guide .back-to-top{right:max(14px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom))}
- .mjx-home .navbar{padding:10px 16px;gap:5px}
- .mjx-home .navbar .nav-links{width:100%;max-width:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;overscroll-behavior-x:contain;gap:4px}
- .mjx-home .navbar .nav-links li{flex-shrink:0}
- .mjx-home .hero{height:51vh;min-height:320px;max-height:490px}
- .mjx-home .hero-content{width:calc(100% - 28px);padding:24px 17px}
- .mjx-home .hero h1{font-size:clamp(1.8rem,7vw,2.65rem)}
- .mjx-home .discord-box{max-width:calc(100% - 32px)}
- .mjx-home .container{width:auto;max-width:100%;padding:0 16px;margin-top:29px}
- .mjx-home .intro-grid,.mjx-home .feature-grid,.mjx-home .mission-grid,.mjx-home .article-grid,.mjx-home .map-grid{grid-template-columns:minmax(0,1fr)}
- .mjx-home .intro-photo-wide{height:210px}
- .mjx-home .status-compact{gap:15px;justify-content:flex-start}
- .mjx-home .mjx-policy-spotlight{flex-direction:column;align-items:stretch;padding:20px 17px;gap:12px}
- .mjx-home .mjx-policy-spotlight .mjx-action{width:100%}
- .mjx-home .map-button{display:block;padding:17px}
- .mjx-regulations .hero-inner{padding:42px 18px 43px}
- .mjx-regulations .hero h1{font-size:clamp(1.95rem,7vw,2.65rem)}
- .mjx-regulations .hero-stats{gap:7px;margin-top:22px}
- .mjx-regulations .stat{padding:9px 12px;font-size:.77rem}
- .mjx-regulations .stat b{font-size:1.18rem}
- .mjx-regulations .wrap{padding:23px 16px 55px}
- .mjx-regulations .notice{padding:19px 17px;margin-bottom:22px}
- .mjx-regulations .rule-grid{grid-template-columns:minmax(0,1fr);gap:14px}
- .mjx-regulations .rule{padding:21px 18px;scroll-margin-top:110px}
- .mjx-regulations .rule-label{font-size:.72rem}
- .mjx-regulations .rule h3{font-size:1.21rem}
- .mjx-regulations .tools{gap:14px}
- .mjx-regulations .controls{width:100%;min-width:0;gap:7px}
- .mjx-regulations .search{flex:1 0 100%;width:100%;min-height:44px;font-size:1rem}
- .mjx-regulations .filter{min-height:44px;padding:9px 14px}
- .mjx-regulations .quicklinks-list{overflow-x:auto;width:100%}
- .mjx-regulations .fulltext-actions{flex-direction:column;align-items:stretch}
- .mjx-regulations .fulltext-link{width:100%;justify-content:space-between}
- .mjx-regulations .footer-note{padding:20px 17px}
+ .mjx-alert{padding:18px;margin:16px}
+ .mjx-page-footer{margin-top:28px;padding:24px max(16px,env(safe-area-inset-right)) 24px max(16px,env(safe-area-inset-left))}
 }
 @media(max-width:360px){
  .mjx-toplinks a{padding:8px 9px;font-size:.77rem}
- .mjx-regulations .rule{padding:18px 15px}
- .mjx-regulations .rule h3{font-size:1.13rem}
- .mjx-regulations .rule-number{font-size:1.48rem}
- .mjx-regulations .rule-label{font-size:.68rem}
- .mjx-regulations .filter{padding:9px 11px;font-size:.77rem}
  .mjx-index .mjx-hero-actions .mjx-action{flex:1 1 100%}
- .mjx-guide .card{padding:18px 15px}
- .mjx-home .navbar{padding:9px 13px}
 }
-@media(max-height:460px) and (orientation:landscape){
- .mjx-home .hero{height:auto;min-height:280px;max-height:none}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
 @media(hover:none){
  .mjx-route-card:hover,.mjx-action:hover{transform:none}
 }
 @media print{
- .mjx-regulations .quicklinks{display:none}
-}
-
-/* Explicit page reset: the original guide stylesheet had removed body margins.
-   Without this reset the browser inserts an 8px border around the whole page. */
-html { margin: 0; }
-body.mjx-guide, body.mjx-index, body.mjx-regulations { margin: 0; width: 100%; }
-body.mjx-guide .mjx-topbar,body.mjx-guide .mjx-page-footer { width: 100%; }
-body.mjx-guide #closing { display: block; width: 100%; }
-body.mjx-guide #closing .footer-banner { width: 100%; }
-body.mjx-guide .closing-heading { display: block; text-align: center; color: #fff; }
-body.mjx-guide .footer-slogan { text-align: center; }
-body.mjx-guide .back-to-top { position: fixed; left: auto; right: 22px; bottom: 22px; }
-@media(max-width:700px) {
- body.mjx-guide .back-to-top { left: auto; right: max(14px, env(safe-area-inset-right)); bottom: max(14px, env(safe-area-inset-bottom)); }
+ .mjx-topbar,.mjx-skip,.mjx-page-footer{display:none!important}
 }
