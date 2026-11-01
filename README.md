@@ -86,3 +86,10 @@ The English regulations page shows both the Japanese original PDF and its Englis
 - 元の50ページ承認版PDFは `regulations/source-original/` に保管し、毎回そこから55ページ版を再構成する。
 - ロゴのXマークと文字列全体を含む画像範囲へ変更し、7規定の最終ページのみ右下安全領域に配置。
 - 公開更新前のGitHub Actionsで7箇所をPDFレンダリングし、ロゴ画素数と上下左右の余白を検査する。
+
+## Searchable PDFs and page numbering (November 1, 2026)
+- The official Japanese PDF originals remain archived under `regulations/source-original/`.
+- The published 55-page PDF has sequential page numbers (including seven cover pages), plus PDF bookmarks for all seven regulations.
+- The 14 image-only pages of General Server Rules and Builder Regulations gain a Tesseract OCR **search layer**. The visible printed Japanese provisions are not changed.
+- **OCR results have not been proofread**; copied/search text may contain recognition errors and must not substitute for the visible original when interpreting regulations.
+- The workflow runs `scripts/make_mjx_searchable.py` after the layout generator, then publishes the split PDF files and validates all 55 page labels, OCR layers, and logo margins.
