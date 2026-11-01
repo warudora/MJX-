@@ -59,8 +59,8 @@ def publish():
         number=f"{num} / 55"
         x=(page.rect.width-fitz.get_text_length(number,fontname="helv",fontsize=7.8))/2
         page.insert_text((x,812),number,fontname="helv",fontsize=7.8,color=(.42,.47,.54))
-        if num in ENDS and num not in (52, 55):
-            # Pages 52 and 55 already contain the original logo; avoid a duplicate.
+        if num in ENDS:
+            # Add one correctly sized logo; obsolete duplicates are removed during reflow.
             page.insert_image(fitz.Rect(444,685,538,760),stream=logo_png,keep_proportion=True,overlay=True)
     output.set_toc([[1,f"{i:02d}  {NAMES[i-1][:-4]}",START[i-1]] for i in range(1,8)])
     output.save(root/"MJX_all_seven_regulations_2026-11-01.pdf",garbage=4,deflate=True)

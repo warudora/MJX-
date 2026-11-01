@@ -36,6 +36,18 @@ def reflow(source):
     for number in range(1, 56):
         if number not in FRAGMENTS:
             revised.insert_pdf(source, from_page=number - 1, to_page=number - 1)
+            if number == 52:
+                # Source material contains an obsolete second logo underneath
+                # the footer. Keep the standardized logo at 685..760 only.
+                page = revised[-1]
+                page.draw_rect(
+                    fitz.Rect(424, 770, 572, 835),
+                    color=None, fill=(1, 1, 1), overlay=True
+                )
+                page.draw_line(
+                    (424, 785.89), (552, 785.89),
+                    color=(.86, .89, .92), width=.65
+                )
             continue
         page = revised.new_page(width=595.276, height=841.89)
         header = fitz.Rect(0, 0, 595.276, 56)
