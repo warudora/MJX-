@@ -36,22 +36,22 @@ a{color:var(--accent)}a:hover{text-decoration-thickness:2px}button,input{font:in
 .controls{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
 .search{width:min(350px,75vw);padding:12px 15px;border:1px solid #cbd3dc;border-radius:12px;outline:0;background:#fff}
 .search:focus{border-color:var(--accent);box-shadow:0 0 0 3px #f5cee1}
-.filter{background:#fff;color:var(--ink);border:1px solid var(--line);padding:11px 14px;border-radius:12px;cursor:pointer;font-weight:700;font-size:.82rem}
+.filter{min-height:44px;background:#fff;color:var(--ink);border:1px solid var(--line);padding:11px 14px;border-radius:12px;cursor:pointer;font-weight:700;font-size:.82rem}
 .filter[aria-pressed="true"]{color:var(--accent);background:var(--soft);border-color:#ecafcb}
 .rule-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 .rule{min-width:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:27px 28px 23px;scroll-margin-top:95px;display:flex;flex-direction:column}
 .rule:target{outline:3px solid #efc2d5}.rule[hidden]{display:none}
-.rule-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
-.rule-number{font-size:1.8rem;font-weight:800;color:var(--accent);letter-spacing:-.07em;line-height:1}.rule-number span{color:#a9adb5;font-size:.8rem;letter-spacing:0}
+.rule-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
+.rule-number{font-size:1.8rem;font-weight:800;color:var(--accent);letter-spacing:-.07em;line-height:1}.rule-number span{color:#64748b;font-size:.8rem;letter-spacing:0}
 .rule-label{font-size:.72rem;border:1px solid var(--line);border-radius:99px;padding:4px 10px;color:#586272;font-weight:700;text-align:center}
-.rule h3{font-size:clamp(1.16rem,2vw,1.45rem);margin:18px 0 1px;line-height:1.5}.english{font-size:.78rem;color:#87909d;margin:0 0 16px}
+.rule h3{font-size:clamp(1.16rem,2vw,1.45rem);margin:18px 0 1px;line-height:1.5}.english{font-size:.78rem;color:#566579;margin:0 0 16px}
 .desc{margin:0;color:#4b596a;font-size:.91rem;line-height:1.9}
-.meta{border-top:1px solid var(--line);margin-top:24px;padding-top:15px;display:flex;gap:6px 14px;flex-wrap:wrap;color:#697586;font-size:.74rem}
-.rule details{margin-top:auto;padding-top:19px}.rule summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;border-radius:10px;background:var(--soft);color:#8e0046;padding:12px 14px;cursor:pointer;font-weight:800;font-size:.87rem}
+.meta{border-top:1px solid var(--line);margin-top:24px;padding-top:15px;display:flex;gap:6px 14px;flex-wrap:wrap;color:#586678;font-size:.74rem}
+.rule details{margin-top:auto;padding-top:19px}.rule summary{list-style:none;min-height:44px;display:flex;align-items:center;justify-content:space-between;gap:10px;border-radius:10px;background:var(--soft);color:#8e0046;padding:12px 14px;cursor:pointer;font-weight:800;font-size:.87rem}
 .rule summary::-webkit-details-marker{display:none}.rule summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .expand-mark{font-size:1.2rem;line-height:1}.rule details[open] .expand-mark{transform:rotate(45deg)}
 .rule-details{padding:5px 3px}.rule-details section{padding:13px 0;border-bottom:1px solid #eff1f3}.rule-details h4{font-size:.87rem;margin:0 0 3px}.rule-details p{color:#526072;font-size:.84rem;line-height:1.9;margin:0}
-.rule-details .subtle{font-size:.73rem;color:#798493;margin-top:16px}
+.rule-details .subtle{font-size:.78rem;color:#5a6777;margin-top:16px}
 .empty{display:none;padding:35px;text-align:center;color:var(--muted)}.empty.show{display:block}
 .footer-note{margin-top:35px;padding:24px;border-radius:15px;background:#fff;border:1px solid var(--line);color:#596476;font-size:.88rem}
 .footer-note h2{margin:0 0 10px;color:var(--ink);font-size:1.05rem}.footer-note p{margin:8px 0}
@@ -59,13 +59,22 @@ footer{background:#141b27;color:#c3ccd8;padding:27px 24px;font-size:.82rem}foote
 footer a{color:#fff}
 @media(max-width:830px){.rule-grid{grid-template-columns:1fr}.toplinks{gap:9px}.toplinks a{font-size:.74rem}}
 @media(max-width:560px){.hero-inner{padding:49px 20px 44px}.wrap{padding:28px 15px 65px}.rule{padding:23px 20px}.topbar-inner{padding:10px 15px}.brand span:last-child{font-size:.82rem}.toplinks a{font-size:.68rem}.hero-stats{gap:8px}.stat{padding:10px 12px}.tools{align-items:stretch}.controls{width:100%}.search{width:100%}}
-@media print{.topbar,.controls,.rule summary,.hero-stats{display:none!important}body{background:#fff}.hero-inner{padding:20px}.wrap{padding:10px}.rule-grid{display:block}.rule{break-inside:avoid;margin-bottom:15px;box-shadow:none}.rule details{display:none}.footer-note{break-inside:avoid}}
+@media print{.topbar,.controls,.rule summary,.hero-stats{display:none!important}body{background:#fff}.hero-inner{padding:20px}.wrap{padding:10px}.rule-grid{display:block}.rule{break-inside:avoid;margin-bottom:15px;box-shadow:none}.rule details{display:block}.rule details .rule-details{display:block!important}.rule-details section{break-inside:avoid}.footer-note{break-inside:avoid}}
 
 .fulltext-actions{margin-top:18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .fulltext-link{display:inline-flex;gap:11px;align-items:center;justify-content:space-between;padding:11px 17px;background:#b40056;border:1px solid #b40056;border-radius:11px;color:#fff;text-decoration:none;font-weight:800;font-size:.86rem;transition:background .2s,transform .2s}
 .fulltext-link:hover,.fulltext-link:focus-visible{background:#89003f;color:#fff;transform:translateY(-1px)}
-.fulltext-hint{color:#738092;font-size:.76rem}
+.fulltext-hint{color:#566579;font-size:.76rem}
 @media(max-width:560px){.fulltext-link{width:100%}.fulltext-actions{align-items:stretch;flex-direction:column}}
+
+/* Quick access links keep seven long documents easy to navigate, even on narrow screens. */
+.quicklinks{display:flex;align-items:center;gap:10px;padding:13px 0 21px;margin:0 0 20px;border-bottom:1px solid var(--line)}
+.quicklinks-label{font-size:.82rem;font-weight:800;color:#526074;flex-shrink:0}
+.quicklinks-list{display:flex;gap:8px;overflow-x:auto;padding:4px 2px;scrollbar-width:thin}
+.quicklinks-list a{flex-shrink:0;min-height:39px;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:10px;border:1px solid var(--line);color:#3c5063;background:#fff;text-decoration:none;font-size:.81rem;font-weight:700}
+.quicklinks-list a:hover,.quicklinks-list a:focus-visible{border-color:#ebb5cf;background:var(--soft);color:#89003f}
+@media(max-width:560px){.quicklinks{align-items:flex-start;flex-direction:column;gap:5px}.quicklinks-list{width:100%}.rule-label{max-width:100%;overflow-wrap:anywhere}.rule{scroll-margin-top:100px}}
+@media print{.quicklinks{display:none}}
 </style>
 <link rel="stylesheet" href="mjx-theme.css">
 </head>
@@ -76,6 +85,11 @@ footer a{color:#fff}
 <div class="hero-stats"><div class="stat"><b>07</b> 規定文書</div><div class="stat"><b>04</b> 現行・原文維持</div><div class="stat"><b>03</b> 承認済み・施行日未指定</div></div></div></header>
 <main class="wrap" id="main-content">
 <section class="notice" aria-label="重要な注意事項"><h2>承認日と施行日は異なります</h2><p>文書④リソースパック統一規約、⑤プライバシーポリシー、⑦ビジター向けルールは、2026年11月1日に改訂・修正が承認されました。ただし、PDFには施行日が指定されていません。運営が正式に周知するまでは、これらの改訂内容が直ちに現行規定へ切り替わったものとして扱いません。</p><p>このページは<strong>原文を置き換えるものではなく、公式規定集の目次・要点案内</strong>です。各規定カードの「全文を読む」から、承認版PDFから該当文書を抽出した原文を参照できます。詳細な条文・例外・附則は、運営配布の「MJX 規定集 全7文書（承認版）」PDF原本を確認してください。</p></section>
+<nav class="quicklinks" aria-label="規定別の目次"><span class="quicklinks-label">文書を選ぶ</span><div class="quicklinks-list">
+<a href="#doc-01">01 映画館</a><a href="#doc-02">02 共通</a><a href="#doc-03">03 Builder</a>
+<a href="#doc-04">04 リソースパック</a><a href="#doc-05">05 プライバシー</a>
+<a href="#doc-06">06 経済</a><a href="#doc-07">07 Visitor</a>
+</div></nav>
 <div class="tools"><div><h2>規定一覧</h2><p id="result-count" aria-live="polite">7件の規定を表示中</p></div><div class="controls"><label for="search" class="sr" style="position:absolute;left:-9999px">規定を検索</label><input class="search" type="search" id="search" placeholder="規定名・キーワードで検索" autocomplete="off"><button type="button" class="filter" data-filter="all" aria-pressed="true">すべて</button><button type="button" class="filter" data-filter="active" aria-pressed="false">現行</button><button type="button" class="filter" data-filter="approved" aria-pressed="false">承認済み</button></div></div>
 <div class="rule-grid" id="rules"><article class="rule" id="doc-01" data-status="active" data-search="映画館システム利用ポリシー cinema system usage policy 映画館システムにおける映像・音声コンテンツの権利、利用条件、禁止事項、運営対応を定めます。 第1〜2条｜目的・利用可能なコンテンツ 自作で必要な権利を保有するもの、権利者から必要な許可を得たもの、利用条件上上映可能なもの、運営が承認したものが利用対象です。 第3〜4条｜禁止事項・youtube 映画・アニメ・有料配信作品の無断上映、違法アップロードの利用、アクセス制限やコピー防止措置の回避等は禁止。youtubeで一般公開されているだけではmjx内での上映・再配信は許可されません。 第5〜8条｜管理・措置・免責・改定 管理者の保守・イベント対応にも法令と利用規約が適用されます。違反時は再生停止・利用制限等の措置があり、障害等による不具合についても法令上免除できない責任は免除されません。">
  <div class="rule-head"><div class="rule-number">01 <span>/ 07</span></div><div class="rule-label">現行規定・原文維持</div></div>
@@ -167,6 +181,14 @@ footer a{color:#fff}
     render();
   }));
   input.addEventListener("input",render);
+  let printOpenStates=[];
+  window.addEventListener("beforeprint",()=>{
+    printOpenStates=cards.map(c=>c.querySelector("details")?.open||false);
+    cards.forEach(c=>{const details=c.querySelector("details");if(details)details.open=true;});
+  });
+  window.addEventListener("afterprint",()=>{
+    cards.forEach((c,i)=>{const details=c.querySelector("details");if(details)details.open=!!printOpenStates[i];});
+  });
   render();
 })();
 </script>
