@@ -5,6 +5,7 @@ on:
       - .github/workflows/publish-mjx-regulations.yml
       - scripts/publish_mjx_regulations.py
       - scripts/make_mjx_searchable.py
+      - scripts/reflow_mjx_pages.py
   workflow_dispatch:
 permissions:
   contents: write
@@ -26,6 +27,7 @@ jobs:
       - name: Rebuild, split and validate PDFs
         run: |
           python scripts/publish_mjx_regulations.py
+          python scripts/reflow_mjx_pages.py
           python scripts/make_mjx_searchable.py
           python - <<'PY'
           from pathlib import Path
@@ -38,6 +40,18 @@ jobs:
           with fitz.open('MJX_all_seven_regulations_2026-11-01.pdf') as doc:
               assert len(doc)==55
               assert len(doc.get_toc())==7
+              # Moving list items must not leave an isolated first/last point.
+              checks = {
+                  49: ('第38', 'ゲームバランス'),
+                  50: ('第42', '改正を指示'),
+                  51: ('第43', '第44'),
+                  54: ('お金の稼ぎ方', 'その他、認められた仕事'),
+                  55: ('お金の使い道', 'ポイントとコインの変換'),
+              }
+              for number, needles in checks.items():
+                  content=doc[number-1].get_text().replace(' ', '')
+                  assert all(word.replace(' ', '') in content for word in needles), (number,needles)
+
               for index in range(55):
                   page=doc[index]
                   text=page.get_text()

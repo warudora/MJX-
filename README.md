@@ -93,3 +93,10 @@ The English regulations page shows both the Japanese original PDF and its Englis
 - The 14 image-only pages of General Server Rules and Builder Regulations gain a Tesseract OCR **search layer**. The visible printed Japanese provisions are not changed.
 - **OCR results have not been proofread**; copied/search text may contain recognition errors and must not substitute for the visible original when interpreting regulations.
 - The workflow runs `scripts/make_mjx_searchable.py` after the layout generator, then publishes the split PDF files and validates all 55 page labels, OCR layers, and logo margins.
+
+## 2026-11-01: 49–51・54–55ページの改ページ修正
+- 経済規定の第38条第5項と第42条第3項が孤立しないよう、それぞれ49・50ページにまとめる。
+- ビジター規定の「2. お金の稼ぎ方」の見出しと内容を54ページにまとめ、55ページは「3. お金の使い道」から始める。
+- PDF本文はページ間移動のみ（画像OCRや文字の書き直しなし）。対象のページ群について本文単語の欠落・重複を自動検査。
+- 52・55ページで元の小さなロゴに大きなロゴが重複していたため、自動追加を除外。ページ番号55ページと原文7分割の範囲は維持。
+- 自動生成順序：承認済み原本から組版 → 指定5ページの改ページ調整 → OCR文字層とページ番号を再作成 → GitHub公開。
