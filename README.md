@@ -80,3 +80,9 @@ The seven English summaries are kept as **separate reference PDFs**, not as tran
 - 07 Visitor Rules: `regulations/english/07-07-visitor-rules-summary-en.pdf`
 
 The English regulations page shows both the Japanese original PDF and its English reference summary PDF. Revisions 04, 05, and 07 remain **approved but without announced effective dates**. Complete, clause-by-clause certified English translations have not been produced; the scanned original pages require additional verification before such translations could be published.
+
+## 右下ロゴの欠け修正（2026-11-01）
+- 不完全なロゴの原因は、PDF再生成処理のロゴ切り出し範囲（元画像の右側を欠落させる位置）にあった。
+- 元の50ページ承認版PDFは `regulations/source-original/` に保管し、毎回そこから55ページ版を再構成する。
+- ロゴのXマークと文字列全体を含む画像範囲へ変更し、7規定の最終ページのみ右下安全領域に配置。
+- 公開更新前のGitHub Actionsで7箇所をPDFレンダリングし、ロゴ画素数と上下左右の余白を検査する。

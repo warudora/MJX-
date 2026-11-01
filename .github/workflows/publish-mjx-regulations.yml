@@ -32,7 +32,30 @@ jobs:
                   assert len(doc)==n,(name,len(doc),n)
           with fitz.open('MJX_all_seven_regulations_2026-11-01.pdf') as doc:
               assert len(doc)==55
-          print('Verified seven split files and 55-page combined PDF.')
+              for number in (4,9,20,28,34,52,55):
+                  # The bottom-right logo must occupy a complete, centered,
+                  # non-clipped region with margins on all four sides.
+                  pix=doc[number-1].get_pixmap(
+                      matrix=fitz.Matrix(2,2),
+                      clip=fitz.Rect(440,680,542,765),
+                      alpha=False
+                  )
+                  width,height,channels=pix.width,pix.height,pix.n
+                  samples=pix.samples
+                  pixels=[]
+                  for y in range(height):
+                      for x in range(width):
+                          k=(y*width+x)*channels
+                          r,g,b=samples[k],samples[k+1],samples[k+2]
+                          if r>120 and g<115 and b>40 and r>g*1.6:
+                              pixels.append((x,y))
+                  assert len(pixels)>1200,(number,"logo missing",len(pixels))
+                  left=min(p[0] for p in pixels)
+                  right=max(p[0] for p in pixels)
+                  top=min(p[1] for p in pixels)
+                  bottom=max(p[1] for p in pixels)
+                  assert left>8 and top>8 and right<width-9 and bottom<height-9,(number,"logo clipped",(left,top,right,bottom))
+          print('Verified seven split PDFs, 55 pages, and all seven unclipped logos.')
           PY
       - name: Replace published originals
         run: |
