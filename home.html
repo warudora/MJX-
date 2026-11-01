@@ -141,6 +141,11 @@ body.mjx-home{margin:0;min-width:0;background:#f6f7f9;color:var(--mjx-ink);font-
 .mjx-home .mjx-flask-language{display:inline-flex;align-items:center;gap:4px;padding:4px;border:1px solid #dfe5eb;border-radius:12px;white-space:nowrap}
 .mjx-home .mjx-flask-language a{min-height:36px;padding:6px 10px;border-radius:8px}
 .mjx-home .mjx-flask-language a.is-selected{color:#fff;background:#b40056}
+@media(max-width:1024px){
+.mjx-home .navbar>.logo{order:0}
+.mjx-home .navbar>.mjx-flask-language{order:1;margin-left:auto}
+.mjx-home .navbar>.nav-links{order:2}
+}
 @media(max-width:700px){.mjx-home .mjx-flask-language{flex-shrink:0}}
 </style>
 <!-- Self-contained style: this Jinja template may render without a static /mjx-theme.css route. -->
@@ -155,11 +160,12 @@ body.mjx-home{margin:0;min-width:0;background:#f6f7f9;color:var(--mjx-ink);font-
         <li><a href="{{ item.url }}">{{ item.name_en|default(item.name, true) if mjx_en else item.name }}</a></li>
         {% endfor %}
         <li><a href="{{ 'regulations-en.html' if mjx_en else 'regulations.html' }}" class="mjx-nav-policy">{{ 'Official Regulations' if mjx_en else '公式7規定' }}</a></li>
-        <li class="mjx-flask-language" aria-label="Language / 言語">
+        
+    </ul>
+    <div class="mjx-flask-language" aria-label="Language / 言語">
 <a href="{{ url_for('homepage.home', lang='ja') }}" data-mjx-home-switch="ja" lang="ja" {% if not mjx_en %}aria-current="true" class="is-selected"{% endif %}>日本語</a>
 <a href="{{ url_for('homepage.home', lang='en') }}" data-mjx-home-switch="en" lang="en" {% if mjx_en %}aria-current="true" class="is-selected"{% endif %}>English</a>
-</li>
-    </ul>
+</div>
 </nav>
 
 <header class="hero">
