@@ -112,3 +112,9 @@ The English regulations page shows both the Japanese original PDF and its Englis
 - Static Japanese/English home, regulations and About pages, and the Flask/Jinja homepage have favicon, app-icon and social meta tags.
 - The Flask homepage points its icons at the GitHub Pages asset URLs to avoid dependence on Flask static route configuration.
 - `assets/site.webmanifest` provides the installable web app icon metadata. App icon generation does not modify the legal regulation PDF logos.
+
+## 2026-11-01: オリジナル画像をそのまま使用
+- 前のベクタートレースとXマーク単独の切り抜きは使用しない。ユーザー提供の背景・X・「MTR Japan Nexus」の文字を含む**全体の構図**を、アイコン・ホーム画面・SNS画像に共通使用する。
+- サイト用の容量削減として元画像の構図を維持したWebPを `assets/original-logo/source-*.b64.txt` に保存し、`scripts/generate_brand_assets.py` でPNGとICOへ変換。小さいサイズへの縮小以外は切り抜き・再デザインしない。WebP変換は不可逆圧縮のため、ピクセル単位での元PNGの完全同一コピーではない。
+- 公開用SNS共有画像は正方形のまま（512×512）、X/Twitterカードも正方形向け表示にする。
+- `assets/mjx-logo.svg` と `assets/mjx-mark.svg` は過去版のため、HTMLから参照しない。規定PDFのロゴは変更しない。
