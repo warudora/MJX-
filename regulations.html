@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ad004f">
+<meta name="description" content="MTR Japan Nexusの公式7規定の一覧、適用状況、主要な内容。2026年11月1日承認版を基準に整理。">
+<title>公式7規定・適用状況 | MTR Japan Nexus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#b40056;--ink:#172132;--muted:#5f6b7b;--line:#dfe4e9;--paper:#fff;--back:#f6f7f8;--soft:#fdf1f6;--radius:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--back);color:var(--ink);font-family:Inter,"Noto Sans JP",sans-serif;line-height:1.8}
+a{color:var(--accent)}a:hover{text-decoration-thickness:2px}button,input{font:inherit}
+.topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.topbar-inner{max-width:1200px;padding:12px 24px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;text-decoration:none;color:var(--ink);letter-spacing:.02em}
+.mark{width:34px;height:34px;border-radius:10px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:800}
+.toplinks{display:flex;gap:18px;align-items:center;flex-wrap:wrap}.toplinks a{text-decoration:none;color:#4c5360;font-size:.86rem;font-weight:700}
+.toplinks .selected{color:var(--accent)}
+.hero{background:#fff;border-bottom:1px solid var(--line)}
+.hero-inner{max-width:1200px;margin:auto;padding:77px 24px 63px}
+.eyebrow{font-weight:800;color:var(--accent);letter-spacing:.17em;font-size:.77rem}
+.hero h1{font-size:clamp(2.15rem,5vw,4.2rem);line-height:1.27;letter-spacing:-.03em;margin:15px 0}
+.hero p{font-size:1.03rem;color:var(--muted);max-width:780px;margin:0}
+.redline{display:block;width:85px;height:5px;background:var(--accent);margin:27px 0;border-radius:20px}
+.hero-stats{margin-top:36px;display:flex;flex-wrap:wrap;gap:11px}
+.stat{border:1px solid var(--line);background:#fff;border-radius:12px;padding:13px 18px;display:flex;align-items:baseline;gap:9px;font-weight:600;color:var(--muted);font-size:.82rem}
+.stat b{font-size:1.45rem;color:var(--ink)}
+.wrap{max-width:1200px;margin:auto;padding:40px 24px 85px}
+.notice{border:1px solid #ebd0dc;border-left:5px solid var(--accent);background:#fff;border-radius:14px;padding:21px 24px;margin-bottom:28px}
+.notice h2{font-size:1.05rem;margin:0 0 7px}.notice p{margin:0;color:#445065;font-size:.91rem}
+.notice p+p{margin-top:8px}
+.tools{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:23px;flex-wrap:wrap}
+.tools h2{font-size:1.4rem;margin:0 0 2px}.tools p{font-size:.9rem;color:var(--muted);margin:0}
+.controls{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.search{width:min(350px,75vw);padding:12px 15px;border:1px solid #cbd3dc;border-radius:12px;outline:0;background:#fff}
+.search:focus{border-color:var(--accent);box-shadow:0 0 0 3px #f5cee1}
+.filter{background:#fff;color:var(--ink);border:1px solid var(--line);padding:11px 14px;border-radius:12px;cursor:pointer;font-weight:700;font-size:.82rem}
+.filter[aria-pressed="true"]{color:var(--accent);background:var(--soft);border-color:#ecafcb}
+.rule-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.rule{min-width:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:27px 28px 23px;scroll-margin-top:95px;display:flex;flex-direction:column}
+.rule:target{outline:3px solid #efc2d5}.rule[hidden]{display:none}
+.rule-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.rule-number{font-size:1.8rem;font-weight:800;color:var(--accent);letter-spacing:-.07em;line-height:1}.rule-number span{color:#a9adb5;font-size:.8rem;letter-spacing:0}
+.rule-label{font-size:.72rem;border:1px solid var(--line);border-radius:99px;padding:4px 10px;color:#586272;font-weight:700;text-align:center}
+.rule h3{font-size:clamp(1.16rem,2vw,1.45rem);margin:18px 0 1px;line-height:1.5}.english{font-size:.78rem;color:#87909d;margin:0 0 16px}
+.desc{margin:0;color:#4b596a;font-size:.91rem;line-height:1.9}
+.meta{border-top:1px solid var(--line);margin-top:24px;padding-top:15px;display:flex;gap:6px 14px;flex-wrap:wrap;color:#697586;font-size:.74rem}
+.rule details{margin-top:auto;padding-top:19px}.rule summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;border-radius:10px;background:var(--soft);color:#8e0046;padding:12px 14px;cursor:pointer;font-weight:800;font-size:.87rem}
+.rule summary::-webkit-details-marker{display:none}.rule summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.expand-mark{font-size:1.2rem;line-height:1}.rule details[open] .expand-mark{transform:rotate(45deg)}
+.rule-details{padding:5px 3px}.rule-details section{padding:13px 0;border-bottom:1px solid #eff1f3}.rule-details h4{font-size:.87rem;margin:0 0 3px}.rule-details p{color:#526072;font-size:.84rem;line-height:1.9;margin:0}
+.rule-details .subtle{font-size:.73rem;color:#798493;margin-top:16px}
+.empty{display:none;padding:35px;text-align:center;color:var(--muted)}.empty.show{display:block}
+.footer-note{margin-top:35px;padding:24px;border-radius:15px;background:#fff;border:1px solid var(--line);color:#596476;font-size:.88rem}
+.footer-note h2{margin:0 0 10px;color:var(--ink);font-size:1.05rem}.footer-note p{margin:8px 0}
+footer{background:#141b27;color:#c3ccd8;padding:27px 24px;font-size:.82rem}footer .inner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+footer a{color:#fff}
+@media(max-width:830px){.rule-grid{grid-template-columns:1fr}.toplinks{gap:9px}.toplinks a{font-size:.74rem}}
+@media(max-width:560px){.hero-inner{padding:49px 20px 44px}.wrap{padding:28px 15px 65px}.rule{padding:23px 20px}.topbar-inner{padding:10px 15px}.brand span:last-child{font-size:.82rem}.toplinks a{font-size:.68rem}.hero-stats{gap:8px}.stat{padding:10px 12px}.tools{align-items:stretch}.controls{width:100%}.search{width:100%}}
+@media print{.topbar,.controls,.rule summary,.hero-stats{display:none!important}body{background:#fff}.hero-inner{padding:20px}.wrap{padding:10px}.rule-grid{display:block}.rule{break-inside:avoid;margin-bottom:15px;box-shadow:none}.rule details{display:none}.footer-note{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-inner"><a class="brand" href="index.html"><span class="mark">X</span><span>MTR JAPAN NEXUS</span></a><nav class="toplinks" aria-label="ページ内ナビゲーション"><a href="index.html">ホーム</a><a class="selected" href="regulations.html" aria-current="page">公式7規定</a><a href="jp.html">参加ガイド</a><a href="en.html" lang="en">English</a></nav></div></div>
+<header class="hero"><div class="hero-inner"><div class="eyebrow">MJX / REGULATIONS / 2026.11.01</div><span class="redline"></span><h1>公式7規定<br>適用状況と内容</h1><p>MJXに参加するすべての人のための規定ガイド。2026年11月1日承認版50ページを基準に、各文書の目的、改訂状況、主要事項をまとめています。</p>
+<div class="hero-stats"><div class="stat"><b>07</b> 規定文書</div><div class="stat"><b>04</b> 現行・原文維持</div><div class="stat"><b>03</b> 承認済み・施行日未指定</div></div></div></header>
+<main class="wrap">
+<section class="notice" aria-label="重要な注意事項"><h2>承認日と施行日は異なります</h2><p>文書④リソースパック統一規約、⑤プライバシーポリシー、⑦ビジター向けルールは、2026年11月1日に改訂・修正が承認されました。ただし、PDFには施行日が指定されていません。運営が正式に周知するまでは、これらの改訂内容が直ちに現行規定へ切り替わったものとして扱いません。</p><p>このページは<strong>原文を置き換えるものではなく、公式規定集の目次・要点案内</strong>です。詳細な条文・例外・附則は、運営配布の「MJX 規定集 全7文書（承認版）」PDF原本を確認してください。</p></section>
+<div class="tools"><div><h2>規定一覧</h2><p id="result-count" aria-live="polite">7件の規定を表示中</p></div><div class="controls"><label for="search" class="sr" style="position:absolute;left:-9999px">規定を検索</label><input class="search" type="search" id="search" placeholder="規定名・キーワードで検索" autocomplete="off"><button type="button" class="filter" data-filter="all" aria-pressed="true">すべて</button><button type="button" class="filter" data-filter="active" aria-pressed="false">現行</button><button type="button" class="filter" data-filter="approved" aria-pressed="false">承認済み</button></div></div>
+<div class="rule-grid" id="rules"><article class="rule" id="doc-01" data-status="active" data-search="映画館システム利用ポリシー cinema system usage policy 映画館システムにおける映像・音声コンテンツの権利、利用条件、禁止事項、運営対応を定めます。 第1〜2条｜目的・利用可能なコンテンツ 自作で必要な権利を保有するもの、権利者から必要な許可を得たもの、利用条件上上映可能なもの、運営が承認したものが利用対象です。 第3〜4条｜禁止事項・youtube 映画・アニメ・有料配信作品の無断上映、違法アップロードの利用、アクセス制限やコピー防止措置の回避等は禁止。youtubeで一般公開されているだけではmjx内での上映・再配信は許可されません。 第5〜8条｜管理・措置・免責・改定 管理者の保守・イベント対応にも法令と利用規約が適用されます。違反時は再生停止・利用制限等の措置があり、障害等による不具合についても法令上免除できない責任は免除されません。">
+ <div class="rule-head"><div class="rule-number">01 <span>/ 07</span></div><div class="rule-label">現行規定・原文維持</div></div>
+ <h3>映画館システム利用ポリシー</h3><p class="english">Cinema System Usage Policy</p><p class="desc">映画館システムにおける映像・音声コンテンツの権利、利用条件、禁止事項、運営対応を定めます。</p>
+ <div class="meta"><span>2026年10月11日制定</span><span>全8条</span><span>原本 PDF 1–3 ページ</span></div>
+ <details><summary>主な内容を確認する <span class="expand-mark" aria-hidden="true">＋</span></summary>
+ <div class="rule-details"><section><h4>第1〜2条｜目的・利用可能なコンテンツ</h4><p>自作で必要な権利を保有するもの、権利者から必要な許可を得たもの、利用条件上上映可能なもの、運営が承認したものが利用対象です。</p></section><section><h4>第3〜4条｜禁止事項・YouTube</h4><p>映画・アニメ・有料配信作品の無断上映、違法アップロードの利用、アクセス制限やコピー防止措置の回避等は禁止。YouTubeで一般公開されているだけではMJX内での上映・再配信は許可されません。</p></section><section><h4>第5〜8条｜管理・措置・免責・改定</h4><p>管理者の保守・イベント対応にも法令と利用規約が適用されます。違反時は再生停止・利用制限等の措置があり、障害等による不具合についても法令上免除できない責任は免除されません。</p></section>
+ <p class="subtle">※ この画面は規定の案内・要約です。法的・運営上の判断には2026年11月1日承認版PDFの原文および現行の施行状況を確認してください。</p>
+ </div></details></article>
+<article class="rule" id="doc-02" data-status="active" data-search="共通サーバー規定 general server regulations 参加者全員に適用される基本規律。利用資格、禁止行為、情報、運営判断、処分と異議申し立て等を扱います。 第1〜6条｜適用・禁止行為・安全 法令、利用言語、迷惑行為、個人情報の取り扱い、スパムや危険なコンテンツ、広告・勧誘等について規定されています。 第7〜10条｜mgsa・複数アカウント・運営 mgsaとの連携、複数アカウントの利用、その他の不適切行為、運営者の遵守事項を定めています。 第11〜16条｜処分・異議・自動検出・変更 違反への対応、異議申し立て、自動検出システム、ルールの確認、改定、個別サービスごとの追加規定を扱います。">
+ <div class="rule-head"><div class="rule-number">02 <span>/ 07</span></div><div class="rule-label">現行規定・原文維持</div></div>
+ <h3>共通サーバー規定</h3><p class="english">General Server Regulations</p><p class="desc">参加者全員に適用される基本規律。利用資格、禁止行為、情報、運営判断、処分と異議申し立て等を扱います。</p>
+ <div class="meta"><span>2026年10月5日制定</span><span>前文・全16条・附則</span><span>原本 PDF 4–8 ページ</span></div>
+ <details><summary>主な内容を確認する <span class="expand-mark" aria-hidden="true">＋</span></summary>
+ <div class="rule-details"><section><h4>第1〜6条｜適用・禁止行為・安全</h4><p>法令、利用言語、迷惑行為、個人情報の取り扱い、スパムや危険なコンテンツ、広告・勧誘等について規定されています。</p></section><section><h4>第7〜10条｜MGSA・複数アカウント・運営</h4><p>MGSAとの連携、複数アカウントの利用、その他の不適切行為、運営者の遵守事項を定めています。</p></section><section><h4>第11〜16条｜処分・異議・自動検出・変更</h4><p>違反への対応、異議申し立て、自動検出システム、ルールの確認、改定、個別サービスごとの追加規定を扱います。</p></section>
+ <p class="subtle">※ この画面は規定の案内・要約です。法的・運営上の判断には2026年11月1日承認版PDFの原文および現行の施行状況を確認してください。</p>
+ </div></details></article>
+<article class="rule" id="doc-03" data-status="active" data-search="builder規定 builder regulations builderの資格と責務、開発・所有権、schematicの登録共有、活動休止、処分・紛争解決を定めます。 第1章｜総則（第1〜5条） builder資格、活動目的、基本権限、活動上の義務、運営との関係を規定します。 第2章｜開発と権利の管理（第6〜10条） 優先保存権、開発区域、所有者表示、schematicの登録・共有、create modと技術設備を扱います。 第3〜6章｜経済・休止・処分・補則（第11〜22条） 資源、業務委託、機密情報、禁止事項、活動状況、休職・長期休止・脱退、登録データ、処分と紛争解決、他規定との関係を定めます。">
+ <div class="rule-head"><div class="rule-number">03 <span>/ 07</span></div><div class="rule-label">現行規定・原文維持</div></div>
+ <h3>Builder規定</h3><p class="english">Builder Regulations</p><p class="desc">Builderの資格と責務、開発・所有権、Schematicの登録共有、活動休止、処分・紛争解決を定めます。</p>
+ <div class="meta"><span>2026年10月26日制定</span><span>全6章・22条・附則</span><span>原本 PDF 9–18 ページ</span></div>
+ <details><summary>主な内容を確認する <span class="expand-mark" aria-hidden="true">＋</span></summary>
+ <div class="rule-details"><section><h4>第1章｜総則（第1〜5条）</h4><p>Builder資格、活動目的、基本権限、活動上の義務、運営との関係を規定します。</p></section><section><h4>第2章｜開発と権利の管理（第6〜10条）</h4><p>優先保存権、開発区域、所有者表示、Schematicの登録・共有、Create Modと技術設備を扱います。</p></section><section><h4>第3〜6章｜経済・休止・処分・補則（第11〜22条）</h4><p>資源、業務委託、機密情報、禁止事項、活動状況、休職・長期休止・脱退、登録データ、処分と紛争解決、他規定との関係を定めます。</p></section>
+ <p class="subtle">※ この画面は規定の案内・要約です。法的・運営上の判断には2026年11月1日承認版PDFの原文および現行の施行状況を確認してください。</p>
+ </div></details></article>
+<article class="rule" id="doc-04" data-status="approved" data-search="リソースパック統一規約 resource pack regulations 公式リソースパックの利用・改造・再配布の条件と、制作者・権利者の保護を明確化した改訂版です。 第1〜2条｜適用範囲と正規利用 公式に管理・配布するデータが対象です。通常のダウンロード・キャッシュは認められますが、再配布や外部利用の許可とは異なります。旧mjasデータは自動移行しません。 第3条｜禁止事項と事故表現 無断再配布・抽出・改造・外部利用を禁止。車両の事故表現には原則として当該車両の制作者本人による事前の許諾が必要で、運営のイベント承認では代替できません。 第4〜5条｜制作者の権利と配布管理 作品を提供しても著作権は運営へ自動移転しません。利用停止・登録解除の申し出は、従前の許諾条件と第三者の権利を確認して対応します。 第6〜10条｜違反・異議・情報・改定 状況に応じた制限や申立て、利用者の異議申し立て、現行プライバシーポリシーの適用等を定めます。改定だけで既存の許諾範囲は拡張されません。 施行に関する注記 本改訂は承認済みですが、適用開始日は別途周知するものとされています。">
+ <div class="rule-head"><div class="rule-number">04 <span>/ 07</span></div><div class="rule-label">改訂承認済み・施行日未指定</div></div>
+ <h3>リソースパック統一規約</h3><p class="english">Resource Pack Regulations</p><p class="desc">公式リソースパックの利用・改造・再配布の条件と、制作者・権利者の保護を明確化した改訂版です。</p>
+ <div class="meta"><span>2026年11月1日改訂承認</span><span>前文・全10条・附則</span><span>原本 PDF 19–25 ページ</span></div>
+ <details><summary>主な内容を確認する <span class="expand-mark" aria-hidden="true">＋</span></summary>
+ <div class="rule-details"><section><h4>第1〜2条｜適用範囲と正規利用</h4><p>公式に管理・配布するデータが対象です。通常のダウンロード・キャッシュは認められますが、再配布や外部利用の許可とは異なります。旧MJaSデータは自動移行しません。</p></section><section><h4>第3条｜禁止事項と事故表現</h4><p>無断再配布・抽出・改造・外部利用を禁止。車両の事故表現には原則として当該車両の制作者本人による事前の許諾が必要で、運営のイベント承認では代替できません。</p></section><section><h4>第4〜5条｜制作者の権利と配布管理</h4><p>作品を提供しても著作権は運営へ自動移転しません。利用停止・登録解除の申し出は、従前の許諾条件と第三者の権利を確認して対応します。</p></section><section><h4>第6〜10条｜違反・異議・情報・改定</h4><p>状況に応じた制限や申立て、利用者の異議申し立て、現行プライバシーポリシーの適用等を定めます。改定だけで既存の許諾範囲は拡張されません。</p></section><section><h4>施行に関する注記</h4><p>本改訂は承認済みですが、適用開始日は別途周知するものとされています。</p></section>
+ <p class="subtle">※ この画面は規定の案内・要約です。法的・運営上の判断には2026年11月1日承認版PDFの原文および現行の施行状況を確認してください。</p>
+ </div></details></article>
+<article class="rule" id="doc-05" data-status="approved" data-search="プライバシーポリシー privacy policy 情報の取得、利用目的、保存期間、第三者提供、利用者の請求権と安全管理を整理した改訂版です。 第0〜1条｜取得する情報 同意に基づきminecraftアカウントのuuidを取得する場合があります。リソースパック管理システムでは運営上、アクセス日時と管理modのバージョンを必要な範囲で取得する場合があります。 第2〜3条｜利用目的と保存期間 不正利用防止、障害調査、システム改善などに利用。利用者情報の保存期間は原則としてmjxからの退去・脱退後6か月までで、その後速やかに削除する規定です。 第4〜7条｜第三者提供・cookie・請求・安全管理 個人データの第三者提供は原則として本人同意に基づき、法令で認められる例外を定めます。利用者は自己情報の開示・訂正・利用停止・削除等を申し出られます。 第8〜9条・附則｜問い合わせ・改定 問い合わせ窓口はmjx運営（代表：warudora）、discord &lt;#1320245263796801588&gt;。改訂施行日は未指定で、施行までは従前の現行ポリシーが適用されます。">
+ <div class="rule-head"><div class="rule-number">05 <span>/ 07</span></div><div class="rule-label">改訂承認済み・施行日未指定</div></div>
+ <h3>プライバシーポリシー</h3><p class="english">Privacy Policy</p><p class="desc">情報の取得、利用目的、保存期間、第三者提供、利用者の請求権と安全管理を整理した改訂版です。</p>
+ <div class="meta"><span>2026年11月1日改訂承認</span><span>第0〜9条・附則</span><span>原本 PDF 26–30 ページ</span></div>
+ <details><summary>主な内容を確認する <span class="expand-mark" aria-hidden="true">＋</span></summary>
+ <div class="rule-details"><section><h4>第0〜1条｜取得する情報</h4><p>同意に基づきMinecraftアカウントのUUIDを取得する場合があります。リソースパック管理システムでは運営上、アクセス日時と管理Modのバージョンを必要な範囲で取得する場合があります。</p></section><section><h4>第2〜3条｜利用目的と保存期間</h4><p>不正利用防止、障害調査、システム改善などに利用。利用者情報の保存期間は原則としてMJXからの退去・脱退後6か月までで、その後速やかに削除する規定です。</p></section><section><h4>第4〜7条｜第三者提供・Cookie・請求・安全管理</h4><p>個人データの第三者提供は原則として本人同意に基づき、法令で認められる例外を定めます。利用者は自己情報の開示・訂正・利用停止・削除等を申し出られます。</p></section><section><h4>第8〜9条・附則｜問い合わせ・改定</h4><p>問い合わせ窓口はMJX運営（代表：warudora）、Discord &lt;#1320245263796801588&gt;。改訂施行日は未指定で、施行までは従前の現行ポリシーが適用されます。</p></section>
+ <p class="subtle">※ この画面は規定の案内・要約です。法的・運営上の判断には2026年11月1日承認版PDFの原文および現行の施行状況を確認してください。</p>
+ </div></details></article>
+<article class="rule" id="doc-06" data-status="active" data-search="経済規定 economic regulations ゲーム内通貨g、公共・民間事業、労働、雇用、取引、経済調整、管理権限などを包括的に定めます。 第1〜2章｜総則と参加区分 最低限の公共サービスと、付加価値によって競争できる私営事業を区別。builderの通常の都市開発は原則として経済的制約を適用せず、事業活動には規定を適用します。 第3〜8章｜通貨・公共サービス等 初期支給、貨幣の取得・利用、交通・生活サービス、公共価格などを扱います。具体的な条件は規定本文と運営の現行告知で確認してください。 第9章｜雇用（第27〜31条） 雇用人数は原則3人まで。1回の労働時間は原則10分以上3時間以内。賃金は労働終了後3日以内に支払うものとされています。 第10〜15章｜取引・管理・違反・改正 個人間取引、公正な市場、管理者の私営事業と利益相反、経済調整、最高管理者の権限、不正取引、改正について規定されています。">
+ <div class="rule-head"><div class="rule-number">06 <span>/ 07</span></div><div class="rule-label">現行規定・原文維持</div></div>
+ <h3>経済規定</h3><p class="english">Economic Regulations</p><p class="desc">ゲーム内通貨G、公共・民間事業、労働、雇用、取引、経済調整、管理権限などを包括的に定めます。</p>
+ <div class="meta"><span>2026年10月5日制定</span><span>全15章・47条</span><span>原本 PDF 31–48 ページ</span></div>
+ <details><summary>主な内容を確認する <span class="expand-mark" aria-hidden="true">＋</span></summary>
+ <div class="rule-details"><section><h4>第1〜2章｜総則と参加区分</h4><p>最低限の公共サービスと、付加価値によって競争できる私営事業を区別。Builderの通常の都市開発は原則として経済的制約を適用せず、事業活動には規定を適用します。</p></section><section><h4>第3〜8章｜通貨・公共サービス等</h4><p>初期支給、貨幣の取得・利用、交通・生活サービス、公共価格などを扱います。具体的な条件は規定本文と運営の現行告知で確認してください。</p></section><section><h4>第9章｜雇用（第27〜31条）</h4><p>雇用人数は原則3人まで。1回の労働時間は原則10分以上3時間以内。賃金は労働終了後3日以内に支払うものとされています。</p></section><section><h4>第10〜15章｜取引・管理・違反・改正</h4><p>個人間取引、公正な市場、管理者の私営事業と利益相反、経済調整、最高管理者の権限、不正取引、改正について規定されています。</p></section>
+ <p class="subtle">※ この画面は規定の案内・要約です。法的・運営上の判断には2026年11月1日承認版PDFの原文および現行の施行状況を確認してください。</p>
+ </div></details></article>
+<article class="rule" id="doc-07" data-status="approved" data-search="ビジター向けルール visitor rules ビジターのサバイバルモード参加と、保護modによる建築・破壊の許可範囲を反映した修正版です。 1｜参加環境 ビジターは原則としてサバイバルモードで参加します。mjxの保護modにより、通常はブロックの設置・破壊や都市施設の改変が制限され、運営が許可した区域では設定された権限内で操作できます。参加時には行政から初期手当が支給されます。 2｜お金の稼ぎ方 接客、運転手、案内、業務受託、ショップ経営、商品販売、自動販売機運営、イベント・大会などでコインまたはポイントを獲得できます。獲得区分は活動ごとに設定されます。 3｜お金の使い道 mtr運賃・定期券・高速道路、車両やモビリティ製品、対応装備、家具・家電、飲食、店舗、物件の購入・賃貸などに利用できます。一部イベント等ではポイントをコインへ変換できる場合があります。 施行に関する注記 本修正は2026年11月1日に承認済みですが、施行日は未指定です。旧案内は修正内容と矛盾しないよう参照してください。">
+ <div class="rule-head"><div class="rule-number">07 <span>/ 07</span></div><div class="rule-label">改訂承認済み・施行日未指定</div></div>
+ <h3>ビジター向けルール</h3><p class="english">Visitor Rules</p><p class="desc">ビジターのサバイバルモード参加と、保護Modによる建築・破壊の許可範囲を反映した修正版です。</p>
+ <div class="meta"><span>2026年11月1日修正承認</span><span>参加環境・仕事・利用先</span><span>原本 PDF 49–50 ページ</span></div>
+ <details><summary>主な内容を確認する <span class="expand-mark" aria-hidden="true">＋</span></summary>
+ <div class="rule-details"><section><h4>1｜参加環境</h4><p>ビジターは原則としてサバイバルモードで参加します。MJXの保護Modにより、通常はブロックの設置・破壊や都市施設の改変が制限され、運営が許可した区域では設定された権限内で操作できます。参加時には行政から初期手当が支給されます。</p></section><section><h4>2｜お金の稼ぎ方</h4><p>接客、運転手、案内、業務受託、ショップ経営、商品販売、自動販売機運営、イベント・大会などでコインまたはポイントを獲得できます。獲得区分は活動ごとに設定されます。</p></section><section><h4>3｜お金の使い道</h4><p>MTR運賃・定期券・高速道路、車両やモビリティ製品、対応装備、家具・家電、飲食、店舗、物件の購入・賃貸などに利用できます。一部イベント等ではポイントをコインへ変換できる場合があります。</p></section><section><h4>施行に関する注記</h4><p>本修正は2026年11月1日に承認済みですが、施行日は未指定です。旧案内は修正内容と矛盾しないよう参照してください。</p></section>
+ <p class="subtle">※ この画面は規定の案内・要約です。法的・運営上の判断には2026年11月1日承認版PDFの原文および現行の施行状況を確認してください。</p>
+ </div></details></article></div>
+<p class="empty" id="empty">該当する規定は見つかりませんでした。検索条件を変更してください。</p>
+<section class="footer-note"><h2>適用関係の確認</h2><p>①②③⑥は、承認版PDFの記載上、原文維持の現行規定です。④⑤⑦は、改訂・修正承認済みで施行日未指定です。特にプライバシーポリシーの附則には、改訂版の施行まで従前の現行ポリシーを適用する旨が明記されています。</p><p>映画館の上映許諾、制作物の著作権、MGSAに関わる事項、経済制度上の個別判断などは、要約のみで判断せず関係する規定本文と運営の正式な周知を併せて確認してください。</p></section>
+</main>
+<footer><div class="inner"><span>© MTR Japan Nexus · Official Regulations Guide</span><span><a href="index.html">ポータルへ戻る</a> · 2026.11.01 承認版に基づく案内</span></div></footer>
+<script>
+(()=>{
+  const cards=[...document.querySelectorAll(".rule")];
+  const input=document.getElementById("search"), buttons=[...document.querySelectorAll(".filter")];
+  const count=document.getElementById("result-count"), empty=document.getElementById("empty");
+  let filter="all";
+  function render(){
+    const q=input.value.trim().toLocaleLowerCase("ja");
+    let shown=0;
+    for(const card of cards){
+      const match=(filter==="all"||card.dataset.status===filter)&&(!q||card.dataset.search.includes(q));
+      card.hidden=!match;
+      if(match)shown++;
+    }
+    count.textContent=shown+"件の規定を表示中";
+    empty.classList.toggle("show",shown===0);
+  }
+  buttons.forEach(btn=>btn.addEventListener("click",()=>{
+    filter=btn.dataset.filter;
+    buttons.forEach(b=>b.setAttribute("aria-pressed",String(b===btn)));
+    render();
+  }));
+  input.addEventListener("input",render);
+  render();
+})();
+</script>
+</body>
+</html>
