@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#b40056">
+<meta name="description" content="English overview of the seven MJX regulations, their approval and effective status, and links to the authoritative Japanese PDF originals.">
+<title>Seven Official Regulations | MTR Japan Nexus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#b40056;--ink:#172132;--muted:#5f6b7b;--line:#dfe4e9;--paper:#fff;--back:#f6f7f8;--soft:#fdf1f6;--radius:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--back);color:var(--ink);font-family:Inter,"Noto Sans JP",sans-serif;line-height:1.8}
+a{color:var(--accent)}a:hover{text-decoration-thickness:2px}button,input{font:inherit}
+.topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.topbar-inner{max-width:1200px;padding:12px 24px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;text-decoration:none;color:var(--ink);letter-spacing:.02em}
+.mark{width:34px;height:34px;border-radius:10px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:800}
+.toplinks{display:flex;gap:18px;align-items:center;flex-wrap:wrap}.toplinks a{text-decoration:none;color:#4c5360;font-size:.86rem;font-weight:700}
+.toplinks .selected{color:var(--accent)}
+.hero{background:#fff;border-bottom:1px solid var(--line)}
+.hero-inner{max-width:1200px;margin:auto;padding:77px 24px 63px}
+.eyebrow{font-weight:800;color:var(--accent);letter-spacing:.17em;font-size:.77rem}
+.hero h1{font-size:clamp(2.15rem,5vw,4.2rem);line-height:1.27;letter-spacing:-.03em;margin:15px 0}
+.hero p{font-size:1.03rem;color:var(--muted);max-width:780px;margin:0}
+.redline{display:block;width:85px;height:5px;background:var(--accent);margin:27px 0;border-radius:20px}
+.hero-stats{margin-top:36px;display:flex;flex-wrap:wrap;gap:11px}
+.stat{border:1px solid var(--line);background:#fff;border-radius:12px;padding:13px 18px;display:flex;align-items:baseline;gap:9px;font-weight:600;color:var(--muted);font-size:.82rem}
+.stat b{font-size:1.45rem;color:var(--ink)}
+.wrap{max-width:1200px;margin:auto;padding:40px 24px 85px}
+.notice{border:1px solid #ebd0dc;border-left:5px solid var(--accent);background:#fff;border-radius:14px;padding:21px 24px;margin-bottom:28px}
+.notice h2{font-size:1.05rem;margin:0 0 7px}.notice p{margin:0;color:#445065;font-size:.91rem}
+.notice p+p{margin-top:8px}
+.tools{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:23px;flex-wrap:wrap}
+.tools h2{font-size:1.4rem;margin:0 0 2px}.tools p{font-size:.9rem;color:var(--muted);margin:0}
+.controls{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.search{width:min(350px,75vw);padding:12px 15px;border:1px solid #cbd3dc;border-radius:12px;outline:0;background:#fff}
+.search:focus{border-color:var(--accent);box-shadow:0 0 0 3px #f5cee1}
+.filter{min-height:44px;background:#fff;color:var(--ink);border:1px solid var(--line);padding:11px 14px;border-radius:12px;cursor:pointer;font-weight:700;font-size:.82rem}
+.filter[aria-pressed="true"]{color:var(--accent);background:var(--soft);border-color:#ecafcb}
+.rule-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.rule{min-width:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:27px 28px 23px;scroll-margin-top:95px;display:flex;flex-direction:column}
+.rule:target{outline:3px solid #efc2d5}.rule[hidden]{display:none}
+.rule-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
+.rule-number{font-size:1.8rem;font-weight:800;color:var(--accent);letter-spacing:-.07em;line-height:1}.rule-number span{color:#64748b;font-size:.8rem;letter-spacing:0}
+.rule-label{font-size:.72rem;border:1px solid var(--line);border-radius:99px;padding:4px 10px;color:#586272;font-weight:700;text-align:center}
+.rule h3{font-size:clamp(1.16rem,2vw,1.45rem);margin:18px 0 1px;line-height:1.5}.english{font-size:.78rem;color:#566579;margin:0 0 16px}
+.desc{margin:0;color:#4b596a;font-size:.91rem;line-height:1.9}
+.meta{border-top:1px solid var(--line);margin-top:24px;padding-top:15px;display:flex;gap:6px 14px;flex-wrap:wrap;color:#586678;font-size:.74rem}
+.rule details{margin-top:auto;padding-top:19px}.rule summary{list-style:none;min-height:44px;display:flex;align-items:center;justify-content:space-between;gap:10px;border-radius:10px;background:var(--soft);color:#8e0046;padding:12px 14px;cursor:pointer;font-weight:800;font-size:.87rem}
+.rule summary::-webkit-details-marker{display:none}.rule summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.expand-mark{font-size:1.2rem;line-height:1}.rule details[open] .expand-mark{transform:rotate(45deg)}
+.rule-details{padding:5px 3px}.rule-details section{padding:13px 0;border-bottom:1px solid #eff1f3}.rule-details h4{font-size:.87rem;margin:0 0 3px}.rule-details p{color:#526072;font-size:.84rem;line-height:1.9;margin:0}
+.rule-details .subtle{font-size:.78rem;color:#5a6777;margin-top:16px}
+.empty{display:none;padding:35px;text-align:center;color:var(--muted)}.empty.show{display:block}
+.footer-note{margin-top:35px;padding:24px;border-radius:15px;background:#fff;border:1px solid var(--line);color:#596476;font-size:.88rem}
+.footer-note h2{margin:0 0 10px;color:var(--ink);font-size:1.05rem}.footer-note p{margin:8px 0}
+footer{background:#141b27;color:#c3ccd8;padding:27px 24px;font-size:.82rem}footer .inner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+footer a{color:#fff}
+@media(max-width:830px){.rule-grid{grid-template-columns:1fr}.toplinks{gap:9px}.toplinks a{font-size:.74rem}}
+@media(max-width:560px){.hero-inner{padding:49px 20px 44px}.wrap{padding:28px 15px 65px}.rule{padding:23px 20px}.topbar-inner{padding:10px 15px}.brand span:last-child{font-size:.82rem}.toplinks a{font-size:.68rem}.hero-stats{gap:8px}.stat{padding:10px 12px}.tools{align-items:stretch}.controls{width:100%}.search{width:100%}}
+@media print{.topbar,.controls,.rule summary,.hero-stats{display:none!important}body{background:#fff}.hero-inner{padding:20px}.wrap{padding:10px}.rule-grid{display:block}.rule{break-inside:avoid;margin-bottom:15px;box-shadow:none}.rule details{display:block}.rule details .rule-details{display:block!important}.rule-details section{break-inside:avoid}.footer-note{break-inside:avoid}}
+
+.fulltext-actions{margin-top:18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.fulltext-link{display:inline-flex;gap:11px;align-items:center;justify-content:space-between;padding:11px 17px;background:#b40056;border:1px solid #b40056;border-radius:11px;color:#fff;text-decoration:none;font-weight:800;font-size:.86rem;transition:background .2s,transform .2s}
+.fulltext-link:hover,.fulltext-link:focus-visible{background:#89003f;color:#fff;transform:translateY(-1px)}
+.fulltext-hint{color:#566579;font-size:.76rem}
+@media(max-width:560px){.fulltext-link{width:100%}.fulltext-actions{align-items:stretch;flex-direction:column}}
+
+/* Quick access links keep seven long documents easy to navigate, even on narrow screens. */
+.quicklinks{display:flex;align-items:center;gap:10px;padding:13px 0 21px;margin:0 0 20px;border-bottom:1px solid var(--line)}
+.quicklinks-label{font-size:.82rem;font-weight:800;color:#526074;flex-shrink:0}
+.quicklinks-list{display:flex;gap:8px;overflow-x:auto;padding:4px 2px;scrollbar-width:thin}
+.quicklinks-list a{flex-shrink:0;min-height:39px;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:10px;border:1px solid var(--line);color:#3c5063;background:#fff;text-decoration:none;font-size:.81rem;font-weight:700}
+.quicklinks-list a:hover,.quicklinks-list a:focus-visible{border-color:#ebb5cf;background:var(--soft);color:#89003f}
+@media(max-width:560px){.quicklinks{align-items:flex-start;flex-direction:column;gap:5px}.quicklinks-list{width:100%}.rule-label{max-width:100%;overflow-wrap:anywhere}.rule{scroll-margin-top:100px}}
+@media print{.quicklinks{display:none}}
+</style>
+<link rel="stylesheet" href="mjx-theme.css?v=20261101-clean">
+<script defer src="mjx-lang.js?v=1"></script>
+</head>
+<body class="mjx-regulations">
+<a class="mjx-skip" href="#main-content">Skip to main content</a>
+<div class="topbar mjx-topbar"><div class="topbar-inner mjx-topbar-inner"><a class="mjx-brand" href="index-en.html"><span class="mjx-brand-mark" aria-hidden="true">X</span><span>MTR JAPAN NEXUS</span></a><nav class="mjx-toplinks" aria-label="Site navigation"><a href="index-en.html">Home</a><a href="regulations-en.html" aria-current="page">Official Rules</a><a href="en.html">About MJX</a><a href="regulations.html" data-mjx-lang="ja" lang="ja">日本語</a></nav></div></div>
+<header class="hero"><div class="hero-inner"><div class="eyebrow">MJX / REGULATIONS / 2026.11.01</div><span class="redline"></span><h1>Seven Official Regulations<br>Status and Summary</h1>
+<p>An English guide to the seven MJX regulations, based on the 50-page document set approved November 1, 2026. For authoritative wording, use the Japanese original PDFs.</p>
+<div class="hero-stats"><div class="stat"><b>07</b> Documents</div><div class="stat"><b>04</b> Current, unchanged</div><div class="stat"><b>03</b> Approved, effective date pending</div></div></div></header>
+<main class="wrap" id="main-content">
+<section class="notice" aria-label="Important information"><h2>Approval is not the same as taking effect</h2>
+<p>The amendments to 04 (Resource Pack), 05 (Privacy Policy), and 07 (Visitor Rules) were approved on November 1, 2026. However, their effective dates have not been specified. Do not assume they replaced the previous active provisions immediately.</p>
+<p><strong>This page is an English overview, not an official translation or replacement for the original regulations.</strong> Use “Read original PDF” on each card to see the complete Japanese text. In case of differences, refer to the Japanese original and official MJX announcements.</p></section>
+<nav class="quicklinks" aria-label="Jump to a regulation"><span class="quicklinks-label">Documents</span><div class="quicklinks-list">
+<a href="#doc-01">01 Cinema Policy</a>
+<a href="#doc-02">02 Server Rules</a>
+<a href="#doc-03">03 Builder Rules</a>
+<a href="#doc-04">04 Resource Packs</a>
+<a href="#doc-05">05 Privacy</a>
+<a href="#doc-06">06 Economy</a>
+<a href="#doc-07">07 Visitors</a>
+</div></nav>
+<div class="tools"><div><h2>Regulations</h2><p id="result-count" aria-live="polite">7 regulations shown</p></div><div class="controls"><label for="search" class="sr" style="position:absolute;left:-9999px">Search regulations</label><input class="search" type="search" id="search" placeholder="Search names or keywords" autocomplete="off"><button type="button" class="filter" data-filter="all" aria-pressed="true">All</button><button type="button" class="filter" data-filter="active" aria-pressed="false">Current</button><button type="button" class="filter" data-filter="approved" aria-pressed="false">Approved revisions</button></div></div>
+<div class="rule-grid" id="rules">
+<article class="rule" id="doc-01" data-status="active" data-search="cinema system usage policy cinema policy sets rules for copyright, permissions, prohibited uses, and administration of audiovisual content in the mjx cinema system. articles 1–2 | scope and permitted content eligible content includes works created with the necessary rights, material authorized by rights holders, works whose licensing permits exhibition, and content approved by mjx management. articles 3–4 | prohibited uses and youtube unauthorized screening of movies, anime, or paid streaming content, use of illicit uploads, and circumvention of access or copy protection are prohibited. a video being publicly accessible on youtube does not by itself grant permission to screen or rebroadcast it in mjx. articles 5–8 | administration, enforcement, and changes maintenance and special events are also subject to applicable laws and terms. violations may lead to playback suspension or restrictions. liability that cannot legally be excluded is not waived.">
+<div class="rule-head"><div class="rule-number">01 <span>/ 07</span></div><div class="rule-label">Current · unchanged</div></div>
+<h3>Cinema System Usage Policy</h3><p class="english">English summary · Japanese original prevails</p><p class="desc">Sets rules for copyright, permissions, prohibited uses, and administration of audiovisual content in the MJX cinema system.</p>
+<div class="meta"><span>Enacted October 11, 2026</span><span>8 articles</span><span>Original PDF pages 1–3</span></div>
+<div class="fulltext-actions"><a class="fulltext-link" href="regulations/fulltext/01-cinema-policy.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the Japanese original PDF for document 01 (3 pages)">Read original PDF <span aria-hidden="true">↗</span></a><span class="fulltext-hint">Japanese original / 3 pages · opens in a new tab</span></div>
+<details><summary>Read summary <span class="expand-mark" aria-hidden="true">＋</span></summary>
+<div class="rule-details"><section><h4>Articles 1–2 | Scope and permitted content</h4><p>Eligible content includes works created with the necessary rights, material authorized by rights holders, works whose licensing permits exhibition, and content approved by MJX management.</p></section>
+<section><h4>Articles 3–4 | Prohibited uses and YouTube</h4><p>Unauthorized screening of movies, anime, or paid streaming content, use of illicit uploads, and circumvention of access or copy protection are prohibited. A video being publicly accessible on YouTube does not by itself grant permission to screen or rebroadcast it in MJX.</p></section>
+<section><h4>Articles 5–8 | Administration, enforcement, and changes</h4><p>Maintenance and special events are also subject to applicable laws and terms. Violations may lead to playback suspension or restrictions. Liability that cannot legally be excluded is not waived.</p></section>
+<p class="subtle">This is an unofficial English summary for convenience. Refer to the Japanese PDF and current effective-date announcements for official decisions.</p>
+</div></details></article>
+<article class="rule" id="doc-02" data-status="active" data-search="general server regulations server rules core rules applying to all participants, including eligibility, prohibited conduct, data handling, enforcement, and appeals. articles 1–6 | application, prohibited behavior, and safety these provisions cover applicable laws, language, harassment and disruptive behavior, personal information, spam, dangerous content, advertising, and solicitation. articles 7–10 | mgsa, multiple accounts, and administration these articles address coordination with mgsa, use of multiple accounts, other misconduct, and obligations of the management team. articles 11–16 | sanctions, appeals, and rule changes procedures cover responses to violations, appeals, automated detection, reviewing the rules, amendments, and service-specific additional regulations.">
+<div class="rule-head"><div class="rule-number">02 <span>/ 07</span></div><div class="rule-label">Current · unchanged</div></div>
+<h3>General Server Regulations</h3><p class="english">English summary · Japanese original prevails</p><p class="desc">Core rules applying to all participants, including eligibility, prohibited conduct, data handling, enforcement, and appeals.</p>
+<div class="meta"><span>Enacted October 5, 2026</span><span>Preamble, 16 articles, supplementary provisions</span><span>Original PDF pages 4–8</span></div>
+<div class="fulltext-actions"><a class="fulltext-link" href="regulations/fulltext/02-general-server-rules.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the Japanese original PDF for document 02 (5 pages)">Read original PDF <span aria-hidden="true">↗</span></a><span class="fulltext-hint">Japanese original / 5 pages · opens in a new tab</span></div>
+<details><summary>Read summary <span class="expand-mark" aria-hidden="true">＋</span></summary>
+<div class="rule-details"><section><h4>Articles 1–6 | Application, prohibited behavior, and safety</h4><p>These provisions cover applicable laws, language, harassment and disruptive behavior, personal information, spam, dangerous content, advertising, and solicitation.</p></section>
+<section><h4>Articles 7–10 | MGSA, multiple accounts, and administration</h4><p>These articles address coordination with MGSA, use of multiple accounts, other misconduct, and obligations of the management team.</p></section>
+<section><h4>Articles 11–16 | Sanctions, appeals, and rule changes</h4><p>Procedures cover responses to violations, appeals, automated detection, reviewing the rules, amendments, and service-specific additional regulations.</p></section>
+<p class="subtle">This is an unofficial English summary for convenience. Refer to the Japanese PDF and current effective-date announcements for official decisions.</p>
+</div></details></article>
+<article class="rule" id="doc-03" data-status="active" data-search="builder regulations builder rules covers builder eligibility and responsibilities, development and ownership, schematic registration and sharing, inactivity, sanctions, and dispute resolution. chapter 1 | general provisions (articles 1–5) builder eligibility, objectives, core permissions, responsibilities while participating, and relations with the management team. chapter 2 | development and rights management (articles 6–10) priority preservation rights, development areas, owner labels, schematic registration and sharing, create mod systems, and technical facilities. chapters 3–6 | economy, inactivity, sanctions, and supplementary matters (articles 11–22) resources, commissioned work, confidentiality, prohibited conduct, participation status, leave and departure, registered data, sanctions, disputes, and relationships with other regulations.">
+<div class="rule-head"><div class="rule-number">03 <span>/ 07</span></div><div class="rule-label">Current · unchanged</div></div>
+<h3>Builder Regulations</h3><p class="english">English summary · Japanese original prevails</p><p class="desc">Covers Builder eligibility and responsibilities, development and ownership, schematic registration and sharing, inactivity, sanctions, and dispute resolution.</p>
+<div class="meta"><span>Enacted October 26, 2026</span><span>6 chapters, 22 articles, supplementary provisions</span><span>Original PDF pages 9–18</span></div>
+<div class="fulltext-actions"><a class="fulltext-link" href="regulations/fulltext/03-builder-regulations.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the Japanese original PDF for document 03 (10 pages)">Read original PDF <span aria-hidden="true">↗</span></a><span class="fulltext-hint">Japanese original / 10 pages · opens in a new tab</span></div>
+<details><summary>Read summary <span class="expand-mark" aria-hidden="true">＋</span></summary>
+<div class="rule-details"><section><h4>Chapter 1 | General provisions (Articles 1–5)</h4><p>Builder eligibility, objectives, core permissions, responsibilities while participating, and relations with the management team.</p></section>
+<section><h4>Chapter 2 | Development and rights management (Articles 6–10)</h4><p>Priority preservation rights, development areas, owner labels, schematic registration and sharing, Create Mod systems, and technical facilities.</p></section>
+<section><h4>Chapters 3–6 | Economy, inactivity, sanctions, and supplementary matters (Articles 11–22)</h4><p>Resources, commissioned work, confidentiality, prohibited conduct, participation status, leave and departure, registered data, sanctions, disputes, and relationships with other regulations.</p></section>
+<p class="subtle">This is an unofficial English summary for convenience. Refer to the Japanese PDF and current effective-date announcements for official decisions.</p>
+</div></details></article>
+<article class="rule" id="doc-04" data-status="approved" data-search="resource pack regulations resource packs an approved revision clarifying use, modification, redistribution, and protection of creators and rights holders for official resource packs. articles 1–2 | scope and authorized use applies to data officially managed and distributed. ordinary downloads and caching do not grant permission for redistribution or outside use. older mjas material is not automatically transferred under this regulation. article 3 | prohibited uses and accident depictions unauthorized redistribution, extraction, modification, and external use are prohibited. as a general rule, depicting accidents involving a vehicle requires prior permission from that vehicle's creator; event approval from management does not replace this consent. articles 4–5 | creators' rights and distribution management providing a work does not automatically transfer copyright to the server management. requests to stop use or unregister a work are considered alongside earlier license conditions and third-party rights. articles 6–10 | violations, appeals, information, and amendment covers proportionate restrictions, appeals, and privacy provisions. amending the regulation does not automatically expand any existing permission or license. effective-date note the revision has been approved, but the effective date will be announced separately.">
+<div class="rule-head"><div class="rule-number">04 <span>/ 07</span></div><div class="rule-label">Approved revision · effective date pending</div></div>
+<h3>Resource Pack Regulations</h3><p class="english">English summary · Japanese original prevails</p><p class="desc">An approved revision clarifying use, modification, redistribution, and protection of creators and rights holders for official resource packs.</p>
+<div class="meta"><span>Revision approved November 1, 2026</span><span>Preamble, 10 articles, supplementary provisions</span><span>Original PDF pages 19–25</span></div>
+<div class="fulltext-actions"><a class="fulltext-link" href="regulations/fulltext/04-resource-pack-rules.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the Japanese original PDF for document 04 (7 pages)">Read original PDF <span aria-hidden="true">↗</span></a><span class="fulltext-hint">Japanese original / 7 pages · opens in a new tab</span></div>
+<details><summary>Read summary <span class="expand-mark" aria-hidden="true">＋</span></summary>
+<div class="rule-details"><section><h4>Articles 1–2 | Scope and authorized use</h4><p>Applies to data officially managed and distributed. Ordinary downloads and caching do not grant permission for redistribution or outside use. Older MJaS material is not automatically transferred under this regulation.</p></section>
+<section><h4>Article 3 | Prohibited uses and accident depictions</h4><p>Unauthorized redistribution, extraction, modification, and external use are prohibited. As a general rule, depicting accidents involving a vehicle requires prior permission from that vehicle's creator; event approval from management does not replace this consent.</p></section>
+<section><h4>Articles 4–5 | Creators' rights and distribution management</h4><p>Providing a work does not automatically transfer copyright to the server management. Requests to stop use or unregister a work are considered alongside earlier license conditions and third-party rights.</p></section>
+<section><h4>Articles 6–10 | Violations, appeals, information, and amendment</h4><p>Covers proportionate restrictions, appeals, and privacy provisions. Amending the regulation does not automatically expand any existing permission or license.</p></section>
+<section><h4>Effective-date note</h4><p>The revision has been approved, but the effective date will be announced separately.</p></section>
+<p class="subtle">This is an unofficial English summary for convenience. Refer to the Japanese PDF and current effective-date announcements for official decisions.</p>
+</div></details></article>
+<article class="rule" id="doc-05" data-status="approved" data-search="privacy policy privacy an approved revision outlining data collection, purposes, retention, third-party sharing, user requests, and security safeguards. articles 0–1 | information collected with consent, the server may collect a minecraft account uuid. for resource-pack administration, access timestamps and the management mod version may be collected where needed. articles 2–3 | use and retention data may be used to prevent misuse, investigate failures, and improve systems. the stated retention period for user information generally extends up to six months after leaving mjx, with deletion promptly thereafter. articles 4–7 | sharing, cookies, user requests, and security sharing personal data generally requires consent, subject to legal exceptions. users may request access, correction, suspension of use, or deletion of their information. articles 8–9 and supplementary provisions | contact and amendments contact mjx management (representative: warudora), discord channel &lt;#1320245263796801588&gt;. the amended policy has no stated effective date; the prior active policy remains applicable until then.">
+<div class="rule-head"><div class="rule-number">05 <span>/ 07</span></div><div class="rule-label">Approved revision · effective date pending</div></div>
+<h3>Privacy Policy</h3><p class="english">English summary · Japanese original prevails</p><p class="desc">An approved revision outlining data collection, purposes, retention, third-party sharing, user requests, and security safeguards.</p>
+<div class="meta"><span>Revision approved November 1, 2026</span><span>Articles 0–9 and supplementary provisions</span><span>Original PDF pages 26–30</span></div>
+<div class="fulltext-actions"><a class="fulltext-link" href="regulations/fulltext/05-privacy-policy.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the Japanese original PDF for document 05 (5 pages)">Read original PDF <span aria-hidden="true">↗</span></a><span class="fulltext-hint">Japanese original / 5 pages · opens in a new tab</span></div>
+<details><summary>Read summary <span class="expand-mark" aria-hidden="true">＋</span></summary>
+<div class="rule-details"><section><h4>Articles 0–1 | Information collected</h4><p>With consent, the server may collect a Minecraft account UUID. For resource-pack administration, access timestamps and the management mod version may be collected where needed.</p></section>
+<section><h4>Articles 2–3 | Use and retention</h4><p>Data may be used to prevent misuse, investigate failures, and improve systems. The stated retention period for user information generally extends up to six months after leaving MJX, with deletion promptly thereafter.</p></section>
+<section><h4>Articles 4–7 | Sharing, cookies, user requests, and security</h4><p>Sharing personal data generally requires consent, subject to legal exceptions. Users may request access, correction, suspension of use, or deletion of their information.</p></section>
+<section><h4>Articles 8–9 and supplementary provisions | Contact and amendments</h4><p>Contact MJX management (representative: warudora), Discord channel &lt;#1320245263796801588&gt;. The amended policy has no stated effective date; the prior active policy remains applicable until then.</p></section>
+<p class="subtle">This is an unofficial English summary for convenience. Refer to the Japanese PDF and current effective-date announcements for official decisions.</p>
+</div></details></article>
+<article class="rule" id="doc-06" data-status="active" data-search="economic regulations economy framework for in-game currency g, public and private services, labor, employment, transactions, economic management, and administrative powers. chapters 1–2 | foundations and participant roles distinguishes baseline public services from competitive private businesses. ordinary builder development is generally exempt from economic restrictions, while business operations remain regulated. chapters 3–8 | currency and public services initial allocations, earning and spending currency, transport and everyday services, and public pricing. consult the original regulation and current management announcements for specific conditions. chapter 9 | employment (articles 27–31) employment is generally limited to three people. a work session normally lasts at least 10 minutes and no more than three hours. wages are to be paid within three days after the work ends. chapters 10–15 | trade, oversight, misconduct, and amendments peer-to-peer transactions, fair markets, managers' private businesses and conflicts of interest, economic adjustments, senior management authority, fraudulent transactions, and amendments.">
+<div class="rule-head"><div class="rule-number">06 <span>/ 07</span></div><div class="rule-label">Current · unchanged</div></div>
+<h3>Economic Regulations</h3><p class="english">English summary · Japanese original prevails</p><p class="desc">Framework for in-game currency G, public and private services, labor, employment, transactions, economic management, and administrative powers.</p>
+<div class="meta"><span>Enacted October 5, 2026</span><span>15 chapters, 47 articles</span><span>Original PDF pages 31–47</span></div>
+<div class="fulltext-actions"><a class="fulltext-link" href="regulations/fulltext/06-economic-regulations.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the Japanese original PDF for document 06 (17 pages)">Read original PDF <span aria-hidden="true">↗</span></a><span class="fulltext-hint">Japanese original / 17 pages · opens in a new tab</span></div>
+<details><summary>Read summary <span class="expand-mark" aria-hidden="true">＋</span></summary>
+<div class="rule-details"><section><h4>Chapters 1–2 | Foundations and participant roles</h4><p>Distinguishes baseline public services from competitive private businesses. Ordinary Builder development is generally exempt from economic restrictions, while business operations remain regulated.</p></section>
+<section><h4>Chapters 3–8 | Currency and public services</h4><p>Initial allocations, earning and spending currency, transport and everyday services, and public pricing. Consult the original regulation and current management announcements for specific conditions.</p></section>
+<section><h4>Chapter 9 | Employment (Articles 27–31)</h4><p>Employment is generally limited to three people. A work session normally lasts at least 10 minutes and no more than three hours. Wages are to be paid within three days after the work ends.</p></section>
+<section><h4>Chapters 10–15 | Trade, oversight, misconduct, and amendments</h4><p>Peer-to-peer transactions, fair markets, managers' private businesses and conflicts of interest, economic adjustments, senior management authority, fraudulent transactions, and amendments.</p></section>
+<p class="subtle">This is an unofficial English summary for convenience. Refer to the Japanese PDF and current effective-date announcements for official decisions.</p>
+</div></details></article>
+<article class="rule" id="doc-07" data-status="approved" data-search="visitor rules visitors an approved revision covering visitor participation in survival mode and block-editing permissions managed by the protection mod. 1 | participation environment visitors generally join in survival mode. the mjx protection mod restricts block placement, destruction, and changes to city facilities unless management grants permissions in specified areas. an initial allowance is provided when joining. 2 | ways to earn currency visitors may earn coins or points through customer service, driving, guiding, commissioned tasks, shops, selling products, vending machines, events, and competitions. the form of rewards varies by activity. 3 | ways to spend possible uses include mtr fares and passes, road tolls, vehicles, mobility products, eligible equipment, furniture, appliances, food, and property purchase or rental. some events may allow points to be converted into coins. effective-date note these changes were approved on november 1, 2026, but no effective date has been specified. earlier guidance should not be interpreted as implementing them immediately.">
+<div class="rule-head"><div class="rule-number">07 <span>/ 07</span></div><div class="rule-label">Approved revision · effective date pending</div></div>
+<h3>Visitor Rules</h3><p class="english">English summary · Japanese original prevails</p><p class="desc">An approved revision covering Visitor participation in Survival Mode and block-editing permissions managed by the protection mod.</p>
+<div class="meta"><span>Revision approved November 1, 2026</span><span>Participation, work, and spending</span><span>Original PDF pages 48–50</span></div>
+<div class="fulltext-actions"><a class="fulltext-link" href="regulations/fulltext/07-visitor-rules.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the Japanese original PDF for document 07 (3 pages)">Read original PDF <span aria-hidden="true">↗</span></a><span class="fulltext-hint">Japanese original / 3 pages · opens in a new tab</span></div>
+<details><summary>Read summary <span class="expand-mark" aria-hidden="true">＋</span></summary>
+<div class="rule-details"><section><h4>1 | Participation environment</h4><p>Visitors generally join in Survival Mode. The MJX protection mod restricts block placement, destruction, and changes to city facilities unless management grants permissions in specified areas. An initial allowance is provided when joining.</p></section>
+<section><h4>2 | Ways to earn currency</h4><p>Visitors may earn coins or points through customer service, driving, guiding, commissioned tasks, shops, selling products, vending machines, events, and competitions. The form of rewards varies by activity.</p></section>
+<section><h4>3 | Ways to spend</h4><p>Possible uses include MTR fares and passes, road tolls, vehicles, mobility products, eligible equipment, furniture, appliances, food, and property purchase or rental. Some events may allow points to be converted into coins.</p></section>
+<section><h4>Effective-date note</h4><p>These changes were approved on November 1, 2026, but no effective date has been specified. Earlier guidance should not be interpreted as implementing them immediately.</p></section>
+<p class="subtle">This is an unofficial English summary for convenience. Refer to the Japanese PDF and current effective-date announcements for official decisions.</p>
+</div></details></article>
+</div>
+<p class="empty" id="empty">No matching regulations. Try a different search or filter.</p>
+<section class="footer-note"><h2>Which provisions currently apply?</h2><p>Documents 01, 02, 03, and 06 remain in force without changes. Revisions 04, 05, and 07 are approved but have no specified effective date. In particular, the amended Privacy Policy states that the previous active policy remains applicable until the amendment takes effect.</p><p>For screenings and permissions, copyrights and creator rights, MGSA matters, and individual economic decisions, consult the full Japanese regulations and official MJX notices rather than relying only on this summary.</p></section>
+</main>
+<footer><div class="inner"><span>© MTR Japan Nexus · Regulations Overview (English)</span><span><a href="index-en.html">Back to portal</a> · Based on the November 1, 2026 approved set</span></div></footer>
+<script>
+(()=>{
+  const cards=[...document.querySelectorAll(".rule")];
+  const input=document.getElementById("search"), buttons=[...document.querySelectorAll(".filter")];
+  const count=document.getElementById("result-count"), empty=document.getElementById("empty");
+  let filter="all";
+  function render(){
+    const q=input.value.trim().toLocaleLowerCase("en");
+    let shown=0;
+    for(const card of cards){
+      const match=(filter==="all"||card.dataset.status===filter)&&(!q||card.dataset.search.includes(q));
+      card.hidden=!match;
+      if(match)shown++;
+    }
+    count.textContent=shown+" regulations shown";
+    empty.classList.toggle("show",shown===0);
+  }
+  buttons.forEach(btn=>btn.addEventListener("click",()=>{
+    filter=btn.dataset.filter;
+    buttons.forEach(b=>b.setAttribute("aria-pressed",String(b===btn)));
+    render();
+  }));
+  input.addEventListener("input",render);
+  let printOpenStates=[];
+  window.addEventListener("beforeprint",()=>{
+    printOpenStates=cards.map(c=>c.querySelector("details")?.open||false);
+    cards.forEach(c=>{const details=c.querySelector("details");if(details)details.open=true;});
+  });
+  window.addEventListener("afterprint",()=>{
+    cards.forEach((c,i)=>{const details=c.querySelector("details");if(details)details.open=!!printOpenStates[i];});
+  });
+  render();
+})();
+</script>
+</body>
+</html>
