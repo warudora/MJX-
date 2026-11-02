@@ -128,13 +128,26 @@
   },
   "unmodified_japanese_source": true,
   "tests": {
-    "aligned_blocks": true,
-    "english_matches_json": true,
-    "source_matches_japanese": true,
-    "regulations_count": 7,
-    "headings_and_structure": "Text-only replacements; post-commit validation required.",
-    "regeneration": "Generator now invokes correction script; actual regeneration execution pending.",
-    "github_actions": "Pending after commits."
+    "seven_regulations": true,
+    "bilingual_blocks_792": true,
+    "per_document_counts_match": true,
+    "japanese_source_unchanged": true,
+    "source_attribute_matches_japanese": true,
+    "corrected_english_matches_json": true,
+    "headings_links_id_issues": 0,
+    "broken_internal_anchors": 0,
+    "duplicate_html_ids": 0,
+    "html_doctypes_single": true,
+    "mojibake_not_detected": true,
+    "material_invariants_passed": 17,
+    "english_overview_cards": 7,
+    "english_overview_corrected": true,
+    "generation_script_reapplies_fixes": true,
+    "regeneration_process_executed": false,
+    "regeneration_process_note": "未検証: Argos翻訳モデルを必要とする生成スクリプト全体は実行していない。生成の末尾で修正適用スクリプトを必ず呼ぶように変更し、意味検査を追加した。",
+    "github_actions_executed": "未検証: 対象コミットのworkflow_runsとcommit statusesの取得結果は空で、実行成否を確認できない。",
+    "browser_interaction_test": "未検証: ブラウザでの検索・言語切替・レスポンシブ動作の実機操作は行っていない。",
+    "verification_method": "GitHub mainのファイルを修正後に再取得し、全条項・原文属性・JSON・内部アンカー・見出し・ID・doctype・重要数値を機械検査。"
   },
   "japanese_source_issues": [
     {
@@ -145,5 +158,10 @@
     {
       "issue": "日本語概要の共通サーバー規定に「利用資格」とあるが、全文に直接対応する資格条項は見当たらない。日本語は変更しない。"
     }
-  ]
+  ],
+  "verified_commits": [
+    "34f1c25e3d94fe1f2bfcbaf3e9d5c6f1b4d31b01",
+    "5a72dc91152eef463707c6441b640a89cf214b06"
+  ],
+  "review_conclusion": "原文に照らした11箇所の修正を反映。重大0/中程度10/軽微1。構造・文字列整合は合格。自動再生成の実行、ブラウザ動作、GitHub Actionsは未検証。"
 }
