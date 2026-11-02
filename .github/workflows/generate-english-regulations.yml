@@ -1,0 +1,88 @@
+name: Publish English MJX Regulations Full Text
+on:
+  push:
+    paths:
+      - regulations-full.html
+      - scripts/bootstrap_en_part*.txt
+      - scripts/generate_english_regulations.py
+      - .github/workflows/generate-english-regulations.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install offline translation tools
+        run: python -m pip install 'argostranslate>=1.9,<2' 'beautifulsoup4>=4.12,<5'
+      - name: Restore and verify English translation script
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import base64
+          import hashlib
+          import zlib
+          paths=[Path(f'scripts/bootstrap_en_part{i}.txt') for i in range(4)]
+          source=''.join(p.read_text(encoding='ascii').strip() for p in paths)
+          raw=zlib.decompress(base64.b64decode(source,validate=True))
+          expected='4208459b323ed66ee74734ad13252b1b06773d97d823f10b58576b4d56748d7f'
+          assert hashlib.sha256(raw).hexdigest()==expected, 'Generator source checksum mismatch'
+          script=Path('scripts/generate_english_regulations.py')
+          if script.is_file():
+              assert script.read_bytes()==raw, 'Readable generator and bootstrap differ'
+          else:
+              script.write_bytes(raw)
+          import ast
+          ast.parse(script.read_text(encoding='utf-8'))
+          print('Translation script verified')
+          PY
+      - name: Translate all seven documents and publish English HTML
+        run: |
+          export ARGOS_DEVICE_TYPE=cpu
+          export OMP_NUM_THREADS=2
+          python -u scripts/generate_english_regulations.py
+      - name: Validate English sections, paragraph structure and links
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          from bs4 import BeautifulSoup
+          jp=BeautifulSoup(Path('regulations-full.html').read_text(encoding='utf-8'),'html.parser')
+          en=BeautifulSoup(Path('regulations-full-en.html').read_text(encoding='utf-8'),'html.parser')
+          a=json.loads(Path('assets/mjx-english-translation-audit.json').read_text(encoding='utf-8'))
+          assert en.html['lang']=='en'
+          docs_a=jp.select('section.regulation')
+          docs_b=en.select('section.regulation')
+          assert len(docs_a)==len(docs_b)==7
+          for number,(d1,d2) in enumerate(zip(docs_a,docs_b),1):
+              one=d1.select_one('.document-text').find_all(['p','h3','h4'],recursive=False)
+              two=d2.select_one('.document-text').find_all(['p','h3','h4'],recursive=False)
+              assert len(one)==len(two),('Paragraph count',number)
+              assert [e.get('id') for e in one]==[e.get('id') for e in two],('Clause anchor',number)
+              assert all(e.get_text(strip=True) for e in two),('Empty clause',number)
+          assert a['documents']==7 and a['source_blocks']==sum(a['per_document'])
+          overview=BeautifulSoup(Path('regulations-en.html').read_text(encoding='utf-8'),'html.parser')
+          for n in range(1,8):
+              card=overview.select_one(f'#doc-{n:02d}')
+              assert card.select_one('a.fulltext-link')['href']==f'regulations-full-en.html?lang=en#doc{n}',n
+              assert card.select_one('a.source-link-inline')['href']==f'regulations-full.html?lang=ja#doc{n}',n
+          router=Path('mjx-lang.js').read_text(encoding='utf-8')
+          assert '"regulations-full-en.html"' in router
+          print('7 full English documents, paragraphs, anchors and bilingual routes verified')
+          PY
+      - name: Commit English HTML and readable generator
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/generate_english_regulations.py regulations-full-en.html regulations-full.html regulations-en.html mjx-lang.js assets/mjx-english-translation-audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish machine-translated English full text for all seven MJX regulations"
+            git push
+          fi

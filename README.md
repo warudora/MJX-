@@ -33,3 +33,10 @@ MJX公式の案内サイト。日本語・英語のホーム、紹介、公式�
 - 公式サイトの閲覧導線からPDFを外す。旧PDFはリポジトリ内に履歴として残す。
 - 過去のPDF自動生成ワークフローは自動実行を停止（手動実行のみ）。現行運用のHTMLはPDF生成処理の対象外とする。
 - ④⑤⑦の改訂は2026年11月1日に承認済み・施行日未指定。②③のOCR誤認識は校正待ち。
+
+## Full English regulation pages
+- English overview: `regulations-en.html` (seven original-style cards).
+- `regulations-full-en.html` is built from `regulations-full.html` by Argos Translate Japanese-to-English. Original IDs/paragraph counts are checked.
+- **English is an unreviewed reference translation, not official regulation text.** Japanese wording controls. Regulations 02/03 may contain source OCR inaccuracies.
+- Changes to regulations 04/05/07 approved Nov 1, 2026 are not effective until their effective dates are announced.
+- The English full-text generator is bootstrapped from verified source chunks under `scripts/bootstrap_en_part*.txt` (checksum enforced), then written as `scripts/generate_english_regulations.py` for maintainability.
