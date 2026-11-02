@@ -295,6 +295,10 @@
     "source": "2. Builder には、資格区分に応じて開発に必要な権限を付与する。",
     "english": "2. Builders are granted the permissions needed for development according to their qualification category."
   },
+  "142": {
+    "source": "3. 土地取得の事前申請は原則不要と し、自由な開発を認める。ただし、他者の権利や関連規定による制限は適用される。",
+    "english": "3. As a rule, no advance application is required to acquire land, and free development is permitted. However, restrictions based on others’ rights and related regulations still apply."
+  },
   "143": {
     "source": "4. 他者の開発を不当に妨害したり、既存の建築物、設備、所有物などを無断で変更、移動、撤去、破壊したりしてはならない。",
     "english": "4. Builders must not improperly obstruct another person’s development or modify, move, remove, or destroy existing buildings, equipment, or property without permission."
@@ -450,6 +454,10 @@
   "216": {
     "source": "第12条（店舗運営および業務委託）",
     "english": "Article 12 — Store Operations and Contracting"
+  },
+  "217": {
+    "source": "1. Builder は、案内、運転、撮影、建築、店舗スタッフなどの業務を他の参加者へ委託し、コインで報酬を支払うことができる。",
+    "english": "1. A Builder may commission other participants to perform guidance, driving, filming, construction, shop-staff duties, or similar work, and may pay them in coins."
   },
   "218": {
     "source": "2. 店舗・サービス業などの事業活動は経済規定その他の関連規定に従い、運営公認の公式店舗・事業を推奨する。",
@@ -1470,6 +1478,10 @@
   "729": {
     "source": "第41条（最高管理者の権限）",
     "english": "Article 41 — Powers of the Supreme Administrator"
+  },
+  "732": {
+    "source": "3. 最高管理者は、経済状況、公共性、緊急性その他の事情を考慮し、本規定の全部又は一部について、変更、停止、適用除外その他必要な措置を行うことができる。",
+    "english": "3. The Supreme Administrator may amend, suspend, exempt from application, or take other necessary measures concerning all or part of these Regulations, taking into account economic conditions, public interest, emergencies, and other circumstances."
   },
   "733": {
     "source": "4. 最高管理者は、経済上必要と認める場合、価格、賃金、雇用人数、初期支給、公共サービスその他の経済制度について、本規定に定めのない事項を決定することができる。",
