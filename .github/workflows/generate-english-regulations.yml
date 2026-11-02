@@ -10,6 +10,9 @@ on:
       - assets/mjx-english-corrections.json
       - .github/workflows/generate-english-regulations.yml
   workflow_dispatch:
+concurrency:
+  group: mjx-english-regulations-${{ github.ref }}
+  cancel-in-progress: true
 permissions:
   contents: write
 jobs:
