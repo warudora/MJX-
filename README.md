@@ -46,5 +46,5 @@ MJX公式の案内サイト。日本語・英語のホーム、紹介、公式�
 - 日英の各ページに自己参照の `canonical` と相互の `hreflang` を付け、`sitemap.xml` に検索対象の8ページを掲載します。
 - 公開URL: https://warudora.github.io/MJX-/
 - Google Search Consoleには `https://warudora.github.io/MJX-/sitemap.xml` を登録し、公開後のインデックス状況を確認してください。サイトマップは検索順位やインデックス登録を保証しません。
-- Discord公式招待リンクは**運営が正規URLを確認してから**サイトに設置します。未確認の招待URL・仮URLは使用しません。
+- Discord公式招待リンクは **https://discord.gg/PehjWyGDHV** （運営提供URL）。日本語・英語の各ページのナビ・フッターとトップページ等の参加ボタンから案内します。
 - GitHub Pagesは `warudora.github.io` のサブパスで公開されるため、`/MJX-/robots.txt` を配置してもドメインルートのrobots.txtの代替にはなりません。
