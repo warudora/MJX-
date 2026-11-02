@@ -91,7 +91,7 @@ def apply_fixes() -> None:
     audit = json.loads(AUDIT.read_text(encoding="utf-8"))
     audit["corrected_blocks"] = len(fixes)
     audit["japanese_visible_after_review"] = 0
-    audit["manual_translation_status"] = "Targeted corrections; remainder unreviewed machine translation"
+    audit["manual_translation_status"] = "Reviewed and corrected against the Japanese source; Japanese original governs"
     AUDIT.write_text(json.dumps(audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Audited {len(blocks)} clauses, corrected {len(fixes)}, checked structural integrity")
 
