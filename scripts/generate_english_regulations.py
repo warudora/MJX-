@@ -31,7 +31,7 @@ NAMES = (
 STATES = (
     "Current regulation · unchanged",
     "Current regulation · unchanged",
-    "Current regulation · unchanged",
+    "Established · effective date set separately",
     "Revision approved · effective date not specified",
     "Revision approved · effective date not specified",
     "Current regulation · unchanged",
@@ -40,7 +40,7 @@ STATES = (
 DESCRIPTIONS = (
     "Enacted October 11, 2026. Text unchanged.",
     "Enacted October 5, 2026. Preamble, 16 articles and supplementary provisions.",
-    "Enacted October 26, 2026. Six chapters, 22 articles and supplementary provisions.",
+    "Established October 26, 2026. Six chapters, 22 articles and supplementary provisions. The effective date is specified separately by management.",
     "Revision approved November 1, 2026. Creator rights, modifications and appeal procedures.",
     "Revision approved November 1, 2026. The six-month post-departure retention period remains.",
     "Enacted October 5, 2026. Fifteen chapters and 47 articles.",
