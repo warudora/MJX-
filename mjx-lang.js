@@ -9,7 +9,8 @@
     "en.html":            { ja: "jp.html",          en: "en.html" },
     "regulations.html":   { ja: "regulations.html", en: "regulations-en.html" },
     "regulations-en.html":{ ja: "regulations.html", en: "regulations-en.html" },
-    "regulations-full.html":{ ja: "regulations-full.html", en: "regulations-en.html" }
+    "regulations-full.html":{ ja: "regulations-full.html", en: "regulations-full-en.html" },
+    "regulations-full-en.html":{ ja: "regulations-full.html", en: "regulations-full-en.html" }
   };
   const path = window.location.pathname;
   const filename = path.slice(path.lastIndexOf("/") + 1) || "index.html";
