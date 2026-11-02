@@ -299,6 +299,10 @@
     "source": "4. 他者の開発を不当に妨害したり、既存の建築物、設備、所有物などを無断で変更、移動、撤去、破壊したりしてはならない。",
     "english": "4. Builders must not improperly obstruct another person’s development or modify, move, remove, or destroy existing buildings, equipment, or property without permission."
   },
+  "145": {
+    "source": "第4条（活動上の義務）",
+    "english": "Article 4 — Duties During Activities"
+  },
   "148": {
     "source": "2. サーバーに過度な負荷をかけないよう努める。",
     "english": "2. Make reasonable efforts not to place an excessive load on the server."
@@ -447,6 +451,14 @@
     "source": "第12条（店舗運営および業務委託）",
     "english": "Article 12 — Store Operations and Contracting"
   },
+  "218": {
+    "source": "2. 店舗・サービス業などの事業活動は経済規定その他の関連規定に従い、運営公認の公式店舗・事業を推奨する。",
+    "english": "2. Business activities such as stores and services are subject to the Economic Regulations and other related rules. Official stores and businesses authorized by MJX management are recommended."
+  },
+  "219": {
+    "source": "3. 広告・勧誘は MJX 共通規定第 6 条に従い、許可が必要な宣伝は事前承認を受ける。",
+    "english": "3. Advertising and solicitation are governed by Article 6 of the MJX General Server Regulations. Advertising that requires permission must receive prior approval."
+  },
   "220": {
     "source": "4. 現実の金銭その他ゲーム外の価値を用いる取引は別途定める規定に従い、承認が必要な場合は事前に受けなければならない。",
     "english": "4. Transactions involving real money or other value outside the game are subject to separately established rules. Any required approval must be obtained in advance."
@@ -547,6 +559,10 @@
     "source": "1. 脱退する Builder は運営へ通知する。",
     "english": "1. A Builder who withdraws must notify management."
   },
+  "264": {
+    "source": "2. 権限、担当案件、優先保有権、Schematic、リソースパックなどは本規定および関連手続きに従って処理する。",
+    "english": "2. Permissions, assigned projects, priority holding rights, Schematics, resource packs, and similar matters must be handled in accordance with these Regulations and related procedures."
+  },
   "265": {
     "source": "3. 運営は通知から原則 14 日以内を目安に必要な確認・手続きを進める。",
     "english": "3. As a guideline, management proceeds with necessary checks and procedures within 14 days of notification."
@@ -595,6 +611,10 @@
     "source": "12. 緊急の安全確保に必要な制限は審査中も継続できるが、必要性を随時確認し、不要となった場合は解除・変更する。",
     "english": "12. Restrictions needed for emergency safety may remain in place during review, but their necessity must be reassessed as appropriate, and they must be lifted or changed when no longer necessary."
   },
+  "289": {
+    "source": "14. 処分の実施・記録および最終判断は、共通規定その他の関連規定に従う。",
+    "english": "14. The implementation and recording of disciplinary measures, and final decisions, are governed by the General Server Regulations and other related rules."
+  },
   "290": {
     "source": "第20条（Builder 間の紛争解決）",
     "english": "Article 20 — Dispute Resolution Between Builders"
@@ -626,6 +646,10 @@
   "310": {
     "source": "7. 解釈の疑義や条文間の矛盾は、関連規定、本規定の趣旨および MJX の運営目的に基づいて判断する。",
     "english": "7. Questions of interpretation and contradictions between provisions must be decided in light of related regulations, the intent of these Regulations, and MJX’s operational purposes."
+  },
+  "311": {
+    "source": "8. MJX 全体の最終的な意思決定は最高管理者規定に従う。",
+    "english": "8. Final decisions concerning MJX as a whole are governed by the Supreme Administrator Regulations."
   },
   "316": {
     "source": "4. 既存の運用と本規定が異なる場合、運営は関係する Builder へ変更内容を周知し、必要に応じて個別調整する。",
@@ -739,6 +763,10 @@
     "source": "◦ 著作権その他の権利に関する問題が確認された場合。",
     "english": "◦ When copyright or other rights-related problems are confirmed."
   },
+  "393": {
+    "source": "◦ その他、合理的な理由により停止が必要と判断された場合。",
+    "english": "◦ When suspension is deemed necessary for other reasonable grounds."
+  },
   "394": {
     "source": "3. 配布停止を行った場合、運営は可能な範囲でその理由、影響および再開見込み等を周知する。",
     "english": "3. If distribution is suspended, management will publicize the reasons, effects, and anticipated resumption to the extent possible."
@@ -762,6 +790,10 @@
   "405": {
     "source": "◦ 悪質な場合のサーバー利用停止またはBAN。",
     "english": "◦ Suspension of server access or a ban in serious cases."
+  },
+  "407": {
+    "source": "4. 前項の申立ては、必要な権利または正当な根拠に基づき行うものとし、MJX運営が外部サービスを直接停止・削除する権限を有することを意味しない。",
+    "english": "4. Requests under the preceding paragraph must be based on appropriate rights or legitimate grounds. They do not imply that MJX management has authority to directly shut down or delete external services."
   },
   "409": {
     "source": "6. 処分の実施に当たっては、原則として理由を通知する。ただし、緊急の安全確保や証拠保全等のため必要な場合は、先に一時的な措置を行うことができる。",
@@ -798,6 +830,10 @@
   "427": {
     "source": "第10条（関連規定および改定）",
     "english": "Article 10 — Related Regulations and Amendments"
+  },
+  "429": {
+    "source": "2. 本規約と他の規定に解釈上の相違が生じた場合は、対象となる活動、権利関係および各規定の適用範囲を考慮し、MJX共通サーバー規定その他の関連規定に従って判断する。",
+    "english": "2. Where interpretations of these Regulations and other rules differ, decisions must take account of the activities concerned, the rights involved, and each rule’s scope, in accordance with the MJX General Server Regulations and other related rules."
   },
   "430": {
     "source": "3. いかなる場合も、本規約によって法令上認められる権利や、正当な権利者の権利が当然に失われるものではない。",
@@ -895,6 +931,10 @@
     "source": "3. 利用目的の達成などにより、保存期間中であっても情報を保持する必要がなくなった場合は、適切な時期に削除するよう努めます。",
     "english": "3. If information is no longer needed to fulfill its purposes during the retention period, MJX will endeavor to delete it at an appropriate time."
   },
+  "478": {
+    "source": "4. 法令に基づく保存義務その他の法令上の事情がある場合は、その必要な範囲に限り、法令に従って取り扱います。",
+    "english": "4. Where laws require retention or other legal circumstances apply, MJX will handle the information in accordance with the law and only to the extent necessary."
+  },
   "480": {
     "source": "第4条（第三者提供）",
     "english": "Article 4 — Provision of Information to Third Parties"
@@ -903,6 +943,10 @@
     "source": "1. MJXは、取得した個人データについて、原則として本人の同意なく第三者へ提供しません。",
     "english": "1. As a rule, MJX does not provide collected personal data to third parties without the data subject’s consent."
   },
+  "482": {
+    "source": "2. 前項にかかわらず、以下の場合には、法令で認められる範囲において提供することがあります。",
+    "english": "2. Notwithstanding the preceding paragraph, data may be provided in the following cases, to the extent permitted by law."
+  },
   "483": {
     "source": "◦ 本人の同意を得た場合",
     "english": "◦ Where the data subject has consented"
@@ -910,6 +954,10 @@
   "487": {
     "source": "3. 不正利用、規定違反その他の問題への対応を目的とする場合であっても、そのことのみを理由として無条件に第三者提供を行うものではありません。",
     "english": "3. Even when responding to misuse, violations, or other problems, MJX will not disclose personal data to third parties unconditionally on that basis alone."
+  },
+  "489": {
+    "source": "5. 外部事業者へ個人データの取り扱いを委託する場合は、法令に従い、委託先に対する必要かつ適切な監督を行います。",
+    "english": "5. When outsourcing personal-data processing, MJX will provide necessary and appropriate supervision of the contractor in accordance with the law."
   },
   "494": {
     "source": "第6条（利用者による情報の確認・訂正・削除）",
@@ -1091,9 +1139,17 @@
     "source": "4. 管理者が公共価格を設定した商品又はサービスについて、私営事業者は、原則として公共価格を下回る価格で提供してはならない。",
     "english": "4. As a rule, private operators must not offer goods or services for which a public price has been set at a price below that public price."
   },
+  "591": {
+    "source": "5. 前項にかかわらず、管理者が特に認めた場合はこの限りでない。",
+    "english": "5. The preceding paragraph does not apply where an administrator has specifically authorized an exception."
+  },
   "592": {
     "source": "第12条（食料品）",
     "english": "Article 12 — Food Products"
+  },
+  "594": {
+    "source": "2. 管理者は、経済状況その他の事情に応じて前項の価格を変更することができる。",
+    "english": "2. Administrators may change the price in the preceding paragraph based on economic conditions or other circumstances."
   },
   "595": {
     "source": "3. パン以外の食料品についても、管理者が公共価格を設定した場合は、前条の規定を適用する。",
@@ -1114,6 +1170,10 @@
   "607": {
     "source": "第15条（公共住宅の取得）",
     "english": "Article 15 — Acquisition of Public Housing"
+  },
+  "609": {
+    "source": "2. 前項の取得制度を実施する場合、所有権、土地の扱い、改築、譲渡、売却その他必要な条件を管理者が別途定めるものとする。",
+    "english": "2. If the acquisition scheme in the preceding paragraph is implemented, administrators will separately establish the necessary conditions concerning ownership, land, renovations, transfers, sale, and other matters."
   },
   "610": {
     "source": "3. 管理者は、経済状況又は住宅制度の変更に応じて、取得制度を変更又は停止することができる。",
@@ -1347,6 +1407,10 @@
     "source": "第35条（市場の公正）",
     "english": "Article 35 — Fairness of the Market"
   },
+  "704": {
+    "source": "2. 商品又はサービスの大量買占め、意図的な供給停止、価格操作その他、MJX の経済を不当に混乱させる行為を禁止する。",
+    "english": "2. Bulk buying of goods or services, deliberate interruptions of supply, price manipulation, and other acts that unfairly disrupt MJX’s economy are prohibited."
+  },
   "705": {
     "source": "3. 特定の事業者又は参加者が市場を独占すること自体を直ちに禁止するものではないが、独占的地位を利用して他者の経済活動を不当に妨害する行為については、管理者が必要な措置を行うことができる。",
     "english": "3. Monopoly by a particular business or participant is not immediately prohibited in itself. However, management may take necessary measures against abuse of a dominant position that unfairly obstructs others’ economic activities."
@@ -1407,6 +1471,14 @@
     "source": "第41条（最高管理者の権限）",
     "english": "Article 41 — Powers of the Supreme Administrator"
   },
+  "733": {
+    "source": "4. 最高管理者は、経済上必要と認める場合、価格、賃金、雇用人数、初期支給、公共サービスその他の経済制度について、本規定に定めのない事項を決定することができる。",
+    "english": "4. When economically necessary, the Supreme Administrator may determine matters not specified in these Regulations concerning prices, wages, numbers of employees, initial allowances, public services, or other economic systems."
+  },
+  "734": {
+    "source": "5. 最高管理者が本規定に基づいて行った決定は、MJX における最終的な決定とする。",
+    "english": "5. Decisions made by the Supreme Administrator under these Regulations are final within MJX."
+  },
   "735": {
     "source": "第42条（最高管理者による権限行使）",
     "english": "Article 42 — Exercise of Authority by the Supreme Administrator"
@@ -1422,6 +1494,10 @@
   "740": {
     "source": "1. 最高管理者が私営事業を運営する場合においても、第36 条の規定を適用する。",
     "english": "1. Article 36 also applies when the Supreme Administrator operates a private business."
+  },
+  "741": {
+    "source": "2. 最高管理者は、自らが私営事業者として活動する場合、本規定上の事業者として扱われる。",
+    "english": "2. When the Supreme Administrator operates a private business, they are treated as a business operator under these Regulations."
   },
   "742": {
     "source": "3. 前二項にかかわらず、最高管理者はMJX 全体の利益及び経済の安定のために必要な場合、第 41 条に定める権限を行使することができる。",

@@ -13,7 +13,7 @@
     241,
     26
   ],
-  "corrected_blocks": 390,
+  "corrected_blocks": 409,
   "japanese_visible_after_review": 0,
   "manual_translation_status": "Targeted corrections; remainder unreviewed machine translation",
   "latest_review": "Compared every source block to the Japanese source using targeted semantic screening; targeted corrections applied. Remaining clauses are unreviewed machine translation and may contain errors.",
@@ -26,5 +26,6 @@
     "privacy and access restrictions",
     "appeals",
     "resource pack licensing"
-  ]
+  ],
+  "semantic_tests_added": true
 }

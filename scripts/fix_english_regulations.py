@@ -51,6 +51,23 @@ def apply_fixes() -> None:
                or BAD_CONTENT.search(b.get_text(" ", strip=True))]
     if problem:
         raise ValueError(f"Untranslated or suspicious output still remains: {problem[:12]}")
+    tests = {
+        "YouTube publication does not grant permission": (11, "Public availability on YouTube does not mean"),
+        "Cinema access-restriction bypass": (16, "Circumventing access restrictions"),
+        "Server overload prohibited": (148, "not to place an excessive load"),
+        "No immediate revocation for silence": (242, "must not be revoked immediately"),
+        "Public-price floor": (590, "must not offer goods or services"),
+        "Work duration is three hours, not three minutes": (674, "no more than 3 hours"),
+        "Supreme Administrator's rights are preserved": (736, "not restricted by these Regulations"),
+    }
+    for name, (position, expected) in tests.items():
+        if expected not in blocks[position].get_text():
+            raise ValueError(f"Semantic invariant failed: {name}")
+    # Japanese punctuation in visible English usually signals a broken model output.
+    stray = [(i, block.get_text(" ", strip=True)[:80]) for i, block in enumerate(blocks)
+             if re.search(r"[。、]", block.get_text(" ", strip=True))]
+    if stray:
+        raise ValueError(f"Japanese punctuation in English text: {stray[:10]}")
     if "must not be less than 1,000G" not in blocks[652].get_text():
         raise ValueError("Minimum wage meaning inverted")
     if "must not exceed 10,000G" not in blocks[654].get_text():
