@@ -61,6 +61,14 @@ def apply_fixes() -> None:
         "Public-price floor": (590, "must not offer goods or services"),
         "Work duration is three hours, not three minutes": (674, "no more than 3 hours"),
         "Supreme Administrator's rights are preserved": (736, "not restricted by these Regulations"),
+        "Labor is distinct from employment": (547, '"Labor"'),
+        "Wage chapter names labor rather than contracts": (641, "Wages and Labor"),
+        "Privacy third-party disclosure follows lawful grounds": (484, "based on applicable law"),
+        "Priority holdings require approved areas and development purpose": (161, "development purpose"),
+        "Builder decisions are made by authorized management": (152, "Routine decisions concerning Builders"),
+        "Approved housing scheme uses twelve months": (608, "12 months"),
+        "Six months after leaving remains retention period": (475, "six months"),
+        "Supreme Administrator may grant exemptions": (89, "may waive the application"),
     }
     for name, (position, expected) in tests.items():
         if expected not in blocks[position].get_text():
