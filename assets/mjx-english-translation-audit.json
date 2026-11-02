@@ -1,7 +1,7 @@
 {
   "model_calls": 765,
   "translated_blocks": 792,
-  "japanese_remains": 53,
+  "japanese_remains": 54,
   "documents": 7,
   "source_blocks": 792,
   "per_document": [
@@ -15,5 +15,5 @@
   ],
   "corrected_blocks": 792,
   "japanese_visible_after_review": 0,
-  "manual_translation_status": "All 792 English blocks checked against corresponding Japanese text; reviewed English overrides stored for regeneration; Japanese original governs"
+  "manual_translation_status": "Reviewed and corrected against the Japanese source; Japanese original governs"
 }
