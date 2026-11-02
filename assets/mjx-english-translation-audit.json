@@ -13,7 +13,7 @@
     241,
     26
   ],
-  "corrected_blocks": 671,
+  "corrected_blocks": 792,
   "japanese_visible_after_review": 0,
-  "manual_translation_status": "Reviewed and corrected against the Japanese source; Japanese original governs"
+  "manual_translation_status": "All 792 English blocks checked against corresponding Japanese text; reviewed English overrides stored for regeneration; Japanese original governs"
 }
