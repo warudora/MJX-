@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://warudora.github.io/MJX-/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warudora.github.io/MJX-/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warudora.github.io/MJX-/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warudora.github.io/MJX-/"/>
+  </url>
+  <url>
+    <loc>https://warudora.github.io/MJX-/index-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warudora.github.io/MJX-/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warudora.github.io/MJX-/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warudora.github.io/MJX-/"/>
+  </url>
+  <url>
+    <loc>https://warudora.github.io/MJX-/regulations.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warudora.github.io/MJX-/regulations.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warudora.github.io/MJX-/regulations-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warudora.github.io/MJX-/regulations.html"/>
+  </url>
+  <url>
+    <loc>https://warudora.github.io/MJX-/regulations-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warudora.github.io/MJX-/regulations.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warudora.github.io/MJX-/regulations-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warudora.github.io/MJX-/regulations.html"/>
+  </url>
+  <url>
+    <loc>https://warudora.github.io/MJX-/regulations-full.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warudora.github.io/MJX-/regulations-full.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warudora.github.io/MJX-/regulations-full-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warudora.github.io/MJX-/regulations-full.html"/>
+  </url>
+  <url>
+    <loc>https://warudora.github.io/MJX-/regulations-full-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warudora.github.io/MJX-/regulations-full.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warudora.github.io/MJX-/regulations-full-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warudora.github.io/MJX-/regulations-full.html"/>
+  </url>
+  <url>
+    <loc>https://warudora.github.io/MJX-/jp.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warudora.github.io/MJX-/jp.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warudora.github.io/MJX-/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warudora.github.io/MJX-/jp.html"/>
+  </url>
+  <url>
+    <loc>https://warudora.github.io/MJX-/en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://warudora.github.io/MJX-/jp.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://warudora.github.io/MJX-/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://warudora.github.io/MJX-/jp.html"/>
+  </url>
+</urlset>
