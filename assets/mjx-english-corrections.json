@@ -1615,6 +1615,10 @@
     "source": "第2条（基本原則）",
     "english": "Article 2 — Fundamental Principles"
   },
+  "532": {
+    "source": "1. MJX における経済活動は、参加者が自由に商品、サービス及び労働を提供できることを基本とする。",
+    "english": "1. Economic activity within MJX is based on participants' freedom to offer goods, services, and labor."
+  },
   "533": {
     "source": "2. MJX は、参加者が最低限の生活及び活動を行えるよう、必要な公共サービスを提供する。",
     "english": "2. MJX provides the necessary public services so participants can maintain a minimum standard of living and activity."
@@ -1622,6 +1626,10 @@
   "534": {
     "source": "3. 公共事業は、参加者に最低限必要な商品及びサービスを安定して提供することを目的とし、高い品質、速度、頻度、利便性その他の付加価値を提供することを目的としない。",
     "english": "3. Public services aim to provide a stable supply of goods and services essential to participants; they do not aim to offer premium quality, speed, frequency, convenience, or other added value."
+  },
+  "535": {
+    "source": "4. 民間事業者は、公共サービスを基準として、品質、速度、頻度、利便性、設備、付加価値その他の要素により独自のサービスを提供することができる。",
+    "english": "4. Private businesses may differentiate their offerings from public services through quality, speed, frequency, convenience, facilities, added value, and other features."
   },
   "536": {
     "source": "5. 管理者は、MJX の経済の安定及び継続性を確保するため、必要に応じて価格、賃金その他の経済条件を定め、又は変更することができる。",
@@ -1631,6 +1639,10 @@
     "source": "第3条（用語）",
     "english": "Article 3 — Definitions"
   },
+  "538": {
+    "source": "本規定において、次の各号に掲げる用語は、それぞれ以下の意味を有する。",
+    "english": "The following terms have the meanings set out below in these Regulations:"
+  },
   "540": {
     "source": "2. 「最高管理者」：MJX における最高管理権限を有する者をいう。",
     "english": "2. “Supreme Administrator”: The person holding the highest administrative authority in MJX."
@@ -1638,6 +1650,22 @@
   "542": {
     "source": "4. 「ビジター」：MJX において、都市生活、経済活動その他の一般的な参加活動を行う者をいう。",
     "english": "4. “Visitor”: A person who participates in everyday urban life, economic activities, and other general activities within MJX."
+  },
+  "543": {
+    "source": "5. 「ビルダー」：MJX の都市、建築物、交通施設その他の開発及び建設を主たる活動として行う者をいう。",
+    "english": "5. \"Builder\": A participant whose primary activities are developing and constructing MJX cities, buildings, transportation facilities, or other infrastructure."
+  },
+  "544": {
+    "source": "6. 「事業者」：MJX において商品又はサービスを継続的又は反復的に提供する者をいう。",
+    "english": "6. \"Business Operator\": A person who offers goods or services within MJX on an ongoing or repeated basis."
+  },
+  "545": {
+    "source": "7. 「公共事業」：管理者がMJX の参加者に対して最低限必要な商品又はサービスを提供するために行う事業をいう。",
+    "english": "7. \"Public Service\": An activity operated by an administrator to provide MJX participants with essential goods or services."
+  },
+  "546": {
+    "source": "8. 「私営事業」：管理者その他の参加者が自己の事業として行う事業であって、公共事業に該当しないものをいう。",
+    "english": "8. \"Private Business\": A business run by an administrator or another participant on their own account that is not classified as a public service."
   },
   "547": {
     "source": "9. 「労働」：事業者の指示又は管理の下で、時間又は作業を提供し、その対価として賃金を受ける活動をいう。",
@@ -1667,9 +1695,17 @@
     "source": "1. ビルダーであっても、店舗の運営、商品の販売、サービスの提供、労働者の雇用その他の経済活動を行う場合には、その活動について本規定を適用する。",
     "english": "1. Even Builders are subject to these Regulations when they operate stores, sell goods, provide services, hire workers, or conduct other economic activities."
   },
+  "557": {
+    "source": "2. ビルダーが自らの建築技術又は作業を他者に提供し、完成した成果物その他の成果に対して報酬を受ける場合には、原則として建築請負として扱う。",
+    "english": "2. As a general rule, when a Builder provides construction skills or services to another participant in return for payment for a completed deliverable, the arrangement is treated as a construction contract."
+  },
   "558": {
     "source": "3. 建築請負については、通常の雇用労働に関する賃金及び労働時間の規定を原則として適用しない。",
     "english": "3. As a rule, provisions on wages and working hours for ordinary employment do not apply to construction contracts."
+  },
+  "559": {
+    "source": "4. ビルダーであることのみを理由として、経済活動を行う場合の義務を免除するものではない。",
+    "english": "4. Builder status alone does not exempt a participant from obligations applicable to their economic activities."
   },
   "560": {
     "source": "5. 前各項にかかわらず、建築請負の実態が事業者の指示又は管理の下で時間単位の労働を行うものである場合は、通常の労働として扱うことができる。",
@@ -1679,9 +1715,17 @@
     "source": "第6条（ビジターの活動）",
     "english": "Article 6 — Visitor Activities"
   },
+  "564": {
+    "source": "3. ビジターが都市開発又は建築活動を行う場合、必要な資材その他の物品について、公共事業又は私営事業を通じて取得することができる。",
+    "english": "3. Visitors undertaking urban development or construction may obtain the necessary materials and goods through public services or private businesses."
+  },
   "566": {
     "source": "第7条（通貨）",
     "english": "Article 7 — Currency"
+  },
+  "568": {
+    "source": "2. G は、MJX 内における商品、サービス、労働その他の経済活動の対価として使用する。",
+    "english": "2. G is used as payment for goods, services, labor, and other economic activities within MJX."
   },
   "569": {
     "source": "3. G の発行、配布その他の通貨量に影響する行為は、原則として管理者が管理する。",
@@ -1699,9 +1743,17 @@
     "source": "第9条（初期支給）",
     "english": "Article 9 — Initial Allowance"
   },
+  "575": {
+    "source": "1. MJX に参加したビジターには、原則として以下を初期支給する。",
+    "english": "1. As a general rule, new Visitors receive the following initial allowance:"
+  },
   "576": {
     "source": "・パン：1 スタック（64 個）・2,000G",
-    "english": "• Bread: 1 stack (64 items) — 2,000G"
+    "english": "• Bread: 1 stack (64 items); starting funds: 2,000G"
+  },
+  "577": {
+    "source": "2. 初期支給の内容は、経済状況その他の事情により管理者が変更することができる。",
+    "english": "2. Administrators may change the initial allowance in response to economic conditions or other circumstances."
   },
   "578": {
     "source": "3. ビルダーについては、通常の初期支給を行わないことができる。",
@@ -1727,6 +1779,10 @@
     "source": "3. 公共事業は、利益の最大化又は民間事業者を上回るサービスの提供を目的としない。",
     "english": "3. Public services are not intended to maximize profits or surpass private businesses’ service levels."
   },
+  "585": {
+    "source": "5. 公共事業は、最低限の目的を達成する範囲において、品質、速度、頻度、利便性その他の面で簡素又は限定的なサービスとなることを妨げない。",
+    "english": "5. Public services may provide basic or limited quality, speed, frequency, convenience, or other features, provided that they fulfill their essential purpose."
+  },
   "586": {
     "source": "第11条（公共価格）",
     "english": "Article 11 — Public Prices"
@@ -1751,6 +1807,10 @@
     "source": "3. パン以外の食料品についても、管理者が公共価格を設定した場合は、前条の規定を適用する。",
     "english": "3. Where management sets a public price for food items other than bread, the preceding article applies."
   },
+  "596": {
+    "source": "4. 管理者が公共価格を設定していない食料品については、事業者が自由に価格を設定することができる。",
+    "english": "4. Businesses may freely price food products for which management has not set a public price."
+  },
   "597": {
     "source": "第13条（私営事業者の価格）",
     "english": "Article 13 — Prices Charged by Private Businesses"
@@ -1759,6 +1819,10 @@
     "source": "1. 私営事業者は、公共価格が設定されている商品又はサービスについて、公共価格以上の範囲で自由に価格を設定することができる。",
     "english": "1. Private operators may freely set prices for goods and services subject to public prices, provided the prices are at or above the public price."
   },
+  "600": {
+    "source": "3. 私営事業者が公共事業と同一又は同等の商品若しくはサービスを提供する場合であっても、公共事業と同一の品質、速度、頻度又は利便性を提供する義務を負わない。",
+    "english": "3. Even when private businesses offer goods or services equivalent to those provided publicly, they are not required to match the public service's quality, speed, frequency, or convenience."
+  },
   "601": {
     "source": "第5章 住宅",
     "english": "Chapter 5 — Housing"
@@ -1766,6 +1830,10 @@
   "607": {
     "source": "第15条（公共住宅の取得）",
     "english": "Article 15 — Acquisition of Public Housing"
+  },
+  "608": {
+    "source": "1. 公共住宅について、入居者が12 か月間継続して家賃を支払った場合、当該住宅を取得できる制度を設けることができる。",
+    "english": "1. Management may establish a system under which tenants who pay public-housing rent continuously for 12 months can acquire the home."
   },
   "609": {
     "source": "2. 前項の取得制度を実施する場合、所有権、土地の扱い、改築、譲渡、売却その他必要な条件を管理者が別途定めるものとする。",
@@ -1779,6 +1847,14 @@
     "source": "第16条（私営住宅）",
     "english": "Article 16 — Privately Operated Housing"
   },
+  "613": {
+    "source": "2. 私営住宅の価格及び契約条件は、MJX の規定に反しない範囲で事業者が定める。",
+    "english": "2. Private businesses may set prices and contract terms for privately operated housing, provided they comply with MJX regulations."
+  },
+  "614": {
+    "source": "3. 私営住宅については、価格、広さ、設備、立地その他の付加価値を自由に設定することができる。",
+    "english": "3. Private housing operators may freely determine prices, floor areas, amenities, locations, and other features."
+  },
   "615": {
     "source": "4. 私営住宅について公共価格が設定されている場合は、第11 条及び第13 条の規定を適用する。",
     "english": "4. If a public price has been set for privately operated housing, Articles 11 and 13 apply."
@@ -1786,6 +1862,10 @@
   "616": {
     "source": "第6章 交通",
     "english": "Chapter 6 — Transportation"
+  },
+  "619": {
+    "source": "2. 公共交通は、区役所その他の主要な公共施設等へ移動できる最低限の交通手段を確保することを目的とする。",
+    "english": "2. Public transportation aims to ensure at least basic access to district offices and other major public facilities."
   },
   "621": {
     "source": "4. 公共交通は、最低限の目的を達成する範囲において、簡素又は非効率な運行となることを妨げない。",
@@ -1811,13 +1891,25 @@
     "source": "第19条（私営交通）",
     "english": "Article 19 — Privately Operated Transportation"
   },
+  "628": {
+    "source": "2. 私営交通の価格は、本規定その他管理者が定める価格条件に反しない範囲で、事業者が定めることができる。",
+    "english": "2. Private transportation operators may set their fares subject to these Regulations and any other pricing requirements set by management."
+  },
   "629": {
     "source": "3. 私営交通は、速度、運行頻度、利便性、快適性、設備、運行範囲その他の付加価値によって公共交通との差別化を図ることができる。",
-    "english": "Article 19 — Public Transport Operations"
+    "english": "3. Private transportation may distinguish itself from public transportation through speed, service frequency, convenience, comfort, equipment, service area, and other added value."
   },
   "630": {
     "source": "第7章 建築資材及び工具",
     "english": "Chapter 7 — Construction Materials and Tools"
+  },
+  "633": {
+    "source": "2. 基本建築資材は、原則として1 スタック（64 個）単位で販売する。",
+    "english": "2. As a general rule, basic building materials are sold in stacks of 64 items."
+  },
+  "635": {
+    "source": "4. ビルダーの通常の都市開発及び建築活動については、本条による資材購入を必要としない。",
+    "english": "4. Builders do not need to purchase materials under this Article for their ordinary urban-development or construction activities."
   },
   "636": {
     "source": "第21条（工具）",
@@ -1839,6 +1931,10 @@
     "source": "第8章 賃金及び労働",
     "english": "Chapter 8 — Wages and Construction Contracts"
   },
+  "642": {
+    "source": "第22条（賃金の基本）",
+    "english": "Article 22 — Basic Wage Rules"
+  },
   "643": {
     "source": "1. MJX において労働を行った者には、原則としてその労働に応じた賃金を支払うものとする。",
     "english": "1. As a rule, anyone performing work in MJX must be paid wages corresponding to that work."
@@ -1854,6 +1950,10 @@
   "646": {
     "source": "1. ビルダーその他の参加者は、建築物、施設その他の成果物について、報酬を受けて建築請負を行うことができる。",
     "english": "1. Builders and other participants may undertake paid contracts to provide completed buildings, facilities, or other deliverables."
+  },
+  "648": {
+    "source": "3. 建築請負は、原則として通常の雇用労働とは区別する。",
+    "english": "3. As a general rule, construction contracts are distinguished from ordinary employment."
   },
   "649": {
     "source": "4. 建築請負の報酬については、第24 条の最低賃金及び第25 条の最高賃金を直接適用しない。",
@@ -1887,6 +1987,10 @@
     "source": "1. 賃金は、原則として10 分単位で計算する。",
     "english": "1. As a rule, wages are calculated in 10-minute units."
   },
+  "659": {
+    "source": "2. 1 時間あたり1,000G の労働については、10 分あたり約167G を基準とする。",
+    "english": "2. For work paid at 1,000G per hour, the reference amount is approximately 167G per 10 minutes."
+  },
   "660": {
     "source": "3. 事業者は、10 分単位で計算可能な範囲において、具体的な賃金額を求人時に明示しなければならない。",
     "english": "3. Employers must specify the wage offered when recruiting, with amounts that can be calculated in 10-minute units."
@@ -1898,6 +2002,10 @@
   "662": {
     "source": "第27条（雇用条件の明示）",
     "english": "Article 27 — Disclosure of Employment Conditions"
+  },
+  "663": {
+    "source": "事業者が労働者を雇用する場合、求人時に以下の事項を明確にしなければならない。",
+    "english": "When a business recruits workers, it must clearly state the following information in the job posting:"
   },
   "664": {
     "source": "1. 雇用条件",
@@ -1938,6 +2046,10 @@
   "675": {
     "source": "2. 管理者が必要と認めた場合は、前項の上限を超えて労働させることができる。",
     "english": "2. If an administrator considers it necessary, workers may be employed beyond the limit in the preceding paragraph."
+  },
+  "676": {
+    "source": "3. 長時間の労働を行う場合、事業者は求人時にその旨を明示するものとする。",
+    "english": "3. If a job involves extended working hours, the business must disclose that fact when recruiting."
   },
   "677": {
     "source": "第30条（賃金の支払）",
@@ -1987,13 +2099,41 @@
     "source": "第32条（事業者の活動）",
     "english": "Article 32 — Business Activities"
   },
+  "690": {
+    "source": "1. MJX において、参加者は商品又はサービスを提供する事業を行うことができる。",
+    "english": "1. Participants may operate businesses offering goods or services within MJX."
+  },
+  "691": {
+    "source": "2. 事業者は、MJX の規定に反しない範囲で、その事業内容、サービス内容及び価格を定めることができる。",
+    "english": "2. Businesses may determine their activities, services, and prices, provided they comply with MJX regulations."
+  },
   "693": {
     "source": "第33条（公共事業との関係）",
     "english": "Article 33 — Relationship with Public Services"
   },
+  "694": {
+    "source": "1. 公共事業は、MJX における最低限のサービスを提供することを目的とする。",
+    "english": "1. Public services are intended to provide the minimum essential level of service within MJX."
+  },
+  "695": {
+    "source": "2. 公共事業は、私営事業者と同等以上の品質、速度、頻度又は利便性を提供することを必須としない。",
+    "english": "2. Public services are not required to match or exceed the quality, speed, frequency, or convenience offered by private businesses."
+  },
+  "696": {
+    "source": "3. 私営事業者は、公共事業よりも高い品質、速度、頻度、利便性その他の付加価値を提供することにより、独自の需要を獲得することができる。",
+    "english": "3. Private businesses may attract customers by offering higher quality, speed, frequency, convenience, or other added value than public services."
+  },
+  "697": {
+    "source": "4. 公共事業が最低限のサービスを提供している限り、そのサービスが私営事業者より非効率又は不便であることのみを理由として、改善を義務付けられるものではない。",
+    "english": "4. As long as a public service meets the minimum essential standard, it need not be improved solely because it is less efficient or convenient than a private alternative."
+  },
   "698": {
     "source": "第34条（個人間取引）",
     "english": "Article 34 — Transactions Between Individuals"
+  },
+  "699": {
+    "source": "1. 参加者は、他の参加者との間で商品、サービス及びG の取引を行うことができる。",
+    "english": "1. Participants may trade goods, services, and G with one another."
   },
   "701": {
     "source": "3. 取引の内容について、虚偽の説明、意図的な未履行その他相手方を欺く行為を行ってはならない。",
@@ -2002,6 +2142,10 @@
   "702": {
     "source": "第35条（市場の公正）",
     "english": "Article 35 — Fairness of the Market"
+  },
+  "703": {
+    "source": "1. 参加者は、他の参加者の正常な経済活動を不当に妨害してはならない。",
+    "english": "1. Participants must not improperly interfere with the legitimate economic activities of others."
   },
   "704": {
     "source": "2. 商品又はサービスの大量買占め、意図的な供給停止、価格操作その他、MJX の経済を不当に混乱させる行為を禁止する。",
@@ -2031,6 +2175,10 @@
     "source": "4. 管理者が自らの私営事業に関して本規定に基づく判断を行う場合、原則として他の管理者又は最高管理者に判断を委ねるものとする。",
     "english": "4. As a rule, if an administrator makes a decision under these Regulations concerning their own private business, they must leave that decision to another administrator or the Supreme Administrator."
   },
+  "712": {
+    "source": "5. 最高管理者自身の私営事業に関する判断については、可能な限り他の管理者による確認を受けるものとする。",
+    "english": "5. Decisions concerning the Supreme Administrator's own private business must be reviewed by other administrators wherever possible."
+  },
   "713": {
     "source": "第12章 経済の管理",
     "english": "Chapter 12 — Economic Management"
@@ -2051,13 +2199,41 @@
     "source": "管理者は、以下の場合その他MJX の経済を維持するために必要な場合、価格、賃金、初期支給その他の経済条件を変更することができる。",
     "english": "Administrators may change prices, wages, initial allowances, or other economic conditions in the following cases or whenever necessary to maintain MJX’s economy:"
   },
+  "718": {
+    "source": "1. 物価が著しく上昇又は下落した場合",
+    "english": "1. When prices rise or fall significantly"
+  },
+  "719": {
+    "source": "2. 通貨が過剰に流通した場合",
+    "english": "2. When the amount of currency in circulation becomes excessive"
+  },
+  "720": {
+    "source": "3. 特定の商品又はサービスが過度に不足した場合",
+    "english": "3. When particular goods or services are in severe shortage"
+  },
+  "721": {
+    "source": "4. 事業活動が成立しなくなった場合",
+    "english": "4. When business activities can no longer operate viably"
+  },
+  "722": {
+    "source": "5. MJX のゲームバランスに著しい影響が生じた場合",
+    "english": "5. When MJX's game balance is significantly affected"
+  },
   "723": {
     "source": "第39条（G の回収）",
     "english": "Article 39 — Recovery of G"
   },
+  "725": {
+    "source": "2. G の回収を行う場合、その目的及び対象を可能な限り明確にするものとする。",
+    "english": "2. When recovering G, management must clarify the purpose and scope as far as possible."
+  },
   "726": {
     "source": "第40条（特例）",
     "english": "Article 40 — Exceptions"
+  },
+  "727": {
+    "source": "管理者は、公共性、緊急性、事業規模その他の事情を考慮し、本規定の一部について特例を認めることができる。",
+    "english": "Administrators may grant exceptions to parts of these Regulations after considering public interest, urgency, business size, and other circumstances."
   },
   "728": {
     "source": "第13章 最高管理者",
@@ -2066,6 +2242,10 @@
   "729": {
     "source": "第41条（最高管理者の権限）",
     "english": "Article 41 — Powers of the Supreme Administrator"
+  },
+  "731": {
+    "source": "2. 最高管理者は、本規定その他MJX の規定にかかわらず、MJX の経済運営に必要な事項について最終的な決定を行うことができる。",
+    "english": "2. Notwithstanding these Regulations or other MJX rules, the Supreme Administrator may make final decisions on matters necessary for MJX's economic management."
   },
   "732": {
     "source": "3. 最高管理者は、経済状況、公共性、緊急性その他の事情を考慮し、本規定の全部又は一部について、変更、停止、適用除外その他必要な措置を行うことができる。",
@@ -2086,6 +2266,14 @@
   "736": {
     "source": "1. 最高管理者は、MJX の他の規定により認められた権限を妨げられない。",
     "english": "1. The authority granted to the Supreme Administrator under other MJX regulations is not restricted by these Regulations."
+  },
+  "737": {
+    "source": "2. 本規定と最高管理者の決定が抵触する場合、最高管理者の決定を優先する。",
+    "english": "2. If these Regulations conflict with a decision of the Supreme Administrator, the Supreme Administrator's decision takes precedence."
+  },
+  "738": {
+    "source": "3. 最高管理者は、必要に応じて本規定の改正を指示することができる。",
+    "english": "3. The Supreme Administrator may direct amendments to these Regulations when necessary."
   },
   "739": {
     "source": "第43条（最高管理者の私営事業）",
@@ -2111,6 +2299,10 @@
     "source": "1. 本規定に違反した事業者その他の参加者に対しては、MJX の他の規定に基づき、必要な措置を行うことができる。",
     "english": "1. MJX may take necessary measures under other regulations against business operators or participants who violate these Regulations."
   },
+  "746": {
+    "source": "2. 管理者は、違反の程度、影響、故意又は過失その他の事情を考慮し、必要な措置を決定することができる。",
+    "english": "2. Administrators may determine necessary measures after considering the severity and impact of the violation, intent or negligence, and other relevant circumstances."
+  },
   "747": {
     "source": "3. 措置には、以下を含むことができる。",
     "english": "3. Measures may include:"
@@ -2126,6 +2318,14 @@
   "750": {
     "source": "第45条（不正取引等）",
     "english": "Article 45 — Fraudulent Transactions and Related Conduct"
+  },
+  "752": {
+    "source": "1. 商品又はサービスを提供する意思がないにもかかわらず、G を受け取る行為",
+    "english": "1. Receiving G without intending to provide the promised goods or services"
+  },
+  "753": {
+    "source": "2. 虚偽の条件を提示して取引を行う行為",
+    "english": "2. Entering into transactions by misrepresenting the terms"
   },
   "754": {
     "source": "3. 正当な理由なく、合意した労働の賃金を支払わない行為",
@@ -2147,9 +2347,17 @@
     "source": "第46条（改正）",
     "english": "Article 46 — Amendments"
   },
+  "760": {
+    "source": "2. 改正の内容は、原則として参加者に周知するものとする。",
+    "english": "2. As a general rule, amendments must be communicated to participants."
+  },
   "762": {
     "source": "第47条（最高管理者による改正）",
     "english": "Article 47 — Amendments by the Supreme Administrator"
+  },
+  "763": {
+    "source": "1. 最高管理者は、必要と認める場合、本規定を改正し、又は本規定に定めのない経済制度を制定することができる。",
+    "english": "1. The Supreme Administrator may amend these Regulations or establish economic systems not otherwise specified in them when necessary."
   },
   "764": {
     "source": "2. 前項の措置を行った場合、可能な限りその内容を参加者に周知するものとする。",
@@ -2179,6 +2387,10 @@
     "source": "運営が建築・破壊を許可した区域では、設定された権限の範囲内でこれらの操作を行うことができます。",
     "english": "In areas where management permits building or breaking blocks, Visitors may perform those actions within the permissions granted."
   },
+  "772": {
+    "source": "参加時には、行政から初期手当が支給されます。",
+    "english": "On joining MJX, Visitors receive an initial allowance from the MJX administration."
+  },
   "773": {
     "source": "2. お金の稼ぎ方",
     "english": "2. Ways to Earn Money"
@@ -2186,6 +2398,10 @@
   "774": {
     "source": "以下のような活動によって、コインまたはポイントを獲得できます。",
     "english": "Visitors can earn coins or points through the following activities:"
+  },
+  "775": {
+    "source": "どちらを獲得できるかは、各活動によってそれぞれ設定されます。",
+    "english": "The type of reward—coins or points—depends on the activity."
   },
   "776": {
     "source": "• 接客",
@@ -2226,6 +2442,14 @@
   "787": {
     "source": "• モビリティ： 車両・ディーラー、MTS / Kaminari関連製品",
     "english": "• Mobility: Vehicles and dealerships; MTS / Kaminari-related products"
+  },
+  "788": {
+    "source": "• 装備： TacZ等の武器・弾薬、その他、対応する装備",
+    "english": "• Equipment: TacZ weapons, ammunition, and other supported gear"
+  },
+  "789": {
+    "source": "※武器・弾薬の使用については、MJXの戦闘・安全ルールを遵守してください。",
+    "english": "Note: The use of weapons and ammunition is subject to MJX's combat and safety rules."
   },
   "790": {
     "source": "• 生活： JNC系家具・家電、飲食、ショップ商品、物件の購入・賃貸、その他、対応する商品・サービス",
