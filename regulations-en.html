@@ -226,7 +226,8 @@ footer a{color:#fff}
     const q=input.value.trim().toLocaleLowerCase("en");
     let shown=0;
     for(const card of cards){
-      const match=(filter==="all"||card.dataset.status===filter)&&(!q||card.dataset.search.includes(q));
+      const searchableText=(card.dataset.search+" "+card.textContent).toLocaleLowerCase("en");
+      const match=(filter==="all"||card.dataset.status===filter)&&(!q||searchableText.includes(q));
       card.hidden=!match;
       if(match)shown++;
     }
