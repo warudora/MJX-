@@ -505,7 +505,7 @@
   },
   "126": {
     "source": "Builder とは、MJX 内で建築、都市開発、鉄道・交通インフラの整備などを行う者をいう。",
-    "english": "A Builder is a person who performs construction, urban development, or maintenance of rail and transport infrastructure within MJX."
+    "english": "A Builder is a person who performs construction, urban development, or development and upkeep of railway and transportation infrastructure within MJX."
   },
   "127": {
     "source": "MJX は、Builder の自由な開発活動を尊重するとともに、参加者の権利、既存施設、サーバー環境および経済システムを保護する。",
@@ -529,7 +529,7 @@
   },
   "132": {
     "source": "2. Builder は本規定および関連規定を遵守し、他の参加者と協力して MJX の発展に努める。",
-    "english": "2. Builders must comply with these Regulations and related rules and cooperate with other participants to contribute to MJX's development."
+    "english": "2. Builders must comply with these Regulations and related rules, and make reasonable efforts to contribute to MJX's development in cooperation with other participants."
   },
   "133": {
     "source": "3. 本規定は、正当な理由なく Builder の開発活動を制限するものではない。",
@@ -661,7 +661,7 @@
   },
   "165": {
     "source": "7. 保有者は継続的な開発・管理に努める。進捗には建設、具体的な改修、設計に基づく実質的な作業などを含み、単なる保有宣言や予定表明のみは原則として含まない。",
-    "english": "7. Holders should continue developing and managing their areas. Progress includes construction, specific renovation, and substantive design-based work; a declaration of ownership or an announced plan alone normally does not count."
+    "english": "7. Holders must make reasonable efforts to continue developing and managing their holdings. Progress includes construction, specific renovation, and substantive design-based work; a declaration of ownership or an announced plan alone normally does not count."
   },
   "166": {
     "source": "8. 休職中も原則として権利は維持される。ただし、他者の開発を著しく妨げる場合や公共上の必要がある場合は、本人への通知と事情確認を経て変更・取消しを検討できる。",
@@ -705,7 +705,7 @@
   },
   "176": {
     "source": "1. Builder は必要に応じて、建築物、路線、施設などに所有者・管理者を示す看板等を設置する。",
-    "english": "1. Builders should install signs identifying owners or managers of buildings, railway lines, and facilities as necessary."
+    "english": "1. Builders must install signs identifying the owners or managers of buildings, railway lines, and facilities where necessary."
   },
   "177": {
     "source": "2. 表示には Builder 名、組織名など管理主体を特定できる情報を用いる。",
@@ -925,7 +925,7 @@
   },
   "231": {
     "source": "・他者の建築物、土地、設備、活動を不当に妨害するもの・サーバーや参加者の活動に重大な支障を与えるもの・共通規定等で禁止されている施設・活動・MJX の運営目的や建築環境に著しくそぐわず、具体的な理由に基づき運営が不適切と判断したもの・特定の利用者への嫌がらせ、脅迫、侮辱、排斥、攻撃を主な目的とするもの",
-    "english": "• Unreasonably obstructing another person's buildings, land, equipment, or activities • Seriously interfering with the server or participants’ activities • Facilities or activities prohibited by the common rules • Activities that management, for specific stated reasons, deems markedly inconsistent with MJX’s operational purposes or building environment • Activities primarily intended to harass, threaten, insult, exclude, or attack particular users"
+    "english": "• Buildings, displays, or activities that unreasonably obstruct another person's buildings, land, equipment, or activities • Buildings, displays, or activities that seriously interfere with the server or participants’ activities • Facilities or activities prohibited by the common rules • Buildings, displays, or activities that management deems markedly inconsistent with MJX’s operational purposes or building environment on specific grounds • Buildings, displays, or activities primarily intended to harass, threaten, insult, exclude, or attack particular users"
   },
   "232": {
     "source": "3. 不適切性の判断では、作品内容、設置場所、目的、周囲への影響、関連規定などを総合的に考應する。",
@@ -1165,7 +1165,7 @@
   },
   "291": {
     "source": "1. Builder 間で土地、建築物、路線、Schematic、業務などの紛争が生じた場合、まず当事者間で事実を確認し、協議による解決に努める。",
-    "english": "1. If a dispute arises between Builders over land, buildings, railway lines, Schematics, contracted work, or similar matters, the parties must first check the facts and make reasonable efforts to resolve it through discussion."
+    "english": "1. If a dispute arises between Builders over land, buildings, railway lines, Schematics, work, or similar matters, the parties must first check the facts and make reasonable efforts to resolve it through discussion."
   },
   "292": {
     "source": "2. 解決できない場合は、運営へ仲裁・判断を求めることができる。",
@@ -1425,7 +1425,7 @@
   },
   "356": {
     "source": "9. その他、具体的な理由に基づきMJX運営が不適切と判断する行為。",
-    "english": "9. Any other conduct that MJX management deems inappropriate for specific, stated reasons."
+    "english": "9. Any other conduct that MJX management deems inappropriate on specific grounds."
   },
   "357": {
     "source": "ただし、権利者の有効な許諾がある場合または法令上認められる場合については、その範囲内で取り扱う。",
@@ -2209,7 +2209,7 @@
   },
   "552": {
     "source": "2. ビルダーによる通常の都市開発及び建築活動については、原則として本規定に定める商品購入、賃金、住宅、労働その他の経済的制約を適用しない。",
-    "english": "2. As a rule, the product-purchase, wage, housing, employment, and other economic restrictions in these Regulations do not apply to Builders’ ordinary urban-development and construction activities."
+    "english": "2. As a rule, the product-purchase, wage, housing, labor, and other economic restrictions in these Regulations do not apply to Builders’ ordinary urban-development and construction activities."
   },
   "553": {
     "source": "3. ビルダーは、都市開発上必要な範囲において、Creative 環境その他管理者が認めた環境を利用することができる。",
@@ -2249,7 +2249,7 @@
   },
   "562": {
     "source": "1. ビジターは、MJX において労働、事業、消費、居住その他の経済活動を行うことができる。",
-    "english": "1. Visitors may engage in employment, business, consumer, residential, or other economic activities within MJX."
+    "english": "1. Visitors may engage in labor, business, consumption, residence, and other economic activities within MJX."
   },
   "563": {
     "source": "2. ビジターによる通常の経済活動には、本規定を適用する。",
@@ -2821,7 +2821,7 @@
   },
   "705": {
     "source": "3. 特定の事業者又は参加者が市場を独占すること自体を直ちに禁止するものではないが、独占的地位を利用して他者の経済活動を不当に妨害する行為については、管理者が必要な措置を行うことができる。",
-    "english": "3. Monopoly by a particular business or participant is not immediately prohibited in itself. However, management may take necessary measures against abuse of a dominant position that unfairly obstructs others’ economic activities."
+    "english": "3. A monopoly held by a particular business or participant is not, in itself, automatically prohibited. However, management may take necessary measures against the use of a monopolistic position to unfairly obstruct others’ economic activities."
   },
   "706": {
     "source": "第11章 管理者による事業",
@@ -3065,7 +3065,7 @@
   },
   "766": {
     "source": "ビジター（一般参加・生活者）向けルール",
-    "english": "Visitor Rules (for General Participants)"
+    "english": "Visitor Rules (for General Participants and Residents)"
   },
   "767": {
     "source": "ビジターは、MJXの都市で観光・買い物・交通・仕事・生活・イベント等を楽しむ一般プレイヤー向けの参加区分です。",
