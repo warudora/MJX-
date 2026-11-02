@@ -69,6 +69,16 @@ def apply_fixes() -> None:
         "Approved housing scheme uses twelve months": (608, "12 months"),
         "Six months after leaving remains retention period": (475, "six months"),
         "Supreme Administrator may grant exemptions": (89, "may waive the application"),
+        "Builder infrastructure work includes development": (126, "development and upkeep of railway"),
+        "Builder development is an effort duty": (132, "make reasonable efforts"),
+        "Priority holder effort duty": (165, "must make reasonable efforts"),
+        "Required owner signage": (176, "must install signs"),
+        "Building and display prohibitions preserved": (231, "Buildings, displays, or activities"),
+        "Work disputes not limited to contracts": (291, "Schematics, work, or similar matters"),
+        "Specific reasons without an added publication condition": (356, "on specific grounds"),
+        "Builder labor is distinct from employment": (552, "housing, labor, and other"),
+        "Visitor labor is distinct from employment": (562, "engage in labor"),
+        "Monopoly is not automatically prohibited": (705, "not, in itself, automatically prohibited"),
     }
     for name, (position, expected) in tests.items():
         if expected not in blocks[position].get_text():
