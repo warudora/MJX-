@@ -64,7 +64,7 @@ def apply_fixes() -> None:
             if target is None:
                 raise ValueError(f"Broken heading link {link['href']}")
             link.string = target.get_text(strip=True)
-    fixed = "<!DOCTYPE html>\n" + str(soup)
+    fixed = re.sub(r"^(?:\s*<!doctype html>\s*)+", "<!DOCTYPE html>\n", "<!DOCTYPE html>\n" + str(soup), flags=re.I)
     ENG.write_text(fixed, encoding="utf-8")
 
     en_overview = OVERVIEW.read_text(encoding="utf-8")
