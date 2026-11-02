@@ -1,7 +1,7 @@
 {
   "model_calls": 765,
   "translated_blocks": 792,
-  "japanese_remains": 53,
+  "japanese_remains": 54,
   "documents": 7,
   "source_blocks": 792,
   "per_document": [
@@ -12,5 +12,8 @@
     83,
     241,
     26
-  ]
+  ],
+  "corrected_blocks": 173,
+  "japanese_visible_after_review": 0,
+  "manual_translation_status": "Targeted corrections; remainder unreviewed machine translation"
 }
