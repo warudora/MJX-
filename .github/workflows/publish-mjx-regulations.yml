@@ -1,11 +1,5 @@
 name: Publish updated MJX regulation PDFs
 on:
-  push:
-    paths:
-      - .github/workflows/publish-mjx-regulations.yml
-      - scripts/publish_mjx_regulations.py
-      - scripts/make_mjx_searchable.py
-      - scripts/reflow_mjx_pages.py
   workflow_dispatch:
 permissions:
   contents: write
