@@ -6,6 +6,8 @@ on:
       - scripts/bootstrap_en_part*.txt
       - scripts/generate_english_regulations.py
       - scripts/patch_english_regulations.py
+      - scripts/fix_english_regulations.py
+      - assets/mjx-english-corrections.json
       - .github/workflows/generate-english-regulations.yml
   workflow_dispatch:
 permissions:
@@ -49,6 +51,8 @@ jobs:
           export ARGOS_DEVICE_TYPE=cpu
           export OMP_NUM_THREADS=2
           python -u scripts/generate_english_regulations.py
+      - name: Apply verified English corrections and reject malformed translations
+        run: python scripts/fix_english_regulations.py
       - name: Validate English sections, paragraph structure and links
         run: |
           python - <<'PY'

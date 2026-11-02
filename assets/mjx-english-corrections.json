@@ -1,0 +1,414 @@
+{
+  "2": {
+    "source": "第1条｜目的",
+    "english": "Article 1 — Purpose"
+  },
+  "36": {
+    "source": "第8条｜ポリシーの改定",
+    "english": "Article 8 — Policy Revisions"
+  },
+  "43": {
+    "source": "本規定は、MTR Japan Nexus (以下「MJX」という) が運営するサービスの共通利用ルールを定めるものである。",
+    "english": "These Regulations establish common rules for using services operated by MTR Japan Nexus (hereinafter “MJX”)."
+  },
+  "55": {
+    "source": "2. 誹謗中傷、暴言、侮辱、差別的な発言",
+    "english": "2. Defamation, abusive language, insults, and discriminatory statements"
+  },
+  "56": {
+    "source": "3. 他の利用者や団体を不当に貶める行為",
+    "english": "3. Acts that unfairly disparage other users or organizations"
+  },
+  "62": {
+    "source": "第4条（個人情報の取り扱い）",
+    "english": "Article 4 — Handling of Personal Information"
+  },
+  "67": {
+    "source": "1. スパム行為、過度な連投、無意味なメッセージの大量投稿を禁止する。",
+    "english": "1. Spam, excessive repeated posting, and mass posting of meaningless messages are prohibited."
+  },
+  "68": {
+    "source": "2. ウイルス、マルウェアその他利用者やサービスに危害を与える可能性のあるファイル・リンクの投稿を禁止する。",
+    "english": "2. Posting viruses, malware, or files and links that may harm users or the services is prohibited."
+  },
+  "69": {
+    "source": "3. R15・R18 相当の内容を含むリンクやコンテンツの投稿を禁止する。リンク先の内容にかかわらず、運営が危険または不適切と判断した場合は削除や処分の対象となることがある。",
+    "english": "3. Posting links or content equivalent to R15 or R18 material is prohibited. MJX management may delete content or impose measures when it considers the material dangerous or inappropriate, regardless of the destination linked."
+  },
+  "82": {
+    "source": "2. 複数アカウントを利用した迷惑行為、処分の回避、その他不適切な行為を禁止する。",
+    "english": "2. Harassment, evasion of disciplinary action, and other inappropriate acts using multiple accounts are prohibited."
+  },
+  "92": {
+    "source": "・注意・警告・タイムアウト・一時的な利用停止・永久的な利用停止",
+    "english": "• Caution • Warning • Timeout • Temporary suspension of access • Permanent suspension of access"
+  },
+  "97": {
+    "source": "第12条（異議申し立て）",
+    "english": "Article 12 — Appeals"
+  },
+  "106": {
+    "source": "4. アカウントの乗っ取り等、本人の意図しない行為であっても、状況に応じて利用制限等の措置を行うことがある。",
+    "english": "4. Restrictions may be imposed depending on the circumstances, even when account hijacking or other acts occurred without the user’s intent."
+  },
+  "109": {
+    "source": "第15条（規定の改定）",
+    "english": "Article 15 — Revisions to the Regulations"
+  },
+  "125": {
+    "source": "本規定は、MTR Japan Nexus (以下「MJX」) における Builder の資格、権限、義務および運営手続きを定める。",
+    "english": "These Regulations establish the qualifications, authority, duties, and administrative procedures of Builders in MTR Japan Nexus (MJX)."
+  },
+  "129": {
+    "source": "第1章 総則",
+    "english": "Chapter 1 — General Provisions"
+  },
+  "143": {
+    "source": "4. 他者の開発を不当に妨害したり、既存の建築物、設備、所有物などを無断で変更、移動、撤去、破壊したりしてはならない。",
+    "english": "4. Builders must not improperly obstruct another person’s development or modify, move, remove, or destroy existing buildings, equipment, or property without permission."
+  },
+  "168": {
+    "source": "10. 重大な違反や緊急の安全対策が必要な場合、運営は一時的に権利を制限できる。 この場合、可能な限り速やかに本人へ理由を説明する。",
+    "english": "10. In cases of serious violations or emergency safety needs, management may temporarily restrict rights and must explain the reasons to the person concerned as soon as reasonably possible."
+  },
+  "169": {
+    "source": "第7条（開発区域および他者の成果物）",
+    "english": "Article 7 — Development Areas and Others’ Works"
+  },
+  "181": {
+    "source": "第9条（Schematic の登録および共有）",
+    "english": "Article 9 — Registration and Sharing of Schematics"
+  },
+  "186": {
+    "source": "5. 前項の許諾には、原則として次の行為を含み、設置ごとの個別許可は不要とする。",
+    "english": "5. As a rule, the permission in the preceding paragraph includes the following acts, and individual permission is not required for each installation."
+  },
+  "187": {
+    "source": "・MJX 内での設置・利用・複数箇所への設置・景観や用途に合わせた外装・内装・設備の変更",
+    "english": "• Installation and use within MJX • Installation at multiple locations • Modification of exteriors, interiors, and equipment to suit the surroundings or intended use"
+  },
+  "198": {
+    "source": "第10条（Create Mod および技術設備）",
+    "english": "Article 10 — Create Mod and Technical Equipment"
+  },
+  "200": {
+    "source": "2. 技術設備は、サーバーの安定性や他者の活動に著しい支障を与えてはならない。",
+    "english": "2. Technical equipment must not significantly disrupt server stability or the activities of other participants."
+  },
+  "208": {
+    "source": "第11条（資源およびコインの配布）",
+    "english": "Article 11 — Distribution of Resources and Coins"
+  },
+  "210": {
+    "source": "2. Builder は、MJX の経済バランスを維持するため、コインを無制限に直接配布したり、経済システムを不当に迂回して配布したりしてはならない。",
+    "english": "2. To maintain MJX’s economic balance, Builders must not distribute unlimited coins directly or improperly bypass the economic system to distribute coins."
+  },
+  "216": {
+    "source": "第12条（店舗運営および業務委託）",
+    "english": "Article 12 — Store Operations and Contracting"
+  },
+  "223": {
+    "source": "第13条（機密情報）",
+    "english": "Article 13 — Confidential Information"
+  },
+  "230": {
+    "source": "2. 次の建築、展示および活動を禁止する。",
+    "english": "2. The following buildings, displays, and activities are prohibited:"
+  },
+  "231": {
+    "source": "・他者の建築物、土地、設備、活動を不当に妨害するもの・サーバーや参加者の活動に重大な支障を与えるもの・共通規定等で禁止されている施設・活動・MJX の運営目的や建築環境に著しくそぐわず、具体的な理由に基づき運営が不適切と判断したもの・特定の利用者への嫌がらせ、脅迫、侮辱、排斥、攻撃を主な目的とするもの",
+    "english": "• Unreasonably obstructing another person's buildings, land, equipment, or activities • Seriously interfering with the server or participants’ activities • Facilities or activities prohibited by the common rules • Activities that management, for specific stated reasons, deems markedly inconsistent with MJX’s operational purposes or building environment • Activities primarily intended to harass, threaten, insult, exclude, or attack particular users"
+  },
+  "233": {
+    "source": "4. 単にデザインが独特であることや、担当者の個人的な好みに合わないことだけを理由に禁止してはならない。",
+    "english": "4. A design must not be prohibited solely because it is unusual or does not match an administrator’s personal preferences."
+  },
+  "235": {
+    "source": "6. 宗教施設に関する制限は、共通規定および関連規定との整合性を確保し、適用範囲と理由を明示する。 独自の制限を設ける場合は、その権限と根拠を確認しなければならない。",
+    "english": "6. Restrictions on religious facilities must be consistent with the common and related regulations, and their scope and reasons must be stated. Any MJX-specific restriction must have its authority and basis confirmed."
+  },
+  "244": {
+    "source": "第16条（休職）",
+    "english": "Article 16 — Leave of Absence"
+  },
+  "253": {
+    "source": "第17条（路線の長期休止）",
+    "english": "Article 17 — Long-Term Suspension of Railway Lines"
+  },
+  "275": {
+    "source": "第19条（処分および手続き）",
+    "english": "Article 19 — Disciplinary Measures and Procedures"
+  },
+  "285": {
+    "source": "10. 異議申し立てを理由とした不利益な取扱いは禁止する。",
+    "english": "10. Unfavorable treatment solely because a person has lodged an appeal is prohibited."
+  },
+  "290": {
+    "source": "第20条（Builder 間の紛争解決）",
+    "english": "Article 20 — Dispute Resolution Between Builders"
+  },
+  "296": {
+    "source": "第21条（共同開発）",
+    "english": "Article 21 — Joint Development"
+  },
+  "297": {
+    "source": "1. 複数の Builder が共同開発する場合は、担当範囲、管理責任、成果物の利用条件、制作者表示などを可能な限り事前に合意する。",
+    "english": "1. When multiple Builders develop together, they should agree in advance, wherever possible, on their respective tasks, management duties, permitted uses of deliverables, and creator attribution."
+  },
+  "326": {
+    "source": "第1条（適用範囲および用語）",
+    "english": "Article 1 — Scope and Definitions"
+  },
+  "331": {
+    "source": "◦ Visitor（ビジター）： MJXに一般参加する者で、MJXの関連規定に基づく参加区分に属する者。",
+    "english": "◦ Visitor: A general participant in MJX who belongs to the participation category defined in the relevant MJX regulations."
+  },
+  "338": {
+    "source": "1. MJXに参加する利用者は、役職および権利者の利用条件に従い、公式リソースパックを利用できる。",
+    "english": "1. MJX participants may use the official resource pack according to their role and the rights holders’ terms of use."
+  },
+  "359": {
+    "source": "Builderは、前項に加え、以下の行為を行ってはならない。",
+    "english": "In addition to the preceding paragraph, Builders must not engage in the following acts:"
+  },
+  "360": {
+    "source": "1. 他の制作者が制作した車両・モデル等を、認められた利用条件に反して自己の路線や施設へ導入する行為。",
+    "english": "1. Installing vehicles or models made by other creators on one’s own railway lines or facilities in violation of their permitted terms of use."
+  },
+  "386": {
+    "source": "第5条（配布および配布停止）",
+    "english": "Article 5 — Distribution and Re-Distribution"
+  },
+  "404": {
+    "source": "◦ Minecraftサーバーその他MJX関連サービスの利用制限。",
+    "english": "◦ Restrictions on access to the Minecraft server or other MJX-related services."
+  },
+  "415": {
+    "source": "5. 異議申し立てを行ったことのみを理由として、利用者に不利益な措置を講じてはならない。",
+    "english": "5. Users must not be subjected to unfavorable measures solely because they filed an appeal."
+  },
+  "420": {
+    "source": "2. システム障害、仕様変更、通信障害その他の事情により、リソースパックの配布、更新または利用が一時的に制限される場合がある。",
+    "english": "2. Distribution, updates, or use of resource packs may be temporarily restricted due to system failures, specification changes, communication outages, or other circumstances."
+  },
+  "431": {
+    "source": "4. MJX運営は、システムの変更、運営環境、権利関係、法令等に応じて本規約を改定できる。",
+    "english": "4. MJX management may revise these Regulations in response to changes in the system, operating environment, rights, laws, or other relevant circumstances."
+  },
+  "445": {
+    "source": "第0条（目的および適用範囲）",
+    "english": "Article 0 — Purpose and Scope"
+  },
+  "450": {
+    "source": "第1条（取得する情報）",
+    "english": "Article 1 — Information Collected"
+  },
+  "468": {
+    "source": "3. システム障害、不具合等の調査およびトラブルシューティング",
+    "english": "3. Investigation and troubleshooting of system failures, defects, and related problems"
+  },
+  "474": {
+    "source": "第3条（情報の保存期間および削除）",
+    "english": "Article 3 — Information Retention Period and Deletion"
+  },
+  "476": {
+    "source": "2. 前項の期間が経過した場合、MJXは該当する利用者情報を速やかに削除します。",
+    "english": "2. When the period in the preceding paragraph has elapsed, MJX will promptly delete the relevant user information."
+  },
+  "480": {
+    "source": "第4条（第三者提供）",
+    "english": "Article 4 — Provision of Information to Third Parties"
+  },
+  "494": {
+    "source": "第6条（利用者による情報の確認・訂正・削除）",
+    "english": "Article 6 — Access, Correction, and Deletion of Information by Users"
+  },
+  "506": {
+    "source": "第8条（お問い合わせ）",
+    "english": "Article 8 — Inquiries"
+  },
+  "511": {
+    "source": "第9条（ポリシーの改定）",
+    "english": "Article 9 — Policy Revisions"
+  },
+  "528": {
+    "source": "第1章 総則",
+    "english": "Chapter 1 — General Provisions"
+  },
+  "537": {
+    "source": "第3条（用語）",
+    "english": "Article 3 — Definitions"
+  },
+  "547": {
+    "source": "9. 「労働」：事業者の指示又は管理の下で、時間又は作業を提供し、その対価として賃金を受ける活動をいう。",
+    "english": "9. “Employment”: An activity in which a person provides time or labor under an operator’s instructions or supervision in exchange for wages."
+  },
+  "548": {
+    "source": "10. 「建築請負」：建築物、施設その他の成果物について、完成した成果物を提供することを目的として報酬を受ける契約をいう。",
+    "english": "10. “Construction Contract”: A contract under which a person receives remuneration to provide completed buildings, facilities, or other deliverables."
+  },
+  "549": {
+    "source": "第2章 ビルダー及びビジター",
+    "english": "Chapter 2 — Builders and Visitors"
+  },
+  "552": {
+    "source": "2. ビルダーによる通常の都市開発及び建築活動については、原則として本規定に定める商品購入、賃金、住宅、労働その他の経済的制約を適用しない。",
+    "english": "2. As a rule, the product-purchase, wage, housing, employment, and other economic restrictions in these Regulations do not apply to Builders’ ordinary urban-development and construction activities."
+  },
+  "558": {
+    "source": "3. 建築請負については、通常の雇用労働に関する賃金及び労働時間の規定を原則として適用しない。",
+    "english": "3. As a rule, provisions on wages and working hours for ordinary employment do not apply to construction contracts."
+  },
+  "560": {
+    "source": "5. 前各項にかかわらず、建築請負の実態が事業者の指示又は管理の下で時間単位の労働を行うものである場合は、通常の労働として扱うことができる。",
+    "english": "5. Notwithstanding the preceding paragraphs, if a construction contract in practice consists of hourly labor under the operator’s instructions or management, it may be treated as ordinary employment."
+  },
+  "561": {
+    "source": "第6条（ビジターの活動）",
+    "english": "Article 6 — Visitor Activities"
+  },
+  "569": {
+    "source": "3. G の発行、配布その他の通貨量に影響する行為は、原則として管理者が管理する。",
+    "english": "3. The issuance and distribution of G and other activities affecting the money supply are managed by administrators as a rule."
+  },
+  "576": {
+    "source": "・パン：1 スタック（64 個）・2,000G",
+    "english": "• Bread: 1 stack (64 items) — 2,000G"
+  },
+  "601": {
+    "source": "第5章 住宅",
+    "english": "Chapter 5 — Housing"
+  },
+  "610": {
+    "source": "3. 管理者は、経済状況又は住宅制度の変更に応じて、取得制度を変更又は停止することができる。",
+    "english": "3. Administrators may modify or suspend the acquisition scheme in response to economic conditions or changes to the housing system."
+  },
+  "616": {
+    "source": "第6章 交通",
+    "english": "Chapter 6 — Transportation"
+  },
+  "621": {
+    "source": "4. 公共交通は、最低限の目的を達成する範囲において、簡素又は非効率な運行となることを妨げない。",
+    "english": "4. Public transportation may operate simply or inefficiently as long as it fulfills its minimum objectives."
+  },
+  "629": {
+    "source": "3. 私営交通は、速度、運行頻度、利便性、快適性、設備、運行範囲その他の付加価値によって公共交通との差別化を図ることができる。",
+    "english": "Article 19 — Public Transport Operations"
+  },
+  "641": {
+    "source": "第8章 賃金及び労働",
+    "english": "Chapter 8 — Wages and Construction Contracts"
+  },
+  "643": {
+    "source": "1. MJX において労働を行った者には、原則としてその労働に応じた賃金を支払うものとする。",
+    "english": "1. As a rule, anyone performing work in MJX must be paid wages corresponding to that work."
+  },
+  "645": {
+    "source": "第23条（建築請負）",
+    "english": "Article 23 — Construction Contracts"
+  },
+  "646": {
+    "source": "1. ビルダーその他の参加者は、建築物、施設その他の成果物について、報酬を受けて建築請負を行うことができる。",
+    "english": "1. Builders and other participants may undertake paid contracts to provide completed buildings, facilities, or other deliverables."
+  },
+  "649": {
+    "source": "4. 建築請負の報酬については、第24 条の最低賃金及び第25 条の最高賃金を直接適用しない。",
+    "english": "4. The minimum wage in Article 24 and the maximum wage in Article 25 do not directly apply to remuneration for construction contracts."
+  },
+  "651": {
+    "source": "第24条（最低賃金）",
+    "english": "Article 24 — Minimum Wage"
+  },
+  "652": {
+    "source": "労働に対する賃金は、原則として1 時間あたり1,000G を下回ってはならない。",
+    "english": "As a rule, wages for work must not be less than 1,000G per hour."
+  },
+  "653": {
+    "source": "第25条（最高賃金）",
+    "english": "Article 25 — Maximum Wage"
+  },
+  "654": {
+    "source": "1. 労働に対する賃金は、原則として1 時間あたり10,000G を超えてはならない。",
+    "english": "1. As a rule, wages for work must not exceed 10,000G per hour."
+  },
+  "655": {
+    "source": "2. 前項の上限は、MJX 内における過度な通貨流入及び経済の不安定化を防止することを目的とする。",
+    "english": "2. The limit in the preceding paragraph is intended to prevent excessive currency inflow and economic instability within MJX."
+  },
+  "660": {
+    "source": "3. 事業者は、10 分単位で計算可能な範囲において、具体的な賃金額を求人時に明示しなければならない。",
+    "english": "3. Employers must specify the wage offered when recruiting, with amounts that can be calculated in 10-minute units."
+  },
+  "661": {
+    "source": "第9章 雇用",
+    "english": "Chapter 9 — Employment"
+  },
+  "665": {
+    "source": "2. 賃金",
+    "english": "2. Wages"
+  },
+  "675": {
+    "source": "2. 管理者が必要と認めた場合は、前項の上限を超えて労働させることができる。",
+    "english": "2. If an administrator considers it necessary, workers may be employed beyond the limit in the preceding paragraph."
+  },
+  "678": {
+    "source": "1. 事業者は、労働終了後3 日以内に賃金を支払わなければならない。",
+    "english": "1. Employers must pay wages within three days after the work ends."
+  },
+  "679": {
+    "source": "2. 労働者から賃金の未払いについて申告があった場合、管理者は必要に応じて事実確認を行うことができる。",
+    "english": "2. When a worker reports unpaid wages, an administrator may investigate the facts as necessary."
+  },
+  "680": {
+    "source": "3. 未払いが確認された場合、管理者は必要に応じて当該賃金を立て替えて支払うことができる。",
+    "english": "3. If unpaid wages are confirmed, an administrator may advance the unpaid amount on the employer’s behalf when necessary."
+  },
+  "681": {
+    "source": "4. 前項の場合、賃金を支払わなかった事業者は、原則として30 日間、新たな労働者を雇用することができない。",
+    "english": "4. In the circumstances described in the preceding paragraph, the employer who failed to pay wages generally may not hire new workers for 30 days."
+  },
+  "684": {
+    "source": "・事業者名・労働者名・業務内容・労働時間・賃金",
+    "english": "• Employer name • Worker name • Work description • Working hours • Wages"
+  },
+  "685": {
+    "source": "2. 雇用記録は、原則として一般公開する必要はない。",
+    "english": "2. Employment records generally do not have to be made public."
+  },
+  "687": {
+    "source": "4. 雇用記録を作成しない、又は必要事項を記録していない事業者については、管理者は原則として14 日間、新たな労働者の雇用を制限することができる。",
+    "english": "4. Administrators may generally restrict employers who fail to create employment records or record required details from hiring new workers for 14 days."
+  },
+  "710": {
+    "source": "3. 管理者であることを理由として、価格、賃金、雇用、事業活動その他本規定に定める義務の適用を免れることはできない。",
+    "english": "3. Being an administrator does not exempt a person from obligations concerning prices, wages, employment, business activities, or other obligations under these Regulations."
+  },
+  "715": {
+    "source": "管理者は、MJX 内の通貨量、価格、賃金、事業活動その他の経済状況を必要に応じて確認することができる。",
+    "english": "Administrators may review MJX’s money supply, prices, wages, business activities, and other economic circumstances as necessary."
+  },
+  "742": {
+    "source": "3. 前二項にかかわらず、最高管理者はMJX 全体の利益及び経済の安定のために必要な場合、第 41 条に定める権限を行使することができる。",
+    "english": "3. Notwithstanding the preceding two paragraphs, the Supreme Administrator may exercise the authority in Article 41 when necessary for MJX’s overall interests and economic stability."
+  },
+  "748": {
+    "source": "・警告・取引又は営業の制限・新規雇用の制限・事業停止・経済上の利益の取消し・その他管理者が必要と認める措置",
+    "english": "• Warnings • Restrictions on transactions or business activities • Restrictions on new hiring • Business suspension • Revocation of economic benefits • Other measures deemed necessary by administrators"
+  },
+  "749": {
+    "source": "4. 最高管理者は、前各項にかかわらず、MJX 全体の利益及び秩序の維持に必要な最終的措置を決定することができる。",
+    "english": "4. Notwithstanding the preceding paragraphs, the Supreme Administrator may decide final measures necessary to protect MJX’s overall interests and order."
+  },
+  "764": {
+    "source": "2. 前項の措置を行った場合、可能な限りその内容を参加者に周知するものとする。",
+    "english": "2. When measures under the preceding paragraph are taken, their details should be communicated to participants as far as possible."
+  },
+  "766": {
+    "source": "ビジター（一般参加・生活者）向けルール",
+    "english": "Visitor Rules (for General Participants)"
+  },
+  "770": {
+    "source": "ただし、MJXが導入する保護Modによって、通常のプレイではブロックの設置・破壊や都市施設の改変が制限されます。",
+    "english": "However, under the protection mod adopted by MJX, placing or breaking blocks and modifying urban facilities is restricted during ordinary play."
+  }
+}
