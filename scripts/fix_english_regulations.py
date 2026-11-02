@@ -35,6 +35,8 @@ def apply_fixes() -> None:
         if block.get("data-ja-source") != text:
             raise ValueError(f"Japanese source mismatch for English block {i}")
     fixes = json.loads(FIXES.read_text(encoding="utf-8"))
+    if len(fixes) != len(blocks):
+        raise ValueError(f"Expected a reviewed English override for every clause: {len(fixes)}/{len(blocks)}")
     for index, change in fixes.items():
         i = int(index)
         if i < 0 or i >= len(blocks):
