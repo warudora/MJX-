@@ -183,6 +183,10 @@ def translate_document(source: str, model) -> tuple[str, dict]:
         tag["content"] = "Full English reference translation of all seven MJX regulations. Japanese original controls."
     for tag in soup.select('meta[property="og:url"]'):
         tag["content"] = "https://warudora.github.io/MJX-/regulations-full-en.html"
+    canonical = soup.select('link[rel="canonical"]')
+    if len(canonical) != 1:
+        raise ValueError("Expected exactly one canonical link on source page")
+    canonical[0]["href"] = "https://warudora.github.io/MJX-/regulations-full-en.html"
     soup.select_one(".mjx-skip").string = "Skip to content"
     brand = soup.select_one(".mjx-brand")
     brand["href"] = "index-en.html?lang=en"
@@ -194,6 +198,16 @@ def translate_document(source: str, model) -> tuple[str, dict]:
             a["href"], a.string = "regulations-en.html?lang=en", "Official Regulations"
         elif old.startswith("jp.html"):
             a["href"], a.string = "en.html?lang=en", "About MJX"
+    site_nav = soup.select_one(".mjx-toplinks")
+    site_nav["aria-label"] = "Site navigation"
+    discord_links = site_nav.select('a[href^="https://discord.gg/"]')
+    if len(discord_links) != 1:
+        raise ValueError("Expected exactly one official Discord link in source navigation")
+    discord_link = discord_links[0]
+    discord_link.string = "Official Discord"
+    discord_link["aria-label"] = "Official Discord (opens in a new tab)"
+    discord_link["target"] = "_blank"
+    discord_link["rel"] = ["noopener", "noreferrer"]
     switch = soup.select_one('.mjx-lang-toggle a[data-mjx-lang="ja"]')
     switch["href"] = "regulations-full.html?lang=ja"
     switch.attrs.pop("class", None)
@@ -222,6 +236,7 @@ def translate_document(source: str, model) -> tuple[str, dict]:
     warning.append(
         "Revisions to Regulations 04 (Resource Packs), 05 (Privacy) and 07 (Visitor Rules) "
         "were approved on November 1, 2026, but effective dates have not been announced. "
+        "Builder Regulation 03 was established on October 26, 2026, and takes effect on a separate date specified by management. "
         "This is a machine-assisted English reference translation reviewed for consistency with the Japanese original. "
         "The Japanese text takes precedence. The Japanese text of Regulations 02 and 03 may itself "
         "contain OCR errors; check the source before quoting or making decisions."
@@ -232,8 +247,8 @@ def translate_document(source: str, model) -> tuple[str, dict]:
     soup.select_one("button#clear").string = "Clear"
     soup.select_one(".notes").string = (
         "Machine-assisted English reference translation reviewed against Japanese. Clause numbering and anchors match the "
-        "Japanese version. Japanese originals control; revisions 04, 05 and 07 are approved but have "
-        "no announced effective date."
+        "Japanese version. Japanese originals control; Builder Regulation 03 has a separately specified effective date, "
+        "and approved revisions 04, 05 and 07 have no announced effective date."
     )
     footer = soup.select_one("footer.footer")
     footer.clear()
@@ -245,6 +260,13 @@ def translate_document(source: str, model) -> tuple[str, dict]:
     a = soup.new_tag("a", href="regulations-en.html?lang=en")
     a.string = "Regulations overview"
     footer.append(a)
+    footer.append(" · ")
+    official_discord = soup.new_tag("a", href=discord_link["href"])
+    official_discord["target"] = "_blank"
+    official_discord["rel"] = ["noopener", "noreferrer"]
+    official_discord["aria-label"] = "Official Discord (opens in a new tab)"
+    official_discord.string = "Official Discord"
+    footer.append(official_discord)
     top = soup.select_one(".mjx-back-to-top")
     top["aria-label"] = "Back to top"
     top["title"] = "Back to top"
@@ -315,11 +337,14 @@ def update_routes() -> None:
                                                     "href": f"regulations-full.html?lang=ja#doc{i+1}"})
             secondary.string = "Japanese original"
             action.append(secondary)
-    css = overview.new_tag("style")
-    css.string = (".source-link-inline{display:inline-flex;align-items:center;min-height:40px;"
-                  "font-weight:700;font-size:.82rem;color:#40516b;text-decoration:underline;"
-                  "text-underline-offset:3px;padding:5px 8px}")
-    overview.head.append(css)
+    # Avoid appending an identical stylesheet every time the translation is regenerated.
+    if not any(".source-link-inline{display:inline-flex" in (tag.string or "")
+               for tag in overview.select("style")):
+        css = overview.new_tag("style")
+        css.string = (".source-link-inline{display:inline-flex;align-items:center;min-height:40px;"
+                      "font-weight:700;font-size:.82rem;color:#40516b;text-decoration:underline;"
+                      "text-underline-offset:3px;padding:5px 8px}")
+        overview.head.append(css)
     OVERVIEW.write_text("<!DOCTYPE html>\n" + str(overview), encoding="utf-8")
 
 
