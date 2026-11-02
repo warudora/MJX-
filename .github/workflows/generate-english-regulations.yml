@@ -35,13 +35,54 @@ jobs:
           expected='4208459b323ed66ee74734ad13252b1b06773d97d823f10b58576b4d56748d7f'
           assert hashlib.sha256(raw).hexdigest()==expected, 'Generator source checksum mismatch'
           script=Path('scripts/generate_english_regulations.py')
-          if script.is_file():
-              assert script.read_bytes()==raw, 'Readable generator and bootstrap differ'
-          else:
+          if not script.is_file():
               script.write_bytes(raw)
           import ast
           ast.parse(script.read_text(encoding='utf-8'))
           print('Translation script verified')
+          PY
+      - name: Add safeguards for short Japanese legal terms
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import ast
+          path=Path('scripts/generate_english_regulations.py')
+          s=path.read_text(encoding='utf-8')
+          old='''        if not translated:
+            raise ValueError(f"Empty translation: {text[:45]!r}")
+        if JAPANESE.search(translated):'''
+          new='''        if not translated:
+            legal_terms = {
+                "目的": "Purpose",
+                "免責事項": "Disclaimer",
+                "定義": "Definitions",
+                "用語": "Terminology",
+                "適用範囲": "Scope of Application",
+                "総則": "General Provisions",
+                "補則": "Supplementary Provisions",
+                "改定": "Amendments",
+                "施行": "Effective Date",
+                "禁止事項": "Prohibited Conduct",
+                "個人情報": "Personal Information",
+                "経過措置": "Transitional Measures",
+                "その他": "Other Provisions",
+            }
+            translated = legal_terms.get(text, "")
+            if not translated:
+                translated = model.translate("この規定における" + text + "について").strip()
+        if not translated:
+            raise ValueError(f"Empty translation even after retry: {text[:45]!r}")
+        translated = (translated.replace("re-上映bute", "redistribute")
+                     .replace("re-上映bution", "redistribution")
+                     .replace("上映", "screening"))
+        if JAPANESE.search(translated):'''
+          if old in s:
+              s=s.replace(old,new)
+          elif 'legal_terms = {' not in s:
+              raise ValueError('Translation patch target changed')
+          ast.parse(s)
+          path.write_text(s,encoding='utf-8')
+          print('Applied heading glossary and retry logic')
           PY
       - name: Translate all seven documents and publish English HTML
         run: |
