@@ -7,6 +7,8 @@ from __future__ import annotations
 
 import json
 import re
+import subprocess
+import sys
 from collections import Counter
 from pathlib import Path
 
@@ -329,6 +331,7 @@ def main() -> None:
     update_routes()
     audit_path = ROOT / "assets" / "mjx-english-translation-audit.json"
     audit_path.write_text(json.dumps(audit, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    subprocess.run([sys.executable, str(ROOT / "scripts" / "fix_english_regulations.py")], check=True)
     print(json.dumps(audit, ensure_ascii=False), flush=True)
     print("Published English HTML reference translation", flush=True)
 
