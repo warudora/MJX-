@@ -983,6 +983,10 @@
     "source": "6. 具体的な運用基準、禁止・許可リストなどの細則は、運営が別途定めることができる。",
     "english": "6. Management may separately establish detailed rules, such as specific operational standards and lists of prohibited or permitted equipment."
   },
+  "319": {
+    "source": "MTR Japan Nexus リソースパック統一規約",
+    "english": "MTR Japan Nexus — Resource Pack Standardization Rules"
+  },
   "320": {
     "source": "改訂内容承認済み：2026年11月1日／施行日：別途周知",
     "english": "Revisions approved: November 1, 2026 / Effective date: to be announced separately"
@@ -995,9 +999,21 @@
     "source": "本規約は、MTR Japan Nexus（以下「MJX」という。）において利用される公式リソースパックの適切な管理、利用および制作者の権利保護を目的として定める。",
     "english": "These Regulations establish rules for proper management and use of official resource packs within MTR Japan Nexus (MJX) and for protecting their creators’ rights."
   },
+  "324": {
+    "source": "MJXは、参加者による創作活動とその成果物を尊重し、リソースパックを安全かつ継続的に利用できる環境の維持に努める。",
+    "english": "MJX respects participants' creative work and its results, and strives to maintain an environment in which resource packs can be used safely and continuously."
+  },
+  "325": {
+    "source": "本規約は、MJX共通サーバー規定その他の関連規定と併せて適用する。",
+    "english": "These Rules apply alongside the MJX General Server Regulations and other related rules."
+  },
   "326": {
     "source": "第1条（適用範囲および用語）",
     "english": "Article 1 — Scope and Definitions"
+  },
+  "327": {
+    "source": "1. 本規約は、MJX運営が公式に管理・配布するリソースパックおよびこれに含まれるモデル、テクスチャ、音声、設定ファイルその他の構成データに適用する。",
+    "english": "1. These Rules apply to resource packs officially managed and distributed by MJX management, including their models, textures, audio, configuration files, and other component data."
   },
   "329": {
     "source": "◦ 管理者： MJXの規定および権限分担に基づき、サーバー、リソースパックその他の運営管理を行う者。",
@@ -1019,9 +1035,29 @@
     "source": "◦ 権利者： 当該データについて著作権その他の利用許諾に関する権限を有する者。",
     "english": "◦ Rights holder: A person who holds copyright or other authority to grant permission to use the data."
   },
+  "334": {
+    "source": "3. 本規約における「公式リソースパック」とは、MJX運営が指定した方法で提供するリソースパックをいう。",
+    "english": "3. In these Rules, an \"official resource pack\" means a resource pack provided through a method designated by MJX management."
+  },
+  "335": {
+    "source": "4. 本規約に定める利用許可は、原則としてMJXのMinecraftサーバー内での利用に限定する。",
+    "english": "4. As a general rule, permission granted under these Rules is limited to use within MJX's Minecraft server."
+  },
+  "336": {
+    "source": "5. 旧MTR Japan Server（MJaS）で使用されていたリソースパックは、本規約によって自動的にMJX公式リソースパックに含まれるものではない。",
+    "english": "5. Resource packs formerly used by MTR Japan Server (MJaS) do not automatically become MJX official resource packs under these Rules."
+  },
+  "337": {
+    "source": "第2条（利用可能な行為）",
+    "english": "Article 2 — Permitted Uses"
+  },
   "338": {
     "source": "1. MJXに参加する利用者は、役職および権利者の利用条件に従い、公式リソースパックを利用できる。",
     "english": "1. MJX participants may use the official resource pack according to their role and the rights holders’ terms of use."
+  },
+  "339": {
+    "source": "2. Builderは、MJX内における都市開発、鉄道建設、交通施設の整備その他認められた活動のために、利用許可されたリソースパックを使用できる。",
+    "english": "2. Builders may use authorized resource packs for urban development, railway construction, transportation infrastructure, and other permitted activities within MJX."
   },
   "340": {
     "source": "3. Visitorは、MJX内の車両、建築物、設備その他の対象を正常に表示し、認められたゲーム内活動を行うために公式リソースパックを利用できる。",
@@ -1031,17 +1067,53 @@
     "source": "4. Minecraftクライアントによる通常のダウンロード、読み込みおよび必要なキャッシュの生成は、本規約の範囲内で認める。ただし、これらは自由な再配布・改造を認めるものではない。",
     "english": "4. Normal downloading and loading by the Minecraft client, and creation of necessary caches, are permitted under these Regulations. This does not permit free redistribution or modification."
   },
+  "342": {
+    "source": "5. 特定の車両・モデル等について追加の利用条件が定められている場合、その利用条件を併せて遵守しなければならない。",
+    "english": "5. Users must also comply with any additional terms of use applicable to specific vehicles, models, or other assets."
+  },
   "343": {
     "source": "6. リソースパックを使用した画像・映像の公開については、MJXが別途定めるルールおよび権利者の利用条件に従う。",
     "english": "6. Publishing screenshots or videos made using the resource pack is subject to rules separately established by MJX and the rights holders’ terms of use."
+  },
+  "344": {
+    "source": "7. 本条は、第三者の著作物について、権利者の許諾範囲を超えた利用を認めるものではない。",
+    "english": "7. This Article does not authorize use of third-party copyrighted works beyond the rights holder's permission."
+  },
+  "347": {
+    "source": "すべての利用者は、以下の行為を行ってはならない。",
+    "english": "All users are prohibited from:"
   },
   "348": {
     "source": "1. 公式リソースパックの全部または一部を、必要な権限または許諾なく第三者へ再配布する行為。",
     "english": "1. Redistributing all or part of the official resource pack to third parties without the necessary authority or permission."
   },
+  "349": {
+    "source": "2. MJX以外のMinecraftサーバー、シングルプレイワールドその他の環境において、公式リソースパックを無断で利用する行為。",
+    "english": "2. Using official resource packs without permission on Minecraft servers other than MJX, in single-player worlds, or in any other external environment."
+  },
   "350": {
     "source": "3. リソースパックから車両、モデル、テクスチャ、音声等を無断で抽出、改造、移植または転用する行為。",
     "english": "3. Extracting, modifying, porting, or repurposing vehicles, models, textures, sounds, or other data from the resource pack without permission."
+  },
+  "351": {
+    "source": "4. 運営が指定した正規の方法以外で、権限なく公式リソースパックを取得または公開する行為。",
+    "english": "4. Obtaining or publishing official resource packs without authorization through methods other than those officially designated by management."
+  },
+  "352": {
+    "source": "5. 制作者名、権利表示、利用条件等を不正に削除または改変する行為。",
+    "english": "5. Improperly removing or altering creator credits, rights notices, or terms of use."
+  },
+  "353": {
+    "source": "6. リソースパックを使用して、他の利用者への嫌がらせ、差別、脅迫その他の迷惑行為を行う行為。",
+    "english": "6. Using resource packs to harass, discriminate against, threaten, or otherwise disturb other users."
+  },
+  "354": {
+    "source": "7. 政治的・宗教的な宣伝その他、MJX共通サーバー規定に反する目的でリソースパックを利用する行為。",
+    "english": "7. Using resource packs for political or religious promotion or other purposes contrary to the MJX General Server Regulations."
+  },
+  "357": {
+    "source": "ただし、権利者の有効な許諾がある場合または法令上認められる場合については、その範囲内で取り扱う。",
+    "english": "Exceptions based on valid permission from the rights holder or applicable law are recognized only within the scope of that permission or law."
   },
   "358": {
     "source": "3-2 Builderに関する禁止事項",
@@ -1055,6 +1127,10 @@
     "source": "1. 他の制作者が制作した車両・モデル等を、認められた利用条件に反して自己の路線や施設へ導入する行為。",
     "english": "1. Installing vehicles or models made by other creators on one’s own railway lines or facilities in violation of their permitted terms of use."
   },
+  "361": {
+    "source": "2. 他者の制作物を、必要な許諾なく改造、再登録、再配布する行為。",
+    "english": "2. Modifying, re-registering, or redistributing another creator's work without the necessary permission."
+  },
   "363": {
     "source": "4. 車両の制作者本人の許諾なく、当該車両を事故表現に使用する行為。",
     "english": "4. Using a vehicle in accident depictions without permission from that vehicle’s original creator."
@@ -1067,25 +1143,101 @@
     "source": "3-3 車両の事故表現",
     "english": "3-3 Depictions of Vehicle Accidents"
   },
+  "366": {
+    "source": "1. 公式リソースパックに収録された車両を事故表現に使用する場合は、原則として当該車両の制作者本人による事前の許諾を必要とする。",
+    "english": "1. As a general rule, depicting an accident involving a vehicle included in an official resource pack requires the vehicle creator's prior permission."
+  },
+  "367": {
+    "source": "2. 制作者が事故表現を禁止している場合、当該車両を事故表現に使用してはならない。",
+    "english": "2. A vehicle must not be used in accident depictions if its creator has prohibited such use."
+  },
+  "368": {
+    "source": "3. 制作者の許諾が確認できない場合は、許諾されていないものとして取り扱う。",
+    "english": "3. If the creator's permission cannot be verified, the use must be treated as unauthorized."
+  },
+  "369": {
+    "source": "4. MJX運営による企画・イベント等の承認は、制作者本人による許諾に代わるものではない。",
+    "english": "4. MJX management's approval of a plan or event does not replace the vehicle creator's permission."
+  },
+  "370": {
+    "source": "5. 共同制作物など、複数の権利者が関係する場合は、必要な権利者の許諾を得なければならない。",
+    "english": "5. For jointly created works or other assets involving multiple rights holders, permission must be obtained from all relevant rights holders as required."
+  },
+  "371": {
+    "source": "6. 制作者本人が許諾した場合であっても、MJX共通サーバー規定その他の関連規定を遵守しなければならない。",
+    "english": "6. Even with the creator's permission, the user must comply with the MJX General Server Regulations and other related rules."
+  },
   "372": {
     "source": "3-4 改造および利用許諾",
     "english": "3-4 Modifications and Permissions"
+  },
+  "373": {
+    "source": "1. 他の制作者の車両・モデル等を改造する場合は、原則として権利者の許諾を得なければならない。",
+    "english": "1. As a general rule, modifying vehicles, models, or other assets created by others requires the rights holder's permission."
+  },
+  "374": {
+    "source": "2. 作品ごとに改造の可否や条件が明示されている場合は、その条件に従う。",
+    "english": "2. If a work specifies whether modification is allowed and under what conditions, those conditions must be followed."
+  },
+  "375": {
+    "source": "3. 許諾は、対象データ、利用目的、改造内容、再配布の可否等について、当事者間で確認できる形で行うことが望ましい。",
+    "english": "3. Permission should preferably be documented in a form the parties can verify, specifying the data covered, purpose of use, proposed modifications, and whether redistribution is allowed."
+  },
+  "376": {
+    "source": "4. 改造の許諾を得たことのみをもって、再配布、外部利用、データ自体の商業的二次利用その他の行為まで許可されたものとはみなさない。",
+    "english": "4. Permission to modify a work does not, by itself, authorize redistribution, external use, commercial secondary use of the data, or other activities."
+  },
+  "377": {
+    "source": "第4条（制作者および権利者の保護）",
+    "english": "Article 4 — Protection of Creators and Rights Holders"
+  },
+  "378": {
+    "source": "1. 公式リソースパックにデータを提供したことのみを理由として、制作者または権利者の著作権等がMJX運営へ移転するものではない。",
+    "english": "1. Providing data for inclusion in an official resource pack does not, by itself, transfer the creator's or rights holder's copyright or other rights to MJX management."
   },
   "379": {
     "source": "2. 作品の登録・収録に際しては、必要な権利者の許諾およびその利用条件を確認する。",
     "english": "2. When works are registered or included, the necessary permission of the rights holders and the applicable terms of use must be confirmed."
   },
+  "380": {
+    "source": "3. MJX運営による登録・収録の承認は、権利者が保有する権利の譲渡や、許諾範囲を超えた利用を認めるものではない。",
+    "english": "3. MJX management's approval of registration or inclusion does not transfer the rights holder's rights or authorize uses beyond the granted permission."
+  },
+  "381": {
+    "source": "4. 制作者は、自らが許諾する範囲において、他のBuilderによる利用、改造、再利用等の条件を指定できる。",
+    "english": "4. Creators may specify conditions for use, modification, and reuse by other Builders within the scope of the rights they are entitled to license."
+  },
+  "383": {
+    "source": "6. 権利者から利用停止、登録解除その他の申し出があった場合、MJX運営は既存の許諾条件、利用実態および第三者の権利を確認した上で対応する。",
+    "english": "6. If a rights holder requests suspension of use, withdrawal of registration, or other action, MJX management must review existing license terms, actual uses, and third-party rights before responding."
+  },
+  "384": {
+    "source": "7. 登録解除やMJXからの脱退のみを理由として、著作権その他の権利が自動的に消滅するものではない。",
+    "english": "7. Deregistration or withdrawal from MJX does not, by itself, extinguish copyrights or other rights."
+  },
   "386": {
     "source": "第5条（配布および配布停止）",
-    "english": "Article 5 — Distribution and Re-Distribution"
+    "english": "Article 5 — Distribution and Suspension of Distribution"
   },
   "387": {
     "source": "1. 公式リソースパックの配布・更新は、原則としてMJX運営または正当に権限を与えられた者が行う。",
     "english": "1. As a rule, distribution and updates of the official resource pack are carried out by MJX management or persons properly authorized to do so."
   },
+  "388": {
+    "source": "2. MJX運営は、次の場合にリソースパックの配布、更新または利用を一時的に停止できる。",
+    "english": "2. MJX management may temporarily suspend distribution, updates, or use of resource packs in the following circumstances:"
+  },
+  "389": {
+    "source": "◦ データの重大な不備や欠陥が確認された場合。",
+    "english": "◦ If serious deficiencies or defects are found in the data."
+  },
   "390": {
     "source": "◦ 著作権その他の権利に関する問題が確認された場合。",
     "english": "◦ When copyright or other rights-related problems are confirmed."
+  },
+  "391": {
+    "source": "◦ 不正利用、無断再配布その他の規定違反が確認された場合。",
+    "english": "◦ If unauthorized use, unauthorized redistribution, or another rules violation is confirmed."
   },
   "393": {
     "source": "◦ その他、合理的な理由により停止が必要と判断された場合。",
@@ -1095,17 +1247,37 @@
     "source": "3. 配布停止を行った場合、運営は可能な範囲でその理由、影響および再開見込み等を周知する。",
     "english": "3. If distribution is suspended, management will publicize the reasons, effects, and anticipated resumption to the extent possible."
   },
+  "395": {
+    "source": "4. 緊急の場合は事前通知なく停止できる。ただし、必要に応じて事後に説明する。",
+    "english": "4. In emergencies, management may suspend distribution without prior notice but must provide an explanation afterward when necessary."
+  },
   "396": {
     "source": "5. 配布停止は、権利者の有する権利を消滅させるものではない。",
     "english": "5. Suspension of distribution does not extinguish the rights held by rights holders."
+  },
+  "398": {
+    "source": "1. 本規約への違反が確認された場合、MJX運営は違反の内容、影響、故意・過失、過去の違反状況等を考慮し、必要な措置を講じることができる。",
+    "english": "1. If a violation of these Rules is confirmed, MJX management may take necessary measures after considering the violation's nature and impact, intent or negligence, and any prior violations."
   },
   "399": {
     "source": "2. 措置には以下を含む。",
     "english": "2. Measures may include the following:"
   },
+  "400": {
+    "source": "◦ 注意または警告。",
+    "english": "◦ Caution or warning."
+  },
   "401": {
     "source": "◦ 対象データの利用停止。",
     "english": "◦ Suspension of use of the relevant data."
+  },
+  "402": {
+    "source": "◦ リソースパックの利用制限。",
+    "english": "◦ Restrictions on use of the resource pack."
+  },
+  "403": {
+    "source": "◦ 関連する活動権限の一時停止。",
+    "english": "◦ Temporary suspension of related activity permissions."
   },
   "404": {
     "source": "◦ Minecraftサーバーその他MJX関連サービスの利用制限。",
@@ -1115,9 +1287,17 @@
     "source": "◦ 悪質な場合のサーバー利用停止またはBAN。",
     "english": "◦ Suspension of server access or a ban in serious cases."
   },
+  "406": {
+    "source": "3. 無断再配布、権利侵害等が疑われる場合、MJX運営は権利者と協力し、関係するサービスの運営者等に対して削除・停止要請その他必要な申立てを行うことができる。",
+    "english": "3. Where unauthorized redistribution, rights infringement, or similar conduct is suspected, MJX management may work with the rights holder to submit takedown or suspension requests, or other appropriate notices, to the relevant service operators."
+  },
   "407": {
     "source": "4. 前項の申立ては、必要な権利または正当な根拠に基づき行うものとし、MJX運営が外部サービスを直接停止・削除する権限を有することを意味しない。",
     "english": "4. Requests under the preceding paragraph must be based on appropriate rights or legitimate grounds. They do not imply that MJX management has authority to directly shut down or delete external services."
+  },
+  "408": {
+    "source": "5. MGSAに関係する違反または処分については、MJX共通サーバー規定第7条その他の関連規定に従う。",
+    "english": "5. Violations or disciplinary measures involving MGSA are governed by Article 7 of the MJX General Server Regulations and other applicable rules."
   },
   "409": {
     "source": "6. 処分の実施に当たっては、原則として理由を通知する。ただし、緊急の安全確保や証拠保全等のため必要な場合は、先に一時的な措置を行うことができる。",
@@ -1127,9 +1307,21 @@
     "source": "第7条（異議申し立て）",
     "english": "Article 7 — Appeals"
   },
+  "411": {
+    "source": "1. 利用者は、本規約に基づく処分について、MJX運営に説明を求め、異議を申し立てることができる。",
+    "english": "1. Users may request an explanation of disciplinary measures imposed under these Rules and appeal to MJX management."
+  },
+  "412": {
+    "source": "2. 異議申し立ての方法および審査については、MJX共通サーバー規定第12条その他の関連規定を適用する。",
+    "english": "2. The filing and review of appeals are governed by Article 12 of the MJX General Server Regulations and other related rules."
+  },
   "413": {
     "source": "3. Builderに対する処分であって、Builder規定第19条の適用対象となるものについては、同条に定める手続きも適用する。",
     "english": "3. Where a disciplinary measure against a Builder is subject to Article 19 of the Builder Regulations, the procedures under that article also apply."
+  },
+  "414": {
+    "source": "4. 運営は、申立ての内容を確認し、必要と判断した場合には処分の変更、軽減、解除等を行うことができる。",
+    "english": "4. After reviewing an appeal, management may amend, reduce, or lift the disciplinary measure if it considers that necessary."
   },
   "415": {
     "source": "5. 異議申し立てを行ったことのみを理由として、利用者に不利益な措置を講じてはならない。",
@@ -1138,6 +1330,14 @@
   "416": {
     "source": "6. 異議申し立て中の処分の効力については、関連規定に従う。ただし、運営は必要に応じて一時停止、変更または解除を判断できる。",
     "english": "6. The effectiveness of measures during an appeal is governed by related regulations. Management may suspend, modify, or lift a measure when necessary."
+  },
+  "417": {
+    "source": "7. MGSA全体BAN等、MJXが単独で変更できない措置については、関係する制度および権限に従う。",
+    "english": "7. Measures that MJX cannot change independently, such as MGSA-wide bans, are governed by the relevant procedures and authorities."
+  },
+  "419": {
+    "source": "1. MJX運営は、公式リソースパックについて、すべての環境で正常に動作することや、継続的な提供を保証するものではない。",
+    "english": "1. MJX management does not guarantee that official resource packs will function correctly in every environment or remain continuously available."
   },
   "420": {
     "source": "2. システム障害、仕様変更、通信障害その他の事情により、リソースパックの配布、更新または利用が一時的に制限される場合がある。",
@@ -1151,9 +1351,17 @@
     "source": "1. リソースパックの配布、認証、不正利用防止、保守等に伴い取得する利用者情報については、MJXで現行有効なプライバシーポリシーを適用する。",
     "english": "1. The privacy policy currently in effect within MJX applies to user information collected in connection with resource-pack distribution, authentication, misuse prevention, or maintenance."
   },
+  "425": {
+    "source": "2. 取得する情報の種類、利用目的、保存期間、第三者提供等については、プライバシーポリシーに従う。",
+    "english": "2. The types of information collected, purposes of use, retention periods, and sharing with third parties are governed by the Privacy Policy."
+  },
   "427": {
     "source": "第10条（関連規定および改定）",
     "english": "Article 10 — Related Regulations and Amendments"
+  },
+  "428": {
+    "source": "1. 本規約に定めのない事項については、MJX共通サーバー規定、MJX Builder規定その他の関連規定を適用する。",
+    "english": "1. Matters not specified in these Rules are governed by the MJX General Server Regulations, MJX Builder Regulations, and other applicable rules."
   },
   "429": {
     "source": "2. 本規約と他の規定に解釈上の相違が生じた場合は、対象となる活動、権利関係および各規定の適用範囲を考慮し、MJX共通サーバー規定その他の関連規定に従って判断する。",
@@ -1171,9 +1379,25 @@
     "source": "5. 改定内容および適用開始日は、原則として事前に周知する。緊急の変更については、必要な措置を先行して行い、可能な限り速やかに周知する。",
     "english": "5. As a rule, the contents and effective dates of revisions will be announced in advance. In emergencies, necessary measures may be taken first and announced as soon as possible afterward."
   },
+  "433": {
+    "source": "6. 規約の改定のみを理由として、既存の制作者・権利者による利用許諾の範囲が自動的に拡張されることはない。",
+    "english": "6. Revising these Rules does not, by itself, expand the scope of existing permissions granted by creators or rights holders."
+  },
   "435": {
     "source": "1. 本規約は、MJX運営が正式に承認し、周知した適用開始日から施行する。",
     "english": "1. These Regulations take effect on the effective date formally approved and announced by MJX management."
+  },
+  "436": {
+    "source": "2. 本規約は、現在MJXが公式に管理・配布するリソースパックを対象とする。",
+    "english": "2. These Rules apply to the resource packs currently officially managed and distributed by MJX."
+  },
+  "437": {
+    "source": "3. 旧MJaS時代のリソースパックおよびその収録データは、本規約の施行によって自動的にMJXへ移行または収録されるものではない。",
+    "english": "3. Resource packs and their included data from the former MJaS are not automatically transferred to or incorporated into MJX when these Rules take effect."
+  },
+  "438": {
+    "source": "4. 施行前に現在のMJX公式リソースパックについて正当に認められた利用許諾、制作物の権利、登録条件等は、改定のみを理由として当然に取り消されるものではない。",
+    "english": "4. Permissions, creators' rights, and registration conditions validly established for the current MJX official resource packs before these Rules take effect are not automatically revoked solely because of this revision."
   },
   "439": {
     "source": "5. リソースパックの提供方法、利用許可一覧、登録手続き等の細則は、必要に応じてMJX運営が別途定め、周知する。",
@@ -1203,6 +1427,10 @@
     "source": "3. 本ポリシーは、MJXが運営するMinecraftサーバー、リソースパック管理システムおよびこれらに関連するサービスにおいて、本ポリシーに定める情報の取り扱いに適用します。",
     "english": "3. This policy applies to handling information described in this policy in connection with MJX-operated Minecraft servers, resource-pack management systems, and related services."
   },
+  "449": {
+    "source": "4. 関連サービスにおいて本ポリシーに記載されていない情報を新たに取得する場合は、取得情報、利用目的その他必要な事項を事前に明示し、本ポリシーの改定または個別の告知を行います。",
+    "english": "4. Before collecting additional information not covered by this Policy through a related service, MJX will disclose the categories of information, purposes of use, and other necessary details, and revise this Policy or provide a separate notice."
+  },
   "450": {
     "source": "第1条（取得する情報）",
     "english": "Article 1 — Information Collected"
@@ -1211,6 +1439,14 @@
     "source": "MJXは、対象となる機能の利用に際し、必要な説明を行い、利用者の同意を得た場合、以下の情報を取得・保存することがあります。",
     "english": "MJX may collect and store the following information when a user is given the necessary explanation and consents to use a feature that requires it."
   },
+  "455": {
+    "source": "1-2 サービス運営上取得する情報",
+    "english": "1-2 Information Collected for Service Operations"
+  },
+  "456": {
+    "source": "MJXは、リソースパック管理システムの運用、保守およびセキュリティ確保のため、当該システムへのアクセス時に、利用者の同意の有無にかかわらず、以下の情報を必要な範囲で取得・保存することがあります。",
+    "english": "When a user accesses the resource-pack management system, MJX may collect and retain the following information as necessary for its operation, maintenance, and security, regardless of whether the user has consented."
+  },
   "457": {
     "source": "• アクセス日時",
     "english": "• Date and time of access"
@@ -1218,6 +1454,18 @@
   "458": {
     "source": "• 使用されたリソースパック管理Modのバージョン",
     "english": "• Version of the resource-pack management Mod used"
+  },
+  "459": {
+    "source": "これらの情報は、本ポリシーに定める利用目的の範囲内で取り扱います。",
+    "english": "This information will be handled only for the purposes specified in this Policy."
+  },
+  "462": {
+    "source": "2. 偽りその他不正な手段による情報取得を行いません。",
+    "english": "2. MJX will not collect information through deception or other improper means."
+  },
+  "463": {
+    "source": "3. 本条に記載された情報以外を取得する場合は、その内容および利用目的を適切な方法で通知または公表します。",
+    "english": "3. If MJX collects information other than that listed in this Article, it will provide appropriate notice of the information collected and its purposes of use."
   },
   "466": {
     "source": "1. リソースパックの不正利用および無断再配布の防止",
@@ -1283,6 +1531,14 @@
     "source": "5. 外部事業者へ個人データの取り扱いを委託する場合は、法令に従い、委託先に対する必要かつ適切な監督を行います。",
     "english": "5. When outsourcing personal-data processing, MJX will provide necessary and appropriate supervision of the contractor in accordance with the law."
   },
+  "492": {
+    "source": "2. Cookie等を利用する場合は、必要な範囲で適切に管理します。",
+    "english": "2. MJX will manage cookies and similar technologies appropriately and only to the extent necessary."
+  },
+  "493": {
+    "source": "3. Cookie等を使用して追加の情報を取得する場合は、取得内容や利用目的に応じて必要な告知を行います。",
+    "english": "3. If cookies or similar technologies are used to collect additional information, MJX will provide any necessary notice according to the data collected and its purposes of use."
+  },
   "494": {
     "source": "第6条（利用者による情報の確認・訂正・削除）",
     "english": "Article 6 — Access, Correction, and Deletion of Information by Users"
@@ -1290,6 +1546,18 @@
   "495": {
     "source": "1. 利用者は、MJXが保有する自己に関する情報について、開示、訂正、利用停止または削除等を申し出ることができます。",
     "english": "1. Users may request disclosure, correction, suspension of use, deletion, or similar measures concerning information about themselves held by MJX."
+  },
+  "496": {
+    "source": "2. MJXは、申し出を受けた場合、必要に応じて本人確認を行い、法令および利用目的に照らして対応します。",
+    "english": "2. Upon receiving a request, MJX will verify the requester's identity where necessary and respond in accordance with applicable laws and the purposes of use."
+  },
+  "498": {
+    "source": "4. 申し出に対応できない場合や、法令上の理由により全部または一部の対応を行わない場合は、可能な範囲でその理由を説明します。",
+    "english": "4. If MJX cannot fulfill a request, in whole or in part, including for legal reasons, it will explain the reasons to the extent possible."
+  },
+  "499": {
+    "source": "5. 利用者は、情報の取り扱いについて不明な点がある場合、MJX運営に問い合わせることができます。",
+    "english": "5. Users may contact MJX management with questions about the handling of their information."
   },
   "506": {
     "source": "第8条（お問い合わせ）",
@@ -1306,6 +1574,10 @@
   "511": {
     "source": "第9条（ポリシーの改定）",
     "english": "Article 9 — Policy Revisions"
+  },
+  "513": {
+    "source": "2. 改定を行った場合は、MJX内または公式の告知手段を通じて、その内容を周知します。",
+    "english": "2. When this Policy is revised, MJX will announce the changes within MJX or through its official communication channels."
   },
   "514": {
     "source": "3. 利用者情報の取得範囲、利用目的、第三者提供等に関する重要な変更については、原則として事前に周知します。",
