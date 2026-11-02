@@ -11,6 +11,10 @@
     "source": "本ポリシーは、MJXサーバー内の映画館システムを安全かつ適切に利用するためのルールを定めるものです。",
     "english": "This policy establishes the rules for safe and appropriate use of the cinema system on the MJX server."
   },
+  "4": {
+    "source": "本システムでは、YouTube等の外部サービスに関連する映像・音声コンテンツを取り扱う場合があります。",
+    "english": "This system may handle video and audio content associated with external services, including YouTube."
+  },
   "5": {
     "source": "第2条｜利用可能なコンテンツ",
     "english": "Article 2 — Permitted Content"
@@ -31,6 +35,10 @@
     "source": "3. 利用条件の範囲内で上映・配信が認められたコンテンツ",
     "english": "3. Content that may be screened or distributed within the scope of its terms of use"
   },
+  "10": {
+    "source": "4. MJX運営が利用を承認したコンテンツ",
+    "english": "4. Content whose use has been approved by MJX management"
+  },
   "11": {
     "source": "※YouTube上で一般公開されていることは、MJX内での再配信・上映の許可を意味しません。",
     "english": "Note: Public availability on YouTube does not mean that redistribution or screening within MJX is permitted."
@@ -46,6 +54,14 @@
   "17": {
     "source": "4. 他のユーザーへの迷惑行為を目的とした映像・音声の再生",
     "english": "4. Playing video or audio for the purpose of harassing or disturbing other users"
+  },
+  "18": {
+    "source": "5. システムに過度な負荷を与える行為",
+    "english": "5. Actions that place an excessive load on the system"
+  },
+  "19": {
+    "source": "6. その他、法令・サービス利用規約・MJX共通規定に違反する行為",
+    "english": "6. Any other conduct that violates applicable laws, service terms, or the MJX General Server Regulations"
   },
   "20": {
     "source": "第4条｜YouTubeコンテンツの取り扱い",
@@ -179,6 +195,10 @@
     "source": "5. 公序良俗に反する内容、成人向けまたは過度に性的な内容の投稿",
     "english": "5. Posting material contrary to public order or morals, adult-oriented content, or excessively sexual content"
   },
+  "59": {
+    "source": "6. 他の利用者の活動を妨害する行為",
+    "english": "6. Interfering with other users' activities"
+  },
   "60": {
     "source": "7. その他、運営が迷惑行為または不適切な行為と判断する行為",
     "english": "7. Other conduct that management deems harassing, disruptive, or inappropriate"
@@ -202,6 +222,10 @@
   "65": {
     "source": "3. 個人情報の収集、公開、拡散その他これに類する行為を、運営が不適切と判断した場合は処分の対象とする。",
     "english": "3. Collecting, publishing, spreading, or otherwise handling personal information in ways management deems inappropriate may result in disciplinary action."
+  },
+  "66": {
+    "source": "第5条（スパム・危険なコンテンツ等の禁止）",
+    "english": "Article 5 — Prohibition of Spam and Dangerous Content"
   },
   "67": {
     "source": "1. スパム行為、過度な連投、無意味なメッセージの大量投稿を禁止する。",
@@ -293,7 +317,7 @@
   },
   "89": {
     "source": "3. 最高管理者は、自らの判断により、本規定の全部または一部の適用を免除し、または本規定に抵触する行為を行うことができる。",
-    "english": "3. The Supreme Administrator may, at their discretion, exempt themselves from all or part of these Regulations or take actions that would otherwise conflict with them."
+    "english": "3. At their own discretion, the Supreme Administrator may waive the application of all or part of these Regulations or take actions that would otherwise conflict with them."
   },
   "90": {
     "source": "第11条（違反への対応・処分）",
@@ -343,6 +367,14 @@
     "source": "4. MGSA 全体BAN に基づく措置については、MJX 単独で当該決定を変更または撤回することはできないものとする。",
     "english": "4. MJX cannot independently change or revoke measures based on an MGSA-wide ban decision."
   },
+  "102": {
+    "source": "第13条（自動検出システム等）",
+    "english": "Article 13 — Automated Detection Systems and Related Matters"
+  },
+  "103": {
+    "source": "1. 本サービスでは、Wick 等の自動検出システムを利用する場合がある。",
+    "english": "1. The Services may use automated detection systems such as Wick."
+  },
   "104": {
     "source": "2. 自動検出による処分について、利用者は運営に確認を求めることができる。",
     "english": "2. Users may request management to review disciplinary measures resulting from automated detection."
@@ -370,6 +402,14 @@
   "110": {
     "source": "1. 運営は、必要に応じて本規定を改定できる。",
     "english": "1. Management may revise these Regulations when necessary."
+  },
+  "111": {
+    "source": "2. 改定は、原則として事前の通知なく行われる場合がある。",
+    "english": "2. Revisions may generally be made without prior notice."
+  },
+  "112": {
+    "source": "3. 改定後の規定は、公開された時点から適用されるものとする。",
+    "english": "3. Revised Regulations take effect upon publication."
   },
   "113": {
     "source": "第16条（個別サービスの規定）",
@@ -438,6 +478,10 @@
   "134": {
     "source": "第2条（Builder 資格および選考）",
     "english": "Article 2 — Builder Qualifications and Selection"
+  },
+  "135": {
+    "source": "1. Builder 資格は、MTR Global Server Alliance (以下「MGSA」) の選考制度、またはMJXが認める手続きを経て取得する。",
+    "english": "1. Builder qualifications are obtained through the MTR Global Server Alliance (MGSA) selection process or procedures recognized by MJX."
   },
   "136": {
     "source": "2. 資格区分、選考方法および活動権限は、MGSA の共通制度および MJX の関連規定に従う。",
@@ -587,6 +631,10 @@
     "source": "4. 安全確保や重大な障害への緊急対応は、運営の判断で必要な範囲に限り実施できる。",
     "english": "4. In an emergency involving safety or a serious disruption, management may authorize action only to the extent necessary."
   },
+  "174": {
+    "source": "5. 権利に関する紛争は第 20 条に従う。",
+    "english": "5. Disputes concerning rights are governed by Article 20."
+  },
   "175": {
     "source": "第8条（所有者表示）",
     "english": "Article 8 — Identification of Owners"
@@ -654,6 +702,10 @@
   "191": {
     "source": "9. 大幅な改変を加えて別の建物として再登録する場合は、原則として元の制作者を明記する。ただし、正当な理由がある場合は運営と協議できる。元の制作者について誤認させる表示は禁止する。",
     "english": "9. When a significantly modified building is re-registered as a separate building, the original creator must generally be credited. For legitimate reasons, alternative arrangements may be discussed with management. Misleading attribution is prohibited."
+  },
+  "192": {
+    "source": "10. 通常の設置・軽微な改変における制作者表示は、登録時に別途条件が定められている場合を除き任意とする。",
+    "english": "10. Creator attribution for ordinary installations or minor modifications is optional unless additional conditions were specified at registration."
   },
   "193": {
     "source": "11. 登録者は、運営への申出により登録を解除し、将来の新規利用を停止できる。",
@@ -778,6 +830,10 @@
   "224": {
     "source": "1. Builder は、活動を通じて知った非公開情報を正当な理由なく第三者へ開示してはならない。",
     "english": "1. Builders must not disclose nonpublic information learned through their activities to third parties without legitimate grounds."
+  },
+  "225": {
+    "source": "2. 機密情報には、非公開の個人情報、認証情報、未公開の運営判断、セキュリティ情報などを含む。",
+    "english": "2. Confidential information includes nonpublic personal data, login credentials, unpublished management decisions, and security-related information."
   },
   "226": {
     "source": "3. 運営の正式な許可がある場合、規定違反の通報・調査に必要な場合、法令や正当な公的手続きで必要な場合は、必要な範囲で開示できる。",
@@ -1047,6 +1103,10 @@
     "source": "4. 重大な妨害、権利侵害、 サーバーへの被害など緊急時は、協議を待たずに必要な措置を講じることができる。",
     "english": "4. In emergencies involving serious disruption, infringement of rights, or harm to the server, management may take necessary action without waiting for negotiations."
   },
+  "295": {
+    "source": "5. 運営判断への異議は第 19 条および共通規定に従う。",
+    "english": "5. Appeals against management decisions are governed by Article 19 and the General Server Regulations."
+  },
   "296": {
     "source": "第21条（共同開発）",
     "english": "Article 21 — Joint Development"
@@ -1062,6 +1122,10 @@
   "299": {
     "source": "3. 合意がないことのみを理由に、他の参加者の成果物を自由に利用・変更できるものではない。",
     "english": "3. The absence of an agreement does not, by itself, authorize anyone to freely use or modify another participant's work."
+  },
+  "300": {
+    "source": "4. 権利や管理について争いが生じた場合は、第 20 条に従う。",
+    "english": "4. Disputes concerning rights or management are handled under Article 20."
   },
   "301": {
     "source": "5. 運営は必要に応じて、開発記録や担当範囲の提示を求めることができる。",
@@ -1110,6 +1174,10 @@
   "314": {
     "source": "2. 施行前に認められた Builder 資格、優先保有権、登録済み Schematic、既存の建築物・路線は、施行のみを理由として原則取り消されない。",
     "english": "2. Existing Builder qualifications, priority holding rights, registered Schematics, buildings, and railway lines are generally not revoked solely because these Regulations take effect."
+  },
+  "315": {
+    "source": "3. 新たに必要となる申請・登録・表示などには、合理的な移行期間を設けることができる。",
+    "english": "3. Management may establish a reasonable transition period for newly required applications, registrations, identification notices, or similar procedures."
   },
   "316": {
     "source": "4. 既存の運用と本規定が異なる場合、運営は関係する Builder へ変更内容を周知し、必要に応じて個別調整する。",
@@ -1255,6 +1323,10 @@
     "source": "7. 政治的・宗教的な宣伝その他、MJX共通サーバー規定に反する目的でリソースパックを利用する行為。",
     "english": "7. Using resource packs for political or religious promotion or other purposes contrary to the MJX General Server Regulations."
   },
+  "355": {
+    "source": "8. 法令、公序良俗、MJX共通サーバー規定またはその他の関連規定に違反する行為。",
+    "english": "8. Conduct that violates laws, public order or morals, the MJX General Server Regulations, or other related rules."
+  },
   "356": {
     "source": "9. その他、具体的な理由に基づきMJX運営が不適切と判断する行為。",
     "english": "9. Any other conduct that MJX management deems inappropriate for specific, stated reasons."
@@ -1278,6 +1350,10 @@
   "361": {
     "source": "2. 他者の制作物を、必要な許諾なく改造、再登録、再配布する行為。",
     "english": "2. Modifying, re-registering, or redistributing another creator's work without the necessary permission."
+  },
+  "362": {
+    "source": "3. リソースパック内のデータを、必要な権利者の許諾なく有償販売、商品化その他の商業的二次利用に供する行為。",
+    "english": "3. Selling, commercializing, or otherwise commercially exploiting data from the resource pack without the necessary permission from the rights holder."
   },
   "363": {
     "source": "4. 車両の制作者本人の許諾なく、当該車両を事故表現に使用する行為。",
@@ -1355,6 +1431,10 @@
     "source": "4. 制作者は、自らが許諾する範囲において、他のBuilderによる利用、改造、再利用等の条件を指定できる。",
     "english": "4. Creators may specify conditions for use, modification, and reuse by other Builders within the scope of the rights they are entitled to license."
   },
+  "382": {
+    "source": "5. 共同制作物については、関係する権利者間の合意および第三者の権利を尊重する。",
+    "english": "5. For jointly created works, the agreements among relevant rights holders and any third-party rights must be respected."
+  },
   "383": {
     "source": "6. 権利者から利用停止、登録解除その他の申し出があった場合、MJX運営は既存の許諾条件、利用実態および第三者の権利を確認した上で対応する。",
     "english": "6. If a rights holder requests suspension of use, withdrawal of registration, or other action, MJX management must review existing license terms, actual uses, and third-party rights before responding."
@@ -1362,6 +1442,10 @@
   "384": {
     "source": "7. 登録解除やMJXからの脱退のみを理由として、著作権その他の権利が自動的に消滅するものではない。",
     "english": "7. Deregistration or withdrawal from MJX does not, by itself, extinguish copyrights or other rights."
+  },
+  "385": {
+    "source": "8. 本条は、MJX Builder規定その他の関連規定に定める制作物・登録データの取扱いを妨げない。",
+    "english": "8. This Article does not override the treatment of creative works or registered data under the MJX Builder Regulations or other related rules."
   },
   "386": {
     "source": "第5条（配布および配布停止）",
@@ -1599,9 +1683,17 @@
     "source": "第1条（取得する情報）",
     "english": "Article 1 — Information Collected"
   },
+  "451": {
+    "source": "1-1 利用者の同意に基づき取得する情報",
+    "english": "1-1 Information Collected with User Consent"
+  },
   "452": {
     "source": "MJXは、対象となる機能の利用に際し、必要な説明を行い、利用者の同意を得た場合、以下の情報を取得・保存することがあります。",
     "english": "MJX may collect and store the following information when a user is given the necessary explanation and consents to use a feature that requires it."
+  },
+  "453": {
+    "source": "• MinecraftアカウントのUUID",
+    "english": "• Minecraft account UUID"
   },
   "454": {
     "source": "利用者が情報の取得に同意しない場合、当該情報を必要とする一部の機能を利用できないことがあります。",
@@ -1627,6 +1719,10 @@
     "source": "これらの情報は、本ポリシーに定める利用目的の範囲内で取り扱います。",
     "english": "This information will be handled only for the purposes specified in this Policy."
   },
+  "461": {
+    "source": "1. MJXは、利用目的の達成に必要な範囲で情報を取得します。",
+    "english": "1. MJX collects information only to the extent needed for the stated purposes."
+  },
   "462": {
     "source": "2. 偽りその他不正な手段による情報取得を行いません。",
     "english": "2. MJX will not collect information through deception or other improper means."
@@ -1647,9 +1743,21 @@
     "source": "3. システム障害、不具合等の調査およびトラブルシューティング",
     "english": "3. Investigation and troubleshooting of system failures, defects, and related problems"
   },
+  "469": {
+    "source": "4. リソースパックおよび関連システムの改善",
+    "english": "4. Improving resource packs and related systems"
+  },
+  "470": {
+    "source": "5. 利用状況の分析および安定的なサービス提供",
+    "english": "5. Analyzing usage and ensuring stable service provision"
+  },
   "471": {
     "source": "6. セキュリティ対策およびサービスの安全確保",
     "english": "6. Security measures and maintaining the safety of the Services"
+  },
+  "472": {
+    "source": "7. その他、上記の目的に合理的に関連する管理業務",
+    "english": "7. Other administrative activities reasonably related to the purposes above"
   },
   "473": {
     "source": "MJXは、法令に基づく場合その他法令上認められる場合を除き、利用目的の達成に必要な範囲を超えて個人情報を取り扱う場合には、原則として事前に本人の同意を得るものとします。",
@@ -1674,6 +1782,10 @@
   "478": {
     "source": "4. 法令に基づく保存義務その他の法令上の事情がある場合は、その必要な範囲に限り、法令に従って取り扱います。",
     "english": "4. Where laws require retention or other legal circumstances apply, MJX will handle the information in accordance with the law and only to the extent necessary."
+  },
+  "479": {
+    "source": "5. 情報の削除に当たっては、対象となる情報を特定し、適切な方法で削除します。",
+    "english": "5. When deleting information, MJX identifies the relevant records and removes them using appropriate methods."
   },
   "480": {
     "source": "第4条（第三者提供）",
@@ -1703,9 +1815,17 @@
     "source": "3. 不正利用、規定違反その他の問題への対応を目的とする場合であっても、そのことのみを理由として無条件に第三者提供を行うものではありません。",
     "english": "3. Even when responding to misuse, violations, or other problems, MJX will not disclose personal data to third parties unconditionally on that basis alone."
   },
+  "488": {
+    "source": "4. MGSAその他の外部組織との情報共有についても、本人の同意または法令上認められる根拠を確認した上で取り扱います。",
+    "english": "4. When sharing information with MGSA or other external organizations, MJX will first verify the individual's consent or another lawful basis for sharing."
+  },
   "489": {
     "source": "5. 外部事業者へ個人データの取り扱いを委託する場合は、法令に従い、委託先に対する必要かつ適切な監督を行います。",
     "english": "5. When outsourcing personal-data processing, MJX will provide necessary and appropriate supervision of the contractor in accordance with the law."
+  },
+  "491": {
+    "source": "1. MJXが提供するWebベースのシステムでは、ログイン状態の維持その他必要な機能のため、Cookieまたは類似技術を利用する場合があります。",
+    "english": "1. MJX's web-based systems may use cookies or similar technologies to maintain login sessions and provide other necessary functionality."
   },
   "492": {
     "source": "2. Cookie等を利用する場合は、必要な範囲で適切に管理します。",
@@ -1727,6 +1847,10 @@
     "source": "2. MJXは、申し出を受けた場合、必要に応じて本人確認を行い、法令および利用目的に照らして対応します。",
     "english": "2. Upon receiving a request, MJX will verify the requester's identity where necessary and respond in accordance with applicable laws and the purposes of use."
   },
+  "497": {
+    "source": "3. 本人確認に当たっては、原則として必要最小限の情報を使用します。",
+    "english": "3. Identity verification generally uses only the minimum information necessary."
+  },
   "498": {
     "source": "4. 申し出に対応できない場合や、法令上の理由により全部または一部の対応を行わない場合は、可能な範囲でその理由を説明します。",
     "english": "4. If MJX cannot fulfill a request, in whole or in part, including for legal reasons, it will explain the reasons to the extent possible."
@@ -1735,9 +1859,17 @@
     "source": "5. 利用者は、情報の取り扱いについて不明な点がある場合、MJX運営に問い合わせることができます。",
     "english": "5. Users may contact MJX management with questions about the handling of their information."
   },
+  "501": {
+    "source": "1. MJXは、取得した情報について、不正アクセス、漏えい、紛失、改ざん等を防止するため、必要かつ適切な安全管理措置を講じます。",
+    "english": "1. MJX implements necessary and appropriate safeguards to prevent unauthorized access to, leakage, loss, or alteration of collected information."
+  },
   "502": {
     "source": "2. 利用者情報へのアクセスは、運営上必要な権限を持つ者に限定することを原則とします。",
     "english": "2. As a general rule, access to user information is restricted to personnel whose authority requires it for MJX operations."
+  },
+  "503": {
+    "source": "3. 情報の取り扱いに関わる管理者は、業務上知り得た情報を正当な理由なく外部に開示してはなりません。",
+    "english": "3. Administrators who handle information must not disclose information learned through their duties to external parties without legitimate grounds."
   },
   "504": {
     "source": "4. 情報の漏えいその他の問題が発生した場合は、被害の拡大防止、原因調査、再発防止等の必要な措置を講じます。",
@@ -1779,6 +1911,10 @@
     "source": "3. 利用者情報の取得範囲、利用目的、第三者提供等に関する重要な変更については、原則として事前に周知します。",
     "english": "3. As a rule, significant changes to the categories of user information collected, purposes of use, or third-party sharing will be announced in advance."
   },
+  "515": {
+    "source": "4. 法令上新たな同意が必要となる場合は、必要な手続きを行います。",
+    "english": "4. Where additional consent is legally required, MJX will follow the necessary procedures."
+  },
   "516": {
     "source": "5. 改定後のポリシーは、別途定める施行日から適用します。",
     "english": "5. The revised Policy applies from its separately specified effective date."
@@ -1790,6 +1926,14 @@
   "519": {
     "source": "• 原規定名称：MTR Japan Server プライバシーポリシー",
     "english": "• Original policy name: MTR Japan Server Privacy Policy"
+  },
+  "520": {
+    "source": "• 改訂後名称：MTR Japan Nexus プライバシーポリシー",
+    "english": "• Revised policy title: MTR Japan Nexus Privacy Policy"
+  },
+  "521": {
+    "source": "• 改訂承認日：2026年11月1日",
+    "english": "• Revision approved: November 1, 2026"
   },
   "522": {
     "source": "• 改訂施行日：未指定（別途周知）",
@@ -1843,9 +1987,17 @@
     "source": "本規定において、次の各号に掲げる用語は、それぞれ以下の意味を有する。",
     "english": "The following terms have the meanings set out below in these Regulations:"
   },
+  "539": {
+    "source": "1. 「管理者」：MJX の管理者として権限を有する者をいう。",
+    "english": "1. \"Administrator\": A person with administrative authority in MJX."
+  },
   "540": {
     "source": "2. 「最高管理者」：MJX における最高管理権限を有する者をいう。",
     "english": "2. “Supreme Administrator”: The person holding the highest administrative authority in MJX."
+  },
+  "541": {
+    "source": "3. 「参加者」：MJX に参加するすべての者をいう。",
+    "english": "3. \"Participant\": Any person who participates in MJX."
   },
   "542": {
     "source": "4. 「ビジター」：MJX において、都市生活、経済活動その他の一般的な参加活動を行う者をいう。",
@@ -1919,6 +2071,10 @@
     "source": "第6条（ビジターの活動）",
     "english": "Article 6 — Visitor Activities"
   },
+  "562": {
+    "source": "1. ビジターは、MJX において労働、事業、消費、居住その他の経済活動を行うことができる。",
+    "english": "1. Visitors may engage in employment, business, consumer, residential, or other economic activities within MJX."
+  },
   "563": {
     "source": "2. ビジターによる通常の経済活動には、本規定を適用する。",
     "english": "2. These Regulations apply to Visitors' ordinary economic activities."
@@ -1927,9 +2083,17 @@
     "source": "3. ビジターが都市開発又は建築活動を行う場合、必要な資材その他の物品について、公共事業又は私営事業を通じて取得することができる。",
     "english": "3. Visitors undertaking urban development or construction may obtain the necessary materials and goods through public services or private businesses."
   },
+  "565": {
+    "source": "第3章 通貨及び初期資金",
+    "english": "Chapter 3 — Currency and Initial Funds"
+  },
   "566": {
     "source": "第7条（通貨）",
     "english": "Article 7 — Currency"
+  },
+  "567": {
+    "source": "1. MJX における経済活動には、原則として「G」を使用する。",
+    "english": "1. As a general rule, G is used for economic activities within MJX."
   },
   "568": {
     "source": "2. G は、MJX 内における商品、サービス、労働その他の経済活動の対価として使用する。",
@@ -1939,9 +2103,17 @@
     "source": "3. G の発行、配布その他の通貨量に影響する行為は、原則として管理者が管理する。",
     "english": "3. The issuance and distribution of G and other activities affecting the money supply are managed by administrators as a rule."
   },
+  "570": {
+    "source": "第8条（G の発行及び管理）",
+    "english": "Article 8 — Issuance and Management of G"
+  },
   "571": {
     "source": "1. 管理者は、公共事業、報酬、補償、初期支給その他MJX の運営上必要な場合にG を発行又は配布することができる。",
     "english": "1. Administrators may issue or distribute G for public services, rewards, compensation, initial allowances, or other MJX operational needs."
+  },
+  "572": {
+    "source": "2. 管理者は、G の過剰な発行によるインフレーションその他の経済上の問題を防止するため、必要に応じて発行量を調整することができる。",
+    "english": "2. Administrators may adjust the amount of G issued as necessary to prevent inflation or other economic problems resulting from excessive issuance."
   },
   "573": {
     "source": "3. 管理者が経済状況に重大な影響を与える規模のG を新たに発行する場合、その理由及び目的を記録するものとする。",
@@ -1999,9 +2171,17 @@
     "source": "第11条（公共価格）",
     "english": "Article 11 — Public Prices"
   },
+  "587": {
+    "source": "1. 管理者は、公共事業として提供する商品又はサービスについて、公共価格を設定することができる。",
+    "english": "1. Administrators may set public prices for goods and services offered through public services."
+  },
   "588": {
     "source": "2. 公共価格は、当該商品又はサービスについてMJX 内で必要とされる最低限のサービス水準を維持するための基準価格とする。",
     "english": "2. A public price serves as the benchmark for maintaining the minimum required service level for the goods or services concerned within MJX."
+  },
+  "589": {
+    "source": "3. 公共価格は、経済状況、提供費用、利用状況その他の事情に応じて管理者が変更することができる。",
+    "english": "3. Administrators may adjust public prices in response to economic conditions, delivery costs, usage patterns, or other circumstances."
   },
   "590": {
     "source": "4. 管理者が公共価格を設定した商品又はサービスについて、私営事業者は、原則として公共価格を下回る価格で提供してはならない。",
@@ -2014,6 +2194,10 @@
   "592": {
     "source": "第12条（食料品）",
     "english": "Article 12 — Food Products"
+  },
+  "593": {
+    "source": "1. 公共事業として提供するパンの価格は、6 個につき150G とする。",
+    "english": "1. The public price for bread is 150G for six pieces."
   },
   "594": {
     "source": "2. 管理者は、経済状況その他の事情に応じて前項の価格を変更することができる。",
@@ -2035,6 +2219,10 @@
     "source": "1. 私営事業者は、公共価格が設定されている商品又はサービスについて、公共価格以上の範囲で自由に価格を設定することができる。",
     "english": "1. Private operators may freely set prices for goods and services subject to public prices, provided the prices are at or above the public price."
   },
+  "599": {
+    "source": "2. 私営事業者は、価格のほか、品質、速度、頻度、利便性、設備、立地、付加価値その他の要素によって公共事業との差別化を図ることができる。",
+    "english": "2. In addition to price, private businesses may differentiate themselves from public services through quality, speed, frequency, convenience, facilities, location, added value, and other factors."
+  },
   "600": {
     "source": "3. 私営事業者が公共事業と同一又は同等の商品若しくはサービスを提供する場合であっても、公共事業と同一の品質、速度、頻度又は利便性を提供する義務を負わない。",
     "english": "3. Even when private businesses offer goods or services equivalent to those provided publicly, they are not required to match the public service's quality, speed, frequency, or convenience."
@@ -2042,6 +2230,22 @@
   "601": {
     "source": "第5章 住宅",
     "english": "Chapter 5 — Housing"
+  },
+  "603": {
+    "source": "1. 管理者は、参加者が最低限の居住環境を確保できるよう、公共住宅を提供することができる。",
+    "english": "1. Administrators may provide public housing to ensure participants have access to a basic living environment."
+  },
+  "604": {
+    "source": "2. 公共住宅の家賃は、原則として1 か月10,000G とする。",
+    "english": "2. Public housing rent is generally 10,000G per month."
+  },
+  "605": {
+    "source": "3. 公共住宅の設備及びサービスは、最低限の居住に必要なものを基準とする。",
+    "english": "3. Public housing facilities and services are based on the minimum requirements for living accommodation."
+  },
+  "606": {
+    "source": "4. 公共住宅は、高級性、快適性その他の付加価値を提供することを目的としない。",
+    "english": "4. Public housing is not intended to offer luxury, enhanced comfort, or other premium features."
   },
   "607": {
     "source": "第15条（公共住宅の取得）",
@@ -2063,6 +2267,10 @@
     "source": "第16条（私営住宅）",
     "english": "Article 16 — Privately Operated Housing"
   },
+  "612": {
+    "source": "1. 私営事業者は、住宅その他の建築物を提供することができる。",
+    "english": "1. Private businesses may provide housing and other buildings."
+  },
   "613": {
     "source": "2. 私営住宅の価格及び契約条件は、MJX の規定に反しない範囲で事業者が定める。",
     "english": "2. Private businesses may set prices and contract terms for privately operated housing, provided they comply with MJX regulations."
@@ -2079,9 +2287,17 @@
     "source": "第6章 交通",
     "english": "Chapter 6 — Transportation"
   },
+  "618": {
+    "source": "1. 管理者は、参加者がMJX 内を移動するための最低限の交通手段として、公共交通を提供することができる。",
+    "english": "1. Administrators may provide public transportation as a basic means for participants to travel within MJX."
+  },
   "619": {
     "source": "2. 公共交通は、区役所その他の主要な公共施設等へ移動できる最低限の交通手段を確保することを目的とする。",
     "english": "2. Public transportation aims to ensure at least basic access to district offices and other major public facilities."
+  },
+  "620": {
+    "source": "3. 公共交通は、必ずしも高い速度、運行頻度、利便性、快適性その他の付加価値を提供することを目的としない。",
+    "english": "3. Public transportation is not necessarily intended to offer high speeds, frequent service, convenience, comfort, or other premium features."
   },
   "621": {
     "source": "4. 公共交通は、最低限の目的を達成する範囲において、簡素又は非効率な運行となることを妨げない。",
@@ -2107,6 +2323,10 @@
     "source": "第19条（私営交通）",
     "english": "Article 19 — Privately Operated Transportation"
   },
+  "627": {
+    "source": "1. 私営事業者は、公共交通とは別に交通サービスを提供することができる。",
+    "english": "1. Private businesses may offer transportation services separately from public transportation."
+  },
   "628": {
     "source": "2. 私営交通の価格は、本規定その他管理者が定める価格条件に反しない範囲で、事業者が定めることができる。",
     "english": "2. Private transportation operators may set their fares subject to these Regulations and any other pricing requirements set by management."
@@ -2119,9 +2339,17 @@
     "source": "第7章 建築資材及び工具",
     "english": "Chapter 7 — Construction Materials and Tools"
   },
+  "632": {
+    "source": "1. 管理者は、ビジターその他必要とする参加者に対し、建築活動に必要となる基本的な建築資材を販売することができる。",
+    "english": "1. Administrators may sell the basic construction materials required for building activities to Visitors and other participants who need them."
+  },
   "633": {
     "source": "2. 基本建築資材は、原則として1 スタック（64 個）単位で販売する。",
     "english": "2. As a general rule, basic building materials are sold in stacks of 64 items."
+  },
+  "634": {
+    "source": "3. 販売価格は、管理者が経済状況その他の事情を考慮して定める。",
+    "english": "3. Administrators determine sale prices in light of economic conditions and other relevant circumstances."
   },
   "635": {
     "source": "4. ビルダーの通常の都市開発及び建築活動については、本条による資材購入を必要としない。",
@@ -2142,6 +2370,10 @@
   "639": {
     "source": "3. ビルダーについては、Creative 環境等を利用する場合、通常の工具の無償提供を必要としない。",
     "english": "3. Free provision of ordinary tools is not necessary for Builders using Creative mode or similar environments."
+  },
+  "640": {
+    "source": "4. 管理者は、ゲームバランス及び経済状況を考慮して、無償提供する工具の種類を変更することができる。",
+    "english": "4. Administrators may change which tools are provided free of charge in light of game balance and economic conditions."
   },
   "641": {
     "source": "第8章 賃金及び労働",
@@ -2167,6 +2399,10 @@
     "source": "1. ビルダーその他の参加者は、建築物、施設その他の成果物について、報酬を受けて建築請負を行うことができる。",
     "english": "1. Builders and other participants may undertake paid contracts to provide completed buildings, facilities, or other deliverables."
   },
+  "647": {
+    "source": "2. 建築請負における報酬、成果物、納期、仕様その他の条件は、当事者間で事前に合意するものとする。",
+    "english": "2. Parties to a construction contract must agree in advance on payment, deliverables, deadlines, specifications, and other terms."
+  },
   "648": {
     "source": "3. 建築請負は、原則として通常の雇用労働とは区別する。",
     "english": "3. As a general rule, construction contracts are distinguished from ordinary employment."
@@ -2174,6 +2410,10 @@
   "649": {
     "source": "4. 建築請負の報酬については、第24 条の最低賃金及び第25 条の最高賃金を直接適用しない。",
     "english": "4. The minimum wage in Article 24 and the maximum wage in Article 25 do not directly apply to remuneration for construction contracts."
+  },
+  "650": {
+    "source": "5. 建築請負の実態が事業者の指示又は管理の下で時間単位の労働を行うものである場合は、通常の労働として扱うことができる。",
+    "english": "5. Where a construction contract in practice involves hourly work performed under a business operator's direction or supervision, it may be treated as ordinary employment."
   },
   "651": {
     "source": "第24条（最低賃金）",
@@ -2242,6 +2482,10 @@
   "668": {
     "source": "第28条（雇用人数）",
     "english": "Article 28 — Number of Employees"
+  },
+  "669": {
+    "source": "1. 事業者が同時に雇用できる労働者は、管理者が別途定めない限り、原則として3 人までとする。",
+    "english": "1. As a general rule, a business may employ up to three workers simultaneously unless an administrator specifies otherwise."
   },
   "670": {
     "source": "2. 管理者は、事業規模、利用状況、公共性その他の事情を考慮し、前項の人数制限を変更することができる。",
@@ -2327,6 +2571,10 @@
     "source": "2. 事業者は、MJX の規定に反しない範囲で、その事業内容、サービス内容及び価格を定めることができる。",
     "english": "2. Businesses may determine their activities, services, and prices, provided they comply with MJX regulations."
   },
+  "692": {
+    "source": "3. 事業者は、他の事業者と競争し、又は協力することができる。",
+    "english": "3. Business operators may compete or cooperate with other businesses."
+  },
   "693": {
     "source": "第33条（公共事業との関係）",
     "english": "Article 33 — Relationship with Public Services"
@@ -2355,6 +2603,10 @@
     "source": "1. 参加者は、他の参加者との間で商品、サービス及びG の取引を行うことができる。",
     "english": "1. Participants may trade goods, services, and G with one another."
   },
+  "700": {
+    "source": "2. 個人間取引における価格及び条件は、当事者間で合意するものとする。",
+    "english": "2. The parties must agree on prices and terms for transactions between individuals."
+  },
   "701": {
     "source": "3. 取引の内容について、虚偽の説明、意図的な未履行その他相手方を欺く行為を行ってはならない。",
     "english": "3. False statements about a transaction, deliberate nonperformance, and other conduct intended to deceive the other party are prohibited."
@@ -2382,6 +2634,10 @@
   "707": {
     "source": "第36条（管理者による私営事業）",
     "english": "Article 36 — Privately Operated Businesses Run by Administrators"
+  },
+  "708": {
+    "source": "1. 管理者は、私営事業を運営することができる。",
+    "english": "1. Administrators may operate private businesses."
   },
   "709": {
     "source": "2. 管理者が私営事業を運営する場合、当該事業についても本規定を適用する。",
@@ -2443,6 +2699,10 @@
     "source": "第39条（G の回収）",
     "english": "Article 39 — Recovery of G"
   },
+  "724": {
+    "source": "1. 管理者は、経済の安定を目的として、商品販売、サービス提供、税その他の適切な方法によりG を回収することができる。",
+    "english": "1. To maintain economic stability, administrators may recover G through sales of goods, service provision, taxes, or other appropriate means."
+  },
   "725": {
     "source": "2. G の回収を行う場合、その目的及び対象を可能な限り明確にするものとする。",
     "english": "2. When recovering G, management must clarify the purpose and scope as far as possible."
@@ -2462,6 +2722,10 @@
   "729": {
     "source": "第41条（最高管理者の権限）",
     "english": "Article 41 — Powers of the Supreme Administrator"
+  },
+  "730": {
+    "source": "1. 最高管理者は、MJX における最高の管理権限を有する。",
+    "english": "1. The Supreme Administrator holds the highest administrative authority in MJX."
   },
   "731": {
     "source": "2. 最高管理者は、本規定その他MJX の規定にかかわらず、MJX の経済運営に必要な事項について最終的な決定を行うことができる。",
@@ -2567,6 +2831,10 @@
     "source": "第46条（改正）",
     "english": "Article 46 — Amendments"
   },
+  "759": {
+    "source": "1. 本規定は、MJX の経済状況及び運営状況に応じて改正することができる。",
+    "english": "1. These Regulations may be amended in response to MJX's economic or operational circumstances."
+  },
   "760": {
     "source": "2. 改正の内容は、原則として参加者に周知するものとする。",
     "english": "2. As a general rule, amendments must be communicated to participants."
@@ -2602,6 +2870,10 @@
   "768": {
     "source": "1. 参加環境",
     "english": "1. Participation Environment"
+  },
+  "769": {
+    "source": "ビジターは、原則としてサバイバルモードで参加します。",
+    "english": "As a general rule, Visitors participate in Survival Mode."
   },
   "770": {
     "source": "ただし、MJXが導入する保護Modによって、通常のプレイではブロックの設置・破壊や都市施設の改変が制限されます。",
@@ -2654,6 +2926,14 @@
   "782": {
     "source": "• 自動販売機運営",
     "english": "• Operating vending machines"
+  },
+  "783": {
+    "source": "• イベント・大会への参加",
+    "english": "• Participating in events and competitions"
+  },
+  "784": {
+    "source": "• その他、認められた仕事・サービス",
+    "english": "• Other permitted jobs and services"
   },
   "785": {
     "source": "3. お金の使い道",
