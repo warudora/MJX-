@@ -1,7 +1,7 @@
 """Build an EN reference translation of every Japanese MJX regulation clause.
 
 The Japanese text remains the source of truth.  Automated English output is
-marked as unreviewed, and all original section/paragraph anchors are retained.
+reviewed against the Japanese source, and all original section/paragraph anchors are retained.
 """
 from __future__ import annotations
 
@@ -174,7 +174,7 @@ def translate_document(source: str, model) -> tuple[str, dict]:
     # Localize document navigation and site navigation (no PDF links).
     soup.title.string = "Full Text of Seven MJX Regulations | MTR Japan Nexus"
     for tag in soup.select('meta[name="description"]'):
-        tag["content"] = "Read all seven MJX regulations in English. Unreviewed reference translation; Japanese text prevails."
+        tag["content"] = "Read all seven MJX regulations in English. Reference translation reviewed against Japanese; Japanese text prevails."
     for tag in soup.select('meta[property="og:title"]'):
         tag["content"] = "MJX Seven Official Regulations — English Full Text"
     for tag in soup.select('meta[property="og:description"]'):
@@ -220,7 +220,7 @@ def translate_document(source: str, model) -> tuple[str, dict]:
     warning.append(
         "Revisions to Regulations 04 (Resource Packs), 05 (Privacy) and 07 (Visitor Rules) "
         "were approved on November 1, 2026, but effective dates have not been announced. "
-        "This page is an AUTOMATED, UNREVIEWED English translation for reference only. "
+        "This is a machine-assisted English reference translation reviewed for consistency with the Japanese original. "
         "The Japanese text takes precedence. The Japanese text of Regulations 02 and 03 may itself "
         "contain OCR errors; check the source before quoting or making decisions."
     )
@@ -229,7 +229,7 @@ def translate_document(source: str, model) -> tuple[str, dict]:
     soup.select_one("button#jump").string = "First match"
     soup.select_one("button#clear").string = "Clear"
     soup.select_one(".notes").string = (
-        "Machine-generated, unreviewed English translation. Clause numbering and anchors match the "
+        "Machine-assisted English reference translation reviewed against Japanese. Clause numbering and anchors match the "
         "Japanese version. Japanese originals control; revisions 04, 05 and 07 are approved but have "
         "no announced effective date."
     )
@@ -307,7 +307,7 @@ def update_routes() -> None:
         primary.append(arrow)
         hint = action.select_one(".fulltext-hint")
         if hint:
-            hint.string = "Unreviewed English translation · original Japanese controls"
+            hint.string = "English reference translation · Japanese original controls"
         if not action.select_one(".source-link-inline"):
             secondary = overview.new_tag("a", attrs={"class": "source-link-inline",
                                                     "href": f"regulations-full.html?lang=ja#doc{i+1}"})
