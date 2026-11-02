@@ -1,7 +1,7 @@
 {
   "model_calls": 765,
   "translated_blocks": 792,
-  "japanese_remains": 54,
+  "japanese_remains": 53,
   "documents": 7,
   "source_blocks": 792,
   "per_document": [
@@ -15,17 +15,5 @@
   ],
   "corrected_blocks": 412,
   "japanese_visible_after_review": 0,
-  "manual_translation_status": "Targeted corrections; remainder unreviewed machine translation",
-  "latest_review": "Compared every source block to the Japanese source using targeted semantic screening; targeted corrections applied. Remaining clauses are unreviewed machine translation and may contain errors.",
-  "semantic_review_focus": [
-    "negative obligations",
-    "allowed actions",
-    "public price floor",
-    "employment duration",
-    "server load limits",
-    "privacy and access restrictions",
-    "appeals",
-    "resource pack licensing"
-  ],
-  "semantic_tests_added": true
+  "manual_translation_status": "Targeted corrections; remainder unreviewed machine translation"
 }
