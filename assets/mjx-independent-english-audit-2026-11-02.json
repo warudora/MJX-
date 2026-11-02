@@ -1,0 +1,149 @@
+{
+  "title": "MJX official regulations — independent Japanese-to-English translation review",
+  "date": "2026-11-02",
+  "repository": "warudora/MJX-",
+  "branch": "main",
+  "source_revision": "218f99e6cd7ff5841bc84f8e2bd7d0926fa6e010",
+  "japanese_reference": "regulations-full.html",
+  "reviewed_blocks": 792,
+  "per_document": [
+    40,
+    81,
+    198,
+    123,
+    83,
+    241,
+    26
+  ],
+  "issue_counts": {
+    "重大": 0,
+    "中程度": 10,
+    "軽微": 1
+  },
+  "corrections": [
+    {
+      "index": 126,
+      "regulation": 3,
+      "source": "Builder とは、MJX 内で建築、都市開発、鉄道・交通インフラの整備などを行う者をいう。",
+      "current_english": "A Builder is a person who performs construction, urban development, or maintenance of rail and transport infrastructure within MJX.",
+      "revised_english": "A Builder is a person who performs construction, urban development, or development and upkeep of railway and transportation infrastructure within MJX.",
+      "severity": "中程度",
+      "reason": "「整備」をmaintenanceだけに限定し、鉄道・交通インフラの整備・開発を狭めていた。"
+    },
+    {
+      "index": 132,
+      "regulation": 3,
+      "source": "2. Builder は本規定および関連規定を遵守し、他の参加者と協力して MJX の発展に努める。",
+      "current_english": "2. Builders must comply with these Regulations and related rules and cooperate with other participants to contribute to MJX's development.",
+      "revised_english": "2. Builders must comply with these Regulations and related rules, and make reasonable efforts to contribute to MJX's development in cooperation with other participants.",
+      "severity": "中程度",
+      "reason": "「発展に努める」を単なる協力・結果として表現し、努力義務が曖昧だった。"
+    },
+    {
+      "index": 165,
+      "regulation": 3,
+      "source": "7. 保有者は継続的な開発・管理に努める。進捗には建設、具体的な改修、設計に基づく実質的な作業などを含み、単なる保有宣言や予定表明のみは原則として含まない。",
+      "current_english": "7. Holders should continue developing and managing their areas. Progress includes construction, specific renovation, and substantive design-based work; a declaration of ownership or an announced plan alone normally does not count.",
+      "revised_english": "7. Holders must make reasonable efforts to continue developing and managing their holdings. Progress includes construction, specific renovation, and substantive design-based work; a declaration of ownership or an announced plan alone normally does not count.",
+      "severity": "中程度",
+      "reason": "「継続的な開発・管理に努める」が単なる推奨 should と読めるため、努力義務として明確化。"
+    },
+    {
+      "index": 176,
+      "regulation": 3,
+      "source": "1. Builder は必要に応じて、建築物、路線、施設などに所有者・管理者を示す看板等を設置する。",
+      "current_english": "1. Builders should install signs identifying owners or managers of buildings, railway lines, and facilities as necessary.",
+      "revised_english": "1. Builders must install signs identifying the owners or managers of buildings, railway lines, and facilities where necessary.",
+      "severity": "中程度",
+      "reason": "「必要に応じて設置する」をshouldとしたことで必要な場合の設置義務を弱めていた。"
+    },
+    {
+      "index": 231,
+      "regulation": 3,
+      "source": "・他者の建築物、土地、設備、活動を不当に妨害するもの・サーバーや参加者の活動に重大な支障を与えるもの・共通規定等で禁止されている施設・活動・MJX の運営目的や建築環境に著しくそぐわず、具体的な理由に基づき運営が不適切と判断したもの・特定の利用者への嫌がらせ、脅迫、侮辱、排斥、攻撃を主な目的とするもの",
+      "current_english": "• Unreasonably obstructing another person's buildings, land, equipment, or activities • Seriously interfering with the server or participants’ activities • Facilities or activities prohibited by the common rules • Activities that management, for specific stated reasons, deems markedly inconsistent with MJX’s operational purposes or building environment • Activities primarily intended to harass, threaten, insult, exclude, or attack particular users",
+      "revised_english": "• Buildings, displays, or activities that unreasonably obstruct another person's buildings, land, equipment, or activities • Buildings, displays, or activities that seriously interfere with the server or participants’ activities • Facilities or activities prohibited by the common rules • Buildings, displays, or activities that management deems markedly inconsistent with MJX’s operational purposes or building environment on specific grounds • Buildings, displays, or activities primarily intended to harass, threaten, insult, exclude, or attack particular users",
+      "severity": "中程度",
+      "reason": "原文は建築・展示・活動の禁止リストだが一部をactivitiesだけに狭め、理由についてstatedという追加条件もあった。"
+    },
+    {
+      "index": 291,
+      "regulation": 3,
+      "source": "1. Builder 間で土地、建築物、路線、Schematic、業務などの紛争が生じた場合、まず当事者間で事実を確認し、協議による解決に努める。",
+      "current_english": "1. If a dispute arises between Builders over land, buildings, railway lines, Schematics, contracted work, or similar matters, the parties must first check the facts and make reasonable efforts to resolve it through discussion.",
+      "revised_english": "1. If a dispute arises between Builders over land, buildings, railway lines, Schematics, work, or similar matters, the parties must first check the facts and make reasonable efforts to resolve it through discussion.",
+      "severity": "中程度",
+      "reason": "「業務」をcontracted workに限定し、雇用・非委託の仕事を不当に除外するおそれ。"
+    },
+    {
+      "index": 356,
+      "regulation": 4,
+      "source": "9. その他、具体的な理由に基づきMJX運営が不適切と判断する行為。",
+      "current_english": "9. Any other conduct that MJX management deems inappropriate for specific, stated reasons.",
+      "revised_english": "9. Any other conduct that MJX management deems inappropriate on specific grounds.",
+      "severity": "中程度",
+      "reason": "「具体的な理由に基づき」にない「理由を明示した」条件（stated）を追加していた。"
+    },
+    {
+      "index": 552,
+      "regulation": 6,
+      "source": "2. ビルダーによる通常の都市開発及び建築活動については、原則として本規定に定める商品購入、賃金、住宅、労働その他の経済的制約を適用しない。",
+      "current_english": "2. As a rule, the product-purchase, wage, housing, employment, and other economic restrictions in these Regulations do not apply to Builders’ ordinary urban-development and construction activities.",
+      "revised_english": "2. As a rule, the product-purchase, wage, housing, labor, and other economic restrictions in these Regulations do not apply to Builders’ ordinary urban-development and construction activities.",
+      "severity": "中程度",
+      "reason": "「労働」をemploymentとし、「雇用」との区別を失い適用対象を狭めていた。"
+    },
+    {
+      "index": 562,
+      "regulation": 6,
+      "source": "1. ビジターは、MJX において労働、事業、消費、居住その他の経済活動を行うことができる。",
+      "current_english": "1. Visitors may engage in employment, business, consumer, residential, or other economic activities within MJX.",
+      "revised_english": "1. Visitors may engage in labor, business, consumption, residence, and other economic activities within MJX.",
+      "severity": "中程度",
+      "reason": "「労働」をemploymentとし、雇用契約外の労働を除外するように読めた。"
+    },
+    {
+      "index": 705,
+      "regulation": 6,
+      "source": "3. 特定の事業者又は参加者が市場を独占すること自体を直ちに禁止するものではないが、独占的地位を利用して他者の経済活動を不当に妨害する行為については、管理者が必要な措置を行うことができる。",
+      "current_english": "3. Monopoly by a particular business or participant is not immediately prohibited in itself. However, management may take necessary measures against abuse of a dominant position that unfairly obstructs others’ economic activities.",
+      "revised_english": "3. A monopoly held by a particular business or participant is not, in itself, automatically prohibited. However, management may take necessary measures against the use of a monopolistic position to unfairly obstruct others’ economic activities.",
+      "severity": "中程度",
+      "reason": "「直ちに禁止するものではない」をnot immediately prohibitedと訳し、時間経過による自動禁止のように誤読され得た。"
+    },
+    {
+      "index": 766,
+      "regulation": 7,
+      "source": "ビジター（一般参加・生活者）向けルール",
+      "current_english": "Visitor Rules (for General Participants)",
+      "revised_english": "Visitor Rules (for General Participants and Residents)",
+      "severity": "軽微",
+      "reason": "「一般参加・生活者」の生活者が英語タイトルから欠落していた。"
+    }
+  ],
+  "overview_correction": {
+    "before": "Core rules applying to all participants, including eligibility, prohibited conduct, data handling, enforcement, and appeals.",
+    "after": "Core rules applying to all participants, including legal compliance, prohibited conduct, personal information, administration, disciplinary measures, and appeals.",
+    "reason": "「eligibility」は共通サーバー規定の条文には明記されておらず、英語概要から削除した。"
+  },
+  "unmodified_japanese_source": true,
+  "tests": {
+    "aligned_blocks": true,
+    "english_matches_json": true,
+    "source_matches_japanese": true,
+    "regulations_count": 7,
+    "headings_and_structure": "Text-only replacements; post-commit validation required.",
+    "regeneration": "Generator now invokes correction script; actual regeneration execution pending.",
+    "github_actions": "Pending after commits."
+  },
+  "japanese_source_issues": [
+    {
+      "index": 232,
+      "text": "3. 不適切性の判断では、作品内容、設置場所、目的、周囲への影響、関連規定などを総合的に考應する。",
+      "issue": "「考應」は「考慮」のOCR誤認識と思われる。日本語原文は変更しない。"
+    },
+    {
+      "issue": "日本語概要の共通サーバー規定に「利用資格」とあるが、全文に直接対応する資格条項は見当たらない。日本語は変更しない。"
+    }
+  ]
+}
