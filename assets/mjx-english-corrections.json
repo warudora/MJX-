@@ -21,7 +21,7 @@
   },
   "5": {
     "source": "第2条｜利用可能なコンテンツ",
-    "english": "Article 2 — Permitted Content"
+    "english": "Article 2 — Content Permitted for Use"
   },
   "6": {
     "source": "一般ユーザーは、原則として以下のコンテンツを利用できます。",
@@ -77,7 +77,7 @@
   },
   "19": {
     "source": "6. その他、法令・サービス利用規約・MJX共通規定に違反する行為",
-    "english": "6. Any other conduct that violates applicable laws, service terms, or the MJX General Server Regulations"
+    "english": "6. Any other conduct that violates applicable laws, the terms of external services, or the MJX General Server Regulations"
   },
   "20": {
     "source": "第4条｜YouTubeコンテンツの取り扱い",
@@ -141,7 +141,7 @@
   },
   "35": {
     "source": "本ポリシーは、法令上免除できない責任を免除するものではありません。",
-    "english": "This policy does not exclude any liability that cannot legally be excluded."
+    "english": "This policy does not exclude or limit any liability that cannot legally be excluded or limited."
   },
   "36": {
     "source": "第8条｜ポリシーの改定",
@@ -189,7 +189,7 @@
   },
   "47": {
     "source": "利用者は、日本国内の法令および利用者が居住する地域の法令を遵守しなければならない。",
-    "english": "Users must comply with the laws of Japan and the laws applicable in their place of residence."
+    "english": "Users must comply with Japanese law and the laws applicable in the areas where they reside."
   },
   "48": {
     "source": "第2条（使用言語）",
@@ -293,7 +293,7 @@
   },
   "73": {
     "source": "1. MTR Global Server Alliance (以下「MGSA」という) およびその他の関係団体、ならびに他の Minecraft サーバーに関する話題は、運営が指定する場所で行うことを基本とする。",
-    "english": "1. Discussion of the MTR Global Server Alliance (MGSA), other affiliated organizations, and other Minecraft servers should generally take place in locations designated by management."
+    "english": "1. Discussions concerning the MTR Global Server Alliance (MGSA), other affiliated organizations, and other Minecraft servers should generally take place in channels or spaces designated by MJX management."
   },
   "74": {
     "source": "2. 他サーバーで発生したトラブルについて、原則として MJX は関与しない。ただし、MGSA に関係する事案については、この限りではない。",
@@ -309,7 +309,7 @@
   },
   "77": {
     "source": "5. MGSA において、特定の利用者に対する MGSA 全体BAN が閣議決定された場合、MJX を含む MGSA 加盟サーバーは、当該決定に従い、対象者に対する利用停止等の措置を講じなければならない。",
-    "english": "5. When a governing decision is made to impose an MGSA-wide ban on a particular user, MGSA member servers, including MJX, must comply by suspending that user’s access or taking other required measures."
+    "english": "5. If an MGSA-wide ban on a specific user is formally adopted through MGSA's collective decision-making process, all MGSA member servers, including MJX, must implement the decision by suspending the user's access or taking other required measures."
   },
   "78": {
     "source": "6. 前項の措置は、MGSA 全体 BAN の決定に基づくものであり、各加盟サーバーが独自に判断して適用の可否を決定するのではない。",
@@ -445,7 +445,7 @@
   },
   "111": {
     "source": "2. 改定は、原則として事前の通知なく行われる場合がある。",
-    "english": "2. Revisions may generally be made without prior notice."
+    "english": "2. Revisions may be made without advance notice."
   },
   "112": {
     "source": "3. 改定後の規定は、公開された時点から適用されるものとする。",
@@ -609,7 +609,7 @@
   },
   "152": {
     "source": "1. Builder に関する通常の判断は、一般管理者その他の権限を持つ運営担当者が行う。",
-    "english": "1. Routine decisions concerning Builders are made by General Administrators or other authorized management personnel."
+    "english": "3. Applications for priority holding rights must identify the area covered, the person responsible for managing it, and the development purpose. MJX management records and administers approved rights."
   },
   "153": {
     "source": "2. 各担当者の権限は、MJX の管理者に関する規定および権限分担に従う。",
@@ -749,7 +749,7 @@
   },
   "187": {
     "source": "・MJX 内での設置・利用・複数箇所への設置・景観や用途に合わせた外装・内装・設備の変更",
-    "english": "• Installation and use within MJX • Installation at multiple locations • Modification of exteriors, interiors, and equipment to suit the surroundings or intended use"
+    "english": "• Installation and use within MJX • Installation at multiple sites • Changes to exteriors, interiors, and facilities to suit the surroundings or intended purpose"
   },
   "188": {
     "source": "6. 登録時に追加条件や制限を設ける場合は、他の Builder が利用前に確認できるよう明示する。ただし、本規定と矛盾する条件は運営の確認を必要とする。",
@@ -937,7 +937,7 @@
   },
   "234": {
     "source": "5. 運営は、判断の一貫性を確保するため、許可・不許可事例や判断基準を記録し、必要に応じて公表する。",
-    "english": "5. To ensure consistency, management records permitted and refused cases and decision criteria and publishes them when necessary."
+    "english": "5. To ensure consistent decisions, management records cases of approval and refusal, along with the criteria used, and publishes this information when necessary."
   },
   "235": {
     "source": "6. 宗教施設に関する制限は、共通規定および関連規定との整合性を確保し、適用範囲と理由を明示する。 独自の制限を設ける場合は、その権限と根拠を確認しなければならない。",
@@ -1165,7 +1165,7 @@
   },
   "291": {
     "source": "1. Builder 間で土地、建築物、路線、Schematic、業務などの紛争が生じた場合、まず当事者間で事実を確認し、協議による解決に努める。",
-    "english": "1. If a dispute arises between Builders concerning land, buildings, railway lines, Schematics, contracted work, or similar matters, the parties must first establish the facts and seek a negotiated resolution."
+    "english": "1. If a dispute arises between Builders over land, buildings, railway lines, Schematics, contracted work, or similar matters, the parties must first check the facts and make reasonable efforts to resolve it through discussion."
   },
   "292": {
     "source": "2. 解決できない場合は、運営へ仲裁・判断を求めることができる。",
@@ -1389,7 +1389,7 @@
   },
   "347": {
     "source": "すべての利用者は、以下の行為を行ってはならない。",
-    "english": "All users are prohibited from:"
+    "english": "The following actions are prohibited for all users:"
   },
   "348": {
     "source": "1. 公式リソースパックの全部または一部を、必要な権限または許諾なく第三者へ再配布する行為。",
@@ -1533,7 +1533,7 @@
   },
   "383": {
     "source": "6. 権利者から利用停止、登録解除その他の申し出があった場合、MJX運営は既存の許諾条件、利用実態および第三者の権利を確認した上で対応する。",
-    "english": "6. If a rights holder requests suspension of use, withdrawal of registration, or other action, MJX management must review existing license terms, actual uses, and third-party rights before responding."
+    "english": "6. If a rights holder requests that use stop, that registration be withdrawn, or that other action be taken, MJX management must review existing license terms, actual usage, and third-party rights before responding."
   },
   "384": {
     "source": "7. 登録解除やMJXからの脱退のみを理由として、著作権その他の権利が自動的に消滅するものではない。",
@@ -1581,7 +1581,7 @@
   },
   "395": {
     "source": "4. 緊急の場合は事前通知なく停止できる。ただし、必要に応じて事後に説明する。",
-    "english": "4. In emergencies, management may suspend distribution without prior notice but must provide an explanation afterward when necessary."
+    "english": "4. In an emergency, management may suspend distribution without prior notice. An explanation will be provided afterward when necessary."
   },
   "396": {
     "source": "5. 配布停止は、権利者の有する権利を消滅させるものではない。",
@@ -1637,7 +1637,7 @@
   },
   "409": {
     "source": "6. 処分の実施に当たっては、原則として理由を通知する。ただし、緊急の安全確保や証拠保全等のため必要な場合は、先に一時的な措置を行うことができる。",
-    "english": "6. As a rule, reasons for disciplinary action must be communicated. Temporary measures may be taken first where needed to protect safety or preserve evidence."
+    "english": "6. As a general rule, management must notify the person concerned of the reasons for disciplinary action. Temporary measures may be taken in advance where necessary for urgent safety or evidence-preservation purposes."
   },
   "410": {
     "source": "第7条（異議申し立て）",
@@ -1809,7 +1809,7 @@
   },
   "452": {
     "source": "MJXは、対象となる機能の利用に際し、必要な説明を行い、利用者の同意を得た場合、以下の情報を取得・保存することがあります。",
-    "english": "MJX may collect and store the following information when a user is given the necessary explanation and consents to use a feature that requires it."
+    "english": "MJX may collect and retain the following information after explaining the relevant feature and obtaining the user's consent."
   },
   "453": {
     "source": "• MinecraftアカウントのUUID",
@@ -1901,7 +1901,7 @@
   },
   "475": {
     "source": "1. MJXが取得した利用者情報は、原則として、当該利用者がMJXから退去または脱退してから6か月が経過するまで保存します。",
-    "english": "1. As a rule, MJX retains collected user information for six months after the user leaves or withdraws from MJX."
+    "english": "1. As a general rule, MJX retains collected user information until six months have elapsed after the user leaves or withdraws from MJX."
   },
   "476": {
     "source": "2. 前項の期間が経過した場合、MJXは該当する利用者情報を速やかに削除します。",
@@ -1937,7 +1937,7 @@
   },
   "484": {
     "source": "◦ 法令に基づく場合",
-    "english": "◦ When required by law"
+    "english": "◦ Where disclosure is based on applicable law"
   },
   "485": {
     "source": "◦ 人の生命、身体または財産の保護のために必要があり、本人の同意を得ることが困難な場合",
@@ -2189,7 +2189,7 @@
   },
   "547": {
     "source": "9. 「労働」：事業者の指示又は管理の下で、時間又は作業を提供し、その対価として賃金を受ける活動をいう。",
-    "english": "9. “Employment”: An activity in which a person provides time or labor under an operator’s instructions or supervision in exchange for wages."
+    "english": "9. \"Labor\": An activity in which a person supplies work or working time under a business operator's instructions or supervision in exchange for wages."
   },
   "548": {
     "source": "10. 「建築請負」：建築物、施設その他の成果物について、完成した成果物を提供することを目的として報酬を受ける契約をいう。",
@@ -2241,7 +2241,7 @@
   },
   "560": {
     "source": "5. 前各項にかかわらず、建築請負の実態が事業者の指示又は管理の下で時間単位の労働を行うものである場合は、通常の労働として扱うことができる。",
-    "english": "5. Notwithstanding the preceding paragraphs, if a construction contract in practice consists of hourly labor under the operator’s instructions or management, it may be treated as ordinary employment."
+    "english": "5. Notwithstanding the preceding paragraphs, where work under a construction contract in practice consists of hourly labor performed under a business operator's direction or supervision, it may be treated as ordinary labor."
   },
   "561": {
     "source": "第6条（ビジターの活動）",
@@ -2337,7 +2337,7 @@
   },
   "584": {
     "source": "4. 公共事業の範囲は、管理者が必要に応じて定めるものとする。",
-    "english": "4. Administrators may determine the scope of public services as necessary."
+    "english": "4. Administrators determine the scope of public services as necessary."
   },
   "585": {
     "source": "5. 公共事業は、最低限の目的を達成する範囲において、品質、速度、頻度、利便性その他の面で簡素又は限定的なサービスとなることを妨げない。",
@@ -2433,11 +2433,11 @@
   },
   "608": {
     "source": "1. 公共住宅について、入居者が12 か月間継続して家賃を支払った場合、当該住宅を取得できる制度を設けることができる。",
-    "english": "1. Management may establish a system under which tenants who pay public-housing rent continuously for 12 months can acquire the home."
+    "english": "1. Management may introduce a program under which a public-housing tenant becomes eligible to acquire the home after paying rent continuously for 12 months."
   },
   "609": {
     "source": "2. 前項の取得制度を実施する場合、所有権、土地の扱い、改築、譲渡、売却その他必要な条件を管理者が別途定めるものとする。",
-    "english": "2. If the acquisition scheme in the preceding paragraph is implemented, administrators will separately establish the necessary conditions concerning ownership, land, renovations, transfers, sale, and other matters."
+    "english": "2. If such a home-acquisition program is introduced, management must separately establish conditions concerning ownership, the associated land, renovations, transfers, sales, and other necessary matters."
   },
   "610": {
     "source": "3. 管理者は、経済状況又は住宅制度の変更に応じて、取得制度を変更又は停止することができる。",
@@ -2565,7 +2565,7 @@
   },
   "641": {
     "source": "第8章 賃金及び労働",
-    "english": "Chapter 8 — Wages and Construction Contracts"
+    "english": "Chapter 8 — Wages and Labor"
   },
   "642": {
     "source": "第22条（賃金の基本）",
@@ -2573,7 +2573,7 @@
   },
   "643": {
     "source": "1. MJX において労働を行った者には、原則としてその労働に応じた賃金を支払うものとする。",
-    "english": "1. As a rule, anyone performing work in MJX must be paid wages corresponding to that work."
+    "english": "1. As a general rule, participants who perform labor within MJX are entitled to wages appropriate to the work performed."
   },
   "644": {
     "source": "2. 賃金は、G によって支払うものとする。",
@@ -2593,7 +2593,7 @@
   },
   "648": {
     "source": "3. 建築請負は、原則として通常の雇用労働とは区別する。",
-    "english": "3. As a general rule, construction contracts are distinguished from ordinary employment."
+    "english": "3. Construction contracts are, as a general rule, treated separately from ordinary wage employment."
   },
   "649": {
     "source": "4. 建築請負の報酬については、第24 条の最低賃金及び第25 条の最高賃金を直接適用しない。",
@@ -2601,7 +2601,7 @@
   },
   "650": {
     "source": "5. 建築請負の実態が事業者の指示又は管理の下で時間単位の労働を行うものである場合は、通常の労働として扱うことができる。",
-    "english": "5. Where a construction contract in practice involves hourly work performed under a business operator's direction or supervision, it may be treated as ordinary employment."
+    "english": "5. If a construction contract in practice consists of hourly labor performed under a business operator's instructions or supervision, the work may be classified as ordinary labor."
   },
   "651": {
     "source": "第24条（最低賃金）",
@@ -2633,7 +2633,7 @@
   },
   "658": {
     "source": "1. 賃金は、原則として10 分単位で計算する。",
-    "english": "1. As a rule, wages are calculated in 10-minute units."
+    "english": "1. As a general rule, wages are calculated in 10-minute increments."
   },
   "659": {
     "source": "2. 1 時間あたり1,000G の労働については、10 分あたり約167G を基準とする。",
@@ -2705,7 +2705,7 @@
   },
   "676": {
     "source": "3. 長時間の労働を行う場合、事業者は求人時にその旨を明示するものとする。",
-    "english": "3. If a job involves extended working hours, the business must disclose that fact when recruiting."
+    "english": "3. If a job requires a lengthy work session, the business operator must state this when advertising the position."
   },
   "677": {
     "source": "第30条（賃金の支払）",
@@ -2845,7 +2845,7 @@
   },
   "711": {
     "source": "4. 管理者が自らの私営事業に関して本規定に基づく判断を行う場合、原則として他の管理者又は最高管理者に判断を委ねるものとする。",
-    "english": "4. As a rule, if an administrator makes a decision under these Regulations concerning their own private business, they must leave that decision to another administrator or the Supreme Administrator."
+    "english": "4. As a general rule, decisions under these Regulations concerning an administrator's own private business must be entrusted to another administrator or the Supreme Administrator."
   },
   "712": {
     "source": "5. 最高管理者自身の私営事業に関する判断については、可能な限り他の管理者による確認を受けるものとする。",
@@ -3057,7 +3057,7 @@
   },
   "764": {
     "source": "2. 前項の措置を行った場合、可能な限りその内容を参加者に周知するものとする。",
-    "english": "2. When measures under the preceding paragraph are taken, their details should be communicated to participants as far as possible."
+    "english": "2. If the measures in the preceding paragraph are taken, their contents must be communicated to participants to the extent possible."
   },
   "765": {
     "source": "以上",
