@@ -1,6 +1,18 @@
 # MTR Japan Nexus — MJX公式サイト
 
+<p align="center"><img src="./assets/mjx-logo-original.png" alt="MTR Japan Nexus 公式ロゴ（ピンクの背景に白いMJXシンボルと文字）" width="300"></p>
+
 MJX公式の案内サイト。日本語・英語のホーム、紹介、公式規定一覧を公開します。
+
+**公開サイト:** https://warudora.github.io/MJX-/
+
+## 公式ロゴ・サイトアイコン
+- **公式ロゴ:** `assets/mjx-logo-original.png`（README・サイトのヘッダーに使用）
+- **ブラウザのアイコン（favicon）:** `assets/favicon-32.png`、`favicon.ico`
+- **iPhone・iPad用アイコン:** `assets/apple-touch-icon.png`
+- **Webアプリ用アイコン:** `assets/mjx-icon-192.png`、`assets/mjx-icon-512.png`（`assets/site.webmanifest`から参照）
+- **リンク共有時の画像:** `assets/og-mjx.png`（各ページの`og:image`で使用）
+- **個人サイトとは別管理:** `warudora.github.io`直下のアイコンは[warudora個人サイト](https://github.com/warudora/warudora.github.io)用です。MJXは `/MJX-/` 以下の専用画像を使用します。
 
 ## 現在の配布方式（2026-11-03）
 - **規定はHTMLで全文閲覧**します。一覧は `regulations.html` / `regulations-en.html`、全文は `regulations-full.html` / `regulations-full-en.html`。
