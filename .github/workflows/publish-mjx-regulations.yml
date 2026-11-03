@@ -81,7 +81,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add regulations/fulltext/*.pdf MJX_all_seven_regulations_2026-11-01.pdf regulations.html regulations-en.html
+          git add regulations/fulltext/*.pdf MJX_all_seven_regulations_2026-11-01.pdf
           if ! git diff --cached --quiet; then
             git commit -m "Replace MJX regulation PDFs with corrected 55-page layout"
             git push

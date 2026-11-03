@@ -72,29 +72,6 @@ def publish():
     output.close()
     original.close()
     counts=[last-first+1 for first,last in zip(START,ENDS)]
-    for fname,japanese in [("regulations.html",True),("regulations-en.html",False)]:
-        path=root/fname
-        html=path.read_text(encoding="utf-8")
-        for i,count in enumerate(counts,1):
-            start=html.index(f'<article class="rule" id="doc-{i:02d}"')
-            end=html.index("</article>",start)
-            card=html[start:end]
-            if japanese:
-                expr=r'(class="fulltext-hint">原文PDF\s*/\s*)\d+(ページ)'
-            else:
-                expr=r'(Japanese original\s*/\s*)\d+(\s*pages)'
-            card,n=re.subn(expr,lambda m:m.group(1)+str(count)+m.group(2),card)
-            if n!=1:raise ValueError(f"Page label missing: {fname}, {i}")
-            if not japanese:
-                card=re.sub(r'(document '+f"{i:02d}"+r' \()\d+( pages\))',
-                            lambda m:m.group(1)+str(count)+m.group(2),card)
-                # Updated full-set page ranges for the English metadata.
-                ranges=[(1,4),(5,9),(10,20),(21,28),(29,34),(35,52),(53,55)]
-                first,last=ranges[i-1]
-                card=re.sub(r'Original PDF pages \d+[–-]\d+',
-                            f'Updated set pages {first}–{last}',card)
-            html=html[:start]+card+html[end:]
-        path.write_text(html,encoding="utf-8")
     print("Published",counts,"pages",sum(counts))
 
 if __name__=="__main__":
