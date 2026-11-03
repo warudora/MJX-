@@ -41,6 +41,12 @@
     if (!node) return;
     const target = node.getAttribute("data-mjx-lang");
     if (target !== "ja" && target !== "en") return;
+    // Keep the same regulation or article when switching full-text languages.
+    if ((filename === "regulations-full.html" || filename === "regulations-full-en.html") && window.location.hash) {
+      const url = new URL(node.href, window.location.href);
+      url.hash = window.location.hash;
+      node.href = url.href;
+    }
     try { window.localStorage.setItem(storageKey, target); } catch (_) {}
   }, true);
 
