@@ -1,85 +1,43 @@
-# MTR Japan Nexus — MJX公式サイト
+# MTR Japan Nexus | Official Website
 
-<p align="center"><img src="./assets/mjx-logo-original.png" alt="MTR Japan Nexus 公式ロゴ（ピンクの背景に白いMJXシンボルと文字）" width="300"></p>
+<p align="center">
+  <img src="./assets/mjx-logo-original.png" alt="MTR Japan Nexus（MJX）公式ロゴ" width="300">
+</p>
 
-MJX公式の案内サイト。日本語・英語のホーム、紹介、公式規定一覧を公開します。
+<p align="center"><strong>MTR Japan Nexus（MJX）公式ルールブック・案内サイト</strong></p>
 
-**公開サイト:** https://warudora.github.io/MJX-/
+MTR Japan Nexusは、Minecraftにおける都市・鉄道の開発と交流を目的とするコミュニティです。このリポジトリでは、公式7規定とMJXについての案内を日本語・英語で公開しています。
 
-## 公式ロゴ・サイトアイコン
-- **公式ロゴ:** `assets/mjx-logo-original.png`（README・サイトのヘッダーに使用）
-- **ブラウザのアイコン（favicon）:** `assets/favicon-32.png`、`favicon.ico`
-- **iPhone・iPad用アイコン:** `assets/apple-touch-icon.png`
-- **Webアプリ用アイコン:** `assets/mjx-icon-192.png`、`assets/mjx-icon-512.png`（`assets/site.webmanifest`から参照）
-- **リンク共有時の画像:** `assets/og-mjx.png`（各ページの`og:image`で使用）
-- **個人サイトとは別管理:** `warudora.github.io`直下のアイコンは[warudora個人サイト](https://github.com/warudora/warudora.github.io)用です。MJXは `/MJX-/` 以下の専用画像を使用します。
+**公式サイト：** https://warudora.github.io/MJX-/
 
-## 現在の配布方式（2026-11-03）
-- **規定はHTMLで全文閲覧**します。一覧は `regulations.html` / `regulations-en.html`、全文は `regulations-full.html` / `regulations-full-en.html`。
-- `regulations-full.html` はユーザー提供の `MJX_全7規定_完全文字化_2026-11-01(1).html` をベースにし、7規定の本文を保ったままサイトナビ・検索・章条リンクを追加しています。
-- 個別規定の直接リンクは `regulations-full.html?lang=ja#doc1` ～ `#doc7`。章条リンクは `#doc3-article-19` 形式です。
-- 公式7規定は **2026-11-01施行**。すべての規定を同じ施行中の扱いで表示します。制定日・承認日は履歴として維持します。
-- ①共通規定と②Builder規定は画像ページからOCRで文字化されており、**誤認識の可能性があります**。引用・改訂前には人手で原本照合してください。
-- Webサイトの公開ナビではPDFリンクを使用しません。旧PDFと生成用スクリプトはGitHubに作業履歴として残し、新しい規定ページからは案内しません。
-- 英語版には概要ページと全文の参考訳があり、日本語原文を優先します。
+## 公式規定
 
-## ページ
-| ファイル | 役割 |
-|---|---|
-| `index.html` / `index-en.html` | 日英ポータル |
-| `regulations.html` | 全7規定の日本語概要一覧・検索 |
-| `regulations-en.html` | 7規定の英語概要一覧・日英全文へのリンク |
-| `regulations-full.html` | 日本語全文・検索・章条リンク |
-| `regulations-full-en.html` | 英語の参考全文・検索・章条リンク |
-| `jp.html` / `en.html` | MJXの紹介（日英） |
-| `home.html` | Flask/Jinja用ホームページテンプレート（GitHub Pagesで直接レンダリングされない） |
-| `mjx-theme.css` | 共通ヘッダー、フッター、アイコン等のスタイル |
-| `mjx-lang.js` | 言語設定・ページの切り替え |
-| `assets/mjx-logo-original.png` | 元の構図を保った公式ロゴ |
+MJXの公式7規定は**2026年11月1日から施行中**です。各規定の適用範囲・例外・詳細については、要約ではなく公式サイトの本文をご確認ください。
 
-## 更新時の注意
-条文は文書①〜⑦の各セクションで管理。規定の制定・改訂と、改訂の**施行**は区別してください。規定本文を書き換える際は、承認済みの改定内容、施行日、既存条文との整合を確認してください。検索・記事見出し・各 `id` は壊さないようにしてください。
+- [公式7規定の一覧](https://warudora.github.io/MJX-/regulations.html)
+- [日本語の規定全文](https://warudora.github.io/MJX-/regulations-full.html)
+- [English overview](https://warudora.github.io/MJX-/regulations-en.html)
+- [English reference translation](https://warudora.github.io/MJX-/regulations-full-en.html)
 
-## 2026-11-02: 入口を従来のカード式一覧に戻す
-- `regulations.html`：従来の7規定カード・要約・施行状況・検索とフィルターを使った入口。
-- `regulations-full.html`：ユーザー提供の全文HTML（7規定・130条文見出し）をそのまま保持。入口の「全文を読む」は `#doc1` ～ `#doc7` に移動する。
-- `regulations-en.html`：英語の要約入口。日本語全文へのリンク先は `regulations-full.html`。
-- 公式サイトの閲覧導線からPDFを外す。旧PDFはリポジトリ内に履歴として残す。
-- 過去のPDF自動生成ワークフローは自動実行を停止（手動実行のみ）。現行運用のHTMLはPDF生成処理の対象外とし、PDF生成スクリプトもHTMLを書き換えない。
-- 公式7規定は2026年11月1日施行。旧番号による区分表示は廃止済み。共通サーバー規定・Builder規定のOCR誤認識は校正待ち。
+英語版は参考訳です。規定の解釈に差異が生じた場合は、日本語の本文を基準とします。
 
-## Full English regulation pages
-- English overview: `regulations-en.html` (seven original-style cards).
-- `regulations-full-en.html` is built from `regulations-full.html` by Argos Translate Japanese-to-English. Original IDs/paragraph counts are checked.
-- **English is a reviewed reference translation, not official regulation text.** Japanese wording controls. General Server Regulations and Builder Regulations may contain source OCR inaccuracies.
-- All seven regulations took effect November 1, 2026.
-- The English full-text generator is bootstrapped from verified source chunks under `scripts/bootstrap_en_part*.txt` (checksum enforced), then written as `scripts/generate_english_regulations.py` for maintainability.
+## 著作権・名称・ロゴの利用について
 
-## サイトの役割と検索エンジン対応（2026-11-02）
-- このGitHub Pagesサイトは、MJXの総合的な公式ホームページではなく、**公式ルールブック・案内サイト**です。公式7規定の原文・英語参考訳・MJXの説明への入口として運用します。
-- 日英の各ページに自己参照の `canonical` と相互の `hreflang` を付け、`sitemap.xml` に検索対象の8ページを掲載します。
-- 公開URL: https://warudora.github.io/MJX-/
-- Google Search Consoleには `https://warudora.github.io/MJX-/sitemap.xml` を登録し、公開後のインデックス状況を確認してください。サイトマップは検索順位やインデックス登録を保証しません。
-- Discord公式招待リンクは **https://discord.gg/PehjWyGDHV** （運営提供URL）。日本語・英語の各ページのナビ・フッターとトップページ等の参加ボタンから案内します。
-- GitHub Pagesは `warudora.github.io` のサブパスで公開されるため、`/MJX-/robots.txt` を配置してもドメインルートのrobots.txtの代替にはなりません。
+**本サイトはMJX運営が管理する公式案内サイトです。**
 
-## 2026-11-03: 公式7規定の施行日統一
+MJXの公式名称・ロゴ・公式デザイン等の利用はMJX運営が管理します。サイト内の規定文書、文章、画像、デザイン、ソースコードなどの権利は、MJX運営またはそれぞれの制作者・権利者に帰属します。外部Mod・ライブラリ・画像等には各権利者の条件が適用されます。
 
-- MJX運営の指示により公式7規定すべての施行日を **2026-11-01** に統一。制定・改訂承認の履歴は維持。
-- 過去の制定日・承認日は区別して保持。適用上の基準は `regulations-full.html` および対応する規定一覧とし、英語版は参考訳。
-- `regulations/source-original/` および既存PDFは以前の配布時点の原資料・スナップショットであり、今回の施行日修正を反映しない場合があるため、**最新の施行状況と条文はHTML版を確認すること**。
+**権利者の許諾なく、MJXの公式ロゴや掲載コンテンツを転載・複製・加工・再配布したり、別のサイト・サーバー・サービス等に流用したりすることは認めません。** また、MJX公式を装ったり、MJX運営が承認・提携していると誤認させたりする利用は禁止します。
 
-## 2026-11-03: 公式7規定の表示順を統一
+GitHubで公開していることは、自由な再利用を許可するものではありません。別途ライセンスが示されている素材・プログラムは、そのライセンスに従ってください。法令に基づく適法な引用などや、GitHubの利用規約に基づく操作は妨げません。
 
-1. 共通サーバー規定
-2. Builder規定
-3. Visitor規定
-4. 経済規定
-5. リソースパック統一規約
-6. 映画館システム利用ポリシー
-7. プライバシーポリシー
+**公式ページへの通常のリンク共有は歓迎**します。ロゴ・画像・規定文書等の転載やその他の利用を希望する場合は、事前にMJX運営または該当する権利者の許諾を得てください。
 
-- 日英の一覧・全文・目次・章条アンカー・相互リンクをこの順序に統一しました。現行/改訂版の分類フィルターは廃止し、7規定すべてを「施行中」と表示します。
-- 元の制定・改訂承認日、条文本文は変更していません。
-- 旧PDF・作業用スクリプトの元の文書番号は当時の配布順序を示す履歴です。最新版の条文・番号はHTML版で確認してください。
-- 英語全文の自動再生成は、人手で監査済みの翻訳を上書きしないよう停止し、手動ワークフローに変更しました。旧順序に依存する翻訳・校正スクリプトは現行の校正済みHTMLを上書きする用途では使わないでください。
+## 公式窓口・関連情報
+
+- [MJXについて](https://warudora.github.io/MJX-/jp.html)
+- [MJX公式Discord](https://discord.gg/PehjWyGDHV)
+
+---
+
+© 2026 MTR Japan Nexus (MJX). All rights reserved.（MJX運営に権利が帰属する制作物について）
