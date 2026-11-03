@@ -1,14 +1,6 @@
 name: Publish English MJX Regulations Full Text
+# English translations are curated; regenerate manually to avoid overwriting reviewed text.
 on:
-  push:
-    paths:
-      - regulations-full.html
-      - scripts/bootstrap_en_part*.txt
-      - scripts/generate_english_regulations.py
-      - scripts/patch_english_regulations.py
-      - scripts/fix_english_regulations.py
-      - assets/mjx-english-corrections.json
-      - .github/workflows/generate-english-regulations.yml
   workflow_dispatch:
 concurrency:
   group: mjx-english-regulations-${{ github.ref }}
