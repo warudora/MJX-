@@ -6,7 +6,7 @@ MJX公式の案内サイト。日本語・英語のホーム、紹介、公式�
 - **規定はHTMLで全文閲覧**します。日本語の全文は `regulations.html`、英語の参考要約は `regulations-en.html`。
 - `regulations.html` はユーザー提供の `MJX_全7規定_完全文字化_2026-11-01(1).html` をベースにし、7規定の本文を保ったままサイトナビ・検索・章条リンクを追加しています。
 - 個別規定の直接リンクは `regulations.html?lang=ja#doc1` ～ `#doc7`。章条リンクは `#doc3-article-19` 形式です。
-- ④リソースパック統一規約、⑤プライバシーポリシー、⑦ビジター向けルールの修正・改訂は **2026-11-01に承認済み・施行日未指定**。施行告知までは既存の現行運用と区別してください。
+- 公式7規定は **2026-11-01施行**。④リソースパック統一規約、⑤プライバシーポリシー、⑦ビジター向けルールの改訂・修正版も同日から適用します。制定日・承認日は履歴として維持します。
 - ②共通規定と③Builder規定は画像ページからOCRで文字化されており、**誤認識の可能性があります**。引用・改訂前には人手で原本照合してください。
 - Webサイトの公開ナビではPDFリンクを使用しません。旧PDFと生成用スクリプトはGitHubに作業履歴として残し、新しい規定ページからは案内しません。
 - 英語ページは**非公式の参考要約**であり、全文翻訳ではありません。ボタンは日本語HTML全文の各規定に移動します。
@@ -32,13 +32,13 @@ MJX公式の案内サイト。日本語・英語のホーム、紹介、公式�
 - `regulations-en.html`：英語の要約入口。日本語全文へのリンク先は `regulations-full.html`。
 - 公式サイトの閲覧導線からPDFを外す。旧PDFはリポジトリ内に履歴として残す。
 - 過去のPDF自動生成ワークフローは自動実行を停止（手動実行のみ）。現行運用のHTMLはPDF生成処理の対象外とする。
-- ④⑤⑦の改訂は2026年11月1日に承認済み・施行日未指定。②③のOCR誤認識は校正待ち。
+- 公式7規定は2026年11月1日施行。④⑤⑦の改訂・修正版も施行中。②③のOCR誤認識は校正待ち。
 
 ## Full English regulation pages
 - English overview: `regulations-en.html` (seven original-style cards).
 - `regulations-full-en.html` is built from `regulations-full.html` by Argos Translate Japanese-to-English. Original IDs/paragraph counts are checked.
 - **English is an unreviewed reference translation, not official regulation text.** Japanese wording controls. Regulations 02/03 may contain source OCR inaccuracies.
-- Changes to regulations 04/05/07 approved Nov 1, 2026 are not effective until their effective dates are announced.
+- All seven regulations, including revisions 04/05/07, took effect November 1, 2026.
 - The English full-text generator is bootstrapped from verified source chunks under `scripts/bootstrap_en_part*.txt` (checksum enforced), then written as `scripts/generate_english_regulations.py` for maintainability.
 
 ## サイトの役割と検索エンジン対応（2026-11-02）
@@ -48,3 +48,9 @@ MJX公式の案内サイト。日本語・英語のホーム、紹介、公式�
 - Google Search Consoleには `https://warudora.github.io/MJX-/sitemap.xml` を登録し、公開後のインデックス状況を確認してください。サイトマップは検索順位やインデックス登録を保証しません。
 - Discord公式招待リンクは **https://discord.gg/PehjWyGDHV** （運営提供URL）。日本語・英語の各ページのナビ・フッターとトップページ等の参加ボタンから案内します。
 - GitHub Pagesは `warudora.github.io` のサブパスで公開されるため、`/MJX-/robots.txt` を配置してもドメインルートのrobots.txtの代替にはなりません。
+
+## 2026-11-03: 公式7規定の施行日統一
+
+- MJX運営の指示により公式7規定すべての施行日を **2026-11-01** に統一。④⑤⑦の改訂・修正版も同日施行。
+- 過去の制定日・承認日は区別して保持。適用上の基準は `regulations-full.html` および対応する規定一覧とし、英語版は参考訳。
+- `regulations/source-original/` および既存PDFは以前の配布時点の原資料・スナップショットであり、今回の施行日修正を反映しない場合があるため、**最新の施行状況と条文はHTML版を確認すること**。

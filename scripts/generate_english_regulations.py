@@ -29,13 +29,13 @@ NAMES = (
     "Visitor Rules",
 )
 STATES = (
-    "Current regulation · unchanged",
-    "Current regulation · unchanged",
-    "Current regulation · unchanged",
-    "Revision approved · effective date not specified",
-    "Revision approved · effective date not specified",
-    "Current regulation · unchanged",
-    "Amendment approved · effective date not specified",
+    "In force · effective November 1, 2026",
+    "In force · effective November 1, 2026",
+    "In force · effective November 1, 2026",
+    "Revised version in force · effective November 1, 2026",
+    "Revised version in force · effective November 1, 2026",
+    "In force · effective November 1, 2026",
+    "Amended version in force · effective November 1, 2026",
 )
 DESCRIPTIONS = (
     "Enacted October 11, 2026. Text unchanged.",
@@ -217,11 +217,11 @@ def translate_document(source: str, model) -> tuple[str, dict]:
     warning = soup.select_one(".rule-alert")
     warning.clear()
     strong = soup.new_tag("strong")
-    strong.string = "Approval does not mean a revision is in force."
+    strong.string = "All seven regulations effective November 1, 2026."
     warning.append(strong)
     warning.append(
-        "Revisions to Regulations 04 (Resource Packs), 05 (Privacy) and 07 (Visitor Rules) "
-        "were approved on November 1, 2026, but effective dates have not been announced. "
+        "All seven MJX regulations took effect on November 1, 2026, including approved revisions "
+        "04 (Resource Packs), 05 (Privacy), and 07 (Visitor Rules). "
         "This is a machine-assisted English reference translation reviewed for consistency with the Japanese original. "
         "The Japanese text takes precedence. The Japanese text of Regulations 02 and 03 may itself "
         "contain OCR errors; check the source before quoting or making decisions."
@@ -232,8 +232,8 @@ def translate_document(source: str, model) -> tuple[str, dict]:
     soup.select_one("button#clear").string = "Clear"
     soup.select_one(".notes").string = (
         "Machine-assisted English reference translation reviewed against Japanese. Clause numbering and anchors match the "
-        "Japanese version. Japanese originals control; revisions 04, 05 and 07 are approved but have "
-        "no announced effective date."
+        "Japanese version. Japanese originals control; all seven regulations, including revised "
+        "versions 04, 05 and 07, have been effective since November 1, 2026."
     )
     footer = soup.select_one("footer.footer")
     footer.clear()
