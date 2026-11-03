@@ -94,7 +94,7 @@ def apply_fixes() -> None:
         raise ValueError("Minimum wage meaning inverted")
     if "must not exceed 10,000G" not in blocks[655].get_text():
         raise ValueError("Maximum wage meaning inverted")
-    if "obstructing" not in blocks[232].get_text():
+    if not re.search(r"\bobstruct(?:s|ed|ing)?\b", blocks[232].get_text(), re.I):
         raise ValueError("Builder prohibitions mis-translated")
     # Table-of-contents labels must exactly match translated headings in the document.
     for section in soup.select("section.regulation"):
