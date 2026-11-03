@@ -26,7 +26,7 @@ NAMES = (
     "Resource Pack Regulations",
     "Privacy Policy",
     "Economic Regulations",
-    "Visitor Rules",
+    "Visitor Regulations",
 )
 STATES = (
     "In force · effective November 1, 2026",
@@ -221,7 +221,7 @@ def translate_document(source: str, model) -> tuple[str, dict]:
     warning.append(strong)
     warning.append(
         "All seven MJX regulations took effect on November 1, 2026, including approved revisions "
-        "04 (Resource Packs), 05 (Privacy), and 07 (Visitor Rules). "
+        "04 (Resource Packs), 05 (Privacy), and 07 (Visitor Regulations). "
         "This is a machine-assisted English reference translation reviewed for consistency with the Japanese original. "
         "The Japanese text takes precedence. The Japanese text of Regulations 02 and 03 may itself "
         "contain OCR errors; check the source before quoting or making decisions."
