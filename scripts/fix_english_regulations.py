@@ -29,14 +29,16 @@ def apply_fixes() -> None:
     blocks = soup.select("[data-ja-source]")
     source_blocks = BeautifulSoup(JA.read_text(encoding="utf-8"), "html.parser")
     japanese = [n.get_text(strip=True) for n in source_blocks.select(".document-text > p, .document-text > h3, .document-text > h4")]
-    if len(blocks) != len(japanese) or len(blocks) != 792:
-        raise ValueError(f"Expected 792 bilingual blocks: EN={len(blocks)}, JA={len(japanese)}")
+    if len(blocks) != len(japanese):
+        raise ValueError(f"Bilingual block count mismatch: EN={len(blocks)}, JA={len(japanese)}")
     for i, (block, text) in enumerate(zip(blocks, japanese)):
         if block.get("data-ja-source") != text:
             raise ValueError(f"Japanese source mismatch for English block {i}")
     fixes = json.loads(FIXES.read_text(encoding="utf-8"))
     if len(fixes) != len(blocks):
         raise ValueError(f"Expected a reviewed English override for every clause: {len(fixes)}/{len(blocks)}")
+    if set(fixes) != {str(i) for i in range(len(blocks))}:
+        raise ValueError("Correction indices must be a complete 0-based sequence")
     for index, change in fixes.items():
         i = int(index)
         if i < 0 or i >= len(blocks):
@@ -56,29 +58,29 @@ def apply_fixes() -> None:
     tests = {
         "YouTube publication does not grant permission": (11, "Public availability on YouTube does not mean"),
         "Cinema access-restriction bypass": (16, "Circumventing access restrictions"),
-        "Server overload prohibited": (148, "not to place an excessive load"),
-        "No immediate revocation for silence": (242, "must not be revoked immediately"),
-        "Public-price floor": (590, "must not offer goods or services"),
-        "Work duration is three hours, not three minutes": (674, "no more than 3 hours"),
-        "Supreme Administrator's rights are preserved": (736, "not restricted by these Regulations"),
-        "Labor is distinct from employment": (547, '"Labor"'),
-        "Wage chapter names labor rather than contracts": (641, "Wages and Labor"),
-        "Privacy third-party disclosure follows lawful grounds": (484, "based on applicable law"),
-        "Priority holdings require approved areas and development purpose": (161, "development purpose"),
-        "Builder decisions are made by authorized management": (152, "Routine decisions concerning Builders"),
-        "Approved housing scheme uses twelve months": (608, "12 months"),
-        "Six months after leaving remains retention period": (475, "six months"),
-        "Supreme Administrator may grant exemptions": (89, "may waive the application"),
-        "Builder infrastructure work includes development": (126, "development and upkeep of railway"),
-        "Builder development is an effort duty": (132, "make reasonable efforts"),
-        "Priority holder effort duty": (165, "must make reasonable efforts"),
-        "Required owner signage": (176, "must install signs"),
-        "Building and display prohibitions preserved": (231, "Buildings, displays, or activities"),
-        "Work disputes not limited to contracts": (291, "Schematics, work, or similar matters"),
-        "Specific reasons without an added publication condition": (356, "on specific grounds"),
-        "Builder labor is distinct from employment": (552, "housing, labor, and other"),
-        "Visitor labor is distinct from employment": (562, "engage in labor"),
-        "Monopoly is not automatically prohibited": (705, "not, in itself, automatically prohibited"),
+        "Server overload prohibited": (149, "not to place an excessive load"),
+        "No immediate revocation for silence": (243, "must not be revoked immediately"),
+        "Public-price floor": (591, "must not offer goods or services"),
+        "Work duration is three hours, not three minutes": (675, "no more than 3 hours"),
+        "Supreme Administrator's rights are preserved": (737, "not restricted by these Regulations"),
+        "Labor is distinct from employment": (548, '"Labor"'),
+        "Wage chapter names labor rather than contracts": (642, "Wages and Labor"),
+        "Privacy third-party disclosure follows lawful grounds": (485, "based on applicable law"),
+        "Priority holdings require approved areas and development purpose": (162, "development purpose"),
+        "Builder decisions are made by authorized management": (153, "Routine decisions concerning Builders"),
+        "Approved housing scheme uses twelve months": (609, "12 months"),
+        "Six months after leaving remains retention period": (476, "six months"),
+        "Supreme Administrator may grant exemptions": (90, "may waive the application"),
+        "Builder infrastructure work includes development": (127, "development and upkeep of railway"),
+        "Builder development is an effort duty": (133, "make reasonable efforts"),
+        "Priority holder effort duty": (166, "must make reasonable efforts"),
+        "Required owner signage": (177, "must install signs"),
+        "Building and display prohibitions preserved": (232, "Buildings, displays, or activities"),
+        "Work disputes not limited to contracts": (292, "Schematics, work, or similar matters"),
+        "Specific reasons without an added publication condition": (357, "on specific grounds"),
+        "Builder labor is distinct from employment": (553, "housing, labor, and other"),
+        "Visitor labor is distinct from employment": (563, "engage in labor"),
+        "Monopoly is not automatically prohibited": (706, "not, in itself, automatically prohibited"),
     }
     for name, (position, expected) in tests.items():
         if expected not in blocks[position].get_text():
@@ -88,11 +90,11 @@ def apply_fixes() -> None:
              if re.search(r"[。、]", block.get_text(" ", strip=True))]
     if stray:
         raise ValueError(f"Japanese punctuation in English text: {stray[:10]}")
-    if "must not be less than 1,000G" not in blocks[652].get_text():
+    if "must not be less than 1,000G" not in blocks[653].get_text():
         raise ValueError("Minimum wage meaning inverted")
-    if "must not exceed 10,000G" not in blocks[654].get_text():
+    if "must not exceed 10,000G" not in blocks[655].get_text():
         raise ValueError("Maximum wage meaning inverted")
-    if "obstructing" not in blocks[231].get_text():
+    if "obstructing" not in blocks[232].get_text():
         raise ValueError("Builder prohibitions mis-translated")
     # Table-of-contents labels must exactly match translated headings in the document.
     for section in soup.select("section.regulation"):

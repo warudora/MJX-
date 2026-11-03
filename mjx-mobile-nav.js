@@ -104,7 +104,22 @@
   }
   picker.addEventListener("click", () => setPicker(!pickerOpen));
   list.addEventListener("click", (event) => {
-    if (event.target.closest("a")) setPicker(false);
+    const link = event.target.closest("a[href^='#']");
+    if (!link) return;
+    const card = document.getElementById(link.hash.slice(1));
+    if (card && card.hidden) {
+      const resetFilter = document.querySelector('.filter[data-filter="all"]');
+      if (resetFilter) resetFilter.click();
+      const search = document.getElementById("search");
+      if (search) {
+        search.value = "";
+        search.dispatchEvent(new Event("input", { bubbles: true }));
+      }
+    }
+    setPicker(false);
+  });
+  document.addEventListener("pointerdown", (event) => {
+    if (pickerOpen && !quicklinks.contains(event.target)) setPicker(false);
   });
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && pickerOpen) {
