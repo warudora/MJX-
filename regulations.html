@@ -75,6 +75,11 @@ footer a{color:#fff}
 .quicklinks-list a:hover,.quicklinks-list a:focus-visible{border-color:#ebb5cf;background:var(--soft);color:#89003f}
 @media(max-width:560px){.quicklinks{align-items:flex-start;flex-direction:column;gap:5px}.quicklinks-list{width:100%}.rule-label{max-width:100%;overflow-wrap:anywhere}.rule{scroll-margin-top:100px}}
 @media print{.quicklinks{display:none}}
+.rule summary{transition:background-color .22s ease,color .22s ease,box-shadow .22s ease}
+.rule summary:hover{background:#f9e1ed}
+.expand-mark{display:inline-block;flex-shrink:0;transform:rotate(0deg);transition:transform .3s cubic-bezier(.2,.75,.2,1)}
+.rule details[data-collapsing] .expand-mark{transform:rotate(0deg)}
+@media(prefers-reduced-motion:reduce){.rule summary,.expand-mark{transition:none!important}}
 </style>
 <link rel="stylesheet" href="mjx-theme.css?v=20261101-all-headers">
 <script defer src="mjx-lang.js?v=2"></script>
@@ -101,6 +106,9 @@ footer a{color:#fff}
 <link rel="alternate" hreflang="ja" href="https://warudora.github.io/MJX-/regulations.html">
 <link rel="alternate" hreflang="en" href="https://warudora.github.io/MJX-/regulations-en.html">
 <link rel="alternate" hreflang="x-default" href="https://warudora.github.io/MJX-/regulations.html">
+<link rel="stylesheet" href="mjx-mobile-nav.css?v=20261103">
+<script defer src="mjx-mobile-nav.js?v=20261103"></script>
+<script defer src="mjx-details-motion.js?v=20261103"></script>
 </head>
 <body id="page-top" class="mjx-regulations">
 <a class="mjx-skip" href="#main-content">本文へ移動</a>

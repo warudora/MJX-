@@ -80,6 +80,11 @@ footer a{color:#fff}
 .english-guide-download{margin-top:17px!important;display:flex;align-items:center;flex-wrap:wrap;gap:10px}
 .english-guide-download small{color:#58687a;font-size:.77rem}
 @media print{.english-guide-download{display:none}}
+.rule summary{transition:background-color .22s ease,color .22s ease,box-shadow .22s ease}
+.rule summary:hover{background:#f9e1ed}
+.expand-mark{display:inline-block;flex-shrink:0;transform:rotate(0deg);transition:transform .3s cubic-bezier(.2,.75,.2,1)}
+.rule details[data-collapsing] .expand-mark{transform:rotate(0deg)}
+@media(prefers-reduced-motion:reduce){.rule summary,.expand-mark{transition:none!important}}
 </style>
 <link href="mjx-theme.css?v=20261101-all-headers" rel="stylesheet"/>
 <script defer="" src="mjx-lang.js?v=2"></script>
@@ -106,6 +111,9 @@ footer a{color:#fff}
 <link rel="alternate" hreflang="ja" href="https://warudora.github.io/MJX-/regulations.html">
 <link rel="alternate" hreflang="en" href="https://warudora.github.io/MJX-/regulations-en.html">
 <link rel="alternate" hreflang="x-default" href="https://warudora.github.io/MJX-/regulations.html">
+<link rel="stylesheet" href="mjx-mobile-nav.css?v=20261103">
+<script defer src="mjx-mobile-nav.js?v=20261103"></script>
+<script defer src="mjx-details-motion.js?v=20261103"></script>
 </head>
 <body class="mjx-regulations" id="page-top">
 <a class="mjx-skip" href="#main-content">Skip to main content</a>
