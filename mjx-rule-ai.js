@@ -156,14 +156,19 @@
     return { box, detail };
   }
   function addSources(box, citations, isSearch) {
+    const valid = citations.filter((citation) =>
+      citation && /^doc[1-7]-article-\\d+$/.test(citation.id || "")
+    ).slice(0, 6);
+    if (!valid.length) return;
     const wrap = document.createElement("div");
     wrap.className = "mjx-ai-citations";
     const strong = document.createElement("strong");
-    strong.textContent = isSearch ? label("関連する条文（検索結果）", "Relevant clauses (search results)") : label("参照した条文", "Source clauses");
+    strong.textContent = isSearch
+      ? label("関連する条文（原文リンク）", "Relevant clauses (original text)")
+      : label("参照した条文", "Source clauses");
     wrap.appendChild(strong);
-    const list = document.createElement("ol");
-    for (const citation of citations.slice(0, 6)) {
-      if (!/^doc[1-7]-article-\d+$/.test(citation.id || "")) continue;
+
+    function createCitation(citation, index) {
       const li = document.createElement("li");
       const link = document.createElement("a");
       link.href = "regulations-full.html?lang=ja#" + citation.id;
@@ -171,15 +176,55 @@
       link.target = "_blank";
       link.rel = "noopener noreferrer";
       li.appendChild(link);
+
       if (isSearch && citation.text) {
-        const excerpt = document.createElement("span");
-        excerpt.className = "mjx-ai-snippet";
-        excerpt.textContent = citation.text.slice(0, 400) + (citation.text.length > 400 ? "…" : "");
-        li.appendChild(excerpt);
+        const excerptText = citation.text.slice(0, 400) +
+          (citation.text.length > 400 ? "…" : "");
+        if (index === 0) {
+          const excerpt = document.createElement("p");
+          excerpt.className = "mjx-ai-top-excerpt";
+          excerpt.textContent = citation.text.slice(0, 185) +
+            (citation.text.length > 185 ? "…" : "");
+          li.appendChild(excerpt);
+        } else {
+          const disclosure = document.createElement("details");
+          disclosure.className = "mjx-ai-excerpt-toggle";
+          const summary = document.createElement("summary");
+          summary.textContent = label("条文の抜粋を読む", "Read clause excerpt");
+          const excerpt = document.createElement("span");
+          excerpt.className = "mjx-ai-snippet";
+          excerpt.textContent = excerptText;
+          disclosure.append(summary, excerpt);
+          li.appendChild(disclosure);
+        }
       }
-      list.appendChild(li);
+      return li;
     }
-    wrap.appendChild(list);
+
+    const primary = document.createElement("ol");
+    primary.className = "mjx-ai-source-list";
+    valid.slice(0, 3).forEach((citation, index) => {
+      primary.appendChild(createCitation(citation, index));
+    });
+    wrap.appendChild(primary);
+
+    if (valid.length > 3) {
+      const extra = document.createElement("details");
+      extra.className = "mjx-ai-more-sources";
+      const summary = document.createElement("summary");
+      summary.textContent = label(
+        "ほか" + (valid.length - 3) + "件の条文も表示",
+        "Show " + (valid.length - 3) + " more clauses"
+      );
+      const list = document.createElement("ol");
+      list.className = "mjx-ai-source-list";
+      list.start = 4;
+      valid.slice(3).forEach((citation, index) => {
+        list.appendChild(createCitation(citation, index + 3));
+      });
+      extra.append(summary, list);
+      wrap.appendChild(extra);
+    }
     box.appendChild(wrap);
   }
   function search(items, query) {
@@ -232,6 +277,7 @@
       if (submit.disabled) return;
       input.value = el.textContent;
       $("mjx-ai-faq")?.removeAttribute("open");
+      $("mjx-ai-tools")?.removeAttribute("open");
       form.requestSubmit();
     });
   }
@@ -247,6 +293,8 @@
     const question = input.value.trim().slice(0, 400);
     if (!question) return;
     input.value = "";
+    $("mjx-ai-tools")?.removeAttribute("open");
+    $("mjx-ai-faq")?.removeAttribute("open");
     addMessage("user", question);
     submit.disabled = true;
     submit.textContent = label("考え中…", "Thinking…");
