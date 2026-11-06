@@ -48,3 +48,60 @@
  .mjx-ai-form button[type=submit] {min-width:65px;padding:0 11px}
 }
 @media(prefers-reduced-motion:reduce){.mjx-rule-ai-page *{scroll-behavior:auto!important}}
+
+
+/* Compact same-origin iframe view for the persistent support panel. */
+html.mjx-ai-embed { height:100%; overflow:hidden; }
+html.mjx-ai-embed body.mjx-rule-ai-page {
+  height:100vh;
+  height:100dvh;
+  min-height:0;
+  margin:0;
+  overflow:hidden;
+}
+html.mjx-ai-embed :is(.mjx-topbar,.mjx-ai-header,.mjx-page-footer,.mjx-ai-footer-note,.mjx-skip) {
+  display:none!important;
+}
+html.mjx-ai-embed .mjx-ai-shell {
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  max-width:none;
+  height:100%;
+  min-height:0;
+  margin:0;
+  padding:0;
+}
+html.mjx-ai-embed .mjx-ai-panel {
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  min-height:0;
+  margin:0;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+}
+html.mjx-ai-embed .mjx-ai-panel-head { flex-shrink:0; padding:12px 13px; }
+html.mjx-ai-embed .mjx-ai-history {
+  flex:1;
+  min-height:0;
+  max-height:none;
+  padding:12px;
+  overscroll-behavior:contain;
+}
+html.mjx-ai-embed .mjx-ai-message { max-width:98%; font-size:.86rem; }
+html.mjx-ai-embed .mjx-ai-examples {
+  flex-shrink:0;
+  max-height:91px;
+  padding:0 12px 11px;
+  overflow-y:auto;
+}
+html.mjx-ai-embed .mjx-ai-form { flex-shrink:0; padding:11px 12px 12px; }
+html.mjx-ai-embed .mjx-ai-hint { font-size:.7rem; }
+@media(max-height:500px) {
+  html.mjx-ai-embed .mjx-ai-examples { max-height:49px; }
+  html.mjx-ai-embed .mjx-ai-form label { display:none; }
+}
