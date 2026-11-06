@@ -26,13 +26,13 @@
 .mjx-ai-citations ol {margin:8px 0 0;padding-left:1.35em}
 .mjx-ai-citations a {display:inline-block}
 .mjx-ai-examples {display:flex;flex-wrap:wrap;gap:8px;padding:0 20px 16px}
-.mjx-ai-examples button {padding:9px 12px;background:#fff;border:1px solid #e1c6d3;border-radius:100px;color:#8c084a;cursor:pointer;font:600 .78rem/1.4 inherit}
+.mjx-ai-examples button {padding:9px 12px;background:#fff;border:1px solid #e1c6d3;border-radius:100px;color:#8c084a;cursor:pointer;font:600 .78rem/1.4 Inter,"Noto Sans JP",sans-serif}
 .mjx-ai-examples button:hover {background:#fdf1f7}
 .mjx-ai-form {border-top:1px solid #e8ecf2;padding:16px 20px 18px}
 .mjx-ai-form label {display:block;font-weight:750;font-size:.82rem;margin-bottom:8px}
 .mjx-ai-form-row {display:flex;align-items:stretch;gap:10px}
 .mjx-ai-form textarea {flex:1;min-width:0;max-height:180px;resize:vertical;padding:12px 14px;border:1px solid #cbd3de;border-radius:11px;font:inherit;line-height:1.6;color:#1e293b}
-.mjx-ai-form button[type=submit] {background:#b40056;color:#fff;border:0;border-radius:11px;padding:0 20px;min-width:75px;font:700 .89rem inherit;cursor:pointer}
+.mjx-ai-form button[type=submit] {background:#b40056;color:#fff;border:0;border-radius:11px;padding:0 20px;min-width:75px;font:700 .89rem/1.4 Inter,"Noto Sans JP",sans-serif;cursor:pointer}
 .mjx-ai-form button[type=submit]:hover {background:#930045}
 .mjx-ai-form button:disabled {opacity:.6;cursor:wait}
 .mjx-ai-hint {font-size:.76rem;color:#64748b;margin:9px 0 0}
