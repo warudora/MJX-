@@ -212,7 +212,7 @@
 
 /* Calm micro-interactions. The panel keeps its established compact dimensions. */
 #mjx-ai-float-root .mjx-ai-float-launcher {
-  animation:mjx-ai-launcher-arrive 420ms cubic-bezier(.2,.8,.2,1) both;
+  animation:mjx-ai-launcher-arrive 420ms cubic-bezier(.2,.8,.2,1) backwards;
 }
 #mjx-ai-float-root .mjx-ai-float-launcher svg {
   transition:transform 220ms ease;
