@@ -208,3 +208,62 @@
     max-height:calc(100dvh - 94px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
   }
 }
+
+
+/* Calm micro-interactions. The panel keeps its established compact dimensions. */
+#mjx-ai-float-root .mjx-ai-float-launcher {
+  animation:mjx-ai-launcher-arrive 420ms cubic-bezier(.2,.8,.2,1) both;
+}
+#mjx-ai-float-root .mjx-ai-float-launcher svg {
+  transition:transform 220ms ease;
+}
+#mjx-ai-float-root .mjx-ai-float-launcher[aria-expanded="true"] {
+  background:#98034b;
+  box-shadow:0 9px 27px rgba(79,12,42,.32);
+}
+#mjx-ai-float-root .mjx-ai-float-panel:not([hidden]) {
+  transform-origin:left bottom;
+  animation:mjx-ai-panel-enter 270ms cubic-bezier(.2,.8,.2,1) both;
+}
+#mjx-ai-float-root .mjx-ai-float-panel.mjx-ai-float-closing {
+  animation:mjx-ai-panel-leave 180ms ease-in both;
+  pointer-events:none;
+}
+#mjx-ai-float-root .mjx-ai-float-actions :is(a,button) {
+  transition:background-color 170ms ease,color 170ms ease,transform 170ms ease;
+}
+#mjx-ai-float-root .mjx-ai-float-actions :is(a,button):active {
+  transform:scale(.95);
+}
+@media(hover:hover) {
+  #mjx-ai-float-root .mjx-ai-float-launcher:hover svg {
+    transform:rotate(-9deg) scale(1.07);
+  }
+}
+#mjx-ai-float-root .mjx-ai-float-launcher:active {
+  transform:translateY(0) scale(.97);
+}
+@keyframes mjx-ai-launcher-arrive {
+  from {opacity:0;transform:translateY(10px) scale(.96)}
+  to {opacity:1;transform:translateY(0) scale(1)}
+}
+@keyframes mjx-ai-panel-enter {
+  from {opacity:0;transform:translateY(12px) scale(.985)}
+  to {opacity:1;transform:translateY(0) scale(1)}
+}
+@keyframes mjx-ai-panel-leave {
+  from {opacity:1;transform:translateY(0) scale(1)}
+  to {opacity:0;transform:translateY(8px) scale(.99)}
+}
+@media(prefers-reduced-motion:reduce) {
+  #mjx-ai-float-root .mjx-ai-float-launcher,
+  #mjx-ai-float-root .mjx-ai-float-panel:not([hidden]),
+  #mjx-ai-float-root .mjx-ai-float-panel.mjx-ai-float-closing {
+    animation:none!important;
+    transform:none!important;
+  }
+  #mjx-ai-float-root .mjx-ai-float-launcher svg,
+  #mjx-ai-float-root .mjx-ai-float-actions :is(a,button) {
+    transition:none!important;
+  }
+}
