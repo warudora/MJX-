@@ -175,6 +175,9 @@ def translate_document(source: str, model) -> tuple[str, dict]:
 
     # Localize document navigation and site navigation (no PDF links).
     soup.title.string = "Full Text of Seven MJX Regulations | MTR Japan Nexus"
+    # A translated document is separately canonical even when Japanese text takes legal precedence.
+    for tag in soup.select('link[rel="canonical"]'):
+        tag["href"] = "https://warudora.github.io/MJX-/regulations-full-en.html"
     for tag in soup.select('meta[name="description"]'):
         tag["content"] = "Read all seven MJX regulations in English. Reference translation reviewed against Japanese; Japanese text prevails."
     for tag in soup.select('meta[property="og:title"]'):
