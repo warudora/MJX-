@@ -82,7 +82,7 @@
     if (regulations) return regulations;
     if (loading) return loading;
     loading = (async () => {
-      const response = await fetch("regulations-full.html", { cache: "no-cache" });
+      const response = await fetch("regulations-full.html", { cache: "no-cache", signal: AbortSignal.timeout(15000) });
       if (!response.ok) throw new Error("Could not read official regulations");
       const dom = new DOMParser().parseFromString(await response.text(), "text/html");
       const items = [];
