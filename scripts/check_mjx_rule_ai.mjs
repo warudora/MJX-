@@ -32,7 +32,8 @@ const env = {
     aiCalls += 1;
     assert.match(body.messages[0].content, /ONLY from the provided official Japanese source excerpts/);
     assert.ok(body.messages.length >= 3);
-    return { response: "参照条文を確認してください。[1]" };
+    assert.equal(body.chat_template_kwargs.enable_thinking, false);
+    return { choices: [{ message: { content: "参照条文を確認してください。[1]" } }] };
   } },
   RULE_AI_LIMIT: { limit: async () => ({ success: true }) }
 };
