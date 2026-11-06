@@ -84,6 +84,8 @@
 
   let frame = null;
   let opened = false;
+  let hidePanelTimer = null;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const openFrame = () => {
     if (frame) return;
     frame = document.createElement("iframe");
@@ -105,17 +107,34 @@
 
   const setOpened = (value, restoreFocus = true) => {
     opened = Boolean(value);
-    panel.hidden = !opened;
+    if (hidePanelTimer !== null) {
+      window.clearTimeout(hidePanelTimer);
+      hidePanelTimer = null;
+    }
     launcher.setAttribute("aria-expanded", String(opened));
     launcher.setAttribute("aria-label", opened
       ? translate("AIサポーターを閉じる", "Close AI Supporter")
       : translate("AIサポーターを開く", "Open AI Supporter"));
     document.body.classList.toggle("mjx-ai-float-open", opened);
     if (opened) {
+      panel.classList.remove("mjx-ai-float-closing");
+      panel.hidden = false;
       openFrame();
-      close.focus();
-    } else if (restoreFocus) {
-      launcher.focus();
+      close.focus({ preventScroll: true });
+    } else {
+      if (restoreFocus) launcher.focus({ preventScroll: true });
+      if (reducedMotion.matches) {
+        panel.hidden = true;
+      } else {
+        panel.classList.add("mjx-ai-float-closing");
+        hidePanelTimer = window.setTimeout(() => {
+          if (!opened) {
+            panel.hidden = true;
+            panel.classList.remove("mjx-ai-float-closing");
+          }
+          hidePanelTimer = null;
+        }, 190);
+      }
     }
   };
 
