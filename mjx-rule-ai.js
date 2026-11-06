@@ -82,7 +82,7 @@
     if (regulations) return regulations;
     if (loading) return loading;
     loading = (async () => {
-      const response = await fetch("regulations-full.html", { cache: "no-cache" });
+      const response = await fetch("regulations-full.html", { cache: "no-cache", signal: AbortSignal.timeout(15000) });
       if (!response.ok) throw new Error("Could not read official regulations");
       const dom = new DOMParser().parseFromString(await response.text(), "text/html");
       const items = [];
@@ -130,6 +130,30 @@
     historyBox.appendChild(box);
     historyBox.scrollTop = historyBox.scrollHeight;
     return box;
+  }
+  function showThinking() {
+    const box = document.createElement("div");
+    box.className = "mjx-ai-message mjx-ai-message--assistant mjx-ai-message--thinking";
+    box.setAttribute("role", "status");
+    box.setAttribute("aria-live", "polite");
+    const heading = document.createElement("div");
+    heading.className = "mjx-ai-thinking-heading";
+    const dots = document.createElement("span");
+    dots.className = "mjx-ai-thinking-dots";
+    dots.setAttribute("aria-hidden", "true");
+    for (let i = 0; i < 3; i += 1) dots.appendChild(document.createElement("span"));
+    const title = document.createElement("strong");
+    title.textContent = label("考え中…", "Thinking…");
+    heading.append(dots, title);
+    const detail = document.createElement("p");
+    detail.className = "mjx-ai-thinking-detail";
+    detail.textContent = endpoint
+      ? label("公式規定を確認して回答を準備しています。", "Reviewing the official regulations and preparing an answer.")
+      : label("関連する条文を検索しています。", "Searching relevant official clauses.");
+    box.append(heading, detail);
+    historyBox.appendChild(box);
+    historyBox.scrollTop = historyBox.scrollHeight;
+    return { box, detail };
   }
   function addSources(box, citations, isSearch) {
     const wrap = document.createElement("div");
@@ -204,7 +228,12 @@
   }
   for (const el of document.querySelectorAll("[data-example-ja][data-example-en]")) {
     el.textContent = el.dataset["example" + (english ? "En" : "Ja")];
-    el.addEventListener("click", () => { input.value = el.textContent; input.focus(); });
+    el.addEventListener("click", () => {
+      if (submit.disabled) return;
+      input.value = el.textContent;
+      $("mjx-ai-faq")?.removeAttribute("open");
+      form.requestSubmit();
+    });
   }
   input.placeholder = label("例：ビジターでもブロックを設置できますか？", "e.g. Can visitors place blocks?");
   status.textContent = endpoint ? label("AI回答 + 根拠条文", "AI answers with citations") : label("公式条文検索モード", "Official clause search mode");
@@ -220,16 +249,25 @@
     input.value = "";
     addMessage("user", question);
     submit.disabled = true;
-    hint.textContent = label("公式規定を確認しています…", "Checking the official regulations…");
+    submit.textContent = label("考え中…", "Thinking…");
+    form.setAttribute("aria-busy", "true");
+    const thinking = showThinking();
+    hint.textContent = label("考え中… 公式規定を確認しています。", "Thinking… Reviewing official regulations.");
     try {
       if (endpoint) {
         try { await askAI(question); }
-        catch (_) { await fallback(question, true); }
+        catch (_) {
+          thinking.detail.textContent = label("AIにつながらないため、条文検索に切り替えています。", "AI is unavailable. Switching to clause search.");
+          await fallback(question, true);
+        }
       } else {
         await fallback(question, false);
       }
     } finally {
+      thinking.box.remove();
       submit.disabled = false;
+      submit.textContent = label("送信", "Send");
+      form.removeAttribute("aria-busy");
       hint.textContent = endpoint
         ? label("回答の根拠となる条文を必ず確認してください。", "Always check cited clauses.")
         : label("関連条文の一覧から原文を確認できます。", "Open the linked clauses to read the original text.");

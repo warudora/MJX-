@@ -29,6 +29,21 @@ assert.match(floatStyles, /@media\(max-width:600px\)/);
 assert.match(floatStyles, /@media print/);
 assert.match(chatStyles, /html\.mjx-ai-embed/);
 
+assert.match(entry, /id="mjx-ai-faq"/);
+assert.match(entry, /class="mjx-ai-contact"/);
+assert.match(entry, /https:\/\/discord\.gg\/PehjWyGDHV/);
+assert.equal((entry.match(/data-example-ja=/g) || []).length, 6, "Expected six FAQ questions");
+assert.doesNotMatch(entry, /mjx-logo-original\.png/, "Chat page should not show a logo");
+assert.doesNotMatch(floatScript, /mjx-logo-original\.png/, "Floating chat header should not show a logo");
+assert.match(frontend, /function showThinking\(\)/);
+assert.match(frontend, /aria-busy/);
+assert.match(frontend, /mjx-ai-faq/);
+assert.match(frontend, /thinking\.box\.remove\(\)/);
+assert.match(chatStyles, /mjx-ai-message--thinking/);
+assert.match(chatStyles, /@keyframes mjx-ai-dot/);
+assert.match(floatScript, /20261106-faq-thinking-1/);
+
+
 for (const path of ["index.html", "index-en.html", "regulations.html", "regulations-en.html", "regulations-full.html", "regulations-full-en.html", "jp.html", "en.html"]) {
   const markup = readFileSync(join(root, path), "utf8");
   assert.match(markup, /href="mjx-ai-float\.css\?v=/, path + " must load the floating style");
@@ -86,7 +101,7 @@ try {
   assert.equal(forbidden.status, 403);
   assert.ok(aiCalls >= 3);
   assert.ok(sourceReads >= 3);
-  console.log("MJX rule AI: 130 source anchors, floating support on eight pages, 3 grounded questions, CORS and health passed.");
+  console.log("MJX rule AI: 130 source anchors, floating support, FAQ/contact, visible thinking status on eight pages, 3 grounded questions, CORS and health passed.");
 } finally {
   globalThis.fetch = originalFetch;
 }

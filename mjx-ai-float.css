@@ -79,14 +79,6 @@
   gap:10px;
   min-width:0;
 }
-#mjx-ai-float-root .mjx-ai-float-identity img {
-  display:block;
-  width:36px;
-  height:36px;
-  flex-shrink:0;
-  border-radius:10px;
-  object-fit:contain;
-}
 #mjx-ai-float-root .mjx-ai-float-identity div { display:flex;flex-direction:column;min-width:0;gap:2px; }
 #mjx-ai-float-root .mjx-ai-float-identity strong {
   color:#202a3d;
@@ -165,7 +157,6 @@
   body.mjx-ai-float-open { overflow:hidden; }
 }
 @media(max-width:360px) {
-  #mjx-ai-float-root .mjx-ai-float-identity img { width:30px; height:30px; }
   #mjx-ai-float-root .mjx-ai-float-header { padding:10px; }
   #mjx-ai-float-root .mjx-ai-float-actions { gap:2px; }
 }

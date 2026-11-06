@@ -10,16 +10,16 @@
 <link rel="icon" href="assets/favicon-32.png" type="image/png">
 <link rel="stylesheet" href="mjx-theme.css">
 <link rel="stylesheet" href="mjx-mobile-nav.css">
-<link rel="stylesheet" href="mjx-rule-ai.css">
+<link rel="stylesheet" href="mjx-rule-ai.css?v=20261106-faq-thinking-1">
 <script defer src="mjx-lang.js"></script>
 <script defer src="mjx-mobile-nav.js"></script>
 <script defer src="mjx-rule-ai-config.js?v=20261106-worker-connected-1"></script>
-<script defer src="mjx-rule-ai.js?v=20261106-worker-connected-1"></script>
+<script defer src="mjx-rule-ai.js?v=20261106-faq-thinking-1"></script>
 </head>
 <body id="page-top" class="mjx-index mjx-rule-ai-page">
 <a class="mjx-skip" href="#main-content">本文へ移動</a>
 <div class="mjx-topbar"><div class="mjx-topbar-inner">
-  <a class="mjx-brand" href="index.html?lang=ja"><img class="mjx-brand-image" src="assets/mjx-logo-original.png" alt="" width="44" height="44"><span>MTR JAPAN NEXUS</span></a>
+  <a class="mjx-brand" href="index.html?lang=ja"><span>MTR JAPAN NEXUS</span></a>
   <nav class="mjx-toplinks" aria-label="サイトナビゲーション">
     <a href="index.html?lang=ja" data-ja="ホーム" data-en="Home">ホーム</a>
     <a href="regulations.html?lang=ja" data-ja="公式7規定" data-en="Regulations">公式7規定</a>
@@ -48,10 +48,22 @@
         <p data-ja="MJXの規定について質問してね。関連する条文と原文へのリンクを提示します。" data-en="Ask about the MJX rules. I'll find relevant clauses and link to the official text.">MJXの規定について質問してね。関連する条文と原文へのリンクを提示します。</p>
       </div>
     </div>
-    <div class="mjx-ai-examples" id="mjx-ai-examples">
-      <button type="button" data-example-ja="ビジターは建築できますか？" data-example-en="Can visitors build?">ビジターは建築できますか？</button>
-      <button type="button" data-example-ja="映画館で動画を上映する条件は？" data-example-en="What are the rules for screening videos?">映画館で動画を上映する条件は？</button>
-      <button type="button" data-example-ja="個人情報の保存期間は？" data-example-en="How long is personal data retained?">個人情報の保存期間は？</button>
+    <div class="mjx-ai-resources">
+      <details class="mjx-ai-faq" id="mjx-ai-faq">
+        <summary data-ja="よくある質問" data-en="Frequently asked questions">よくある質問</summary>
+        <div class="mjx-ai-examples" id="mjx-ai-examples">
+          <button type="button" data-example-ja="ビジターは建築できますか？" data-example-en="Can visitors build?">ビジターは建築できますか？</button>
+          <button type="button" data-example-ja="映画館で動画を上映する条件は？" data-example-en="What are the rules for screening videos?">映画館で動画を上映する条件は？</button>
+          <button type="button" data-example-ja="個人情報の保存期間は？" data-example-en="How long is personal data retained?">個人情報の保存期間は？</button>
+          <button type="button" data-example-ja="リソースパックの改変や再配布はできますか？" data-example-en="Can I modify or redistribute resource packs?">リソースパックの改変や再配布はできますか？</button>
+          <button type="button" data-example-ja="Builderにはどんな権限がありますか？" data-example-en="What permissions do Builders have?">Builderにはどんな権限がありますか？</button>
+          <button type="button" data-example-ja="MJXの経済規定の基本ルールは？" data-example-en="What are the basic MJX economy rules?">MJXの経済規定の基本ルールは？</button>
+        </div>
+      </details>
+      <div class="mjx-ai-contact">
+        <a href="https://discord.gg/PehjWyGDHV" target="_blank" rel="noopener noreferrer" data-ja="運営への問い合わせ（公式Discord）" data-en="Contact administrators (official Discord)">運営への問い合わせ（公式Discord）</a>
+        <span data-ja="AIで判断できない内容は、運営に直接確認してください。" data-en="For questions the AI cannot resolve, contact MJX administrators.">AIで判断できない内容は、運営に直接確認してください。</span>
+      </div>
     </div>
     <form id="mjx-ai-form" class="mjx-ai-form">
       <label for="mjx-ai-question" data-ja="規定について質問する" data-en="Ask about the regulations">規定について質問する</label>
