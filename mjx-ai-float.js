@@ -84,6 +84,8 @@
 
   let frame = null;
   let opened = false;
+  let hidePanelTimer = null;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const openFrame = () => {
     if (frame) return;
     frame = document.createElement("iframe");
@@ -94,7 +96,7 @@
     const url = new URL("rules-ai.html", window.location.href);
     url.searchParams.set("embed", "1");
     url.searchParams.set("lang", english ? "en" : "ja");
-    url.searchParams.set("v", "20261106-compact-stays-open-1");
+    url.searchParams.set("v", "20261106-motion-1");
     frame.src = url.href;
     frame.addEventListener("load", () => {
       loader.hidden = true;
@@ -105,17 +107,36 @@
 
   const setOpened = (value, restoreFocus = true) => {
     opened = Boolean(value);
-    panel.hidden = !opened;
+    if (hidePanelTimer !== null) {
+      window.clearTimeout(hidePanelTimer);
+      hidePanelTimer = null;
+    }
     launcher.setAttribute("aria-expanded", String(opened));
     launcher.setAttribute("aria-label", opened
       ? translate("AIサポーターを閉じる", "Close AI Supporter")
       : translate("AIサポーターを開く", "Open AI Supporter"));
     document.body.classList.toggle("mjx-ai-float-open", opened);
     if (opened) {
+      panel.classList.remove("mjx-ai-float-closing");
+      panel.inert = false;
+      panel.hidden = false;
       openFrame();
-      close.focus();
-    } else if (restoreFocus) {
-      launcher.focus();
+      close.focus({ preventScroll: true });
+    } else {
+      if (restoreFocus) launcher.focus({ preventScroll: true });
+      panel.inert = true;
+      if (reducedMotion.matches) {
+        panel.hidden = true;
+      } else {
+        panel.classList.add("mjx-ai-float-closing");
+        hidePanelTimer = window.setTimeout(() => {
+          if (!opened) {
+            panel.hidden = true;
+            panel.classList.remove("mjx-ai-float-closing");
+          }
+          hidePanelTimer = null;
+        }, 190);
+      }
     }
   };
 
