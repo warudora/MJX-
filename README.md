@@ -39,6 +39,22 @@ MJXの公式7規定は**2026年11月1日から施行中**です。各規定の�
 - AIによる説明は正式な規定の制定・解釈・運営判断を代行するものではありません。重要な判断は日本語の公式原文と運営の正式な案内を確認してください。
 - 設定・デプロイ方法：[`worker/README.md`](worker/README.md)
 
+## 検索エンジンへの掲載（SEO）
+
+- サイトマップ：[`sitemap.xml`](https://warudora.github.io/MJX-/sitemap.xml)（公式サイトの正規ページ9件）
+- 日本語・英語のページには個別の正規URL（canonical）と、言語別の関連ページ（hreflang）を設定しています。英語版規定全文も英語のURLを正規URLにしています。
+- 日本語・英語のトップページにはMJXの名称・ロゴURLなどの組織情報（Organization構造化データ）を掲載しています。
+- 設定の整合性はGitHub Actionsの `node scripts/check_mjx_seo.cjs` で検査します。
+
+**Google検索に登録する場合（iPad・スマホのブラウザで操作可能）**
+
+1. [Google Search Console](https://search.google.com/search-console/)にログインし、「URLプレフィックス」に `https://warudora.github.io/MJX-/` を登録します。
+2. 案内に従って所有権を確認します。HTMLファイル方式なら、Googleが発行する確認用HTMLファイルをこのリポジトリのルートへ追加します。
+3. 「サイトマップ」から `sitemap.xml` を送信します。必要に応じて「URL検査」からトップページのインデックス登録をリクエストします。
+4. Bingにも登録したい場合は [Bing Webmaster Tools](https://www.bing.com/webmasters/) から同じサイトマップを登録できます。
+
+**注意：** GitHub Pagesのプロジェクトサイト（`/MJX-/`）のため、`robots.txt` はGitHubユーザーサイト側のドメイン直下で解釈されます。このリポジトリの `/MJX-/robots.txt` に書いてもホスト全体のクロール指示にはなりません。サイトマップはSearch Console / Bing Webmaster Toolsから送信してください。サイトマップ送信やSEO設定は検索結果への掲載・順位を保証するものではありません。
+
 ## 著作権・名称・ロゴの利用について
 
 **本サイトはMJX運営が管理する公式案内サイトです。**
