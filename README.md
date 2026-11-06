@@ -1,59 +1,39 @@
-# MTR Japan Nexus | Official Website
+# MTR Japan Nexus (MJX)
 
 <p align="center">
-  <img src="./assets/mjx-logo-original.png" alt="MTR Japan Nexus（MJX）公式ロゴ" width="300">
+  <img src="./assets/mjx-logo-original.png" alt="MTR Japan Nexus（MJX）公式ロゴ" width="270">
 </p>
 
-<p align="center"><strong>MTR Japan Nexus（MJX）公式ルールブック・案内サイト</strong></p>
+<p align="center"><strong>MTR Japan Nexus 公式ウェブサイト</strong></p>
 
-MTR Japan Nexusは、Minecraftにおける都市・鉄道の開発と交流を目的とするコミュニティです。このリポジトリでは、公式7規定とMJXについての案内を日本語・英語で公開しています。
+MTR Japan Nexus（MJX）は、Minecraftを通じて都市・鉄道の開発と交流を行うコミュニティです。このリポジトリでは、MJXの公式サイトと公式規定に関する公開コンテンツを管理しています。
 
-**公式サイト：** https://warudora.github.io/MJX-/
+**[MJX公式サイト](https://warudora.github.io/MJX-/)** | [English](https://warudora.github.io/MJX-/index-en.html)
 
-## 公式規定
+## MJXについて
 
-MJXの公式7規定は**2026年11月1日から施行中**です。各規定の適用範囲・例外・詳細については、要約ではなく公式サイトの本文をご確認ください。
+MJXの概要、成り立ち、活動方針については、[MJXについて](https://warudora.github.io/MJX-/jp.html)をご覧ください。
+
+## 公式7規定
+
+MJXの公式7規定は、**2026年11月1日から施行されています**。参加・利用にあたっては、要約だけで判断せず、適用される規定の本文と運営の正式な案内をご確認ください。
 
 - [公式7規定の一覧](https://warudora.github.io/MJX-/regulations.html)
-- [日本語の規定全文](https://warudora.github.io/MJX-/regulations-full.html)
-- [English overview](https://warudora.github.io/MJX-/regulations-en.html)
-- [English reference translation](https://warudora.github.io/MJX-/regulations-full-en.html)
+- [公式規定の全文（日本語）](https://warudora.github.io/MJX-/regulations-full.html)
+- [Regulations overview (English)](https://warudora.github.io/MJX-/regulations-en.html)
+- [Full text (English reference translation)](https://warudora.github.io/MJX-/regulations-full-en.html)
 
-英語版は参考訳です。規定の解釈に差異が生じた場合は、日本語の本文を基準とします。
+英語版は参考訳です。日本語版との解釈に相違がある場合は、日本語の公式本文を基準とします。
 
-## 公式規定AIアシスタント
+## AIサポーター
 
-- 公式サイトの各ページ左下に「AIサポーター」を常駐表示します。クリックすると、そのページ上でチャットを開閉できます。右下の「上へ」ボタンと重ならない配置です。
-- チャットの外をタップしたり、元のページをスクロールしたりしても自動で閉じません。元のサイトもそのまま操作でき、チャットは「×」または起動ボタンで閉じられます。
-- チャットはPC・タブレットで幅最大480px・高さ最大700pxの控えめなサイズです。長い回答はチャット内でスクロールでき、ヘッダーの「⛶」から一時的に全画面拡大できます。
-- 「よくある質問」と「運営への問い合わせ」は閉じた「よくある質問・運営への問い合わせ」欄にまとめ、会話部分の表示面積を優先します。
-- 関連条文は上位3件を先に表示し、残りや長い抜粋は展開して確認できます。根拠の原文リンクはそのまま使えます。
-- スマートフォンでは画面の約64%の高さを使う小型チャットとして表示し、下側にある起動ボタンから開閉できます。日本語・英語とも対応しています。
-- 回答の準備中はチャットに「考え中…」と進行状況を明示し、完了時に表示を解除します。
-- チャットの開閉・新着メッセージ・FAQ展開・入力操作に短く控えめなアニメーションを適用します。動きを減らすOS設定ではアニメーションを無効化します。
-- 「よくある質問」から代表的な質問をワンタップで送信できます。「運営への問い合わせ」はMJX公式Discordへのリンクです。AIが代わりに問い合わせを送信する機能ではありません。
-- チャットウィンドウのヘッダーはロゴ画像を使わず、文字のみで表示します。
-- [AIチャットを単独で開く](https://warudora.github.io/MJX-/rules-ai.html?lang=ja)こともできます（常駐メニューの「拡大」）。
-- 公式7規定の本文を対象に、質問に関係する条文を検索し、原文の該当箇所へ案内します。
-- Cloudflare Workers AIのデプロイ・接続が完了すると、条文を根拠にした日本語・英語の説明も表示できます。未接続時は引用元リンク付きの条文検索として動作します。
-- AIによる説明は正式な規定の制定・解釈・運営判断を代行するものではありません。重要な判断は日本語の公式原文と運営の正式な案内を確認してください。
-- 設定・デプロイ方法：[`worker/README.md`](worker/README.md)
+公式サイトの左下にある「AIサポーター」から、MJXの規定について質問できます。関連条文の案内や、公式規定の原文へのリンクを確認できます。
 
-## 検索エンジンへの掲載（SEO）
+AIによる案内は参考情報です。規定の正確な内容や最終的な判断については、公式規定本文と運営からの正式な案内を優先してください。
 
-- サイトマップ：[`sitemap.xml`](https://warudora.github.io/MJX-/sitemap.xml)（公式サイトの正規ページ9件）
-- 日本語・英語のページには個別の正規URL（canonical）と、言語別の関連ページ（hreflang）を設定しています。英語版規定全文も英語のURLを正規URLにしています。
-- 日本語・英語のトップページにはMJXの名称・ロゴURLなどの組織情報（Organization構造化データ）を掲載しています。
-- 設定の整合性はGitHub Actionsの `node scripts/check_mjx_seo.cjs` で検査します。
+## お問い合わせ
 
-**Google検索に登録する場合（iPad・スマホのブラウザで操作可能）**
-
-1. [Google Search Console](https://search.google.com/search-console/)にログインし、「URLプレフィックス」に `https://warudora.github.io/MJX-/` を登録します。
-2. 案内に従って所有権を確認します。HTMLファイル方式なら、Googleが発行する確認用HTMLファイルをこのリポジトリのルートへ追加します。
-3. 「サイトマップ」から `sitemap.xml` を送信します。必要に応じて「URL検査」からトップページのインデックス登録をリクエストします。
-4. Bingにも登録したい場合は [Bing Webmaster Tools](https://www.bing.com/webmasters/) から同じサイトマップを登録できます。
-
-**注意：** GitHub Pagesのプロジェクトサイト（`/MJX-/`）のため、`robots.txt` はGitHubユーザーサイト側のドメイン直下で解釈されます。このリポジトリの `/MJX-/robots.txt` に書いてもホスト全体のクロール指示にはなりません。サイトマップはSearch Console / Bing Webmaster Toolsから送信してください。サイトマップ送信やSEO設定は検索結果への掲載・順位を保証するものではありません。
+MJXに関するご質問やお問い合わせは、[MJX公式Discord](https://discord.gg/PehjWyGDHV)をご利用ください。
 
 ## 著作権・名称・ロゴの利用について
 
@@ -66,11 +46,6 @@ MJXの公式名称・ロゴ・公式デザイン等の利用はMJX運営が管�
 GitHubで公開していることは、自由な再利用を許可するものではありません。別途ライセンスが示されている素材・プログラムは、そのライセンスに従ってください。法令に基づく適法な引用などや、GitHubの利用規約に基づく操作は妨げません。
 
 **公式ページへの通常のリンク共有は歓迎**します。ロゴ・画像・規定文書等の転載やその他の利用を希望する場合は、事前にMJX運営または該当する権利者の許諾を得てください。
-
-## 公式窓口・関連情報
-
-- [MJXについて](https://warudora.github.io/MJX-/jp.html)
-- [MJX公式Discord](https://discord.gg/PehjWyGDHV)
 
 ---
 
