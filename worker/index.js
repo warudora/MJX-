@@ -2,7 +2,7 @@
 // The authoritative Japanese text is fetched server-side; the browser never supplies source clauses.
 const SITE_ORIGIN = "https://warudora.github.io";
 const SOURCE_URL = SITE_ORIGIN + "/MJX-/regulations-full.html";
-const MODEL = "@cf/meta/llama-3.1-8b-instruct-fp8";
+const MODEL = "@cf/google/gemma-4-26b-a4b-it";
 const TOP_K = 6;
 const DOCUMENT_NAMES = {
   1: "共通サーバー規定", 2: "Builder規定", 3: "Visitor規定",
@@ -218,12 +218,14 @@ export default {
     try {
       const result = await env.AI.run(MODEL, {
         messages,
-        max_tokens: 600,
-        temperature: 0.1
+        max_completion_tokens: 600,
+        temperature: 0.1,
+        chat_template_kwargs: { enable_thinking: false }
       });
-      if (typeof result?.response !== "string" || !result.response.trim()) throw new Error("Empty model response");
+      const answer = result?.choices?.[0]?.message?.content ?? result?.response;
+      if (typeof answer !== "string" || !answer.trim()) throw new Error("Empty model response");
       return jsonResponse({
-        answer: result.response.slice(0, 5000),
+        answer: answer.slice(0, 5000),
         citations: sources.map(({ id, document, title }) => ({
           id, document, title, url: SOURCE_URL + "#" + id
         }))
