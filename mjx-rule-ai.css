@@ -347,3 +347,79 @@ html.mjx-ai-embed .mjx-ai-faq .mjx-ai-examples {
   html.mjx-ai-embed .mjx-ai-tools[open] {max-height:28dvh}
   html.mjx-ai-embed .mjx-ai-tools > summary {min-height:30px;padding-top:5px;padding-bottom:5px}
 }
+
+
+/* Restrained motion for new replies and interactive support tools. */
+.mjx-ai-history > .mjx-ai-message--fresh {
+  animation:mjx-ai-bubble-arrive 230ms cubic-bezier(.2,.8,.2,1) both;
+}
+.mjx-ai-form {position:relative}
+.mjx-ai-form[aria-busy="true"]::before {
+  content:"";
+  position:absolute;
+  top:-2px;
+  left:0;
+  width:30%;
+  height:3px;
+  border-radius:10px;
+  background:linear-gradient(90deg,#b40056,#efa1c4);
+  pointer-events:none;
+  animation:mjx-ai-progress-sweep 1300ms ease-in-out infinite alternate;
+}
+.mjx-ai-form textarea {
+  transition:border-color 180ms ease,box-shadow 180ms ease;
+}
+.mjx-ai-form textarea:focus {
+  border-color:#b40056;
+  outline:none;
+  box-shadow:0 0 0 3px rgba(180,0,86,.13);
+}
+.mjx-ai-form button[type=submit] {
+  transition:background-color 170ms ease,transform 170ms ease;
+}
+.mjx-ai-form button[type=submit]:active:not(:disabled) {
+  transform:scale(.96);
+}
+.mjx-ai-tools[open] > .mjx-ai-resources,
+.mjx-ai-faq[open] > .mjx-ai-examples,
+.mjx-ai-more-sources[open] > ol,
+.mjx-ai-excerpt-toggle[open] > .mjx-ai-snippet {
+  animation:mjx-ai-details-appear 190ms ease-out both;
+}
+.mjx-ai-examples button {
+  transition:background-color 160ms ease,border-color 160ms ease,transform 160ms ease;
+}
+@media(hover:hover) {
+  .mjx-ai-examples button:hover {
+    border-color:#b40056;
+    transform:translateY(-1px);
+  }
+}
+.mjx-ai-examples button:active {transform:scale(.985)}
+@keyframes mjx-ai-bubble-arrive {
+  from {opacity:0;transform:translateY(7px)}
+  to {opacity:1;transform:translateY(0)}
+}
+@keyframes mjx-ai-details-appear {
+  from {opacity:0;transform:translateY(-4px)}
+  to {opacity:1;transform:translateY(0)}
+}
+@keyframes mjx-ai-progress-sweep {
+  from {transform:translateX(0);opacity:.75}
+  to {transform:translateX(230%);opacity:1}
+}
+@media(prefers-reduced-motion:reduce) {
+  .mjx-ai-history > .mjx-ai-message--fresh,
+  .mjx-ai-form[aria-busy="true"]::before,
+  .mjx-ai-tools[open] > .mjx-ai-resources,
+  .mjx-ai-faq[open] > .mjx-ai-examples,
+  .mjx-ai-more-sources[open] > ol,
+  .mjx-ai-excerpt-toggle[open] > .mjx-ai-snippet {
+    animation:none!important;
+  }
+  .mjx-ai-form textarea,
+  .mjx-ai-form button[type=submit],
+  .mjx-ai-examples button {
+    transition:none!important;
+  }
+}
