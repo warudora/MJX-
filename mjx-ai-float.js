@@ -118,11 +118,13 @@
     document.body.classList.toggle("mjx-ai-float-open", opened);
     if (opened) {
       panel.classList.remove("mjx-ai-float-closing");
+      panel.inert = false;
       panel.hidden = false;
       openFrame();
       close.focus({ preventScroll: true });
     } else {
       if (restoreFocus) launcher.focus({ preventScroll: true });
+      panel.inert = true;
       if (reducedMotion.matches) {
         panel.hidden = true;
       } else {
