@@ -33,6 +33,7 @@
   ];
   let regulations = null;
   let loading = null;
+  const conversation = [];
   function normalize(text) {
     return String(text || "").normalize("NFKC").toLocaleLowerCase("ja").replace(/\s+/g, " ");
   }
@@ -63,6 +64,18 @@
     }
     const q = normalize(query).replace(/\s+/g, "");
     if (q.length >= 2 && (title.includes(q) || body.includes(q))) rank += 20;
+      const sourceNumber = Number(/^doc([1-7])-/.exec(item.id)?.[1] || 0);
+    const topics = [
+      [/ビジター|visitor/i, 3], [/ビルダー|builder/i, 2],
+      [/映画館|上映|cinema|screening/i, 6],
+      [/プライバシー|個人情報|保存期間|privacy|retention/i, 7],
+      [/経済|通貨|運賃|economy|money/i, 4],
+      [/リソースパック|resource.pack/i, 5],
+      [/共通規定|共通サーバー|general.server/i, 1]
+    ];
+    for (const [pattern, number] of topics) {
+      if (pattern.test(query) && sourceNumber === number) rank += 40;
+    }
     return rank;
   }
   async function loadRegulations() {
@@ -172,7 +185,7 @@
     const response = await fetch(endpoint, {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ question: query, lang }),
+      body: JSON.stringify({ question: query, lang, history: conversation.slice(-6) }),
       signal: AbortSignal.timeout(25000)
     });
     if (!response.ok) throw new Error("AI request failed");
@@ -182,6 +195,8 @@
     }
     const citations = data.citations.filter((x) => x && typeof x.id === "string" && /^doc[1-7]-article-\d+$/.test(x.id));
     const message = addMessage("assistant", data.answer);
+    conversation.push({ role: "user", content: query.slice(0, 400) }, { role: "assistant", content: data.answer.slice(0, 500) });
+    if (conversation.length > 12) conversation.splice(0, conversation.length - 12);
     if (citations.length) addSources(message, citations, false);
   }
   for (const el of document.querySelectorAll("[data-ja][data-en]")) {
