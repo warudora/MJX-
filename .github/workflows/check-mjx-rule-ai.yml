@@ -4,6 +4,8 @@ on:
     paths:
       - 'rules-ai.html'
       - 'mjx-rule-ai.js'
+      - 'mjx-ai-float.js'
+      - 'mjx-ai-float.css'
       - 'mjx-rule-ai.css'
       - 'mjx-rule-ai-config.js'
       - 'mjx-lang.js'
@@ -33,6 +35,7 @@ jobs:
       - name: JavaScript syntax checks
         run: |
           node --check mjx-rule-ai.js
+          node --check mjx-ai-float.js
           node --check mjx-rule-ai-config.js
           node --check mjx-lang.js
           node --check worker/index.js
