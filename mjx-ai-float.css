@@ -50,9 +50,9 @@
   bottom:calc(100% + 12px);
   display:flex;
   flex-direction:column;
-  width:min(420px,calc(100vw - 36px));
-  height:min(680px,calc(100vh - 124px));
-  height:min(680px,calc(100dvh - 124px - env(safe-area-inset-top)));
+  width:min(560px,calc(100vw - 36px));
+  height:min(820px,calc(100vh - 108px));
+  height:min(820px,calc(100dvh - 108px - env(safe-area-inset-top)));
   min-height:200px;
   overflow:hidden;
   border:1px solid #e1e5ed;
@@ -68,8 +68,8 @@
   align-items:center;
   justify-content:space-between;
   gap:10px;
-  min-height:69px;
-  padding:12px 14px;
+  min-height:56px;
+  padding:9px 14px;
   border-bottom:1px solid #e7eaf0;
   background:#fff;
 }
@@ -146,7 +146,7 @@
     position:fixed;
     top:calc(8px + env(safe-area-inset-top));
     right:8px;
-    bottom:calc(74px + env(safe-area-inset-bottom));
+    bottom:calc(8px + env(safe-area-inset-bottom));
     left:8px;
     width:auto;
     height:auto;
@@ -164,3 +164,39 @@
   #mjx-ai-float-root .mjx-ai-float-launcher { transition:none; }
 }
 @media print { #mjx-ai-float-root { display:none!important; } }
+
+
+/* More room for long rule explanations, with an optional near-fullscreen view. */
+#mjx-ai-float-root .mjx-ai-float-expand {
+  width:42px;
+  height:42px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:0;
+  border-radius:10px;
+  background:transparent;
+  color:#35445f;
+  font-size:19px;
+  font-weight:700;
+}
+#mjx-ai-float-root .mjx-ai-float-expand:hover,
+#mjx-ai-float-root .mjx-ai-float-expand[aria-pressed="true"] {
+  background:#f3e5ed;
+  color:#970849;
+}
+#mjx-ai-float-root.mjx-ai-float-maximized .mjx-ai-float-panel {
+  position:fixed;
+  top:max(20px,env(safe-area-inset-top));
+  right:max(20px,env(safe-area-inset-right));
+  bottom:max(20px,env(safe-area-inset-bottom));
+  left:max(20px,env(safe-area-inset-left));
+  width:auto;
+  height:auto;
+  max-height:none;
+  min-height:0;
+}
+@media(max-width:600px) {
+  #mjx-ai-float-root .mjx-ai-float-expand {display:none}
+  body.mjx-ai-float-open #mjx-ai-float-root .mjx-ai-float-launcher {display:none}
+}
