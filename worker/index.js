@@ -137,6 +137,17 @@ async function retrieveRegulations() {
 }
 export default {
   async fetch(request, env) {
+    const requestUrl = new URL(request.url);
+    if (request.method === "GET" && requestUrl.pathname === "/health") {
+      return new Response(JSON.stringify({
+        service: "mjx-rule-ai",
+        status: env.AI && env.RULE_AI_LIMIT ? "ready" : "missing_bindings"
+      }), { status: 200, headers: {
+        "content-type": "application/json; charset=utf-8",
+        "cache-control": "no-store",
+        "x-content-type-options": "nosniff"
+      }});
+    }
     const origin = request.headers.get("origin");
     if (origin !== SITE_ORIGIN) {
       return jsonResponse({ error: "Forbidden origin" }, 403);
