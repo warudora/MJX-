@@ -3,6 +3,7 @@
   "use strict";
   const storageKey = "mjx-site-language";
   const pages = {
+    "rules-ai.html":     { ja: "rules-ai.html",    en: "rules-ai.html" },
     "index.html":         { ja: "index.html",       en: "index-en.html" },
     "index-en.html":      { ja: "index.html",       en: "index-en.html" },
     "jp.html":            { ja: "jp.html",          en: "en.html" },
