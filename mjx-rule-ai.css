@@ -220,3 +220,130 @@ html.mjx-ai-embed .mjx-ai-faq .mjx-ai-examples button {font-size:.72rem}
 @media(prefers-reduced-motion:reduce) {
   .mjx-ai-thinking-dots span {animation:none;opacity:1;transform:none}
 }
+
+
+/* Reading-first floating chat: support tools stay folded until explicitly opened. */
+.mjx-ai-tools {
+  display:block;
+  flex-shrink:0;
+  min-width:0;
+  border-top:1px solid #e8ecf2;
+  background:#fff;
+}
+.mjx-ai-tools > summary {
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:7px;
+  min-height:36px;
+  padding:8px 16px;
+  color:#7f2850;
+  font-size:.78rem;
+  font-weight:700;
+  line-height:1.3;
+  cursor:pointer;
+  list-style:none;
+}
+.mjx-ai-tools > summary::-webkit-details-marker {display:none}
+.mjx-ai-tools > summary::before {content:"＋";font-size:1rem;line-height:1}
+.mjx-ai-tools[open] > summary::before {content:"−"}
+.mjx-ai-tools > summary:hover {background:#faf4f7}
+.mjx-ai-tools > summary:focus-visible {outline:3px solid #b40056;outline-offset:-3px}
+.mjx-ai-tools > .mjx-ai-resources {
+  padding:6px 14px 11px;
+  border-top:0;
+}
+.mjx-ai-source-list {
+  padding-left:1.25rem;
+}
+.mjx-ai-citations li {
+  overflow-wrap:anywhere;
+  line-height:1.65;
+}
+.mjx-ai-citations li > a {
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+.mjx-ai-top-excerpt {
+  margin:6px 0 0!important;
+  color:#506078;
+  font-size:.82rem;
+  line-height:1.65;
+  white-space:pre-wrap;
+}
+.mjx-ai-excerpt-toggle {margin-top:4px}
+.mjx-ai-excerpt-toggle > summary {
+  display:inline-flex;
+  align-items:center;
+  color:#7d2450;
+  cursor:pointer;
+  font-size:.78rem;
+  font-weight:650;
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+.mjx-ai-excerpt-toggle .mjx-ai-snippet {
+  margin-top:6px;
+  padding:7px 10px;
+  border-left:2px solid #d7b4c5;
+  background:#fff;
+}
+.mjx-ai-more-sources {margin-top:10px}
+.mjx-ai-more-sources > summary {
+  color:#84214d;
+  cursor:pointer;
+  font-size:.82rem;
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+.mjx-ai-more-sources > ol {margin-top:8px}
+html.mjx-ai-embed .mjx-ai-history {
+  padding:15px 15px 18px;
+  font-size:.95rem;
+}
+html.mjx-ai-embed .mjx-ai-message {
+  max-width:100%;
+  padding:12px 15px;
+  font-size:.93rem;
+  line-height:1.8;
+}
+html.mjx-ai-embed .mjx-ai-message--user {max-width:92%}
+html.mjx-ai-embed .mjx-ai-panel-head {
+  min-height:43px;
+  padding:9px 13px;
+}
+html.mjx-ai-embed .mjx-ai-form {
+  padding:10px 13px 12px;
+}
+html.mjx-ai-embed .mjx-ai-form label {
+  margin-bottom:5px;
+}
+html.mjx-ai-embed .mjx-ai-hint {margin-top:6px}
+html.mjx-ai-embed .mjx-ai-tools[open] {
+  max-height:min(225px,40dvh);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+}
+html.mjx-ai-embed .mjx-ai-resources {
+  max-height:none;
+  padding:5px 13px 10px;
+  overflow:visible;
+}
+html.mjx-ai-embed .mjx-ai-faq .mjx-ai-examples {
+  max-height:115px;
+  padding:7px 0 0;
+}
+@media(max-width:600px) {
+  html.mjx-ai-embed .mjx-ai-panel-head {padding:9px 12px}
+  html.mjx-ai-embed .mjx-ai-history {padding:13px 11px 15px}
+  html.mjx-ai-embed .mjx-ai-message {padding:11px 12px;font-size:.91rem}
+  html.mjx-ai-embed .mjx-ai-tools > summary {padding:8px 12px}
+  html.mjx-ai-embed .mjx-ai-form {padding:9px 11px 11px}
+  html.mjx-ai-embed .mjx-ai-form label {display:none}
+  html.mjx-ai-embed .mjx-ai-contact span {display:none}
+}
+@media(max-height:500px) {
+  html.mjx-ai-embed .mjx-ai-tools[open] {max-height:28dvh}
+  html.mjx-ai-embed .mjx-ai-tools > summary {min-height:30px;padding-top:5px;padding-bottom:5px}
+}
