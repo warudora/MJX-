@@ -41,13 +41,23 @@ assert.match(frontend, /mjx-ai-faq/);
 assert.match(frontend, /thinking\.box\.remove\(\)/);
 assert.match(chatStyles, /mjx-ai-message--thinking/);
 assert.match(chatStyles, /@keyframes mjx-ai-dot/);
-assert.match(floatScript, /20261106-faq-thinking-1/);
+assert.match(floatScript, /20261106-readability-1/);
+assert.match(floatScript, /mjx-ai-float-expand/);
+assert.match(floatScript, /aria-pressed/);
+assert.match(floatStyles, /min\(560px/);
+assert.match(floatStyles, /mjx-ai-float-maximized/);
+assert.match(entry, /id="mjx-ai-tools"/);
+assert.match(frontend, /mjx-ai-more-sources/);
+assert.match(frontend, /mjx-ai-top-excerpt/);
+assert.match(frontend, /mjx-ai-tools/);
+assert.match(chatStyles, /reading-first/i);
 
 
 for (const path of ["index.html", "index-en.html", "regulations.html", "regulations-en.html", "regulations-full.html", "regulations-full-en.html", "jp.html", "en.html"]) {
   const markup = readFileSync(join(root, path), "utf8");
   assert.match(markup, /href="mjx-ai-float\.css\?v=/, path + " must load the floating style");
   assert.match(markup, /src="mjx-ai-float\.js\?v=/, path + " must load the floating assistant");
+  assert.match(markup, /mjx-ai-float\.js\?v=20261106-readable-1/, path + " must invalidate cached widget");
   assert.doesNotMatch(markup, /<a href="rules-ai\.html\?lang=(?:ja|en)">(?:規定AI|Rules Assistant)<\/a>/, path + " should not show an AI navigation tab");
 }
 
@@ -101,7 +111,7 @@ try {
   assert.equal(forbidden.status, 403);
   assert.ok(aiCalls >= 3);
   assert.ok(sourceReads >= 3);
-  console.log("MJX rule AI: 130 source anchors, floating support, FAQ/contact, visible thinking status on eight pages, 3 grounded questions, CORS and health passed.");
+  console.log("MJX rule AI: 130 source anchors, larger chat, collapsible help and sources, 3 grounded questions, CORS and health passed.");
 } finally {
   globalThis.fetch = originalFetch;
 }

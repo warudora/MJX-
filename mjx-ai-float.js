@@ -53,15 +53,23 @@
   fullPage.href = fullPageUrl.href;
   fullPage.target = "_blank";
   fullPage.rel = "noopener noreferrer";
-  fullPage.textContent = translate("拡大", "Expand");
-  fullPage.setAttribute("aria-label", translate("AIサポーターを別画面で開く", "Open AI Supporter in a new tab"));
+  fullPage.textContent = translate("別画面", "New tab");
+  fullPage.setAttribute("aria-label", translate("AIサポーターを別のタブで開く", "Open AI Supporter in a new tab"));
+
+  const expand = document.createElement("button");
+  expand.className = "mjx-ai-float-expand";
+  expand.type = "button";
+  expand.textContent = "⛶";
+  expand.setAttribute("aria-pressed", "false");
+  expand.setAttribute("aria-label", translate("チャットを画面いっぱいに広げる", "Expand chat to fill the screen"));
+  expand.setAttribute("title", translate("チャットを拡大／元に戻す", "Maximize or restore chat"));
 
   const close = document.createElement("button");
   close.className = "mjx-ai-float-close";
   close.type = "button";
   close.textContent = "×";
   close.setAttribute("aria-label", translate("AIサポーターを閉じる", "Close AI Supporter"));
-  actions.append(fullPage, close);
+  actions.append(fullPage, expand, close);
   heading.append(identity, actions);
 
   const content = document.createElement("div");
@@ -86,7 +94,7 @@
     const url = new URL("rules-ai.html", window.location.href);
     url.searchParams.set("embed", "1");
     url.searchParams.set("lang", english ? "en" : "ja");
-    url.searchParams.set("v", "20261106-faq-thinking-1");
+    url.searchParams.set("v", "20261106-readability-1");
     frame.src = url.href;
     frame.addEventListener("load", () => {
       loader.hidden = true;
@@ -113,6 +121,14 @@
       launcher.focus();
     }
   };
+
+  expand.addEventListener("click", () => {
+    const maximized = root.classList.toggle("mjx-ai-float-maximized");
+    expand.setAttribute("aria-pressed", String(maximized));
+    expand.setAttribute("aria-label", maximized
+      ? translate("チャットを元の大きさに戻す", "Restore chat size")
+      : translate("チャットを画面いっぱいに広げる", "Expand chat to fill the screen"));
+  });
 
   launcher.addEventListener("click", () => setOpened(!opened));
   close.addEventListener("click", () => setOpened(false));
