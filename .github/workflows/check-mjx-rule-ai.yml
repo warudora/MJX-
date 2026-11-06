@@ -3,6 +3,9 @@ on:
   push:
     paths:
       - 'rules-ai.html'
+      - 'sitemap.xml'
+      - 'scripts/check_mjx_seo.cjs'
+      - 'scripts/generate_english_regulations.py'
       - 'mjx-rule-ai.js'
       - 'mjx-ai-float.js'
       - 'mjx-ai-float.css'
@@ -40,5 +43,9 @@ jobs:
           node --check mjx-lang.js
           node --check worker/index.js
           node --check scripts/check_mjx_rule_ai.mjs
+          node --check scripts/check_mjx_seo.cjs
+          python -m py_compile scripts/generate_english_regulations.py
       - name: Test source extraction, search and API behavior
         run: node scripts/check_mjx_rule_ai.mjs
+      - name: Check SEO canonical URLs and sitemap
+        run: node scripts/check_mjx_seo.cjs
