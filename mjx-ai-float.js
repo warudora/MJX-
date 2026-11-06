@@ -36,11 +36,6 @@
   heading.className = "mjx-ai-float-header";
   const identity = document.createElement("div");
   identity.className = "mjx-ai-float-identity";
-  const logo = document.createElement("img");
-  logo.src = "assets/mjx-logo-original.png";
-  logo.alt = "";
-  logo.width = 36;
-  logo.height = 36;
   const titles = document.createElement("div");
   const title = document.createElement("strong");
   title.id = "mjx-ai-float-title";
@@ -48,7 +43,7 @@
   const subtitle = document.createElement("span");
   subtitle.textContent = translate("公式規定のご案内", "Official rules guidance");
   titles.append(title, subtitle);
-  identity.append(logo, titles);
+  identity.appendChild(titles);
 
   const actions = document.createElement("div");
   actions.className = "mjx-ai-float-actions";
@@ -91,6 +86,7 @@
     const url = new URL("rules-ai.html", window.location.href);
     url.searchParams.set("embed", "1");
     url.searchParams.set("lang", english ? "en" : "ja");
+    url.searchParams.set("v", "20261106-faq-thinking-1");
     frame.src = url.href;
     frame.addEventListener("load", () => {
       loader.hidden = true;
