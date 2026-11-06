@@ -109,6 +109,18 @@ function score(article, query, tokens) {
   }
   const exact = norm(query).replace(/\s+/g, "");
   if (exact.length >= 2 && (title.includes(exact) || body.includes(exact))) total += 20;
+  const sourceNumber = Number(/^doc([1-7])-/.exec(article.id)?.[1] || 0);
+  const topics = [
+    [/ビジター|visitor/i, 3], [/ビルダー|builder/i, 2],
+    [/映画館|上映|cinema|screening/i, 6],
+    [/プライバシー|個人情報|保存期間|privacy|retention/i, 7],
+    [/経済|通貨|運賃|economy|money/i, 4],
+    [/リソースパック|resource.pack/i, 5],
+    [/共通規定|共通サーバー|general.server/i, 1]
+  ];
+  for (const [pattern, number] of topics) {
+    if (pattern.test(query) && sourceNumber === number) total += 40;
+  }
   return total;
 }
 async function retrieveRegulations() {
