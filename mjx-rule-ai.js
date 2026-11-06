@@ -123,7 +123,7 @@
   }
   function addMessage(type, text) {
     const box = document.createElement("div");
-    box.className = "mjx-ai-message mjx-ai-message--" + type;
+    box.className = "mjx-ai-message mjx-ai-message--" + type + " mjx-ai-message--fresh";
     const p = document.createElement("p");
     p.textContent = text;
     box.appendChild(p);
@@ -133,7 +133,7 @@
   }
   function showThinking() {
     const box = document.createElement("div");
-    box.className = "mjx-ai-message mjx-ai-message--assistant mjx-ai-message--thinking";
+    box.className = "mjx-ai-message mjx-ai-message--assistant mjx-ai-message--thinking mjx-ai-message--fresh";
     box.setAttribute("role", "status");
     box.setAttribute("aria-live", "polite");
     const heading = document.createElement("div");
