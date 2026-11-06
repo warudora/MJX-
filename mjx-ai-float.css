@@ -50,9 +50,9 @@
   bottom:calc(100% + 12px);
   display:flex;
   flex-direction:column;
-  width:min(560px,calc(100vw - 36px));
-  height:min(820px,calc(100vh - 108px));
-  height:min(820px,calc(100dvh - 108px - env(safe-area-inset-top)));
+  width:min(480px,calc(100vw - 36px));
+  height:min(700px,calc(100vh - 120px));
+  height:min(700px,calc(100dvh - 120px - env(safe-area-inset-top)));
   min-height:200px;
   overflow:hidden;
   border:1px solid #e1e5ed;
@@ -144,17 +144,17 @@
   #mjx-ai-float-root .mjx-ai-float-launcher { min-height:50px; padding:11px 15px; }
   #mjx-ai-float-root .mjx-ai-float-panel {
     position:fixed;
-    top:calc(8px + env(safe-area-inset-top));
-    right:8px;
-    bottom:calc(8px + env(safe-area-inset-bottom));
-    left:8px;
-    width:auto;
-    height:auto;
-    max-height:none;
-    min-height:0;
+    top:auto;
+    right:auto;
+    bottom:calc(74px + env(safe-area-inset-bottom));
+    left:max(10px,env(safe-area-inset-left));
+    width:min(460px,calc(100vw - 20px - env(safe-area-inset-left) - env(safe-area-inset-right)));
+    height:min(560px,64dvh);
+    max-height:calc(100dvh - 94px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    min-height:180px;
     border-radius:16px;
   }
-  body.mjx-ai-float-open { overflow:hidden; }
+  /* Underlying site stays interactive and scrollable behind the nonmodal chat. */
 }
 @media(max-width:360px) {
   #mjx-ai-float-root .mjx-ai-float-header { padding:10px; }
@@ -198,5 +198,13 @@
 }
 @media(max-width:600px) {
   #mjx-ai-float-root .mjx-ai-float-expand {display:none}
-  body.mjx-ai-float-open #mjx-ai-float-root .mjx-ai-float-launcher {display:none}
+  #mjx-ai-float-root.mjx-ai-float-maximized .mjx-ai-float-panel {
+    top:auto;
+    right:auto;
+    bottom:calc(74px + env(safe-area-inset-bottom));
+    left:max(10px,env(safe-area-inset-left));
+    width:min(460px,calc(100vw - 20px - env(safe-area-inset-left) - env(safe-area-inset-right)));
+    height:min(560px,64dvh);
+    max-height:calc(100dvh - 94px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  }
 }

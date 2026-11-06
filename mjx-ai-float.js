@@ -94,14 +94,11 @@
     const url = new URL("rules-ai.html", window.location.href);
     url.searchParams.set("embed", "1");
     url.searchParams.set("lang", english ? "en" : "ja");
-    url.searchParams.set("v", "20261106-readability-1");
+    url.searchParams.set("v", "20261106-compact-stays-open-1");
     frame.src = url.href;
     frame.addEventListener("load", () => {
       loader.hidden = true;
-      if (opened) {
-        try { frame.contentWindow.document.getElementById("mjx-ai-question")?.focus(); }
-        catch (_) { /* Focus remains on the close button if the frame is inaccessible. */ }
-      }
+      // Avoid automatically opening the mobile keyboard or scrolling the host page.
     });
     content.appendChild(frame);
   };
@@ -135,9 +132,8 @@
   document.addEventListener("keydown", (event) => {
     if (opened && event.key === "Escape") setOpened(false);
   });
-  document.addEventListener("pointerdown", (event) => {
-    if (opened && !root.contains(event.target)) setOpened(false, false);
-  });
+  // Deliberately do not close on outside taps, page scrolling or background interaction.
+  // Visitors can consult the site while keeping the assistant open.
   window.addEventListener("message", (event) => {
     if (opened && frame && event.origin === window.location.origin &&
         event.source === frame.contentWindow && event.data?.type === "mjx-rule-ai-close") {
