@@ -242,5 +242,13 @@
       form.requestSubmit();
     }
   });
+  if (window.self !== window.top && new URLSearchParams(location.search).get("embed") === "1") {
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        window.parent.postMessage({ type: "mjx-rule-ai-close" }, window.location.origin);
+      }
+    });
+  }
   loadRegulations().catch(() => { /* Loading can be retried by submitting a question. */ });
 })();
