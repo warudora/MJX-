@@ -15,8 +15,25 @@ assert.match(entry, /id="mjx-ai-form"/);
 assert.match(entry, /id="mjx-ai-history"/);
 assert.match(frontend, /new DOMParser\(\)/);
 
+const floatScript = readFileSync(join(root, "mjx-ai-float.js"), "utf8");
+const floatStyles = readFileSync(join(root, "mjx-ai-float.css"), "utf8");
+const chatStyles = readFileSync(join(root, "mjx-rule-ai.css"), "utf8");
+assert.match(entry, /mjx-ai-embed/);
+assert.match(frontend, /mjx-rule-ai-close/);
+assert.match(floatScript, /aria-expanded/);
+assert.match(floatScript, /aria-labelledby/);
+assert.match(floatScript, /rules-ai\.html/);
+assert.match(floatScript, /searchParams\.set\("embed", "1"\)/);
+assert.match(floatStyles, /safe-area-inset-left/);
+assert.match(floatStyles, /@media\(max-width:600px\)/);
+assert.match(floatStyles, /@media print/);
+assert.match(chatStyles, /html\.mjx-ai-embed/);
+
 for (const path of ["index.html", "index-en.html", "regulations.html", "regulations-en.html", "regulations-full.html", "regulations-full-en.html", "jp.html", "en.html"]) {
-  assert.match(readFileSync(join(root, path), "utf8"), /href="rules-ai.html\?lang=(?:ja|en)"/, path + " must link to assistant");
+  const markup = readFileSync(join(root, path), "utf8");
+  assert.match(markup, /href="mjx-ai-float\.css\?v=/, path + " must load the floating style");
+  assert.match(markup, /src="mjx-ai-float\.js\?v=/, path + " must load the floating assistant");
+  assert.doesNotMatch(markup, /<a href="rules-ai\.html\?lang=(?:ja|en)">(?:規定AI|Rules Assistant)<\/a>/, path + " should not show an AI navigation tab");
 }
 
 const originalFetch = globalThis.fetch;
@@ -69,7 +86,7 @@ try {
   assert.equal(forbidden.status, 403);
   assert.ok(aiCalls >= 3);
   assert.ok(sourceReads >= 3);
-  console.log("MJX rule AI: 130 source anchors, cross-page links, 3 grounded questions, CORS and health passed.");
+  console.log("MJX rule AI: 130 source anchors, floating support on eight pages, 3 grounded questions, CORS and health passed.");
 } finally {
   globalThis.fetch = originalFetch;
 }
