@@ -157,7 +157,7 @@
   }
   function addSources(box, citations, isSearch) {
     const valid = citations.filter((citation) =>
-      citation && /^doc[1-7]-article-\\d+$/.test(citation.id || "")
+      citation && /^doc[1-7]-article-\d+$/.test(citation.id || "")
     ).slice(0, 6);
     if (!valid.length) return;
     const wrap = document.createElement("div");
