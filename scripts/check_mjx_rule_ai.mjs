@@ -47,6 +47,11 @@ async function question(value, lang = "ja", origin = "https://warudora.github.io
   return { status: response.status, data: await response.json() };
 }
 try {
+  const ready = await worker.fetch(new Request("https://mjx-rule-ai.example/health", { method: "GET" }), env);
+  assert.equal(ready.status, 200);
+  assert.deepEqual(await ready.json(), { service: "mjx-rule-ai", status: "ready" });
+  const notReady = await worker.fetch(new Request("https://mjx-rule-ai.example/health", { method: "GET" }), {});
+  assert.deepEqual(await notReady.json(), { service: "mjx-rule-ai", status: "missing_bindings" });
   const visitor = await question("ビジターは建築できますか？");
   assert.equal(visitor.status, 200);
   assert.equal(visitor.data.citations[0].id, "doc3-article-01");
@@ -64,7 +69,7 @@ try {
   assert.equal(forbidden.status, 403);
   assert.ok(aiCalls >= 3);
   assert.ok(sourceReads >= 3);
-  console.log("MJX rule AI: 130 source anchors, cross-page links, 3 grounded questions, CORS passed.");
+  console.log("MJX rule AI: 130 source anchors, cross-page links, 3 grounded questions, CORS and health passed.");
 } finally {
   globalThis.fetch = originalFetch;
 }
