@@ -1,0 +1,41 @@
+name: Check MJX rules assistant
+on:
+  push:
+    paths:
+      - 'rules-ai.html'
+      - 'mjx-rule-ai.js'
+      - 'mjx-rule-ai.css'
+      - 'mjx-rule-ai-config.js'
+      - 'mjx-lang.js'
+      - 'worker/**'
+      - 'scripts/check_mjx_rule_ai.mjs'
+      - 'regulations-full.html'
+      - 'index.html'
+      - 'index-en.html'
+      - 'regulations.html'
+      - 'regulations-en.html'
+      - 'regulations-full-en.html'
+      - 'jp.html'
+      - 'en.html'
+      - '.github/workflows/check-mjx-rule-ai.yml'
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: JavaScript syntax checks
+        run: |
+          node --check mjx-rule-ai.js
+          node --check mjx-rule-ai-config.js
+          node --check mjx-lang.js
+          node --check worker/index.js
+          node --check scripts/check_mjx_rule_ai.mjs
+      - name: Test source extraction, search and API behavior
+        run: node scripts/check_mjx_rule_ai.mjs

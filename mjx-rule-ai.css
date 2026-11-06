@@ -1,0 +1,50 @@
+/* MJX rule assistant. Isolated from regulation document layouts. */
+.mjx-rule-ai-page {background:#f6f7f9;color:#1e293b}
+.mjx-rule-ai-page .mjx-ai-shell {flex:1;width:min(950px,100%);margin:0 auto;padding:36px 20px 60px}
+.mjx-ai-header {margin-bottom:22px}
+.mjx-ai-header h1 {font-size:clamp(1.65rem,4vw,2.55rem);line-height:1.3;margin:12px 0;color:#1e293b}
+.mjx-ai-header>p {color:#59687c;line-height:1.85;margin:8px 0;font-size:.95rem}
+.mjx-ai-header .mjx-ai-notice {font-size:.83rem;padding:12px 15px;border-left:4px solid #b40056;background:#fff;border-radius:8px}
+.mjx-ai-panel {background:white;border:1px solid #e0e5ec;border-radius:18px;box-shadow:0 12px 32px rgba(22,34,52,.06);overflow:hidden}
+.mjx-ai-panel-head {display:flex;align-items:center;gap:10px;padding:15px 20px;background:#fff;border-bottom:1px solid #e8ecf2;font-size:.88rem}
+.mjx-ai-panel-head a {margin-left:auto;color:#a0004f;font-weight:700;text-decoration:none}
+.mjx-ai-status-dot {width:9px;height:9px;background:#aa607c;border-radius:50%;flex-shrink:0}
+.mjx-ai-mode--connected .mjx-ai-status-dot {background:#15906d}
+.mjx-ai-history {min-height:270px;max-height:60vh;overflow:auto;overscroll-behavior:contain;padding:22px 20px;display:flex;flex-direction:column;gap:14px}
+.mjx-ai-message {max-width:min(92%,750px);padding:14px 17px;border-radius:14px;background:#f4f6f9;color:#26354a;line-height:1.75;overflow-wrap:anywhere;font-size:.93rem}
+.mjx-ai-message--user {align-self:flex-end;background:#b40056;color:#fff;border-bottom-right-radius:4px}
+.mjx-ai-message--assistant {align-self:flex-start;border-bottom-left-radius:4px}
+.mjx-ai-message p {margin:0 0 8px;white-space:pre-wrap}
+.mjx-ai-message p:last-child {margin-bottom:0}
+.mjx-ai-message ul {margin:7px 0 0;padding-left:1.3em}
+.mjx-ai-message li+li {margin-top:12px}
+.mjx-ai-message a {color:#8b064a;font-weight:700}
+.mjx-ai-message--user a {color:#fff}
+.mjx-ai-snippet {display:block;color:#526175;font-size:.82rem;line-height:1.7;padding-top:3px;white-space:pre-wrap}
+.mjx-ai-citations {border-top:1px solid #e2e7ef;margin-top:12px;padding-top:12px}
+.mjx-ai-citations strong {font-size:.83rem}
+.mjx-ai-citations ol {margin:8px 0 0;padding-left:1.35em}
+.mjx-ai-citations a {display:inline-block}
+.mjx-ai-examples {display:flex;flex-wrap:wrap;gap:8px;padding:0 20px 16px}
+.mjx-ai-examples button {padding:9px 12px;background:#fff;border:1px solid #e1c6d3;border-radius:100px;color:#8c084a;cursor:pointer;font:600 .78rem/1.4 Inter,"Noto Sans JP",sans-serif}
+.mjx-ai-examples button:hover {background:#fdf1f7}
+.mjx-ai-form {border-top:1px solid #e8ecf2;padding:16px 20px 18px}
+.mjx-ai-form label {display:block;font-weight:750;font-size:.82rem;margin-bottom:8px}
+.mjx-ai-form-row {display:flex;align-items:stretch;gap:10px}
+.mjx-ai-form textarea {flex:1;min-width:0;max-height:180px;resize:vertical;padding:12px 14px;border:1px solid #cbd3de;border-radius:11px;font:inherit;line-height:1.6;color:#1e293b}
+.mjx-ai-form button[type=submit] {background:#b40056;color:#fff;border:0;border-radius:11px;padding:0 20px;min-width:75px;font:700 .89rem/1.4 Inter,"Noto Sans JP",sans-serif;cursor:pointer}
+.mjx-ai-form button[type=submit]:hover {background:#930045}
+.mjx-ai-form button:disabled {opacity:.6;cursor:wait}
+.mjx-ai-hint {font-size:.76rem;color:#64748b;margin:9px 0 0}
+.mjx-ai-footer-note {margin:20px 0 0;color:#66758a;font-size:.8rem;line-height:1.8}
+@media(max-width:700px){
+ .mjx-rule-ai-page .mjx-ai-shell {padding:24px 12px 40px}
+ .mjx-ai-history {padding:15px 12px;max-height:56vh;min-height:230px}
+ .mjx-ai-message {max-width:96%;padding:12px 14px}
+ .mjx-ai-panel-head {padding:13px 14px}
+ .mjx-ai-examples {padding:0 12px 12px}
+ .mjx-ai-form {padding:13px 12px}
+ .mjx-ai-form-row {gap:7px}
+ .mjx-ai-form button[type=submit] {min-width:65px;padding:0 11px}
+}
+@media(prefers-reduced-motion:reduce){.mjx-rule-ai-page *{scroll-behavior:auto!important}}
