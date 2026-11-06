@@ -1,0 +1,14 @@
+name = "mjx-rule-ai"
+main = "index.js"
+compatibility_date = "2026-11-01"
+
+[ai]
+binding = "AI"
+
+# Approximate per-location limits; also set account-level spend limits / WAF rules.
+[[ratelimits]]
+name = "RULE_AI_LIMIT"
+namespace_id = "20261106"
+  [ratelimits.simple]
+  limit = 12
+  period = 60
