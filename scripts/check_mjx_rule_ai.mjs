@@ -41,7 +41,7 @@ assert.match(frontend, /mjx-ai-faq/);
 assert.match(frontend, /thinking\.box\.remove\(\)/);
 assert.match(chatStyles, /mjx-ai-message--thinking/);
 assert.match(chatStyles, /@keyframes mjx-ai-dot/);
-assert.match(floatScript, /20261106-compact-stays-open-1/);
+assert.match(floatScript, /20261106-motion-1/);
 assert.match(floatScript, /mjx-ai-float-expand/);
 assert.match(floatScript, /aria-pressed/);
 assert.match(floatStyles, /min\(480px/);
@@ -57,12 +57,29 @@ assert.match(frontend, /mjx-ai-top-excerpt/);
 assert.match(frontend, /mjx-ai-tools/);
 assert.match(chatStyles, /reading-first/i);
 
+assert.match(floatStyles, /@keyframes mjx-ai-panel-enter/);
+assert.match(floatStyles, /@keyframes mjx-ai-panel-leave/);
+assert.match(floatStyles, /@keyframes mjx-ai-launcher-arrive/);
+assert.match(floatStyles, /prefers-reduced-motion:reduce/);
+assert.match(floatScript, /hidePanelTimer/);
+assert.match(floatScript, /window\.clearTimeout\(hidePanelTimer\)/);
+assert.match(floatScript, /window\.setTimeout/);
+assert.match(floatScript, /panel\.inert = true/);
+assert.match(frontend, /mjx-ai-message--fresh/);
+assert.match(chatStyles, /@keyframes mjx-ai-bubble-arrive/);
+assert.match(chatStyles, /@keyframes mjx-ai-details-appear/);
+assert.match(chatStyles, /@keyframes mjx-ai-progress-sweep/);
+assert.match(chatStyles, /mjx-ai-form\[aria-busy="true"\]::before/);
+assert.match(entry, /mjx-rule-ai\.css\?v=20261106-motion-1/);
+assert.match(entry, /mjx-rule-ai\.js\?v=20261106-motion-1/);
+
+
 
 for (const path of ["index.html", "index-en.html", "regulations.html", "regulations-en.html", "regulations-full.html", "regulations-full-en.html", "jp.html", "en.html"]) {
   const markup = readFileSync(join(root, path), "utf8");
   assert.match(markup, /href="mjx-ai-float\.css\?v=/, path + " must load the floating style");
   assert.match(markup, /src="mjx-ai-float\.js\?v=/, path + " must load the floating assistant");
-  assert.match(markup, /mjx-ai-float\.js\?v=20261106-compact-open-1/, path + " must invalidate cached widget");
+  assert.match(markup, /mjx-ai-float\.js\?v=20261106-motion-1/, path + " must invalidate cached widget");
   assert.doesNotMatch(markup, /<a href="rules-ai\.html\?lang=(?:ja|en)">(?:規定AI|Rules Assistant)<\/a>/, path + " should not show an AI navigation tab");
 }
 
