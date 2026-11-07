@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>if(new URLSearchParams(location.search).get("embed")==="1"){document.documentElement.classList.add("mjx-ai-embed");}</script>
 <meta name="theme-color" content="#b40056">
-<meta name="description" content="MTR Japan Nexus（MJX）公式AIサポーター。Minecraftサーバーの公式7規定について質問すると、関連条文と公式規定の原文へのリンクを確認できます。">
-<title>規定AIアシスタント | MTR Japan Nexus</title>
+<meta name="description" content="MTR Japan Nexus（MJX）公式AIサポーター。公式7規定、サーバー参加方法、ビルダー資格、MJXの紹介、困ったときの対処法をご案内します。">
+<title>MJX AIアシスタント | MTR Japan Nexus</title>
 <link rel="canonical" href="https://warudora.github.io/MJX-/rules-ai.html">
 <link rel="icon" href="assets/favicon-32.png" type="image/png">
 <link rel="stylesheet" href="mjx-theme.css">
@@ -15,7 +15,8 @@
 <script defer src="mjx-lang.js"></script>
 <script defer src="mjx-mobile-nav.js"></script>
 <script defer src="mjx-rule-ai-config.js?v=20261106-worker-connected-1"></script>
-<script defer src="mjx-rule-ai.js?v=20261106-motion-1"></script>
+<script defer src="mjx-site-index.js?v=20261107-site-1"></script>
+<script defer src="mjx-rule-ai.js?v=20261107-site-1"></script>
 </head>
 <body id="page-top" class="mjx-index mjx-rule-ai-page">
 <a class="mjx-skip" href="#main-content">本文へ移動</a>
@@ -33,20 +34,20 @@
 </div></div>
 <main id="main-content" class="mjx-ai-shell">
   <header class="mjx-ai-header">
-    <div class="mjx-eyebrow">MJX / OFFICIAL REGULATIONS</div>
-    <h1 data-ja="規定AIアシスタント" data-en="MJX Rules Assistant">規定AIアシスタント</h1>
-    <p data-ja="質問から公式7規定の関連条文を探します。AI接続時は条文を根拠に説明します。" data-en="Find relevant clauses in all seven official regulations. AI explanations use cited source clauses.">質問から公式7規定の関連条文を探します。AI接続時は条文を根拠に説明します。</p>
-    <p class="mjx-ai-notice" data-ja="回答は案内用です。規定の正確な内容・最終判断は原文と運営の正式な案内を確認してください。" data-en="Answers are guidance only. Check the Japanese official text and administrator notices for authoritative decisions.">回答は案内用です。規定の正確な内容・最終判断は原文と運営の正式な案内を確認してください。</p>
+    <div class="mjx-eyebrow">MJX / OFFICIAL WEBSITE ASSISTANT</div>
+    <h1 data-ja="MJX AIアシスタント" data-en="MJX AI Assistant">MJX AIアシスタント</h1>
+    <p data-ja="参加方法、ビルダー資格、公式7規定、MJXの紹介など、サイト全体の疑問を案内します。回答には公式ページへのリンクを添えます。" data-en="Ask about joining, Builder eligibility, official rules, MJX history, and more. Answers include links to relevant official pages.">参加方法、ビルダー資格、公式7規定、MJXの紹介など、サイト全体の疑問を案内します。回答には公式ページへのリンクを添えます。</p>
+    <p class="mjx-ai-notice" data-ja="AIの回答は参考案内です。規定の解釈や参加資格の最終判断は、公式規定本文と運営からの正式な案内を優先してください。" data-en="AI answers are guidance only. For binding rule interpretations or eligibility decisions, consult the official Japanese regulations and administrators.">AIの回答は参考案内です。規定の解釈や参加資格の最終判断は、公式規定本文と運営からの正式な案内を優先してください。</p>
   </header>
   <section class="mjx-ai-panel" aria-label="質問と回答">
     <div class="mjx-ai-panel-head">
       <span class="mjx-ai-status-dot" aria-hidden="true"></span>
       <strong id="mjx-ai-mode" aria-live="polite">条文検索を準備しています</strong>
-      <a href="regulations-full.html?lang=ja" data-ja="全文を読む" data-en="Full text">全文を読む</a>
+      <a href="regulations-full.html?lang=ja" data-ja="公式7規定" data-en="Official Rules">公式7規定</a>
     </div>
     <div id="mjx-ai-history" class="mjx-ai-history" role="log" aria-live="polite" aria-relevant="additions text">
       <div class="mjx-ai-message mjx-ai-message--assistant">
-        <p data-ja="MJXの規定についてご質問ください。関連する条文と公式規定の原文へのリンクをご案内します。" data-en="Please ask your question about MJX regulations. Relevant clauses and links to the official text will be provided.">MJXの規定についてご質問ください。関連する条文と公式規定の原文へのリンクをご案内します。</p>
+        <p data-ja="MJXについて知りたいことを質問してください。参加方法・ビルダー資格・公式規定など、関連するページをご案内します。" data-en="Ask anything about the MJX website, including joining, Builder qualifications, and official regulations. I will point you to relevant pages.">MJXについて知りたいことを質問してください。参加方法・ビルダー資格・公式規定など、関連するページをご案内します。</p>
       </div>
     </div>
     <details class="mjx-ai-tools" id="mjx-ai-tools">
@@ -55,12 +56,13 @@
       <details class="mjx-ai-faq" id="mjx-ai-faq">
         <summary data-ja="よくある質問" data-en="Frequently asked questions">よくある質問</summary>
         <div class="mjx-ai-examples" id="mjx-ai-examples">
+          <button type="button" data-example-ja="MJXの参加方法を教えて" data-example-en="How do I join MJX?">MJXの参加方法を教えて</button>
+          <button type="button" data-example-ja="Prism LauncherでModパックを読み込むには？" data-example-en="How do I import the modpack into Prism Launcher?">Prism LauncherでModパックを読み込むには？</button>
+          <button type="button" data-example-ja="Discordの/startでサーバーを起動するには？" data-example-en="How do I start the server using /start on Discord?">Discordの/startでサーバーを起動するには？</button>
+          <button type="button" data-example-ja="新規ビルダーになるには試験が必要？" data-example-en="Do new Builders need to pass an exam?">新規ビルダーになるには試験が必要？</button>
+          <button type="button" data-example-ja="MJaS・MTTS・JNCはMJXとどう関係しているの？" data-example-en="How are MJaS, MTTS, and JNC related to MJX?">MJaS・MTTS・JNCはMJXとどう関係しているの？</button>
           <button type="button" data-example-ja="ビジターは建築できますか？" data-example-en="Can visitors build?">ビジターは建築できますか？</button>
-          <button type="button" data-example-ja="映画館で動画を上映する条件は？" data-example-en="What are the rules for screening videos?">映画館で動画を上映する条件は？</button>
           <button type="button" data-example-ja="個人情報の保存期間は？" data-example-en="How long is personal data retained?">個人情報の保存期間は？</button>
-          <button type="button" data-example-ja="リソースパックの改変や再配布はできますか？" data-example-en="Can I modify or redistribute resource packs?">リソースパックの改変や再配布はできますか？</button>
-          <button type="button" data-example-ja="Builderにはどんな権限がありますか？" data-example-en="What permissions do Builders have?">Builderにはどんな権限がありますか？</button>
-          <button type="button" data-example-ja="MJXの経済規定の基本ルールは？" data-example-en="What are the basic MJX economy rules?">MJXの経済規定の基本ルールは？</button>
         </div>
       </details>
       <div class="mjx-ai-contact">
@@ -70,15 +72,15 @@
     </div>
     </details>
     <form id="mjx-ai-form" class="mjx-ai-form">
-      <label for="mjx-ai-question" data-ja="規定について質問する" data-en="Ask about the regulations">規定について質問する</label>
+      <label for="mjx-ai-question" data-ja="MJXについて質問する" data-en="Ask about MJX">MJXについて質問する</label>
       <div class="mjx-ai-form-row">
-        <textarea id="mjx-ai-question" maxlength="400" rows="2" placeholder="例：ビジターでもブロックを設置できますか？" required></textarea>
+        <textarea id="mjx-ai-question" maxlength="400" rows="2" placeholder="例：MJXにはどうやって参加するの？" required></textarea>
         <button type="submit" id="mjx-ai-submit" data-ja="送信" data-en="Send">送信</button>
       </div>
       <p id="mjx-ai-hint" class="mjx-ai-hint" aria-live="polite"></p>
     </form>
   </section>
-  <p class="mjx-ai-footer-note" data-ja="日本語の公式規定本文を参照します。英語の回答は参考訳です。質問に個人情報やパスワードを入力しないでください。" data-en="The Japanese official regulations are the source of truth; English answers are reference translations. Do not enter private information or passwords.">日本語の公式規定本文を参照します。英語の回答は参考訳です。質問に個人情報やパスワードを入力しないでください。</p>
+  <p class="mjx-ai-footer-note" data-ja="MJX公式サイトの公開ページを参照します。公式規定の日本語原文が優先されます。個人情報やパスワードを入力しないでください。" data-en="Uses public pages on the MJX official site. The Japanese original regulations take precedence. Do not enter private information or passwords.">MJX公式サイトの公開ページを参照します。公式規定の日本語原文が優先されます。個人情報やパスワードを入力しないでください。</p>
 </main>
 <footer class="mjx-page-footer"><div class="mjx-footer-inner"><span>© 2026 MTR Japan Nexus</span><span>Build. Connect. Live. · <a href="regulations.html?lang=ja">Official Regulations</a></span></div></footer>
 </body>
