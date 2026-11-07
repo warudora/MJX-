@@ -165,7 +165,7 @@
   function addSources(box, citations, isSearch) {
     const valid = citations.filter((citation) =>
       citation && typeof citation.id === "string" && window.MJXSiteIndex?.href(citation.id)
-    ).slice(0, 7);
+    ).slice(0, 8);
     if (!valid.length) return;
     const wrap = document.createElement("div");
     wrap.className = "mjx-ai-citations";
@@ -235,11 +235,19 @@
     box.appendChild(wrap);
   }
   function search(items, query) {
+    if (/規定一覧|7規定|七規定|7つの規定|all.*regulations|list.*rules/i.test(query)) {
+      const overview = items.filter((item) => /^overview-[1-7]$/.test(item.id));
+      if (overview.length === 7) return overview;
+    }
+    if (/参加方法|参加手順|参加したい|how to join|steps to join/i.test(query)) {
+      const steps = items.filter((item) => item.id === "join-early" || /^join-step-0[1-7]$/.test(item.id));
+      if (steps.length === 8) return steps;
+    }
     const tokens = queryWords(query);
     return items.map((item) => ({ ...item, rank: score(item, query, tokens) }))
       .filter((item) => item.rank > 0)
       .sort((a, b) => b.rank - a.rank)
-      .slice(0, 6);
+      .slice(0, 7);
   }
   async function fallback(query, reason) {
     try {
