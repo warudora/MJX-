@@ -37,6 +37,13 @@
 .join-role p{margin:0 0 14px;color:#526276;font-size:.9rem}
 .join-role .mjx-action{margin-top:auto}
 .join-role{display:flex;flex-direction:column;align-items:flex-start}
+/* Compact Builder exam application flow */
+.join-role .join-builder-steps{width:100%;margin:2px 0 17px;padding:0;list-style:none;counter-reset:mjx-builder-steps;display:grid;gap:9px}
+.join-role .join-builder-steps li{counter-increment:mjx-builder-steps;position:relative;padding:9px 11px 9px 39px;border:1px solid #e9e2e8;border-radius:10px;background:#fcf8fa;color:#3d4a60;font-size:.87rem;line-height:1.65;overflow-wrap:anywhere}
+.join-role .join-builder-steps li::before{content:counter(mjx-builder-steps);position:absolute;left:10px;top:10px;display:grid;place-items:center;width:21px;height:21px;border-radius:50%;background:var(--mjx-accent);color:#fff;font-size:.75rem;font-weight:800}
+.join-role .join-builder-note{font-size:.83rem;line-height:1.75}
+.join-role#join-builder-new .mjx-action{width:100%;margin-top:8px;padding:10px 12px;font-size:.84rem}
+
 .join-help{padding:22px 24px;border:1px solid var(--mjx-border);border-radius:15px;background:#fff}
 .join-help p{margin:0 0 9px;color:#516076}
 .join-help p:last-child{margin-bottom:0}
