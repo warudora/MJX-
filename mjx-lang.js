@@ -7,6 +7,8 @@
     "index.html":         { ja: "index.html",       en: "index-en.html" },
     "index-en.html":      { ja: "index.html",       en: "index-en.html" },
     "jp.html":            { ja: "jp.html",          en: "en.html" },
+    "join.html":          { ja: "join.html",        en: "join-en.html" },
+    "join-en.html":       { ja: "join.html",        en: "join-en.html" },
     "en.html":            { ja: "jp.html",          en: "en.html" },
     "regulations.html":   { ja: "regulations.html", en: "regulations-en.html" },
     "regulations-en.html":{ ja: "regulations.html", en: "regulations-en.html" },
