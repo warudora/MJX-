@@ -1,4 +1,4 @@
-/* Floating MJX official-rules assistant, available throughout the static site. */
+/* Floating MJX official-website assistant, available throughout the static site. */
 (() => {
   "use strict";
   if (document.getElementById("mjx-ai-float-root")) return;
@@ -41,7 +41,7 @@
   title.id = "mjx-ai-float-title";
   title.textContent = translate("MJX AIサポーター", "MJX AI Supporter");
   const subtitle = document.createElement("span");
-  subtitle.textContent = translate("公式規定のご案内", "Official rules guidance");
+  subtitle.textContent = translate("参加方法・規定・サイトのご案内", "Website, joining & rules guidance");
   titles.append(title, subtitle);
   identity.appendChild(titles);
 
@@ -90,13 +90,13 @@
     if (frame) return;
     frame = document.createElement("iframe");
     frame.className = "mjx-ai-float-iframe";
-    frame.title = translate("MJX公式規定AIチャット", "MJX official regulations AI chat");
+    frame.title = translate("MJX公式サイトAIチャット", "MJX official website AI chat");
     frame.referrerPolicy = "strict-origin-when-cross-origin";
     frame.setAttribute("allow", "");
     const url = new URL("rules-ai.html", window.location.href);
     url.searchParams.set("embed", "1");
     url.searchParams.set("lang", english ? "en" : "ja");
-    url.searchParams.set("v", "20261106-motion-1");
+    url.searchParams.set("v", "20261107-site-1");
     frame.src = url.href;
     frame.addEventListener("load", () => {
       loader.hidden = true;
