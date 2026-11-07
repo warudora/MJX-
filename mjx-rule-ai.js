@@ -266,7 +266,7 @@
     });
     if (!response.ok) throw new Error("AI request failed");
     const data = await response.json();
-    if (!data || typeof data.answer !== "string" || data.answer.length > 5000 || !Array.isArray(data.citations)) {
+    if (!data || data.source_scope !== "mjx-site-v2" || typeof data.answer !== "string" || data.answer.length > 5000 || !Array.isArray(data.citations)) {
       throw new Error("Invalid AI response");
     }
     const citations = data.citations.filter((x) => x && typeof x.id === "string" && window.MJXSiteIndex?.href(x.id));
