@@ -29,7 +29,14 @@
     ["個人情報", "ログ", "保存期間", "プライバシー", "privacy", "data", "retention"],
     ["通貨", "お金", "価格", "運賃", "経済", "money", "economy"],
     ["リソースパック", "resource pack", "配布", "改変", "テクスチャ"],
-    ["違反", "禁止", "処分", "異議", "ban", "appeal"]
+    ["違反", "禁止", "処分", "異議", "ban", "appeal"],
+    ["参加方法", "参加", "入り方", "接続", "マルチプレイ", "join", "connect"],
+    ["modパック", "modpack", "ダウンロード", "zip", "インポート"],
+    ["prism launcher", "prism", "ランチャー", "起動構成"],
+    ["discord", "サーバーステータス", "/start", "接続アドレス"],
+    ["mgsa", "mcp", "共通試験", "ビルダー試験", "資格", "免除"],
+    ["mjas", "mtts", "jnc", "統合", "成り立ち", "コミュニティ"],
+    ["問い合わせ", "トラブル", "エラー", "起動しない", "接続できない"]
   ];
   let regulations = null;
   let loading = null;
@@ -76,7 +83,7 @@
     for (const [pattern, number] of topics) {
       if (pattern.test(query) && sourceNumber === number) rank += 40;
     }
-    return rank;
+    return rank + (window.MJXSiteIndex?.scoreBoost(item, query) || 0);
   }
   async function loadRegulations() {
     if (regulations) return regulations;
@@ -148,8 +155,8 @@
     const detail = document.createElement("p");
     detail.className = "mjx-ai-thinking-detail";
     detail.textContent = endpoint
-      ? label("公式規定を確認して回答を準備しています。", "Reviewing the official regulations and preparing an answer.")
-      : label("関連する条文を検索しています。", "Searching relevant official clauses.");
+      ? label("公式サイトの情報を確認して回答を準備しています。", "Reviewing the official website and preparing an answer.")
+      : label("公式サイト内を検索しています。", "Searching the official website.");
     box.append(heading, detail);
     historyBox.appendChild(box);
     historyBox.scrollTop = historyBox.scrollHeight;
@@ -157,21 +164,21 @@
   }
   function addSources(box, citations, isSearch) {
     const valid = citations.filter((citation) =>
-      citation && /^doc[1-7]-article-\d+$/.test(citation.id || "")
-    ).slice(0, 6);
+      citation && typeof citation.id === "string" && window.MJXSiteIndex?.href(citation.id)
+    ).slice(0, 7);
     if (!valid.length) return;
     const wrap = document.createElement("div");
     wrap.className = "mjx-ai-citations";
     const strong = document.createElement("strong");
     strong.textContent = isSearch
-      ? label("関連する条文（原文リンク）", "Relevant clauses (original text)")
-      : label("参照した条文", "Source clauses");
+      ? label("関連する公式ページ・条文", "Related official pages and clauses")
+      : label("参照した公式ページ・条文", "Official sources and clauses");
     wrap.appendChild(strong);
 
     function createCitation(citation, index) {
       const li = document.createElement("li");
       const link = document.createElement("a");
-      link.href = "regulations-full.html?lang=ja#" + citation.id;
+      link.href = window.MJXSiteIndex.href(citation.id);
       link.textContent = citation.document + " — " + citation.title;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
@@ -236,18 +243,18 @@
   }
   async function fallback(query, reason) {
     try {
-      const items = await loadRegulations();
+      const items = window.MJXSiteIndex ? await window.MJXSiteIndex.load(loadRegulations) : await loadRegulations();
       const citations = search(items, query);
       if (!citations.length) {
-        addMessage("assistant", label("該当する条文を見つけられませんでした。別の言い方で質問するか、公式規定全文を確認してください。", "No matching clauses found. Try rephrasing the question or check the full regulations."));
+        addMessage("assistant", label("関連する公式ページが見つかりませんでした。質問を言い換えるか、公式サイトを確認してください。", "No matching official pages found. Try rephrasing your question or explore the website."));
         return;
       }
       const opening = endpoint && reason
-        ? label("AIに接続できなかったため、条文検索の結果を表示します。", "AI is unavailable, so these are clause-search results.")
-        : label("質問に関連する可能性がある条文です。解釈や判断ではなく、原文への案内として確認してください。", "These clauses may be relevant. These are search matches, not an interpretation or decision.");
+        ? label("AIに接続できなかったため、公式サイト内の検索結果を表示します。", "AI is unavailable, so official site search results are shown.")
+        : label("質問に関連する公式ページです。検索結果は正式な判断ではないため、本文をご確認ください。", "These official pages may be relevant. Search results are not authoritative decisions.");
       addSources(addMessage("assistant", opening), citations, true);
     } catch (_) {
-      addMessage("assistant", label("現在、公式規定を取得できません。通信状態を確認して再試行してください。", "Unable to load the official regulations right now. Check your connection and try again."));
+      addMessage("assistant", label("現在、公式サイトの情報を取得できません。通信状態を確認して再試行してください。", "Unable to load the official site information. Check your connection and try again."));
     }
   }
   async function askAI(query) {
@@ -262,7 +269,7 @@
     if (!data || typeof data.answer !== "string" || data.answer.length > 5000 || !Array.isArray(data.citations)) {
       throw new Error("Invalid AI response");
     }
-    const citations = data.citations.filter((x) => x && typeof x.id === "string" && /^doc[1-7]-article-\d+$/.test(x.id));
+    const citations = data.citations.filter((x) => x && typeof x.id === "string" && window.MJXSiteIndex?.href(x.id));
     const message = addMessage("assistant", data.answer);
     conversation.push({ role: "user", content: query.slice(0, 400) }, { role: "assistant", content: data.answer.slice(0, 500) });
     if (conversation.length > 12) conversation.splice(0, conversation.length - 12);
@@ -281,12 +288,12 @@
       form.requestSubmit();
     });
   }
-  input.placeholder = label("例：ビジターでもブロックを設置できますか？", "e.g. Can visitors place blocks?");
-  status.textContent = endpoint ? label("AI回答 + 根拠条文", "AI answers with citations") : label("公式条文検索モード", "Official clause search mode");
+  input.placeholder = label("例：MJXにはどうやって参加するの？", "e.g. How can I join MJX?");
+  status.textContent = endpoint ? label("MJX公式サイトAI案内", "MJX website AI assistant") : label("公式サイト内検索モード", "Official website search mode");
   if (endpoint) status.parentElement.classList.add("mjx-ai-mode--connected");
   hint.textContent = endpoint
     ? label("AIの回答には誤りが含まれる場合があります。重要な判断は原文で確認してください。", "AI may make mistakes. Confirm important decisions in the original text.")
-    : label("AIの接続設定がないため、現在は条文検索として動作します。", "AI is not connected yet; clause search is available.");
+    : label("AIの接続設定がないため、公式サイト内検索でご案内します。", "AI is not connected; official website search is available.");
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     if (submit.disabled) return;
@@ -300,12 +307,12 @@
     submit.textContent = label("考え中…", "Thinking…");
     form.setAttribute("aria-busy", "true");
     const thinking = showThinking();
-    hint.textContent = label("考え中… 公式規定を確認しています。", "Thinking… Reviewing official regulations.");
+    hint.textContent = label("考え中… 公式サイトを確認しています。", "Thinking… Reviewing the official site.");
     try {
       if (endpoint) {
         try { await askAI(question); }
         catch (_) {
-          thinking.detail.textContent = label("AIにつながらないため、条文検索に切り替えています。", "AI is unavailable. Switching to clause search.");
+          thinking.detail.textContent = label("AIにつながらないため、サイト内検索に切り替えています。", "AI is unavailable. Switching to site search.");
           await fallback(question, true);
         }
       } else {
@@ -318,7 +325,7 @@
       form.removeAttribute("aria-busy");
       hint.textContent = endpoint
         ? label("回答の根拠となる条文を必ず確認してください。", "Always check cited clauses.")
-        : label("関連条文の一覧から原文を確認できます。", "Open the linked clauses to read the original text.");
+        : label("検索結果のリンクから公式ページを確認できます。", "Open the official pages linked in the results.");
       input.focus();
     }
   });
@@ -336,5 +343,5 @@
       }
     });
   }
-  loadRegulations().catch(() => { /* Loading can be retried by submitting a question. */ });
+  (window.MJXSiteIndex ? window.MJXSiteIndex.load(loadRegulations) : loadRegulations()).catch(() => { /* Retry on submission. */ });
 })();
