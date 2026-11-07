@@ -257,6 +257,7 @@ export default {
     if (request.method === "GET" && requestUrl.pathname === "/health") {
       return new Response(JSON.stringify({
         service: "mjx-rule-ai",
+        source_scope: "mjx-site-v2",
         status: env.AI && env.RULE_AI_LIMIT ? "ready" : "missing_bindings"
       }), { status: 200, headers: {
         "content-type": "application/json; charset=utf-8",
