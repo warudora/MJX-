@@ -1,7 +1,12 @@
 // Cloudflare Workers AI backend for the MJX official rules site.
 // The authoritative Japanese text is fetched server-side; the browser never supplies source clauses.
 const SITE_ORIGIN = "https://warudora.github.io";
-const SOURCE_URL = SITE_ORIGIN + "/MJX-/regulations-full.html";
+const SITE_BASE = SITE_ORIGIN + "/MJX-/";
+const SOURCE_URL = SITE_BASE + "regulations-full.html";
+const JOIN_URL = SITE_BASE + "join.html";
+const ABOUT_URL = SITE_BASE + "jp.html";
+const OVERVIEW_URL = SITE_BASE + "regulations.html";
+const HOME_URL = SITE_BASE + "index.html";
 const MODEL = "@cf/google/gemma-4-26b-a4b-it";
 const TOP_K = 6;
 const DOCUMENT_NAMES = {
@@ -16,7 +21,14 @@ const SYNONYMS = [
   ["個人情報", "ログ", "保存期間", "プライバシー", "privacy", "data", "retention"],
   ["通貨", "お金", "価格", "運賃", "経済", "money", "economy"],
   ["リソースパック", "resource pack", "配布", "改変", "テクスチャ"],
-  ["違反", "禁止", "処分", "異議", "ban", "appeal"]
+  ["違反", "禁止", "処分", "異議", "ban", "appeal"],
+  ["参加方法", "参加", "入り方", "接続", "マルチプレイ", "join", "connect"],
+  ["modパック", "modpack", "zip", "ダウンロード", "インポート"],
+  ["prism launcher", "prism", "ランチャー", "起動構成"],
+  ["discord", "サーバーステータス", "/start", "接続アドレス", "playit.gg"],
+  ["mgsa", "mcp", "共通試験", "ビルダー試験", "資格", "免除", "移行"],
+  ["mjas", "mtts", "jnc", "統合", "成り立ち", "コミュニティ"],
+  ["問い合わせ", "トラブル", "エラー", "起動しない", "接続できない"]
 ];
 const CORS = {
   "access-control-allow-origin": SITE_ORIGIN,
@@ -81,6 +93,92 @@ function parseArticles(page) {
     }
   }
   return output;
+}
+
+function pageItem(id, document, title, text, url) {
+  return { id, document, title, text: String(text || "").slice(0, 3000), url };
+}
+function parseJoin(page) {
+  const items = [];
+  const banner = page.match(/<div class="join-banner">([\s\S]*?)<\/div>/);
+  if (banner) items.push(pageItem("join-early", "参加方法", "早期アクセスとModパックの入手", plain(banner[1]), JOIN_URL + "#join-steps"));
+  const steps = [...page.matchAll(/<li\s+class="join-step"[^>]*>([\s\S]*?)<\/li>/g)];
+  if (steps.length !== 7) throw new Error("Join guide is incomplete");
+  for (let index = 0; index < steps.length; index += 1) {
+    const part = steps[index][1];
+    const number = String(index + 1).padStart(2, "0");
+    const title = plain(part.match(/<h3>([\s\S]*?)<\/h3>/)?.[1] || "");
+    if (!title) throw new Error("Join step title missing");
+    items.push(pageItem("join-step-" + number, "参加方法", title, plain(part), JOIN_URL + "#join-step-" + number));
+  }
+  const roles = [...page.matchAll(/<article\s+class="join-role"[^>]*>([\s\S]*?)<\/article>/g)];
+  if (roles.length !== 3) throw new Error("Builder guidance is incomplete");
+  const ids = ["join-visitor", "join-builder-new", "join-builder-legacy"];
+  roles.forEach((entry, index) => {
+    items.push(pageItem(ids[index], "参加方法・ビルダー資格",
+      plain(entry[1].match(/<h3>([\s\S]*?)<\/h3>/)?.[1] || ""), plain(entry[1]), JOIN_URL + "#" + ids[index]));
+  });
+  const help = page.match(/<section\s+class="join-section"\s+aria-labelledby="join-help-title">([\s\S]*?)<\/section>/);
+  if (help) items.push(pageItem("join-help", "参加方法", "トラブルシューティング・問い合わせ",
+    plain(help[1]), JOIN_URL + "#join-help-title"));
+  return items;
+}
+function parseAbout(page) {
+  const items = [];
+  const history = page.match(/<section\s+id="history"[^>]*>([\s\S]*?)<div class="community-label">/);
+  if (history) items.push(pageItem("about-history", "MJXについて", "MJXの成り立ちと3コミュニティの統合",
+    plain(history[1]), ABOUT_URL + "#history"));
+  for (const article of page.matchAll(/<article\s+class="origin"[^>]*>([\s\S]*?)<\/article>/g)) {
+    const title = plain(article[1].match(/<h3>([\s\S]*?)<\/h3>/)?.[1] || "");
+    const id = "about-" + title.toLowerCase();
+    if (["about-mjas", "about-mtts", "about-jnc"].includes(id)) {
+      items.push(pageItem(id, "MJXについて", title, plain(article[1]), ABOUT_URL + "#communities"));
+    }
+  }
+  const purpose = page.match(/<section\s+id="purpose"[^>]*>([\s\S]*?)<\/section>/);
+  if (purpose) items.push(pageItem("about-purpose", "MJXについて", "MJXのコンセプトと目的",
+    plain(purpose[1]), ABOUT_URL + "#purpose"));
+  const closing = page.match(/<section\s+id="closing"[^>]*>([\s\S]*?)<\/section>/);
+  if (closing) items.push(pageItem("about-closing", "MJXについて", "最後に・MJXの活動",
+    plain(closing[1]), ABOUT_URL + "#closing"));
+  if (items.length < 6) throw new Error("About page is incomplete");
+  return items;
+}
+function parseOverview(page) {
+  const items = [];
+  for (const match of page.matchAll(/<article\s+class="rule"\s+id="doc-0([1-7])"[\s\S]*?<h3>([\s\S]*?)<\/h3>[\s\S]*?<p class="desc">([\s\S]*?)<\/p>/g)) {
+    items.push(pageItem("overview-" + match[1], "公式7規定", plain(match[2]),
+      plain(match[3]) + " / 2026年11月1日施行", OVERVIEW_URL + "#doc-0" + match[1]));
+  }
+  if (items.length !== 7) throw new Error("Regulations overview is incomplete");
+  return items;
+}
+function parseHome(page) {
+  const intro = page.match(/<section\s+class="mjx-hero"[^>]*>[\s\S]*?<p>([\s\S]*?)<\/p>/);
+  return intro ? [pageItem("home-about", "公式サイト", "MTR Japan Nexus（MJX）公式サイトの案内",
+    plain(intro[1]) + " 運営への問い合わせは公式Discordから。", HOME_URL)] : [];
+}
+async function fetchSitePage(url) {
+  const response = await fetch(url, {
+    headers: { accept: "text/html" },
+    cf: { cacheTtl: 300, cacheEverything: true }
+  });
+  if (!response.ok) throw new Error("Official site fetch failed");
+  return response.text();
+}
+async function retrieveSiteSources() {
+  const tasks = [
+    retrieveRegulations(),
+    fetchSitePage(JOIN_URL).then(parseJoin),
+    fetchSitePage(ABOUT_URL).then(parseAbout),
+    fetchSitePage(OVERVIEW_URL).then(parseOverview),
+    fetchSitePage(HOME_URL).then(parseHome)
+  ];
+  const results = await Promise.allSettled(tasks);
+  const items = [];
+  for (const result of results) if (result.status === "fulfilled") items.push(...result.value);
+  if (!items.length) throw new Error("Official website information temporarily unavailable");
+  return items;
 }
 function terms(query) {
   const cleaned = norm(query).replace(/できますか|してもいい|について|教えて|どうすれば|何ですか|どこですか|ありますか|でしょうか|できます|したい|のですか|ですか|は|が|を|に|で|の|も|か|？|\?/g, " ");
