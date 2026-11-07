@@ -319,7 +319,8 @@ export default {
         answer: lang === "en"
           ? "I could not identify a relevant official page. Please check the MJX website or contact MJX administrators."
           : "関連する公式ページを特定できませんでした。MJX公式サイトをご確認いただくか、運営にお問い合わせください。",
-        citations: []
+        citations: [],
+        source_scope: "mjx-site-v2"
       });
     }
     const evidence = sources.map((x, index) =>
@@ -358,7 +359,8 @@ export default {
         answer: answer.slice(0, 5000),
         citations: sources.map(({ id, document, title, url }) => ({
           id, document, title, url: url || SOURCE_URL + "#" + id
-        }))
+        })),
+        source_scope: "mjx-site-v2"
       });
     } catch (_) {
       return jsonResponse({ error: "AI model temporarily unavailable" }, 503);
