@@ -307,10 +307,17 @@ export default {
     try {
       const items = await retrieveSiteSources();
       const words = terms(retrievalQuestion);
-      sources = items.map((item) => ({ ...item, rank: score(item, retrievalQuestion, words) }))
+      const ranked = items.map((item) => ({ ...item, rank: score(item, retrievalQuestion, words) }))
         .filter((item) => item.rank > 0)
-        .sort((a, b) => b.rank - a.rank)
-        .slice(0, TOP_K);
+        .sort((a, b) => b.rank - a.rank);
+      // Present complete authoritative checklists when the visitor asks for a whole guide.
+      if (/規定一覧|7規定|七規定|7つの規定|all.*regulations|list.*rules/i.test(retrievalQuestion)) {
+        sources = items.filter((item) => /^overview-[1-7]$/.test(item.id));
+      } else if (/参加方法|参加手順|参加したい|how to join|steps to join/i.test(retrievalQuestion)) {
+        sources = items.filter((item) => item.id === "join-early" || /^join-step-0[1-7]$/.test(item.id));
+      } else {
+        sources = ranked.slice(0, TOP_K);
+      }
     } catch (_) {
       return jsonResponse({ error: "Official website information temporarily unavailable" }, 503);
     }
