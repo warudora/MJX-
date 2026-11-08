@@ -208,7 +208,7 @@
       return li;
     }
 
-    const primary = document.createElement("ol");
+    const primary = document.createElement("ul");
     primary.className = "mjx-ai-source-list";
     valid.slice(0, 3).forEach((citation, index) => {
       primary.appendChild(createCitation(citation, index));
@@ -223,9 +223,8 @@
         "ほか" + (valid.length - 3) + "件の条文も表示",
         "Show " + (valid.length - 3) + " more clauses"
       );
-      const list = document.createElement("ol");
+      const list = document.createElement("ul");
       list.className = "mjx-ai-source-list";
-      list.start = 4;
       valid.slice(3).forEach((citation, index) => {
         list.appendChild(createCitation(citation, index + 3));
       });
@@ -258,7 +257,7 @@
         return;
       }
       const opening = endpoint && reason
-        ? label("AIに接続できなかったため、公式サイト内の検索結果を表示します。", "AI is unavailable, so official site search results are shown.")
+        ? reason
         : label("質問に関連する公式ページです。検索結果は正式な判断ではないため、本文をご確認ください。", "These official pages may be relevant. Search results are not authoritative decisions.");
       addSources(addMessage("assistant", opening), citations, true);
     } catch (_) {
@@ -272,13 +271,18 @@
       body: JSON.stringify({ question: query, lang, history: conversation.slice(-6) }),
       signal: AbortSignal.timeout(25000)
     });
-    if (!response.ok) throw new Error("AI request failed");
+    if (!response.ok) {
+      const error = new Error("AI request failed");
+      error.status = response.status;
+      throw error;
+    }
     const data = await response.json();
     if (!data || data.source_scope !== "mjx-site-v2" || typeof data.answer !== "string" || data.answer.length > 5000 || !Array.isArray(data.citations)) {
       throw new Error("Invalid AI response");
     }
     const citations = data.citations.filter((x) => x && typeof x.id === "string" && window.MJXSiteIndex?.href(x.id));
     const message = addMessage("assistant", data.answer);
+    updateAIState("connected");
     conversation.push({ role: "user", content: query.slice(0, 400) }, { role: "assistant", content: data.answer.slice(0, 500) });
     if (conversation.length > 12) conversation.splice(0, conversation.length - 12);
     if (citations.length) addSources(message, citations, false);
@@ -297,8 +301,22 @@
     });
   }
   input.placeholder = label("例：MJXにはどうやって参加するの？", "e.g. How can I join MJX?");
-  status.textContent = endpoint ? label("MJX公式サイトAI案内", "MJX website AI assistant") : label("公式サイト内検索モード", "Official website search mode");
-  if (endpoint) status.parentElement.classList.add("mjx-ai-mode--connected");
+  function updateAIState(state) {
+    status.parentElement.classList.toggle("mjx-ai-mode--connected", state === "connected");
+    status.textContent = state === "connected"
+      ? label("AI応答正常", "AI responding")
+      : state === "offline"
+        ? label("AI一時利用不可・サイト内検索", "AI unavailable · site search")
+        : endpoint
+          ? label("AI接続確認前", "AI connection not yet checked")
+          : label("公式サイト内検索モード", "Official website search mode");
+  }
+  function aiFailureNotice(error) {
+    if (error?.status === 429) return label("AIへのアクセスが集中しているため、公式サイト内の検索結果を表示します。", "The AI request limit has been reached. Showing official site search results.");
+    if (error?.name === "TimeoutError" || error?.name === "AbortError") return label("AIの応答が時間内に届かなかったため、公式サイト内の検索結果を表示します。", "The AI response timed out. Showing official site search results.");
+    return label("AIが一時的に利用できないため、公式サイト内の検索結果を表示します。", "AI is temporarily unavailable. Showing official site search results.");
+  }
+  updateAIState("pending");
   hint.textContent = endpoint
     ? label("AIの回答には誤りが含まれる場合があります。重要な判断は原文で確認してください。", "AI may make mistakes. Confirm important decisions in the original text.")
     : label("AIの接続設定がないため、公式サイト内検索でご案内します。", "AI is not connected; official website search is available.");
@@ -319,9 +337,11 @@
     try {
       if (endpoint) {
         try { await askAI(question); }
-        catch (_) {
-          thinking.detail.textContent = label("AIにつながらないため、サイト内検索に切り替えています。", "AI is unavailable. Switching to site search.");
-          await fallback(question, true);
+        catch (error) {
+          updateAIState("offline");
+          const notice = aiFailureNotice(error);
+          thinking.detail.textContent = notice;
+          await fallback(question, notice);
         }
       } else {
         await fallback(question, false);
