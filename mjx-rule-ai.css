@@ -23,7 +23,7 @@
 .mjx-ai-snippet {display:block;color:#526175;font-size:.82rem;line-height:1.7;padding-top:3px;white-space:pre-wrap}
 .mjx-ai-citations {border-top:1px solid #e2e7ef;margin-top:12px;padding-top:12px}
 .mjx-ai-citations strong {font-size:.83rem}
-.mjx-ai-citations ol {margin:8px 0 0;padding-left:1.35em}
+.mjx-ai-citations .mjx-ai-source-list {margin:8px 0 0;padding:0;list-style:none}
 .mjx-ai-citations a {display:inline-block}
 .mjx-ai-examples {display:flex;flex-wrap:wrap;gap:8px;padding:0 20px 16px}
 .mjx-ai-examples button {padding:9px 12px;background:#fff;border:1px solid #e1c6d3;border-radius:100px;color:#8c084a;cursor:pointer;font:600 .78rem/1.4 Inter,"Noto Sans JP",sans-serif}
@@ -254,7 +254,8 @@ html.mjx-ai-embed .mjx-ai-faq .mjx-ai-examples button {font-size:.72rem}
   border-top:0;
 }
 .mjx-ai-source-list {
-  padding-left:1.25rem;
+  padding-left:0;
+  list-style:none;
 }
 .mjx-ai-citations li {
   overflow-wrap:anywhere;
