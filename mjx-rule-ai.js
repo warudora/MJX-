@@ -277,29 +277,60 @@
     }
   }
   async function askAI(query) {
-    const response = await fetch(endpoint, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ question: query, lang, history: conversation.slice(-6) }),
-      signal: AbortSignal.timeout(25000)
-    });
-    if (!response.ok) {
-      const diagnostic = await response.json().catch(() => null);
-      const error = new Error("AI request failed");
-      error.status = response.status;
-      error.reason = typeof diagnostic?.reason === "string" ? diagnostic.reason : "";
-      throw error;
+    // Keep the request pending until a response is fully received or the explicit timeout expires.
+    // A single request is used to avoid duplicate AI charges and rate-limit consumption.
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => controller.abort(), 60000);
+    try {
+      let response;
+      try {
+        response = await fetch(endpoint, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ question: query, lang, history: conversation.slice(-6) }),
+          signal: controller.signal
+        });
+      } catch (error) {
+        if (controller.signal.aborted) {
+          const timeoutError = new Error("AI request timed out");
+          timeoutError.name = "TimeoutError";
+          timeoutError.reason = "ai_timeout";
+          throw timeoutError;
+        }
+        if (error instanceof TypeError) error.reason = "browser_network";
+        throw error;
+      }
+      if (!response.ok) {
+        const diagnostic = await response.json().catch(() => null);
+        const error = new Error("AI request failed");
+        error.status = response.status;
+        error.reason = typeof diagnostic?.reason === "string" ? diagnostic.reason : "";
+        throw error;
+      }
+      let data;
+      try {
+        data = await response.json();
+      } catch (error) {
+        error.reason = "invalid_response";
+        throw error;
+      }
+      if (!data || data.source_scope !== "mjx-site-v2" || typeof data.answer !== "string" ||
+          data.answer.length > 5000 || !Array.isArray(data.citations)) {
+        const error = new Error("Invalid AI response");
+        error.reason = "invalid_response";
+        throw error;
+      }
+      const citations = data.citations.filter((x) =>
+        x && typeof x.id === "string" && window.MJXSiteIndex?.href(x.id)
+      );
+      const message = addMessage("assistant", data.answer);
+      updateAIState("connected");
+      conversation.push({ role: "user", content: query.slice(0, 400) }, { role: "assistant", content: data.answer.slice(0, 500) });
+      if (conversation.length > 12) conversation.splice(0, conversation.length - 12);
+      if (citations.length) addSources(message, citations, false);
+    } finally {
+      window.clearTimeout(timeoutId);
     }
-    const data = await response.json();
-    if (!data || data.source_scope !== "mjx-site-v2" || typeof data.answer !== "string" || data.answer.length > 5000 || !Array.isArray(data.citations)) {
-      throw new Error("Invalid AI response");
-    }
-    const citations = data.citations.filter((x) => x && typeof x.id === "string" && window.MJXSiteIndex?.href(x.id));
-    const message = addMessage("assistant", data.answer);
-    updateAIState("connected");
-    conversation.push({ role: "user", content: query.slice(0, 400) }, { role: "assistant", content: data.answer.slice(0, 500) });
-    if (conversation.length > 12) conversation.splice(0, conversation.length - 12);
-    if (citations.length) addSources(message, citations, false);
   }
   for (const el of document.querySelectorAll("[data-ja][data-en]")) {
     el.textContent = el.dataset[lang];
@@ -326,12 +357,16 @@
           ? label("AI利用制限・サイト内検索", "AI rate limited · site search")
           : label("AI一時利用不可・サイト内検索", "AI unavailable · site search");
     } else {
-      status.textContent = endpoint
-        ? label("AI接続確認前", "AI connection not yet checked")
-        : label("公式サイト内検索モード", "Official website search mode");
+      status.textContent = state === "pending"
+        ? label("AI応答待機中…", "Waiting for AI response…")
+        : endpoint
+          ? label("AI接続確認前", "AI connection not yet checked")
+          : label("公式サイト内検索モード", "Official website search mode");
     }
   }
   function aiFailureNotice(error) {
+    if (error?.reason === "browser_network") return label("ブラウザからAIへの通信に失敗しました。ネットワークやSafariのコンテンツブロッカーをご確認ください。公式サイト内検索に切り替えます。", "The browser could not reach AI. Check your connection or content blockers. Switching to site search.");
+    if (error?.reason === "invalid_response") return label("AIから受信した回答データを処理できませんでした。公式サイト内検索に切り替えます。", "The AI response format could not be processed. Switching to site search.");
     if (error?.reason === "ai_quota") return label("AIサービスの利用枠に達したため、公式サイト内検索へ切り替えました。", "The AI service has reached its usage quota. Showing official site search results.");
     if (error?.reason === "ai_capacity") return label("AIモデル側が混雑しているため、公式サイト内検索へ切り替えました。", "The AI model is temporarily busy. Showing official site search results.");
     if (error?.reason === "visitor_rate_limit") return label("短時間のAI利用制限に達したため、公式サイト内検索へ切り替えました。", "The AI request rate limit was reached. Showing official site search results.");
@@ -341,7 +376,7 @@
     if (error?.status === 429) return label("AIへのアクセスが制限されたため、公式サイト内検索へ切り替えました。", "AI access was rate limited. Showing official site search results.");
     return label("AIが一時的に利用できないため、公式サイト内検索へ切り替えました。", "AI is temporarily unavailable. Showing official site search results.");
   }
-  updateAIState("pending");
+  updateAIState("idle");
   hint.textContent = endpoint
     ? label("AIの回答には誤りが含まれる場合があります。重要な判断は原文で確認してください。", "AI may make mistakes. Confirm important decisions in the original text.")
     : label("AIの接続設定がないため、公式サイト内検索でご案内します。", "AI is not connected; official website search is available.");
@@ -361,6 +396,7 @@
     hint.textContent = label("考え中… 公式サイトを確認しています。", "Thinking… Reviewing the official site.");
     try {
       if (endpoint) {
+        updateAIState("pending");
         try { await askAI(question); }
         catch (error) {
           updateAIState("offline", error);
