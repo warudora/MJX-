@@ -16,5 +16,22 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install matching Playwright package
         run: npm install --no-save playwright@1.58.2
-      - name: Exercise public AI page and embedded assistant in WebKit
+      - name: Verify browser scripts
+        run: |
+          node --check mjx-rule-ai.js
+          node --check mjx-ai-float.js
+          node --check scripts/diagnose_mjx_webkit.mjs
+      - name: Confirm the new diagnostic client is public
+        shell: bash
+        run: |
+          for attempt in $(seq 1 48); do
+            if curl -fsSL --max-time 12 'https://warudora.github.io/MJX-/rules-ai.html?diagnostic=nov9' | grep -q 'mjx-rule-ai.js?v=20261109-ai-diagnostic-1'; then
+              echo 'The updated AI script is published'
+              exit 0
+            fi
+            sleep 5
+          done
+          echo 'The updated AI script is not yet publicly available'
+          exit 1
+      - name: Exercise desktop, mobile and simulated failure in WebKit
         run: node scripts/diagnose_mjx_webkit.mjs
