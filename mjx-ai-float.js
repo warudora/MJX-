@@ -96,7 +96,7 @@
     const url = new URL("rules-ai.html", window.location.href);
     url.searchParams.set("embed", "1");
     url.searchParams.set("lang", english ? "en" : "ja");
-    url.searchParams.set("v", "20261107-site-1");
+    url.searchParams.set("v", "20261109-ai-diagnostic-1");
     frame.src = url.href;
     frame.addEventListener("load", () => {
       loader.hidden = true;
