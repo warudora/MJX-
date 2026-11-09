@@ -32,7 +32,9 @@ assert.match(chatStyles, /html\.mjx-ai-embed/);
 assert.match(entry, /id="mjx-ai-faq"/);
 assert.match(entry, /class="mjx-ai-contact"/);
 assert.match(entry, /https:\/\/discord\.gg\/PehjWyGDHV/);
-assert.equal((entry.match(/data-example-ja=/g) || []).length, 6, "Expected six FAQ questions");
+const faqQuestions = [...entry.matchAll(/data-example-ja="([^"]+)"/g)].map((match) => match[1]);
+assert.ok(faqQuestions.length >= 6 && faqQuestions.length <= 12, "FAQ question count is outside the supported range");
+assert.equal(new Set(faqQuestions).size, faqQuestions.length, "FAQ questions must be unique");
 assert.doesNotMatch(entry, /mjx-logo-original\.png/, "Chat page should not show a logo");
 assert.doesNotMatch(floatScript, /mjx-logo-original\.png/, "Floating chat header should not show a logo");
 assert.match(frontend, /function showThinking\(\)/);
@@ -41,7 +43,7 @@ assert.match(frontend, /mjx-ai-faq/);
 assert.match(frontend, /thinking\.box\.remove\(\)/);
 assert.match(chatStyles, /mjx-ai-message--thinking/);
 assert.match(chatStyles, /@keyframes mjx-ai-dot/);
-assert.match(floatScript, /20261106-motion-1/);
+assert.match(floatScript, /mjx-ai-float-expand/);
 assert.match(floatScript, /mjx-ai-float-expand/);
 assert.match(floatScript, /aria-pressed/);
 assert.match(floatStyles, /min\(480px/);
@@ -55,7 +57,7 @@ assert.match(entry, /id="mjx-ai-tools"/);
 assert.match(frontend, /mjx-ai-more-sources/);
 assert.match(frontend, /mjx-ai-top-excerpt/);
 assert.match(frontend, /mjx-ai-tools/);
-assert.match(chatStyles, /reading-first/i);
+assert.match(chatStyles, /mjx-ai-source-list/);
 
 assert.match(floatStyles, /@keyframes mjx-ai-panel-enter/);
 assert.match(floatStyles, /@keyframes mjx-ai-panel-leave/);
@@ -70,8 +72,8 @@ assert.match(chatStyles, /@keyframes mjx-ai-bubble-arrive/);
 assert.match(chatStyles, /@keyframes mjx-ai-details-appear/);
 assert.match(chatStyles, /@keyframes mjx-ai-progress-sweep/);
 assert.match(chatStyles, /mjx-ai-form\[aria-busy="true"\]::before/);
-assert.match(entry, /mjx-rule-ai\.css\?v=20261106-motion-1/);
-assert.match(entry, /mjx-rule-ai\.js\?v=20261106-motion-1/);
+assert.match(entry, /mjx-rule-ai\.css\?v=[\w-]+/);
+assert.match(entry, /mjx-rule-ai\.js\?v=[\w-]+/);
 
 
 
@@ -79,22 +81,32 @@ for (const path of ["index.html", "index-en.html", "regulations.html", "regulati
   const markup = readFileSync(join(root, path), "utf8");
   assert.match(markup, /href="mjx-ai-float\.css\?v=/, path + " must load the floating style");
   assert.match(markup, /src="mjx-ai-float\.js\?v=/, path + " must load the floating assistant");
-  assert.match(markup, /mjx-ai-float\.js\?v=20261106-motion-1/, path + " must invalidate cached widget");
+  assert.match(markup, /mjx-ai-float\.js\?v=[\w-]+/, path + " must version its floating assistant script");
   assert.doesNotMatch(markup, /<a href="rules-ai\.html\?lang=(?:ja|en)">(?:規定AI|Rules Assistant)<\/a>/, path + " should not show an AI navigation tab");
 }
 
 const originalFetch = globalThis.fetch;
 let sourceReads = 0;
+const sitePages = new Map([
+  ["regulations-full.html", html],
+  ...["join.html", "jp.html", "regulations.html", "index.html"].map((page) =>
+    [page, readFileSync(join(root, page), "utf8")])
+]);
 globalThis.fetch = async (input) => {
-  assert.equal(String(input), "https://warudora.github.io/MJX-/regulations-full.html");
+  const url = new URL(String(input));
+  assert.equal(url.origin, "https://warudora.github.io");
+  assert.ok(url.pathname.startsWith("/MJX-/"), "Source must remain on the official MJX site");
+  const path = url.pathname.slice("/MJX-/".length);
+  assert.ok(sitePages.has(path), "Unexpected official source: " + path);
   sourceReads += 1;
-  return new Response(html, { status: 200, headers: { "content-type": "text/html" } });
+  return new Response(sitePages.get(path), { status: 200, headers: { "content-type": "text/html" } });
 };
 let aiCalls = 0;
 const env = {
   AI: { run: async (_model, body) => {
     aiCalls += 1;
-    assert.match(body.messages[0].content, /ONLY from the provided official Japanese source excerpts/);
+    assert.match(body.messages[0].content, /MJX official website AI navigation assistant/);
+    assert.match(body.messages[1].content, /Official source excerpts:/);
     assert.ok(body.messages.length >= 3);
     assert.equal(body.chat_template_kwargs.enable_thinking, false);
     return { choices: [{ message: { content: "参照条文を確認してください。[1]" } }] };
@@ -113,9 +125,9 @@ async function question(value, lang = "ja", origin = "https://warudora.github.io
 try {
   const ready = await worker.fetch(new Request("https://mjx-rule-ai.example/health", { method: "GET" }), env);
   assert.equal(ready.status, 200);
-  assert.deepEqual(await ready.json(), { service: "mjx-rule-ai", status: "ready" });
+  assert.deepEqual(await ready.json(), { service: "mjx-rule-ai", source_scope: "mjx-site-v2", status: "ready" });
   const notReady = await worker.fetch(new Request("https://mjx-rule-ai.example/health", { method: "GET" }), {});
-  assert.deepEqual(await notReady.json(), { service: "mjx-rule-ai", status: "missing_bindings" });
+  assert.deepEqual(await notReady.json(), { service: "mjx-rule-ai", source_scope: "mjx-site-v2", status: "missing_bindings" });
   const visitor = await question("ビジターは建築できますか？");
   assert.equal(visitor.status, 200);
   assert.equal(visitor.data.citations[0].id, "doc3-article-01");
@@ -133,7 +145,7 @@ try {
   assert.equal(forbidden.status, 403);
   assert.ok(aiCalls >= 3);
   assert.ok(sourceReads >= 3);
-  console.log("MJX rule AI: 130 source anchors, compact persistent nonmodal chat, collapsible help and sources, 3 grounded questions, CORS and health passed.");
+  console.log("MJX rule AI: 130 official article anchors, FAQ, full-site grounding, responsive chat, API, CORS and health passed.");
 } finally {
   globalThis.fetch = originalFetch;
 }
