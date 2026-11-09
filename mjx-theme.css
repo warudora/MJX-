@@ -59,9 +59,11 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .mjx-route-card h2 { margin:17px 0 9px; font-size:1.35rem; line-height:1.5; letter-spacing:-.02em; }
 .mjx-route-card p { margin:0; color:var(--mjx-muted); font-size:.87rem; line-height:1.85; }
 .mjx-route-card .mjx-route-open { display:flex; align-items:center; justify-content:space-between; margin-top:auto; padding-top:24px; color:var(--mjx-accent-deep); font-weight:800; font-size:.88rem; }
-.mjx-disclaimer { border:1px solid #ead4df; border-left:4px solid var(--mjx-accent); border-radius:14px; background:#fff; padding:22px 24px; margin-top:23px; line-height:1.8; }
-.mjx-disclaimer h2 { margin:0 0 7px; font-size:1rem; }
-.mjx-disclaimer p { margin:0; color:#566276; font-size:.87rem; }
+.mjx-disclaimer { border:1px solid #ecdce5; border-radius:18px; background:linear-gradient(135deg,#fff 30%,#fff7fb 100%); padding:23px 26px; margin-top:24px; line-height:1.8; box-shadow:0 9px 25px rgba(31,23,35,.045); }
+.mjx-disclaimer h2 { margin:0 0 8px; font-size:1.12rem; color:var(--mjx-ink); letter-spacing:-.018em; }
+.mjx-disclaimer p { margin:0; color:#566276; font-size:.9rem; }
+.mjx-disclaimer a { color:var(--mjx-accent-deep); font-weight:750; text-underline-offset:3px; }
+.mjx-notice-kicker { display:inline-flex; align-items:center; width:fit-content; max-width:100%; padding:5px 10px; margin:0 0 12px; border-radius:999px; background:#fbe8f1; color:#960449; font-size:.7rem; font-weight:800; letter-spacing:.07em; line-height:1.45; text-transform:uppercase; }
 /* Only shared navigation and public portal styles belong in this file.
    About pages and the Flask homepage have their own self-contained styles. */
 *,*::before,*::after{box-sizing:border-box}
