@@ -272,8 +272,10 @@
       signal: AbortSignal.timeout(25000)
     });
     if (!response.ok) {
+      const diagnostic = await response.json().catch(() => null);
       const error = new Error("AI request failed");
       error.status = response.status;
+      error.reason = typeof diagnostic?.reason === "string" ? diagnostic.reason : "";
       throw error;
     }
     const data = await response.json();
@@ -301,20 +303,31 @@
     });
   }
   input.placeholder = label("例：MJXにはどうやって参加するの？", "e.g. How can I join MJX?");
-  function updateAIState(state) {
+  function updateAIState(state, error = null) {
     status.parentElement.classList.toggle("mjx-ai-mode--connected", state === "connected");
-    status.textContent = state === "connected"
-      ? label("AI応答正常", "AI responding")
-      : state === "offline"
-        ? label("AI一時利用不可・サイト内検索", "AI unavailable · site search")
-        : endpoint
-          ? label("AI接続確認前", "AI connection not yet checked")
-          : label("公式サイト内検索モード", "Official website search mode");
+    if (state === "connected") {
+      status.textContent = label("AI応答正常", "AI responding");
+    } else if (state === "offline") {
+      status.textContent = error?.reason === "ai_quota"
+        ? label("AI利用上限・サイト内検索", "AI quota reached · site search")
+        : error?.reason === "visitor_rate_limit"
+          ? label("AI利用制限・サイト内検索", "AI rate limited · site search")
+          : label("AI一時利用不可・サイト内検索", "AI unavailable · site search");
+    } else {
+      status.textContent = endpoint
+        ? label("AI接続確認前", "AI connection not yet checked")
+        : label("公式サイト内検索モード", "Official website search mode");
+    }
   }
   function aiFailureNotice(error) {
-    if (error?.status === 429) return label("AIへのアクセスが集中しているため、公式サイト内の検索結果を表示します。", "The AI request limit has been reached. Showing official site search results.");
-    if (error?.name === "TimeoutError" || error?.name === "AbortError") return label("AIの応答が時間内に届かなかったため、公式サイト内の検索結果を表示します。", "The AI response timed out. Showing official site search results.");
-    return label("AIが一時的に利用できないため、公式サイト内の検索結果を表示します。", "AI is temporarily unavailable. Showing official site search results.");
+    if (error?.reason === "ai_quota") return label("AIサービスの利用枠に達したため、公式サイト内検索へ切り替えました。", "The AI service has reached its usage quota. Showing official site search results.");
+    if (error?.reason === "ai_capacity") return label("AIモデル側が混雑しているため、公式サイト内検索へ切り替えました。", "The AI model is temporarily busy. Showing official site search results.");
+    if (error?.reason === "visitor_rate_limit") return label("短時間のAI利用制限に達したため、公式サイト内検索へ切り替えました。", "The AI request rate limit was reached. Showing official site search results.");
+    if (error?.reason === "ai_binding" || error?.reason === "limit_service") return label("AIサービスの設定または接続に問題があるため、公式サイト内検索へ切り替えました。", "The AI service is not correctly configured or connected. Showing official site search results.");
+    if (error?.reason === "ai_timeout" || error?.name === "TimeoutError" || error?.name === "AbortError") return label("AIの応答が時間内に届かなかったため、公式サイト内検索へ切り替えました。", "The AI response timed out. Showing official site search results.");
+    if (error?.status === 403) return label("AIへのアクセスが拒否されたため、公式サイト内検索へ切り替えました。", "Access to AI was denied. Showing official site search results.");
+    if (error?.status === 429) return label("AIへのアクセスが制限されたため、公式サイト内検索へ切り替えました。", "AI access was rate limited. Showing official site search results.");
+    return label("AIが一時的に利用できないため、公式サイト内検索へ切り替えました。", "AI is temporarily unavailable. Showing official site search results.");
   }
   updateAIState("pending");
   hint.textContent = endpoint
@@ -338,7 +351,7 @@
       if (endpoint) {
         try { await askAI(question); }
         catch (error) {
-          updateAIState("offline");
+          updateAIState("offline", error);
           const notice = aiFailureNotice(error);
           thinking.detail.textContent = notice;
           await fallback(question, notice);
@@ -351,7 +364,7 @@
       submit.disabled = false;
       submit.textContent = label("送信", "Send");
       form.removeAttribute("aria-busy");
-      hint.textContent = endpoint
+      hint.textContent = endpoint && status.parentElement.classList.contains("mjx-ai-mode--connected")
         ? label("回答の根拠となる条文を必ず確認してください。", "Always check cited clauses.")
         : label("検索結果のリンクから公式ページを確認できます。", "Open the official pages linked in the results.");
       input.focus();
