@@ -1,0 +1,23 @@
+name: Diagnose MJX AI on WebKit
+on:
+  push:
+    paths:
+      - '.github/workflows/diagnose-mjx-webkit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  safari-engine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright WebKit
+        run: |
+          npm install --no-save playwright@1.58.2
+          npx playwright install --with-deps webkit
+      - name: Exercise public AI page and embedded assistant in WebKit
+        run: node scripts/diagnose_mjx_webkit.mjs
