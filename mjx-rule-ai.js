@@ -49,7 +49,9 @@
     const words = query.split(/[\s、。,.!！:：]+/).filter((word) => word.length >= 2);
     const set = new Set(words);
     for (const w of words) {
-      if (w.length > 2) for (let i = 0; i < w.length - 1; i += 1) set.add(w.slice(i, i + 2));
+      if (w.length > 2 && !/^[a-z0-9]+$/.test(w)) {
+        for (let i = 0; i < w.length - 1; i += 1) set.add(w.slice(i, i + 2));
+      }
     }
     for (const group of aliases) {
       if (group.some((w) => normalize(text).includes(normalize(w)))) {
@@ -58,6 +60,13 @@
     }
     return [...set].filter((w) => w.length >= 2).slice(0, 48);
   }
+  function matchesTerm(text, term) {
+    // Short Latin terms must match entire words, not "hi" inside "architecture".
+    if (/^[a-z0-9]{2}$/.test(term)) {
+      return new RegExp("(^|[^a-z0-9])" + term + "($|[^a-z0-9])").test(text);
+    }
+    return text.includes(term);
+  }
   function score(item, query, tokens) {
     const title = normalize(item.title);
     const doc = normalize(item.document);
@@ -65,12 +74,12 @@
     let rank = 0;
     for (const word of tokens) {
       const boost = word.length > 2 ? 1.8 : 0.65;
-      if (title.includes(word)) rank += 7 * boost;
-      if (doc.includes(word)) rank += 4 * boost;
-      if (body.includes(word)) rank += 1.8 * boost;
+      if (matchesTerm(title, word)) rank += 7 * boost;
+      if (matchesTerm(doc, word)) rank += 4 * boost;
+      if (matchesTerm(body, word)) rank += 1.8 * boost;
     }
     const q = normalize(query).replace(/\s+/g, "");
-    if (q.length >= 2 && (title.includes(q) || body.includes(q))) rank += 20;
+    if (q.length >= 2 && (matchesTerm(title, q) || matchesTerm(body, q))) rank += 20;
       const sourceNumber = Number(/^doc([1-7])-/.exec(item.id)?.[1] || 0);
     const topics = [
       [/ビジター|visitor/i, 3], [/ビルダー|builder/i, 2],
@@ -253,7 +262,10 @@
       const items = window.MJXSiteIndex ? await window.MJXSiteIndex.load(loadRegulations) : await loadRegulations();
       const citations = search(items, query);
       if (!citations.length) {
-        addMessage("assistant", label("関連する公式ページが見つかりませんでした。質問を言い換えるか、公式サイトを確認してください。", "No matching official pages found. Try rephrasing your question or explore the website."));
+        const message = /^(hi|hello|hey|こんにちは|やあ|おはよう|こんばんは)[！!。\s]*$/i.test(query)
+          ? label("こんにちは！MJXの参加方法や規定について質問できます。", "Hello! You can ask about joining MJX or its regulations.")
+          : label("関連する公式ページが見つかりませんでした。質問を言い換えるか、公式サイトを確認してください。", "No matching official pages found. Try rephrasing your question or explore the website.");
+        addMessage("assistant", endpoint && reason ? reason + "\n" + message : message);
         return;
       }
       const opening = endpoint && reason
