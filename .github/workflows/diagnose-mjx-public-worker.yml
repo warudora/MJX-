@@ -1,4 +1,4 @@
-name: Diagnose MJX public Worker (one-time)
+name: Diagnose MJX public Worker
 on:
   push:
     paths:
@@ -11,26 +11,51 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
-      - name: Check public health and one AI question
+      - name: Check deployed API, CORS preflight and JSON schema
         shell: bash
         run: |
           node --input-type=module <<'NODE'
+          import assert from "node:assert/strict";
           const base = "https://mjx-rule-ai.warudora36.workers.dev/";
-          async function probe(label, url, options) {
-            try {
-              const response = await fetch(url, { ...options, signal: AbortSignal.timeout(35000) });
-              const payload = await response.json().catch(() => ({}));
-              const status = payload?.status || payload?.reason || "unspecified";
-              console.log(label + ": HTTP " + response.status + ", status=" + status +
-                ", answer=" + (typeof payload?.answer === "string" && payload.answer.length > 0));
-            } catch (error) {
-              console.log(label + ": NETWORK ERROR " + String(error?.name || "Error"));
-            }
-          }
-          await probe("health", base + "health", {});
-          await probe("question", base, {
-            method: "POST",
-            headers: { "content-type": "application/json", origin: "https://warudora.github.io" },
-            body: JSON.stringify({ question: "ビジターは建築できますか？", lang: "ja", history: [] })
+          const origin = "https://warudora.github.io";
+          const health = await fetch(base + "health", { signal: AbortSignal.timeout(10000) });
+          const healthData = await health.json();
+          console.log("health: HTTP " + health.status + ", state=" + healthData.status);
+          assert.equal(health.status, 200);
+          assert.equal(healthData.status, "ready");
+
+          const preflight = await fetch(base, {
+            method: "OPTIONS",
+            headers: {
+              origin,
+              "access-control-request-method": "POST",
+              "access-control-request-headers": "content-type"
+            },
+            signal: AbortSignal.timeout(10000)
           });
+          const allowOrigin = preflight.headers.get("access-control-allow-origin");
+          const allowHeaders = preflight.headers.get("access-control-allow-headers") || "";
+          console.log("preflight: HTTP " + preflight.status + ", allowedOrigin=" + (allowOrigin === origin) +
+            ", contentTypeAllowed=" + allowHeaders.toLowerCase().includes("content-type"));
+          assert.equal(preflight.status, 204);
+          assert.equal(allowOrigin, origin);
+          assert.ok(allowHeaders.toLowerCase().includes("content-type"));
+
+          const response = await fetch(base, {
+            method: "POST",
+            headers: { "content-type": "application/json", origin },
+            body: JSON.stringify({ question: "ビジターは建築できますか？", lang: "ja", history: [] }),
+            signal: AbortSignal.timeout(35000)
+          });
+          const data = await response.json().catch(() => ({}));
+          const schemaValid = data.source_scope === "mjx-site-v2" &&
+            typeof data.answer === "string" && data.answer.length > 0 &&
+            data.answer.length <= 5000 && Array.isArray(data.citations);
+          const corsValid = response.headers.get("access-control-allow-origin") === origin;
+          console.log("question: HTTP " + response.status + ", reason=" + (data.reason || "none") +
+            ", schemaValid=" + schemaValid + ", corsValid=" + corsValid +
+            ", citations=" + (Array.isArray(data.citations) ? data.citations.length : "none"));
+          assert.equal(response.status, 200);
+          assert.ok(schemaValid);
+          assert.ok(corsValid);
           NODE
