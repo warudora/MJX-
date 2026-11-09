@@ -9,9 +9,10 @@
 .join-lead{max-width:700px}
 .join-intro,.join-section{margin:0 0 36px}
 .join-muted{color:var(--mjx-muted);font-size:.93rem}
-.join-banner{background:#fff;border:1px solid var(--mjx-border);border-left:5px solid var(--mjx-accent);border-radius:15px;padding:19px 22px}
-.join-banner strong{display:block;margin-bottom:5px}
-.join-banner p{margin:0}
+.join-banner{background:linear-gradient(135deg,#fff 30%,#fff7fb 100%);border:1px solid #ecdce5;border-radius:18px;padding:23px 26px;box-shadow:0 9px 25px rgba(31,23,35,.045)}
+.join-banner strong{display:block;margin-bottom:8px;color:var(--mjx-ink);font-size:1.12rem;line-height:1.5;letter-spacing:-.018em}
+.join-banner p{margin:0;color:#566276;font-size:.9rem}
+.join-banner a{color:var(--mjx-accent-deep);font-weight:750;text-underline-offset:3px}
 .join-section-heading{display:flex;align-items:center;gap:12px;margin-bottom:19px}
 .join-section-heading .join-tag{color:var(--mjx-accent);font-size:.75rem;font-weight:800;letter-spacing:.12em}
 .join-steps{list-style:none;padding:0;margin:0;display:grid;gap:12px}
