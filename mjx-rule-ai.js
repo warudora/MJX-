@@ -311,7 +311,13 @@
       try {
         data = await response.json();
       } catch (error) {
-        error.reason = "invalid_response";
+        if (controller.signal.aborted) {
+          const timeoutError = new Error("AI request timed out");
+          timeoutError.name = "TimeoutError";
+          timeoutError.reason = "ai_timeout";
+          throw timeoutError;
+        }
+        error.reason = error instanceof TypeError ? "browser_network" : "invalid_response";
         throw error;
       }
       if (!data || data.source_scope !== "mjx-site-v2" || typeof data.answer !== "string" ||
