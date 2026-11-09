@@ -437,8 +437,7 @@
         try { await askAI(question); }
         catch (error) {
           updateAIState("offline", error);
-          const notice = aiFailureNotice(error) + "
-" + failureDiagnostic(error);
+          const notice = aiFailureNotice(error) + "\n" + failureDiagnostic(error);
           thinking.detail.textContent = notice;
           await fallback(question, notice);
         }
