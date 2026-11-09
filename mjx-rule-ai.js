@@ -276,66 +276,79 @@
       addMessage("assistant", label("現在、公式サイトの情報を取得できません。通信状態を確認して再試行してください。", "Unable to load the official site information. Check your connection and try again."));
     }
   }
-  async function askAI(query) {
-    // Keep the request pending until a response is fully received or the explicit timeout expires.
-    // A single request is used to avoid duplicate AI charges and rate-limit consumption.
+  async function requestAI(query) {
+    const startedAt = performance.now();
     const controller = new AbortController();
     const timeoutId = window.setTimeout(() => controller.abort(), 60000);
+    let stage = "request";
+    let response = null;
+    let providerReason = "";
     try {
-      let response;
-      try {
-        response = await fetch(endpoint, {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({ question: query, lang, history: conversation.slice(-6) }),
-          signal: controller.signal
-        });
-      } catch (error) {
-        if (controller.signal.aborted) {
-          const timeoutError = new Error("AI request timed out");
-          timeoutError.name = "TimeoutError";
-          timeoutError.reason = "ai_timeout";
-          throw timeoutError;
-        }
-        if (error instanceof TypeError) error.reason = "browser_network";
-        throw error;
-      }
+      response = await fetch(endpoint, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ question: query, lang, history: conversation.slice(-6) }),
+        signal: controller.signal
+      });
+      stage = "http_response";
       if (!response.ok) {
         const diagnostic = await response.json().catch(() => null);
-        const error = new Error("AI request failed");
-        error.status = response.status;
-        error.reason = typeof diagnostic?.reason === "string" ? diagnostic.reason : "";
-        throw error;
+        providerReason = typeof diagnostic?.reason === "string" ? diagnostic.reason : "";
+        throw new Error("AI HTTP request failed");
       }
-      let data;
-      try {
-        data = await response.json();
-      } catch (error) {
-        if (controller.signal.aborted) {
-          const timeoutError = new Error("AI request timed out");
-          timeoutError.name = "TimeoutError";
-          timeoutError.reason = "ai_timeout";
-          throw timeoutError;
-        }
-        error.reason = error instanceof TypeError ? "browser_network" : "invalid_response";
-        throw error;
-      }
-      if (!data || data.source_scope !== "mjx-site-v2" || typeof data.answer !== "string" ||
+      stage = "parse_response";
+      const data = await response.json();
+      if (!data || data.source_scope !== "mjx-site-v2" ||
+          typeof data.answer !== "string" || !data.answer.trim() ||
           data.answer.length > 5000 || !Array.isArray(data.citations)) {
-        const error = new Error("Invalid AI response");
-        error.reason = "invalid_response";
-        throw error;
+        throw new Error("AI returned an invalid response");
       }
+      return data;
+    } catch (cause) {
+      const error = new Error("MJX AI request failed");
+      error.name = controller.signal.aborted ? "TimeoutError" : "AIRequestError";
+      error.status = response?.status || 0;
+      error.reason = controller.signal.aborted
+        ? "ai_timeout"
+        : providerReason || (error.status
+          ? (error.status === 429 ? "rate_limit" : "http_error")
+          : stage === "request" ? "browser_network" : "invalid_response");
+      error.stage = stage;
+      error.elapsedMs = Math.max(0, Math.round(performance.now() - startedAt));
+      // Never log the user's question or AI answer.
+      console.warn("[MJX AI] request", {
+        stage: error.stage, reason: error.reason, status: error.status, elapsedMs: error.elapsedMs,
+        causeName: String(cause?.name || "Error")
+      });
+      throw error;
+    } finally {
+      window.clearTimeout(timeoutId);
+    }
+  }
+  async function askAI(query) {
+    const data = await requestAI(query);
+    let message;
+    try {
+      message = addMessage("assistant", data.answer);
+      updateAIState("connected");
+      conversation.push(
+        { role: "user", content: query.slice(0, 400) },
+        { role: "assistant", content: data.answer.slice(0, 500) }
+      );
+      if (conversation.length > 12) conversation.splice(0, conversation.length - 12);
+    } catch (_) {
+      const error = new Error("AI reply display failed");
+      error.reason = "client_render";
+      throw error;
+    }
+    // Source-link rendering is optional; it must never reclassify a valid AI reply as a connection failure.
+    try {
       const citations = data.citations.filter((x) =>
         x && typeof x.id === "string" && window.MJXSiteIndex?.href(x.id)
       );
-      const message = addMessage("assistant", data.answer);
-      updateAIState("connected");
-      conversation.push({ role: "user", content: query.slice(0, 400) }, { role: "assistant", content: data.answer.slice(0, 500) });
-      if (conversation.length > 12) conversation.splice(0, conversation.length - 12);
       if (citations.length) addSources(message, citations, false);
-    } finally {
-      window.clearTimeout(timeoutId);
+    } catch (_) {
+      console.warn("[MJX AI] citations could not be rendered");
     }
   }
   for (const el of document.querySelectorAll("[data-ja][data-en]")) {
@@ -357,11 +370,17 @@
     if (state === "connected") {
       status.textContent = label("AI応答正常", "AI responding");
     } else if (state === "offline") {
-      status.textContent = error?.reason === "ai_quota"
-        ? label("AI利用上限・サイト内検索", "AI quota reached · site search")
-        : error?.reason === "visitor_rate_limit"
-          ? label("AI利用制限・サイト内検索", "AI rate limited · site search")
-          : label("AI一時利用不可・サイト内検索", "AI unavailable · site search");
+      status.textContent = error?.reason === "browser_network"
+        ? label("AI通信失敗・サイト内検索", "AI network failed · site search")
+        : error?.reason === "invalid_response"
+          ? label("AI回答形式エラー・サイト内検索", "AI format error · site search")
+          : error?.reason === "client_render"
+            ? label("AI表示エラー・サイト内検索", "AI display error · site search")
+            : error?.reason === "ai_quota"
+              ? label("AI利用上限・サイト内検索", "AI quota reached · site search")
+              : error?.reason === "visitor_rate_limit" || error?.reason === "rate_limit"
+                ? label("AI利用制限・サイト内検索", "AI rate limited · site search")
+                : label("AI一時利用不可・サイト内検索", "AI unavailable · site search");
     } else {
       status.textContent = state === "pending"
         ? label("AI応答待機中…", "Waiting for AI response…")
@@ -371,6 +390,7 @@
     }
   }
   function aiFailureNotice(error) {
+    if (error?.reason === "client_render") return label("AIから回答は届きましたが、画面に表示できませんでした。サイト内検索に切り替えます。", "The AI answered, but the page could not display it. Switching to site search.");
     if (error?.reason === "browser_network") return label("ブラウザからAIへの通信に失敗しました。ネットワークやSafariのコンテンツブロッカーをご確認ください。公式サイト内検索に切り替えます。", "The browser could not reach AI. Check your connection or content blockers. Switching to site search.");
     if (error?.reason === "invalid_response") return label("AIから受信した回答データを処理できませんでした。公式サイト内検索に切り替えます。", "The AI response format could not be processed. Switching to site search.");
     if (error?.reason === "ai_quota") return label("AIサービスの利用枠に達したため、公式サイト内検索へ切り替えました。", "The AI service has reached its usage quota. Showing official site search results.");
@@ -381,6 +401,17 @@
     if (error?.status === 403) return label("AIへのアクセスが拒否されたため、公式サイト内検索へ切り替えました。", "Access to AI was denied. Showing official site search results.");
     if (error?.status === 429) return label("AIへのアクセスが制限されたため、公式サイト内検索へ切り替えました。", "AI access was rate limited. Showing official site search results.");
     return label("AIが一時的に利用できないため、公式サイト内検索へ切り替えました。", "AI is temporarily unavailable. Showing official site search results.");
+  }
+  function failureDiagnostic(error) {
+    const kind = error?.reason === "browser_network" ? "NETWORK"
+      : error?.reason === "invalid_response" ? "RESPONSE"
+      : error?.reason === "client_render" ? "DISPLAY"
+      : error?.reason === "ai_timeout" ? "TIMEOUT"
+      : error?.status ? "HTTP " + error.status : "UNKNOWN";
+    const seconds = typeof error?.elapsedMs === "number"
+      ? (error.elapsedMs / 1000).toFixed(1) + "s"
+      : "-";
+    return label("診断", "Diagnostic") + ": " + kind + " / " + seconds;
   }
   updateAIState("idle");
   hint.textContent = endpoint
@@ -406,7 +437,8 @@
         try { await askAI(question); }
         catch (error) {
           updateAIState("offline", error);
-          const notice = aiFailureNotice(error);
+          const notice = aiFailureNotice(error) + "
+" + failureDiagnostic(error);
           thinking.detail.textContent = notice;
           await fallback(question, notice);
         }
