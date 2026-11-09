@@ -141,6 +141,22 @@ try {
   assert.equal(film.status, 200);
   assert.equal(film.data.citations[0].id.slice(0, 4), "doc6");
 
+  const originalModelRun = env.AI.run;
+  env.AI.run = async () => {
+    throw Object.assign(new Error("Daily free allocation of neurons exceeded"), { code: 3036 });
+  };
+  const exhausted = await question("ビジターの参加方法を教えて");
+  assert.equal(exhausted.status, 429);
+  assert.equal(exhausted.data.reason, "ai_quota");
+
+  env.AI.run = async () => {
+    throw Object.assign(new Error("Capacity temporarily exceeded"), { code: 3040 });
+  };
+  const busy = await question("ビジターの参加方法を教えて");
+  assert.equal(busy.status, 503);
+  assert.equal(busy.data.reason, "ai_capacity");
+  env.AI.run = originalModelRun;
+
   const forbidden = await question("個人情報の保存期間は？", "ja", "https://invalid.example");
   assert.equal(forbidden.status, 403);
   assert.ok(aiCalls >= 3);
