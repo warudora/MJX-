@@ -185,7 +185,9 @@ function terms(query) {
   const words = cleaned.split(/[\s、。,.!！:：]+/).filter((word) => word.length >= 2);
   const tokens = new Set(words);
   for (const word of words) {
-    if (word.length > 2) for (let i = 0; i < word.length - 1; i += 1) tokens.add(word.slice(i, i + 2));
+    if (word.length > 2 && !/^[a-z0-9]+$/.test(word)) {
+      for (let i = 0; i < word.length - 1; i += 1) tokens.add(word.slice(i, i + 2));
+    }
   }
   for (const group of SYNONYMS) {
     if (group.some((word) => norm(query).includes(norm(word)))) {
@@ -194,6 +196,13 @@ function terms(query) {
   }
   return [...tokens].filter((word) => word.length >= 2).slice(0, 48);
 }
+function matchesTerm(text, term) {
+  // Match two-character Latin words as words, never inside a longer word.
+  if (/^[a-z0-9]{2}$/.test(term)) {
+    return new RegExp("(^|[^a-z0-9])" + term + "($|[^a-z0-9])").test(text);
+  }
+  return text.includes(term);
+}
 function score(article, query, tokens) {
   const title = norm(article.title);
   const doc = norm(article.document);
@@ -201,12 +210,12 @@ function score(article, query, tokens) {
   let total = 0;
   for (const word of tokens) {
     const weight = word.length > 2 ? 1.8 : 0.65;
-    if (title.includes(word)) total += 7 * weight;
-    if (doc.includes(word)) total += 4 * weight;
-    if (body.includes(word)) total += 1.8 * weight;
+    if (matchesTerm(title, word)) total += 7 * weight;
+    if (matchesTerm(doc, word)) total += 4 * weight;
+    if (matchesTerm(body, word)) total += 1.8 * weight;
   }
   const exact = norm(query).replace(/\s+/g, "");
-  if (exact.length >= 2 && (title.includes(exact) || body.includes(exact))) total += 20;
+  if (exact.length >= 2 && (matchesTerm(title, exact) || matchesTerm(body, exact))) total += 20;
   const sourceNumber = Number(/^doc([1-7])-/.exec(article.id)?.[1] || 0);
   const topics = [
     [/ビジター|visitor/i, 3], [/ビルダー|builder/i, 2],
