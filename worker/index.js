@@ -251,6 +251,22 @@ async function retrieveRegulations() {
   }
   return articles;
 }
+function classifyInferenceFailure(error) {
+  const providerCode = String(error?.code ?? error?.cause?.code ?? "");
+  const details = String(error?.message ?? error?.cause?.message ?? "");
+  const diagnostic = providerCode + " " + details;
+  if (/4006|3036|daily free allocation|quota exceeded|neuron limit/i.test(diagnostic)) {
+    return { reason: "ai_quota", status: 429 };
+  }
+  if (/3040|capacity temporarily exceeded|out of capacity/i.test(diagnostic)) {
+    return { reason: "ai_capacity", status: 503 };
+  }
+  if (/3007|timeout|timed out/i.test(diagnostic)) {
+    return { reason: "ai_timeout", status: 504 };
+  }
+  return { reason: "ai_service", status: 503 };
+}
+
 export default {
   async fetch(request, env) {
     const requestUrl = new URL(request.url);
@@ -280,10 +296,20 @@ export default {
     }
     const length = Number(request.headers.get("content-length") || 0);
     if (length > 6000) return jsonResponse({ error: "Request too large" }, 413);
-    if (!env.AI || !env.RULE_AI_LIMIT) return jsonResponse({ error: "AI binding not configured" }, 503);
+    if (!env.AI || !env.RULE_AI_LIMIT) {
+      return jsonResponse({ error: "AI temporarily unavailable", reason: "ai_binding" }, 503);
+    }
     const key = request.headers.get("cf-connecting-ip") || "unknown";
-    const limit = await env.RULE_AI_LIMIT.limit({ key: key.slice(0, 100) });
-    if (!limit.success) return jsonResponse({ error: "Too many requests" }, 429);
+    let limit;
+    try {
+      limit = await env.RULE_AI_LIMIT.limit({ key: key.slice(0, 100) });
+    } catch (error) {
+      console.error("MJX AI rate limit binding failure", { name: String(error?.name || "Unknown") });
+      return jsonResponse({ error: "AI temporarily unavailable", reason: "limit_service" }, 503);
+    }
+    if (!limit.success) {
+      return jsonResponse({ error: "Too many requests", reason: "visitor_rate_limit" }, 429);
+    }
     let data;
     try {
       const raw = await request.text();
@@ -370,8 +396,13 @@ export default {
         })),
         source_scope: "mjx-site-v2"
       });
-    } catch (_) {
-      return jsonResponse({ error: "AI model temporarily unavailable" }, 503);
+    } catch (error) {
+      const failure = classifyInferenceFailure(error);
+      console.error("MJX AI inference failed", {
+        reason: failure.reason,
+        providerCode: String(error?.code ?? error?.cause?.code ?? "unknown").slice(0, 32)
+      });
+      return jsonResponse({ error: "AI model temporarily unavailable", reason: failure.reason }, failure.status);
     }
   }
 };
