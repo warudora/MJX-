@@ -141,6 +141,10 @@ try {
   assert.equal(film.status, 200);
   assert.equal(film.data.citations[0].id.slice(0, 4), "doc6");
 
+  const greeting = await question("hi");
+  assert.equal(greeting.status, 200);
+  assert.equal(greeting.data.citations.length, 0, "A greeting must not match JNC's architecture text");
+
   const originalModelRun = env.AI.run;
   env.AI.run = async () => {
     throw Object.assign(new Error("Daily free allocation of neurons exceeded"), { code: 3036 });
