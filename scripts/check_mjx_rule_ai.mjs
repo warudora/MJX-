@@ -13,7 +13,14 @@ assert.equal(allSources.length, 130, "Expected the 130 currently published artic
 assert.equal(new Set(allSources.map((x) => x[1])).size, 130);
 assert.match(entry, /id="mjx-ai-form"/);
 assert.match(entry, /id="mjx-ai-history"/);
-assert.match(frontend, /new DOMParser\(\)/);
+assert.match(frontend, /new DOMParser\\(\\)/);
+assert.match(frontend, /updateAIState\\("idle"\\)/, "AI must start as not yet checked");
+assert.match(frontend, /updateAIState\\("pending"\\)/, "Each AI request must reset its status to pending");
+assert.match(frontend, /updateAIState\\("connected"\\)/, "AI can be marked connected after a valid answer");
+assert.match(frontend, /controller\\.abort\\(\\), 60000\\)/, "The request must not be aborted before 60 seconds");
+assert.match(frontend, /window\\.clearTimeout\\(timeoutId\\)/, "The timeout must be cleared after the response");
+assert.doesNotMatch(frontend, /AbortSignal\\.timeout\\(25000\\)/, "The former 25-second abort must not return");
+assert.match(frontend, /browser_network/, "Network errors must be distinguishable from server failures");
 
 const floatScript = readFileSync(join(root, "mjx-ai-float.js"), "utf8");
 const floatStyles = readFileSync(join(root, "mjx-ai-float.css"), "utf8");
