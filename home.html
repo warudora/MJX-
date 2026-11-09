@@ -95,8 +95,8 @@ body.mjx-home{margin:0;min-width:0;background:#f6f7f9;color:var(--mjx-ink);font-
 .mjx-home .mjx-action{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:44px;padding:11px 20px;border-radius:12px;border:1px solid var(--mjx-border);font-size:.91rem;font-weight:800;text-decoration:none;white-space:normal}
 .mjx-home .mjx-action--primary{background:var(--mjx-accent);border-color:var(--mjx-accent);color:#fff}
 .mjx-home .mjx-action--primary:hover{background:var(--mjx-accent-deep);color:#fff}
-.mjx-home .mjx-policy-spotlight{background:#fff;border:1px solid var(--mjx-border);border-left:5px solid var(--mjx-accent);border-radius:18px;padding:23px 26px;display:flex;justify-content:space-between;align-items:center;gap:20px;margin:0 0 43px;box-shadow:0 9px 28px #17213209}
-.mjx-home .mjx-policy-spotlight .eyebrow{color:var(--mjx-accent);font-size:.72rem;font-weight:800;letter-spacing:.14em}
+.mjx-home .mjx-policy-spotlight{background:linear-gradient(135deg,#fff 30%,#fff7fb 100%);border:1px solid #ecdce5;border-radius:18px;padding:23px 26px;display:flex;justify-content:space-between;align-items:center;gap:20px;margin:0 0 43px;box-shadow:0 9px 25px rgba(31,23,35,.045)}
+.mjx-home .mjx-policy-spotlight .eyebrow{display:inline-flex;align-items:center;width:fit-content;padding:5px 10px;margin-bottom:11px;border-radius:999px;background:#fbe8f1;color:#960449;font-size:.7rem;font-weight:800;line-height:1.45;letter-spacing:.07em}
 .mjx-home .mjx-policy-spotlight h2{font-size:1.25rem;margin:5px 0 7px}
 .mjx-home .mjx-policy-spotlight p{color:var(--mjx-muted);margin:0;font-size:.89rem;line-height:1.8}
 .mjx-home .mjx-policy-spotlight .mjx-action{flex-shrink:0}
@@ -255,7 +255,7 @@ html{scroll-behavior:smooth}
 
 <div class="container" id="main-content">
     <section class="mjx-policy-spotlight" aria-label="{{ 'Official regulations notice' if mjx_en else '公式7規定のお知らせ' }}">
-      <div><span class="eyebrow">OFFICIAL REGULATIONS / 2026.11.01</span>
+      <div><span class="eyebrow">OFFICIAL RULES</span>
       <h2>{{ 'The Seven Official MJX Regulations' if mjx_en else 'MJX 公式7規定のご案内' }}</h2>
       <p>{{ 'All seven official regulations took effect on November 1, 2026.' if mjx_en else '公式7規定はすべて2026年11月1日から施行しています。' }}</p></div>
       <a class="mjx-action mjx-action--primary" href="{{ 'regulations-en.html?lang=en' if mjx_en else 'regulations.html?lang=ja' }}">{{ 'Read the regulations' if mjx_en else '7規定を確認する' }}</a>
