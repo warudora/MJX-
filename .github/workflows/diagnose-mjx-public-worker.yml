@@ -1,0 +1,36 @@
+name: Diagnose MJX public Worker (one-time)
+on:
+  push:
+    paths:
+      - .github/workflows/diagnose-mjx-public-worker.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Check public health and one AI question
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          const base = "https://mjx-rule-ai.warudora36.workers.dev/";
+          async function probe(label, url, options) {
+            try {
+              const response = await fetch(url, { ...options, signal: AbortSignal.timeout(35000) });
+              const payload = await response.json().catch(() => ({}));
+              const status = payload?.status || payload?.reason || "unspecified";
+              console.log(label + ": HTTP " + response.status + ", status=" + status +
+                ", answer=" + (typeof payload?.answer === "string" && payload.answer.length > 0));
+            } catch (error) {
+              console.log(label + ": NETWORK ERROR " + String(error?.name || "Error"));
+            }
+          }
+          await probe("health", base + "health", {});
+          await probe("question", base, {
+            method: "POST",
+            headers: { "content-type": "application/json", origin: "https://warudora.github.io" },
+            body: JSON.stringify({ question: "ビジターは建築できますか？", lang: "ja", history: [] })
+          });
+          NODE
